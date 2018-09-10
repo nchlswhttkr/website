@@ -1,0 +1,28 @@
+baseURL: "https://nchlswhttkr.github.io/"
+languageCode: "en-us"
+title: "Nicholas Whittaker"
+enableEmoji: true
+
+params:
+  me:
+    name: Nicholas Whittaker
+    email: nchlswhttkr+enquiries@gmail.com
+  identities:
+    # - site: Facebook
+    #   profile: https://facebook.com/nchlswhttkr
+    - site: Twitter
+      profile: https://twitter.com/nchlswhttkr
+    - site: Github
+      profile: https://github.com/nchlswhttkr
+    # - site: Bitbucket
+    #   profile: https://bitbucket.com/nchlswhttkr
+    # - site: GitLab
+    #   profile: https://gitlab.com/nchlswhttkr
+    - site: LinkedIn
+      profile: https://linkedin.com/nchlswhttkr
+    # - site: npm
+    #   profile: https://www.npmjs.com/~nchlswhttkr
+    # - site: Travis
+    #   profile: https://travis-ci.org/nchlswhttkr
+    # - site: Medium
+    #   profile: https://medium.com/@nchlswhttkr

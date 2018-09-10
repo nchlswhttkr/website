@@ -1,0 +1,45 @@
+section {
+  display: block;
+  box-sizing: border-box;
+  margin: 20px auto;
+  padding: 16px 24px;
+  width: 80%;
+  min-width: 300px;
+  max-width: 1000px;
+  overflow: hidden;
+  box-shadow: 0px 2px 10px #888888;
+  text-align: center;
+}
+
+section > * {
+  margin: 8px auto;
+}
+
+section > h1 {
+  font-size: 32px;
+}
+
+section > h2 {
+  font-size: 24px;
+}
+
+#blog-posts {
+  margin: 16px auto;
+}
+
+#blog-posts > a {
+  box-sizing: border-box;
+  display: block;
+  margin: 8px;
+  padding: 8px 16px;
+  border: 2px solid #eeeeee;
+  text-decoration: none;
+}
+
+#blog-posts > a:hover {
+  background-color: #eeeeee;
+}
+
+#blog-posts > a > div > * {
+  margin: 8px auto;
+}

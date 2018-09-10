@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Nicholas Whittaker</title>
+  {{ partial "meta.html" . }}
+  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/home.css" />
+</head>
+
+<body>
+  {{ partial "header/index.html" (dict "title" "Nicholas Whittaker" "subtitle" "Student, Musician, Developer"  "link" .Site.BaseURL)}}
+  <main>
+    <section id="bio">
+      {{ .Content }}
+    </section>
+    <section id="contact">
+      <h1>Contact</h1>
+      <h2>Send me a postcard, drop me a line...</h2>
+      {{ range .Site.Params.Identities}}
+      <div class="button {{ lower .site }}">
+        <a href="{{ .profile }}">{{ .site }}</a>
+      </div>
+      {{ end }}
+    </section>
+    <!-- <section class="block exp">
+      <h1>Experience</h1>
+      <h2>What can I do? Can I do things? Let's find out!</h2>
+      <p>
+        <em>This section is currently empty... how ominous...</em>
+      </p>
+    </section>
+    <section class="block proj">
+      <h1>Projects</h1>
+      <h2>The home of all the beatiful code that I produce!</h2>
+      <p>
+        <em>This section is currently empty... how ominous...</em>
+      </p>
+    </section> -->
+    <section id="blog">
+      <h1>
+        <a href="{{ .Site.BaseURL }}">Blog</a>
+      </h1>
+      <h2>Browse the scribble collection!</h2>
+      <div id="blog-posts">
+        {{ range where .Data.Pages "Section" "blog" }}
+        <a href="{{ .Permalink }}">
+          <div>
+            <h1>
+              {{ .Title }}
+            </h1>
+            <p>{{ .Description }}</p>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </section>
+  </main>
+  {{ partial "footer/index.html" . }}
+</body>
+
+</html>

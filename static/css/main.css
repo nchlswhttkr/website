@@ -1,0 +1,121 @@
+:root {
+  --header-height: 48px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+}
+
+a {
+  color: inherit;
+}
+
+#hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: var(--header-height);
+  min-height: 20vh;
+  color: #ffffff;
+  text-align: center;
+}
+
+#hero > h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 48px;
+  margin: 8px 0;
+}
+
+#hero > h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  margin: 8px 0;
+}
+
+main {
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: var(--header-height);
+  width: 100%;
+  background-color: rgba(63, 63, 63, 0.8);
+  color: #fff;
+}
+
+header > a {
+  text-align: center;
+  flex: 1;
+  width: 64px;
+  max-width: 128px;
+}
+
+header > a:hover {
+  background-color: rgba(127, 127, 127, 0.8);
+}
+
+header > a > p {
+  display: inline-block;
+  margin: 0;
+  height: var(--header-height);
+  line-height: var(--header-height);
+  font-size: calc(var(--header-height) / 3);
+  font-weight: 700;
+}
+
+footer {
+  box-sizing: border-box;
+  padding: 10px;
+  min-height: 60px;
+  text-align: center;
+  background-color: #cccccc;
+}
+
+footer > p {
+  margin: 4px;
+}
+
+.button {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 2px 0;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 700;
+  border: 3px solid;
+  border-radius: 6px;
+}
+
+.github {
+  color: #24292e;
+  background-color: #ffffff;
+  border-color: #24292e;
+}
+
+.twitter {
+  color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.facebook {
+  color: #3b5998;
+  border-color: #3b5998;
+}
+
+.npm {
+  color: #cb3837;
+  border-color: #cb3837;
+}
+
+.linkedin {
+  color: #0077b5;
+  border-color: #0077b5;
+}

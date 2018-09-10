@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ERROR 404</title>
+  {{ partial "meta.html" . }}
+</head>
+
+<body>
+  {{ partial "header/index.html" (dict "title" "404" "subtitle" "Click to return home" "link" .Site.BaseURL) }}
+  {{ partial "footer/index.html" . }}
+</body>
+
+</html>
