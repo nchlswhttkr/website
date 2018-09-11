@@ -3,7 +3,7 @@ title: "Nicholas Whittaker"
 description: "Student, Developer, Musician"
 ---
 
-# Hello World!
+# Hello World! :wave:
 
 ## I'm Nicholas, a student developer in Melbourne Australia!
 

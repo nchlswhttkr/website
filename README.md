@@ -1,6 +1,6 @@
-# nchlswhttkr.github.io
+# [nchlswhttkr.github.io](https://nchlswhttkr.github.io)
 
-Build using [Hugo](https://gohugo.io).
+Built using [Hugo](https://gohugo.io).
 
 ---
 
@@ -16,7 +16,7 @@ The `dev` branch is used for templates and content, then the built static site i
 
 ---
 
-_Why not git submodules?_
+**Why not git submodules?**
 
 I wasn't quite able to make this approach work. I ended up getting errors inside a git hook script when trying to git commands on the submodule, but I did not encounter these problems when running from CLI. It might be possible to fix using the `-C`, `--git-dir`, and `--work-tree` flags, but I wasn't able to find the config that worked.
 

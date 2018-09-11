@@ -14,15 +14,13 @@ git branch -u origin/master
 cd ..
 
 # pre-commit
-echo "
-#!/bin/sh
+echo "#!/bin/sh
 sh scripts/pre-commit.sh
 " > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 
 # pre-push
-echo "
-#!/bin/sh
+echo "#!/bin/sh
 sh scripts/pre-push.sh
 " > .git/hooks/pre-push
 chmod +x .git/hooks/pre-commit
