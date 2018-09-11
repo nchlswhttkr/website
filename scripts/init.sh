@@ -23,4 +23,4 @@ chmod +x .git/hooks/pre-commit
 echo "#!/bin/sh
 sh scripts/pre-push.sh
 " > .git/hooks/pre-push
-chmod +x .git/hooks/pre-commit
+chmod +x .git/hooks/pre-push
