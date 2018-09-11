@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>{{ .Site.Params.Blog.title }}</title>
   {{ partial "meta.html" . }}
-  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/blog.css"/>  
+  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/blog.css" />
 </head>
+
 <body>
-    {{ partial "header/index.html" (dict "title" "/blog" "subtitle" "A collection of scribbles"  "link" ( printf "%sblog" .Site.BaseURL ) ) }}
-    <main>
+  {{ partial "header.html" . }}
+  <main>
+    {{ partial "title.html" . }}
     {{ range .Data.Pages }}
-      <section class="block">
-        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-        <h2>{{ .Description }}</h2>
-        <h3>{{ .Date.Format "Jan 02, 2006" }}</h3>
-        <p>{{ .Summary }}</p>
-      </section>
+    <section>
+      <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+      <h2>{{ .Description }}</h2>
+      <h3>{{ .Date.Format "Jan 02, 2006" }}</h3>
+      <p>{{ .Summary }}</p>
+    </section>
     {{ end }}
   </main>
-  {{ partial "footer/index.html" . }}
+  {{ partial "footer.html" . }}
 </body>
+
 </html>

@@ -1,0 +1,19 @@
+{{ if eq .Kind "404" }}
+<hgroup class="title-404">
+    <h1>
+        Error 404
+    </h1>
+    <h2>
+        <a href="{{ .Site.BaseURL}}">Return Home?</a>
+    </h2>
+</hgroup>
+{{ else }}
+<hgroup>
+    <h1>
+        <a href="{{ .URL }}">{{ .Title }}</a>
+    </h1>
+    <h2>
+        <a href="{{ .URL }}">{{ .Description }}</a>
+    </h2>
+</hgroup>
+{{ end }}

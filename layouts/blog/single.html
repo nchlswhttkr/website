@@ -2,29 +2,22 @@
 <html lang="en">
 
 <head>
-  <title>{{ .Title }}</title>
   {{ partial "meta.html" . }}
   <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/blog.css" />
 </head>
 
 <body>
-    {{ partial "header/index.html" (dict "title" "/blog" "subtitle" "A collection of scribbles"  "link" ( printf "%sblog" .Site.BaseURL ) ) }}
-    <main>
-    <article>
-      <section id="blog-title">
-        <h1>{{ .Params.title }}</h1>
-        <h2>{{ .Params.description }}</h2>
-      </section>
-      <section id="blog-content">
+  {{ partial "header.html" . }}
+  <main>
+    {{ partial "title.html" . }}
+    <section>
+      <article>
         {{ .Content }}
-      </section>
-      <section id="blog-meta">
-        <img src="{{ .Site.BaseURL }}media/nicholas.jpg" />
-        <h1>{{ .Site.Params.Me.Name }} - <em>{{ .Date.Format "Jan 02, 2006" }}</em></h1>
-      </section>
-    </article>
+        {{ partial "blurb.html" . }}
+      </article>
+    </section>
   </main>
-  {{ partial "footer/index.html" . }}
+  {{ partial "footer.html" . }}
 </body>
 
 </html>
