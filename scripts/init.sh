@@ -2,14 +2,27 @@
 
 # This should be run after a fresh clone, it sets up git submodules and hooks
 
-# Set the submodule to track the master branch, as opposed to the most recent
-# commit, to avoid having to deal with a detached head
-git submodule init
-git submodule update
+set -e
+
+# Create the build directory, and initialise git
+mkdir public
 cd public
-git checkout master
+git init
+git remote add origin git@github.com:nchlswhttkr/nchlswhttkr.github.io.git
+git pull origin master
+git branch -u origin/master
 cd ..
 
-# Copy over the pre-commit hook
-cp scripts/pre-commit.sh .git/hooks/pre-commit
+# pre-commit
+echo "
+#!/bin/sh
+sh scripts/pre-commit.sh
+" > .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+
+# pre-push
+echo "
+#!/bin/sh
+sh scripts/pre-push.sh
+" > .git/hooks/pre-push
 chmod +x .git/hooks/pre-commit
