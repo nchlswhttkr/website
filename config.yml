@@ -14,12 +14,12 @@ params:
       profile: https://twitter.com/nchlswhttkr
     - site: Github
       profile: https://github.com/nchlswhttkr
-    # - site: Bitbucket
-    #   profile: https://bitbucket.com/nchlswhttkr
-    # - site: GitLab
-    #   profile: https://gitlab.com/nchlswhttkr
+    - site: Bitbucket
+      profile: https://bitbucket.com/nchlswhttkr
+    - site: GitLab
+      profile: https://gitlab.com/nchlswhttkr
     - site: LinkedIn
-      profile: https://linkedin.com/nchlswhttkr
+      profile: https://linkedin.com/in/nchlswhttkr/
     # - site: npm
     #   profile: https://www.npmjs.com/~nchlswhttkr
     # - site: Travis

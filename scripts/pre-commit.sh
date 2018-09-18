@@ -12,7 +12,7 @@ hugo
 
 cd public
 git add .
-git commit -m "published site changes"
+git commit -m "published site changes" --allow-empty
 cd ..
 
 git stash pop
