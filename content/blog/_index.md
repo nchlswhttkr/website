@@ -1,4 +1,4 @@
 ---
-title: Blog
-description: A collection of scribbles
+title: "Blog"
+description: "A collection of scribbles"
 ---

@@ -3,18 +3,15 @@
 
 <head>
   {{ partial "meta.html" . }}
-  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/blog.css" />
 </head>
 
 <body>
   {{ partial "header.html" . }}
   <main>
-    {{ partial "title.html" . }}
     {{ range .Data.Pages }}
     <section>
       <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
       <h2>{{ .Description }}</h2>
-      <h3>{{ .Date.Format "Jan 02, 2006" }}</h3>
       <p>{{ .Summary }}</p>
     </section>
     {{ end }}

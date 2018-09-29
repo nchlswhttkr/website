@@ -1,4 +1,4 @@
-baseURL: "https://nchlswhttkr.github.io/"
+baseURL: "https://nchlswhttkr.com/"
 languageCode: "en-us"
 title: "Nicholas Whittaker"
 enableEmoji: true
@@ -7,22 +7,24 @@ params:
   me:
     name: Nicholas Whittaker
     email: nchlswhttkr+enquiries@gmail.com
+    username: nchlswhttkr
   identities:
-    # - site: Facebook
-    #   profile: https://facebook.com/nchlswhttkr
     - site: Twitter
       profile: https://twitter.com/nchlswhttkr
+      username: nchlswhttkr
     - site: Github
       profile: https://github.com/nchlswhttkr
+      username: nchlswhttkr
     - site: Bitbucket
       profile: https://bitbucket.com/nchlswhttkr
+      username: nchlswhttkr
     - site: GitLab
       profile: https://gitlab.com/nchlswhttkr
+      username: nchlswhttkr
     - site: LinkedIn
       profile: https://linkedin.com/in/nchlswhttkr/
+      username: nchlswhttkr
+    # - site: Facebook
     # - site: npm
-    #   profile: https://www.npmjs.com/~nchlswhttkr
     # - site: Travis
-    #   profile: https://travis-ci.org/nchlswhttkr
     # - site: Medium
-    #   profile: https://medium.com/@nchlswhttkr

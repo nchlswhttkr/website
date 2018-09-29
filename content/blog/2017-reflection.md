@@ -1,10 +1,8 @@
 ---
 title: "2017 Reflection"
-description: "Looking back on the year"
-author: "Nicholas Whittaker"
-date: "2017-12-23T12:00:00+10:00"
+description: "A reflection on the past year"
+date: 2018-12-23T12:00:00+10:00
 draft: true
-layout: "single"
 slug: "2017-reflection"
 ---
 

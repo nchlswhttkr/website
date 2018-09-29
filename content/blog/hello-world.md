@@ -1,10 +1,8 @@
 ---
 title: "Hello World"
-description: "A simple little test article for my blog. It's a small beginning!"
-author: "Nicholas Whittaker"
-date: "2017-11-24T00:31:44+11:00"
+description: "Testing out markdown styling/formatting"
+date: 2017-01-01T12:00:00+10:00
 draft: false
-layout: "single"
 slug: "hello-world"
 ---
 
@@ -13,8 +11,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metu
 <!--more-->
 
 Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
-
-Nulla ut convallis lectus. Aenean eleifend augue vitae quam convallis blandit. Donec pharetra rutrum ultricies. Duis ut sem at nulla venenatis consectetur ut ac risus. Donec iaculis volutpat tincidunt. Proin pellentesque lectus vulputate augue posuere, ac auctor libero ultricies. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sollicitudin orci mauris, ac vestibulum velit fermentum sit amet.
 
 # Heading 1
 
@@ -41,20 +37,22 @@ _italics_
 - Bar
 - Baz
 
+Text<sub>with subtext</sub>
+
+Text<sup>with supertext</sup>
+
 1.  1
-2.  2
-3.  3
+1.  2
+1.  3
 
 - [ ] Incompete
 - [x] Complete
 
-```c++
-#include <iostream>
-
-using namespace std;
+```c
+#include <stdio.h>
 
 int main () {
-  cout << "Hello World" << endl;
+  printf("Hello world!\n");
   return 0;
 }
 ```
@@ -63,8 +61,8 @@ I maintain the site source code on the `dev` branch, then deploy builds from `ma
 
 [A LINK](https://github.com)
 
-![AN IMAGE](https://nchlswhttkr.github.io/media/cat.jpg)
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metus. Nam suscipit euismod orci at sagittis. Donec vitae convallis enim. Pellentesque iaculis, ligula eu condimentum sodales, nulla metus blandit diam, non maximus tellus dolor vitae ipsum. Aliquam at cursus lacus, eget eleifend quam.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metus. Nam suscipit euismod orci at sagittis. Donec vitae convallis enim. Pellentesque iaculis, ligula eu condimentum sodales, nulla metus blandit diam, non maximus tellus dolor vitae ipsum. Aliquam at cursus lacus, eget eleifend quam. Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
+---
 
-Nulla ut convallis lectus. Aenean eleifend augue vitae quam convallis blandit. Donec pharetra rutrum ultricies. Duis ut sem at nulla venenatis consectetur ut ac risus. Donec iaculis volutpat tincidunt. Proin pellentesque lectus vulputate augue posuere, ac auctor libero ultricies. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sollicitudin orci mauris, ac vestibulum velit fermentum sit amet.
+Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.

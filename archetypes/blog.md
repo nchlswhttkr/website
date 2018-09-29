@@ -1,11 +1,9 @@
 ---
-title: {{ replace .TranslationBaseName "-" " " | title }}
-description: 
-author: Nicholas Whittaker
-date: "{{ .Date }}"
+title: "{{ replace .TranslationBaseName "-" " " | title }}"
+description: ""
+date: {{ printf "%sT12:00:00+10:00" ( now.Format "2006-01-02" ) }}
 draft: true
-layout: single
-slug: {{ .TranslationBaseName }}
+slug: "{{ .TranslationBaseName }}"
 ---
 
 <!--more-->

@@ -3,17 +3,15 @@
 
 <head>
   {{ partial "meta.html" . }}
-  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/blog.css" />
+  <meta property="og:type" content="article" />
 </head>
 
 <body>
   {{ partial "header.html" . }}
   <main>
-    {{ partial "title.html" . }}
     <section>
       <article>
         {{ .Content }}
-        {{ partial "blurb.html" . }}
       </article>
     </section>
   </main>
