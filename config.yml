@@ -11,19 +11,14 @@ params:
   identities:
     - site: Twitter
       profile: https://twitter.com/nchlswhttkr
-      username: nchlswhttkr
     - site: Github
       profile: https://github.com/nchlswhttkr
-      username: nchlswhttkr
     - site: Bitbucket
       profile: https://bitbucket.com/nchlswhttkr
-      username: nchlswhttkr
     - site: GitLab
       profile: https://gitlab.com/nchlswhttkr
-      username: nchlswhttkr
     - site: LinkedIn
       profile: https://linkedin.com/in/nchlswhttkr/
-      username: nchlswhttkr
     # - site: Facebook
     # - site: npm
     # - site: Travis
