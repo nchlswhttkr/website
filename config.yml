@@ -1,4 +1,4 @@
-baseURL: "http://nchlswhttkr.com/"
+baseURL: "https://nchlswhttkr.com/"
 languageCode: "en-us"
 title: "Nicholas Whittaker"
 enableEmoji: true
@@ -14,7 +14,7 @@ params:
     - site: Github
       profile: https://github.com/nchlswhttkr
     - site: Bitbucket
-      profile: https://bitbucket.com/nchlswhttkr
+      profile: https://bitbucket.org/nchlswhttkr
     - site: GitLab
       profile: https://gitlab.com/nchlswhttkr
     - site: LinkedIn

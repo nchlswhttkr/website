@@ -1,13 +1,10 @@
 image: registry.gitlab.com/pages/hugo:latest
 
-variables:
-  GIT_SUBMODULE_STRATEGY: none
-
 pages:
   script:
-  - hugo
+    - hugo
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - dev
+    - dev
