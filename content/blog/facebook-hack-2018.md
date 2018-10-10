@@ -16,7 +16,7 @@ Teaming up with my good friend Patrick, we went in as a pair and a welcoming att
 
 ![Team Java Binks: Myself, Patrick, Tij and Hugh](/media/facebook-hack-2018/2.jpg)
 
-_Team Java Binks: Myself, Patrick, Tij, and Hugh_
+<span>_Team Java Binks: Myself, Patrick, Tij, and Hugh_</span>
 
 We ended up building an application to make it easier for small committees and organisations to run social media campaigns, by shifting all the focus to a single central service. Our goal was to reduce the effort needed to run automated posts across multiple platforms (Facebook, Twitter, etc…). We also ended up extending this by generating a weekly newsletter that could then be sent out.
 
@@ -28,7 +28,7 @@ In the end, our pitch went well and while we didn’t take out any prizes, we al
 
 ![Posing with Grace, Curtis and Bambi](/media/facebook-hack-2018/3.jpg)
 
-_Posing with Grace, Curtis and Bambi_
+<span>_Posing with Grace, Curtis and Bambi_</span>
 
 ## What I learned from #fbmelhack18
 
@@ -42,4 +42,4 @@ The next hackathon on the calendar for me is [UNIHACK](https://unihack.net/), an
 
 ![As well as a Facebook snuggie, I ended up winning an Instragram hoodie in the raffle!](/media/facebook-hack-2018/4.jpg)
 
-_As well as a Facebook snuggie, I ended up winning an Instragram hoodie in the raffle!_
+<span>_As well as a Facebook snuggie, I ended up winning an Instragram hoodie in the raffle!_</span>

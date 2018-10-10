@@ -2,55 +2,45 @@
 title: "Simple Static Sites"
 description: "My setup for building and deploying a personal website"
 date: 2017-05-29T12:00:00+10:00
-draft: true
+draft: false
 slug: "simple-static-sites"
 ---
 
-Personal websites! Everyone wants to have one, but nobody wants to go through the bother of maintaining, updating them, and fixing them. I thought I'd go through my personal setup, and you how I take advantage of a few handy Git features!
+Personal websites! Everyone wants to have one, but nobody wants to go through the bother of maintaining, updating them, and fixing them. I thought I'd go through my personal setup, and show how I build and deploy my own site.
 
 <!--more-->
 
 ## Outline
 
-Let's go through the basics first. I build my site using [Hugo](https://gohugo.io), and serve my content (for free!) with [GitHub Pages](https://pages.github.com). I chose Hugo for its blazing fast performance (~25ms to build my current site), and its focus on giving full templating control. While Hugo, like its competitors, offers a plethora of pre-built templates to choose from, I enjoy having the freedom to change almost anything to do with my site's presentation.
+Let's go through the basics first. I build my site using the static site generator [Hugo](https://gohugo.io), and serve my content (for free!) with [GitHub Pages](https://pages.github.com). I chose Hugo for its blazing fast performance (~25ms to build my current site), and its focus on giving full control over design, structure and templating. While Hugo, like its competitors, offers a plethora of pre-built templates to choose from, I enjoy having the freedom to change anything to do with my site's presentation.
 
-Here's a few of the methods I went through to build and deploy my site. The key thing about building with Hugo is that you will have both the stiatic build files of your site as well as the templating and content used for building said files located within the same working space. When you call the `hugo` command, your site will be generated inside the `public` directory. On GitHub, I used a `dev` branch for these templating files, and the `master` branch to deploy off of (this is required by GitHub Pages config).
+Here's a few of the methods I went through to build and deploy my site. Hugo, like most generators, keeps a subdirectory of your project to store build artifacts (files created at build time). When you call the `hugo` command, your site will be generated into the `public` directory. On GitHub, I used a `dev` branch for these templating files, and the `master` branch to deploy off of (this is required by GitHub Pages config).
 
 My goal was to eliminate as much effort from my side as possible when it comes to building and deploying, but at the same time ensuring that I maintain a fairly clean solution that avoids 'dirty' fixes to make functional ends meet.
 
-## `.gitignore`d directory
+## Using `.gitignore`
 
 My first approach was quite naive but effective.
 
 - Have the base directory point to the `dev` branch
 - Have a `.gitignore`'d subdirectory pointed at the `master` branch
-  This approach is simple and understandable, but I found a few drawback with it. This setup struggles to be **portable**, as you have to keep setting up the `public` folder when moving from computer to computer, and at the time it was **unwieldy** to have to keep on remembering to push after each build. While I later learned about how to deal with the latter complaint with shell scripts, the former point remained troublesome to deal with.
 
-## External build/deploy providers
+This approach is simple and understandable, but I found a few drawbacks with it. This setup struggles to be **portable**, as you have to keep setting up the `public` folder when moving from computer to computer, and at the time it was **unwieldy** to have to keep on remembering to push after each build.
+
+## CI/CD Providers
 
 The next approach was seeing if I could find a solution where all the heavy lifting (building and deploying) would be done through an external service.
 
-I tried two options for this. [Travis](https://travis-ci.com) was my first condsideration because of how easily it incorporates with GitHub itself, and because I had used it in the past with reasonable success. I just wasn't quite able to find a solution that I liked, as although others on the internet were able to get Hugo working in Travis through the use of Python libraries, there was no simple, clean one-line solution. A dirty fix might have worked well enough, but I didn't feel like letting a script I didn't understand to all the work for me.
+I tried two options for this. [Travis](https://travis-ci.com) was my first condsideration because of how easily it ties with GitHub itself, and because I had used it in the past with reasonable success. I just wasn't quite able to find a solution that I liked however. Although solutions on the internet could get Hugo working in Travis through the use of Python libraries or managing dependencies in [Go](https://golang.org/), there was no simple solution that I both liked and understood well. A dirty fix might have got the job done in this case, but I didn't feel like letting something I didn't understand to all the work for me.
 
-I did a little investigating and found that [GitLab](https://gitlab.com) also offers a [GitHub Pages-esque service](https://about.gitlab.com/features/pages/), and with inbuilt support for Hugo in GitLab CI, I thought I'd found my solution. Through [repository mirroring](https://docs.gitlab.com/ee/workflow/repository_mirroring.html) (another fantastic GitLab service!), I would also be able to keep my GitHub Pages site up to date with my separate GitLab Pages site. The stumbling point came when I tried to access the static site contents in the `public` directory generated by Hugo. As it turns out, GitLab will simply deploy the contents of this directory to [nchlswhttkr.gitlab.io](nchlswhttkr.gitlab.io), no push to `master` needed. These build 'artifacts' are confined to the build environment, so you can't push them to your `master` branch without a dirty script at the end of your build cycle. Because I was facing the possibility of using another 'unclean' solution, I decided against using GitLab Pages.
+I did a little investigating and found that [GitLab](https://gitlab.com) also offers a [GitHub Pages-esque service](https://about.gitlab.com/features/pages/), and with inbuilt support for Hugo in GitLab CI, I thought I'd found my solution. Through [repository mirroring](https://docs.gitlab.com/ee/workflow/repository_mirroring.html) (another fantastic GitLab service!), I would also be able to keep my GitHub Pages site up to date with my separate GitLab Pages site. The stumbling point came when I tried to access the static site contents in the `public` directory generated by Hugo. As it turns out, GitLab will simply deploy the contents of this directory to [nchlswhttkr.gitlab.io](nchlswhttkr.gitlab.io), with no push to `master` being made. Generated files were confined to the build environment, so you couldn't push them to your `master` branch at the end of your build cycle.
 
-_It should be noted that at the time of development/writing, GitLab was working on a [feature](https://gitlab.com/gitlab-org/gitlab-ce/issues/18106) to allow CI runners to push back to other repositories during a build. However, this issue had been open for more than two years and a public feature release did not seem to be on the horizon)._
+_It should be noted that at the time of development/writing, GitLab is working on a [feature](https://gitlab.com/gitlab-org/gitlab-ce/issues/18106) to allow CI runners to push back to other repositories during a build. However, this issue had been open for more than two years and a public release did not seem to be on the horizon)._
 
 ## Method 3: (Back) To The Local Repo!
 
-After development stagnated for a while as I studied at university and worked with [MonPlan](https://monplan.github.io), I learned a bit more about the feature of Git, and how to use scripts to automate simple actions. Everything started to click into place when I discovered a little feature of Git called submodules, which allow you to store pointers to other repositories/branches at a target commit. What's more, you can push and pull these sub-repositories like any regular repository!
+After development stagnated for a while as I studied at university and worked with [MonPlan](https://monplan.github.io), I learned a bit more about the features of Git, and how to use scripts to automate simple actions. Everything started to click into place when I discovered a little feature of Git called hooks, which allow you to run various configured commands or scripts before/after key actions in the Git lifecycle (commit, push, etc...).
 
-After a series of attempts and subsequent fixes, I was able to configure a submodule to point at my `master` branch that would sit inside my `dev` branch inside the `public` folder. As I called Hugo to build my site, an updated version would be placed in the submodule, and I could simply commit and push this submodule when needed. With scripts, I could automate this as well.
+After a series of attempts and subsequent fixes, I was able to set up a script that sets up all the Git hooks I needed, and all that was needed was an `init` script to run making a fresh clone of the repo. Hugo doesn't overwrite the `.git` directory from the `public` directory, so there's no need to worry about needing to repeat myself after rebuilding the site. With that, I was able to make a setup that I was both understood well and felt happy using.
 
-## Moving Forward
-
-While I'm quite happy with my current with my current setup, I think one last addition I could make would be to add a [Git hook](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks) that runs pre-commit. This would mean I don't have to manually run my `commit-and-deploy.sh` script every time I want to deploy my site, and instead have it be done automatically for every commit on the `dev` branch.
-
-If I can make that work, I'll be sure to update this article!
-
-## External Reading
-
-- [GitHub Pages](https://pages.github.io)
-- [GitLab Pages](https://pages.gitlab.io)
-- [Git Hooks](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks)
-- [Travis](https://travis-ci.com)
+Now, pushing an update to my site is as quick and easy as a commit and a push!

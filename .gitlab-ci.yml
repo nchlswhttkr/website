@@ -2,6 +2,7 @@ image: registry.gitlab.com/pages/hugo:latest
 
 pages:
   script:
+    - rm static/CNAME
     - hugo
   artifacts:
     paths:

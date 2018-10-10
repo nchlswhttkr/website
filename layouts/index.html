@@ -15,16 +15,6 @@
     </section>
 
 
-    <!-- CONTACT -->
-    <section>
-      <h1>Contact</h1>
-      <h2>Send me a postcard, drop me a line...</h2>
-      {{ range .Site.Params.Identities }}
-      <div class="button {{ lower .site }}">
-        <a href="{{ .profile }}">{{ .site }}</a>
-      </div>
-      {{ end }}
-    </section>
 
 
     <!-- EXPERIENCE -->
@@ -32,23 +22,21 @@
       <h1>Experience</h1>
       <h2>
         For a full resume, please
-        <a href="mailto:{{ .Site.Params.me.email }}?subject=RE: Resume">contact me personally</a>.
+        <a href="mailto:{{ .Site.Params.Me.Email }}?subject=RE: Resume">contact me personally</a>.
       </h2>
 
-      <div>
+      <div class="experience">
         <h1>Monash University - eSolutions</h1>
-        <h2>Junior Software Developer</h2>
-        <h3><em>Jan 2018 - Present</em></h3>
+        <p>Junior Software Developer, <em>Jan 2018 - Present</em></p>
         <p>
           Frontend/UX for <a href="https://monplan.github.io">MonPlan</a>, building accessible course planning for
           Monash University students and staff in an enterprise application.
         </p>
       </div>
 
-      <div>
+      <div class="experience">
         <h1>CodeCamp</h1>
-        <h2>Assistant Teacher</h2>
-        <h3><em>Jun 2017 - Dec 2017</em></h3>
+        <p>Assistant Teacher, <em>Jun 2017 - Dec 2017</em></p>
         <p>
           Educating kids in the logic of programming, and helping them to build their own games over the course of a
           holiday program.
@@ -56,15 +44,25 @@
       </div>
 
       <!-- 
-      <div>
-        <h1>Company</h1>
-        <h2>Position</h2>
-        <h3><em>Duration</em></h3>
-        <p>Description</p>
-      </div>
-       -->
+        <div class="experience">
+          <h1>Company</h1>
+          <p>Position, <em>Duration</em></p>
+          <p>Description</p>
+        </div>
+      -->
     </section>
 
+    <!-- CONTACT -->
+    <section>
+      <h1>Contact</h1>
+      <h2>Send me a postcard, drop me a line...</h2>
+      <p>
+        <a href="{{ .Site.Params.Me.Email }}" class="button email">Email</a>
+        {{ range .Site.Params.Identities }}
+        <a href="{{ .profile }}" class="button {{ lower .site }}">{{ .site }}</a>
+        {{ end }}
+      </p>
+    </section>
 
     <!-- PROJECTS -->
     <!-- <section class="block proj">
@@ -82,14 +80,10 @@
         <a href="/blog">Blog</a>
       </h1>
       <h2>Browse the scribble collection!</h2>
-      {{ range where .Data.Pages "Section" "blog" }}
-      <div>
-        <h1>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h1>
-        <h2>{{ .Description }}</h2>
-      </div>
-      {{ end }}
+      <p>
+        I like to write down my thoughts and experiences every now and them, feel free to
+        <a href="/blog">give them a read</a>.
+      </p>
     </section>
 
 
