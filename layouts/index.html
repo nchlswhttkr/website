@@ -57,7 +57,7 @@
       <h1>Contact</h1>
       <h2>Send me a postcard, drop me a line...</h2>
       <p>
-        <a href="{{ .Site.Params.Me.Email }}" class="button email">Email</a>
+        <a href="mailto:{{ .Site.Params.Me.Email }}" class="button email">Email</a>
         {{ range .Site.Params.Identities }}
         <a href="{{ .profile }}" class="button {{ lower .site }}">{{ .site }}</a>
         {{ end }}
