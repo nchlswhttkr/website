@@ -59,7 +59,7 @@ I maintain the site source code on the `dev` branch, then deploy builds from `ma
 
 [A link](https://nchlswhttkr.com)
 
-![An image](/media/logo.png)
+![An image](/media/nicholas.png)
 
 <span>_A caption for the above image_</span>
 
