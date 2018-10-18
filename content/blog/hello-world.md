@@ -12,8 +12,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metu
 
 Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
 
-# Heading 1
-
 ## Heading 2
 
 ### Heading 3
@@ -59,7 +57,11 @@ int main () {
 
 I maintain the site source code on the `dev` branch, then deploy builds from `master`.
 
-[A LINK](https://github.com)
+[A link](https://nchlswhttkr.com)
+
+![An image](/media/logo.png)
+
+<span>_A caption for the above image_</span>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metus. Nam suscipit euismod orci at sagittis. Donec vitae convallis enim. Pellentesque iaculis, ligula eu condimentum sodales, nulla metus blandit diam, non maximus tellus dolor vitae ipsum. Aliquam at cursus lacus, eget eleifend quam.
 

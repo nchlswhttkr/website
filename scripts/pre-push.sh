@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Deploy the site when the superproject is pushed
+# Deploy the site when the superproject (dev branch) is pushed
 
 set -e
 

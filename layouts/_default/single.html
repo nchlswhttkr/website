@@ -3,17 +3,16 @@
 
 <head>
   {{ partial "meta.html" . }}
+  <meta name="author" content="{{ .Site.Params.Me.Name }}" />
   <meta property="og:type" content="article" />
 </head>
 
 <body>
   {{ partial "header.html" . }}
   <main>
-    <section>
-      <article>
-        {{ .Content }}
-      </article>
-    </section>
+    <article>
+      {{ .Content }}
+    </article>
   </main>
   {{ partial "footer.html" . }}
 </body>

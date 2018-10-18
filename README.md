@@ -2,6 +2,8 @@
 
 Built using [Hugo](https://gohugo.io).
 
+If you are reading this on **GitLab**, please be aware that this is just a mirror of the repository on [GitHub](https://github.com/nchlswhttkr/nchlswhttkr.github.io).
+
 ---
 
 ## Getting Started

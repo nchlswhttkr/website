@@ -7,19 +7,6 @@
   </a>
 </nav>
 <header>
-  {{ if eq .Kind "404" }}
-  <hgroup class="title-404">
-    <h1>
-      Error 404
-    </h1>
-    <h2>
-      <a href="/">Return Home?</a>
-    </h2>
-  </hgroup>
-  {{ else }}
-  <hgroup>
     <h1>{{ .Title }}</h1>
     <h2>{{ .Description }}</h2>
-  </hgroup>
-  {{ end }}
 </header>

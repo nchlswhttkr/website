@@ -34,6 +34,7 @@ nav {
   display: flex;
   justify-content: center;
   align-content: center;
+  text-align: center;
   background-color: #333;
   color: #fff;
   z-index: 999;
@@ -49,19 +50,21 @@ nav > a {
 nav > a:hover {
   background-color: #888;
 }
-
-hgroup {
-  box-sizing: border-box;
-  padding: 24px;
-  color: #fff;
+header {
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+header > * {
+  margin: 16px;
+  color: #fff;
+}
+
 /* BODY SECTIONS */
-section {
+main > * {
   box-sizing: border-box;
   margin: 16px auto;
   padding: 12px 24px;
@@ -75,16 +78,12 @@ section > * {
   margin: 12px auto;
 }
 
-section > h1 {
+section > h2 {
   font-size: 2em;
 }
 
-section > h2 {
-  font-size: 1.6em;
-}
-
 section > h3 {
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 
 /* BLOCKS */
@@ -100,11 +99,12 @@ section > h3 {
   margin: 4px;
 }
 
-.experience > h1 {
+.experience > h2 {
   font-size: 1.4em;
 }
 
-article {
+article,
+article > p > code {
   font-size: 1.2em;
 }
 
@@ -120,20 +120,17 @@ article > p > span {
 article > p > img {
   margin: 0 auto;
   display: block;
-  max-width: 800px;
-  min-width: 300px;
-  width: 90%;
+  max-width: 90%;
 }
 
 article > pre {
   box-sizing: border-box;
   padding: 16px;
-  background-color: #eee;
+  background-color: #fff;
   box-shadow: 0px 2px 5px #888;
 }
 
 .button {
-  opacity: 0.84;
   box-sizing: border-box;
   border-radius: 3px;
   padding: 8px 8px;
@@ -144,8 +141,8 @@ article > pre {
   font-weight: 700;
 }
 
-.title-404 {
-  height: 80vh;
+.error-404 {
+  height: 100vh;
 }
 
 .github {

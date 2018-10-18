@@ -10,8 +10,8 @@
   <main>
     {{ range .Data.Pages }}
     <section>
-      <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-      <h2>{{ .Description }}</h2>
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <h3>{{ .Description }}</h3>
       <p>{{ .Summary }}</p>
     </section>
     {{ end }}

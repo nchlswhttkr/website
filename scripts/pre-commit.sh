@@ -1,13 +1,12 @@
 #!/bin/sh
 
-# This will build and commit build artifacts
+# This will build and commit any changes to the site, it stashes unstaged
+# changes before building
 
 set -e
 
-# Stash unstaged changes
 git stash -k -u
 
-# Build
 hugo
 
 cd public
