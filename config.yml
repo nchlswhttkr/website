@@ -13,14 +13,13 @@ params:
       profile: https://twitter.com/nchlswhttkr
     - site: Github
       profile: https://github.com/nchlswhttkr
-    - site: Bitbucket
-      profile: https://bitbucket.org/nchlswhttkr
     - site: GitLab
       profile: https://gitlab.com/nchlswhttkr
     - site: LinkedIn
       profile: https://linkedin.com/in/nchlswhttkr/
-    # - site: Facebook
-    # - site: npm
-    # - site: Travis
+    # - site: Bitbucket
     # - site: Medium
     # - site: Soundcloud
+    # - site: npm
+    # - site: Facebook
+    # - site: Travis

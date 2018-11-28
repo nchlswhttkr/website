@@ -3,6 +3,7 @@ image: registry.gitlab.com/pages/hugo:latest
 pages:
   script:
     - rm static/CNAME
+    - sed -i s/nchlswhttkr\.com/nchlswhttkr.gitlab.io/ config.yml
     - hugo
   artifacts:
     paths:

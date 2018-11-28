@@ -1,94 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <head>
     {{ partial "meta.html" . }}
   </head>
-  
+
   <body>
-  {{ partial "header.html" . }}
-  <main>
+    {{ partial "header.html" . }}
+    <main>
+      <!-- ABOUT -->
+      <section>{{ .Content }}</section>
 
-    <!-- ABOUT -->
-    <section>
-      {{ .Content }}
-    </section>
+      <!-- EXPERIENCE -->
+      <section>
+        <h2>Experience</h2>
+        <h3>
+          For a full resume, please
+          <a href="mailto:{{ .Site.Params.Me.Email }}?subject=RE:%20Resume"
+            >contact me personally</a
+          >.
+        </h3>
 
-
-
-
-    <!-- EXPERIENCE -->
-    <section>
-      <h2>Experience</h2>
-      <h3>
-        For a full resume, please
-        <a href="mailto:{{ .Site.Params.Me.Email }}?subject=RE:%20Resume">contact me personally</a>.
-      </h3>
-
-      <div class="experience">
-        <h2>Monash University - eSolutions</h2>
-        <p>Junior Software Developer, <em>Jan 2018 - Present</em></p>
-        <p>
-          Frontend/UX for <a href="https://monplan.github.io">MonPlan</a>, building accessible course planning for
-          Monash University students and staff in an enterprise application.
-        </p>
-      </div>
-
-      <div class="experience">
-        <h2>CodeCamp</h2>
-        <p>Assistant Teacher, <em>Jun 2017 - Dec 2017</em></p>
-        <p>
-          Educating kids in the logic of programming, and helping them to build their own games over the course of a
-          holiday program.
-        </p>
-      </div>
-
-      <!-- 
-        <div class="experience">
-          <h2>Company</h2>
-          <p>Position, <em>Duration</em></p>
-          <p>Description</p>
+        <div>
+          <h4>Monash University - eSolutions</h4>
+          <p>Junior Software Developer, <em>Jan 2018 - Present</em></p>
+          <p>
+            Frontend for <a href="https://monplan.github.io">MonPlan</a>,
+            enabling interactive course planning for Monash University students
+            and staff.
+          </p>
         </div>
+
+        <div>
+          <h4>Code Camp</h4>
+          <p>Assistant Teacher, <em>Jun 2017 - Dec 2017</em></p>
+          <p>
+            Educating kids in the logic of programming, and helping them to
+            build their own games over the course of a holiday program.
+          </p>
+        </div>
+
+        <!--
+          <div class="experience">
+            <h4>Company</h4>
+            <p>Position, <em>Duration</em></p>
+            <p>Description</p>
+          </div>
+        -->
+      </section>
+
+      <!-- CONTACT -->
+      <section>
+        <h2>Contact</h2>
+        <h3>Send me a postcard, drop me a line...</h3>
+        <p>
+          <a href="mailto:{{ .Site.Params.Me.Email }}" class="button email"
+            >Email</a
+          >
+          {{ range.Site.Params.Identities }}
+          <a
+            href="{{ .profile }}"
+            class="button {{ lower .site }}"
+            >{{ .site }}</a
+          >
+          {{ end }}
+        </p>
+      </section>
+
+      <!-- PROJECTS -->
+      <!--
+        <section class="block proj">
+          <h2>Projects</h2>
+          <h3>The home of all the beatiful code that I produce!</h3>
+          <p>
+            <em>This section is currently empty... how ominous...</em>
+          </p>
+        </section>
       -->
-    </section>
 
-    <!-- CONTACT -->
-    <section>
-      <h2>Contact</h2>
-      <h3>Send me a postcard, drop me a line...</h3>
-      <p>
-        <a href="mailto:{{ .Site.Params.Me.Email }}" class="button email">Email</a>
-        {{ range .Site.Params.Identities }}
-        <a href="{{ .profile }}" class="button {{ lower .site }}">{{ .site }}</a>
-        {{ end }}
-      </p>
-    </section>
-
-    <!-- PROJECTS -->
-    <!-- <section class="block proj">
-      <h2>Projects</h2>
-      <h3>The home of all the beatiful code that I produce!</h3>
-      <p>
-        <em>This section is currently empty... how ominous...</em>
-      </p>
-    </section> -->
-
-
-    <!-- BLOG -->
-    <section id="blog">
-      <h2>
-        <a href="/blog">Blog</a>
-      </h2>
-      <h3>Browse the scribble collection!</h3>
-      <p>
-        I like to write down my thoughts and experiences every now and them, feel free to
-        <a href="/blog">give them a read</a>.
-      </p>
-    </section>
-
-
-  </main>
-  {{ partial "footer.html" . }}
-</body>
-
+      <!-- BLOG -->
+      <section id="blog">
+        <h2><a href="/blog">Blog</a></h2>
+        <h3>Browse the scribble collection!</h3>
+        <p>
+          I like to write down my thoughts and experiences every now and them,
+          feel free to <a href="/blog">give them a read</a>.
+        </p>
+      </section>
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
 </html>

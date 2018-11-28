@@ -49,6 +49,8 @@ Text<sup>with supertext</sup>
 ```c
 #include <stdio.h>
 
+// I'm including this really long line of source code to show that scrolling sideways works.
+
 int main () {
   printf("Hello world!\n");
   return 0;

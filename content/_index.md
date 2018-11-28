@@ -3,9 +3,11 @@ title: "Nicholas Whittaker"
 description: "Student, Developer, Musician"
 ---
 
-## Hello World! :wave:
+## Hello World!
 
-### I'm Nicholas, a developer in Melbourne, Australia!
+## :wave: :wave: :wave:
+
+### I'm Nicholas, a developer in Melbourne, Australia
 
 I'm a fan of many things, including cats, comics, and coding. Music is my passion, and most evenings of the week you'd be sure to find me rehearsing with a brass band or orchestra. Outside of music, I also enjoy playing the occassional game of lawn bowls.
 
