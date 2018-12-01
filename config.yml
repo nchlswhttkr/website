@@ -10,11 +10,11 @@ params:
     username: nchlswhttkr
   identities:
     - site: Twitter
-      profile: https://twitter.com/nchlswhttkr
+      profile: https://twitter.com/nchlswhttkr/
     - site: Github
-      profile: https://github.com/nchlswhttkr
+      profile: https://github.com/nchlswhttkr/
     - site: GitLab
-      profile: https://gitlab.com/nchlswhttkr
+      profile: https://gitlab.com/nchlswhttkr/
     - site: LinkedIn
       profile: https://linkedin.com/in/nchlswhttkr/
     # - site: Bitbucket

@@ -14,4 +14,4 @@ Our final product, WaitLess, was a mobile app that simplified the dining experie
 
 {{< tweet 907806961676124161 >}}
 
-You can find a copy of our project on [GitHub](https://github.com/scaredginger/angry-react-native)!
+You can find a copy of our project on [GitHub](https://github.com/scaredginger/angry-react-native/)!

@@ -59,7 +59,7 @@ int main () {
 
 I maintain the site source code on the `dev` branch, then deploy builds from `master`.
 
-[A link](https://nchlswhttkr.com)
+[A link](https://nchlswhttkr.com/)
 
 ![An image](/media/nicholas.png)
 

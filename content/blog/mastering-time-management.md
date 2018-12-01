@@ -18,7 +18,7 @@ For example, a university assignment might take several afternoons or a weekend 
 
 Similarly, a music rehearsal might regularly occupy an evening (or three!) out of my week, but it is also rewarding because I spend time doing what I love, giving my brain an opportunity to step away from the stress of daily life. The key thing to recognise is that these moments of personal freedom are **just as important** as your other obligations.
 
-The trick to managing all of these commitments is to keep in your mind what's left to be done, and what's coming up in the near future. Tools like a notepad or digital calendar are made for handling all of these commitments and deadlines, keeping them all in a single place. I use a combination of [Google Calendar](https://calendar.google.com) and [Trello](https://trello.com) personally.
+The trick to managing all of these commitments is to keep in your mind what's left to be done, and what's coming up in the near future. Tools like a notepad or digital calendar are made for handling all of these commitments and deadlines, keeping them all in a single place. I use a combination of [Google Calendar](https://calendar.google.com/) and [Trello](https://trello.com/) personally.
 
 It's not about scheduling every second of your day like a CEO, it's about identifying the most important things in your schedule, so that you don't run out of time down the track. Remember to set aside time for what you love, or the stress you place upon yourself will drive you into a spiral and you'll end up burning out.
 

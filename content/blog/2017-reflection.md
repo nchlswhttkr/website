@@ -22,13 +22,13 @@ Some other highlights over the year included [marching in the Grand Final Parade
 
 I also managed to survive my first year of university, meeting many new friends along the way. Studying Computer Science at Monash has so far been a great enjoyment for me, as I've set off on the path of becoming a ~~software developer~~ ~~programmer~~ ~~computer engineer~~ cool computer-y guy (_who knows what the proper job title is anymore_).
 
-A particular highlight for the year was the research project I was able to complete as part of the Honours stream. Working with Matt Buttler from SensiLab, I explored various methods to creating more accessible 3D models for those with vision impairments. You can read more of that in the [report I wrote for the subject](http://github.com/nchlswhttkr/fit1041). Although I ended up dropping down the regular stream of Computer Science, this research project was a fantastic learning experience for me. Coming out of it, I've gained a greater appreciation for the importance of accessibility, and I hope to apply my knowledge going forward.
+A particular highlight for the year was the research project I was able to complete as part of the Honours stream. Working with Matt Buttler from SensiLab, I explored various methods to creating more accessible 3D models for those with vision impairments. You can read more of that in the [report I wrote for the subject](http://github.com/nchlswhttkr/fit1041/). Although I ended up dropping down the regular stream of Computer Science, this research project was a fantastic learning experience for me. Coming out of it, I've gained a greater appreciation for the importance of accessibility, and I hope to apply my knowledge going forward.
 
 Coming into my first year at Monash, I also took the opportunity to join up with WIRED, the IT student society. I had great fun at their events, in particular the tech talks they ran and their self-hosted hackathon Unihack Mini. At the AGM, I was elected to the role of Marketing Officer, so I look forward to helping run WIRED for 2018 and continuing to make the IT student experience at Monash great!
 
 Outside of continuing a strong academic performance, I also took part in several 'hackathons' with my peers, even managing to take out a prize at UniHack 2017 with the Bosch IoT Award at Unihack Mini. (Read more [here](../unihack-2017/)).
 
-As the year neared a close, my friend Eric suggested I apply for a position on the team at [MonPlan](https://monplan.github.io), as a frontend developer. As a part of this, I started learning React/Redux for building web applications. In the end, I was offered a position on the team, so with the new year I can look forward to working in a proper software developer role for the university!
+As the year neared a close, my friend Eric suggested I apply for a position on the team at [MonPlan](https://monplan.github.io/), as a frontend developer. As a part of this, I started learning React/Redux for building web applications. In the end, I was offered a position on the team, so with the new year I can look forward to working in a proper software developer role for the university!
 
 ## Moving Forward
 
