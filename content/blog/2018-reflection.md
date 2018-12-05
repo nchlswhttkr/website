@@ -88,7 +88,7 @@ I took the opportunity this year to attend a few developer-focused events. This 
 
 ### Hackathons
 
-I sometimes feel like hackathons aren't the type of event for me, but nonetheless I endavoured to attend a few throughout the year. This started off with the [Facebook Regional Hack](./facebook-hack-2018) in May, [Unihack](https://unihack.net) in July and [GovHack](https://www.govhack.org/) in September. I was also involved with running Unihack Mini as a part of WIRED, though I didn't participate myself.
+I sometimes feel like hackathons aren't the type of event for me, but nonetheless I endavoured to attend a few throughout the year. This started off with the [Facebook Regional Hack](./facebook-hack-2018) in May, [Unihack](https://unihack.net/) in July and [GovHack](https://www.govhack.org/) in September. I was also involved with running Unihack Mini as a part of WIRED, though I didn't participate myself.
 
 {{< tweet 1060468874083102720 >}}
 
@@ -100,7 +100,7 @@ These events were fun, though I find that I'm usually going to enjoy the weekend
 
 I never really found the time to work on a personal project this year, or at least anything substantiative. I've certainly been learning, whether it be in terms of programming knowledge or just general development practice. Hopefully I'll be able to make something come to fruition in the coming months.
 
-<!-- Mention Hacktoberfest-->
+<!-- Mention Hacktoberfest -->
 
 ---
 
@@ -108,7 +108,7 @@ I never really found the time to work on a personal project this year, or at lea
 
 ### Gaming
 
-I bought a switch, it was worth it.
+I bought a Switch, it was worth it.
 
 {{< tweet 1056357122282143744 >}}
 
