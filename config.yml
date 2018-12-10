@@ -6,17 +6,18 @@ enableEmoji: true
 params:
   me:
     name: Nicholas Whittaker
-    email: nchlswhttkr+enquiries@gmail.com
     username: nchlswhttkr
   identities:
+    - site: Email
+      link: mailto:nchlswhttkr+enquiries@gmail.com
     - site: Twitter
-      profile: https://twitter.com/nchlswhttkr/
+      link: https://twitter.com/nchlswhttkr/
     - site: Github
-      profile: https://github.com/nchlswhttkr/
+      link: https://github.com/nchlswhttkr/
     - site: GitLab
-      profile: https://gitlab.com/nchlswhttkr/
+      link: https://gitlab.com/nchlswhttkr/
     - site: LinkedIn
-      profile: https://linkedin.com/in/nchlswhttkr/
+      link: https://linkedin.com/in/nchlswhttkr/
     # - site: Bitbucket
     # - site: Medium
     # - site: Soundcloud

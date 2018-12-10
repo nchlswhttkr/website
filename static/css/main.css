@@ -15,16 +15,22 @@ body > * > * {
   padding: 0 16px;
   margin: 0 auto;
   min-width: 300px;
-  max-width: 800px;
+  max-width: 750px;
 }
 
 a {
   color: inherit;
 }
 
-p,
-li {
-  line-height: 1.3em;
+hr {
+  color: #1a99b5;
+  margin: 64px 0;
+}
+
+header,
+footer,
+nav {
+  color: #fff;
 }
 
 nav {
@@ -38,32 +44,27 @@ nav > ul > li {
   display: inline-block;
 }
 
-header,
-footer,
-nav {
-  color: #fff;
-}
-
 main {
   background-color: #fff;
 }
 
-section {
-  margin-bottom: 128px;
+article {
+  margin: 16px inherit;
 }
 
-section > div {
-  margin: 36px 0;
+article > p {
+  line-height: 1.5em;
 }
 
-section > div > * {
-  margin: 8px 0;
+article > ul > li {
+  list-style-type: square;
 }
 
-article > p > code,
-article,
-section {
-  font-size: 1.2em;
+article > p > img {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 50vh;
 }
 
 article > p > span {
@@ -71,19 +72,13 @@ article > p > span {
   text-align: center;
 }
 
-article > p > img {
-  margin: 0 auto;
-  display: block;
-  max-width: 80%;
-}
-
 article > pre {
+  box-sizing: border-box;
   margin: 16px auto;
   padding: 24px 16px;
-  background-color: #fff;
   box-shadow: 0px 2px 5px #888;
   overflow: scroll;
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .button {
