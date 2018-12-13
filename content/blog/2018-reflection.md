@@ -52,7 +52,7 @@ The Monash Philharmonic Orchestra has been fun to play with as well, although my
 
 **Monash Jazz Orchestra** - 3rd trombone for the "Beyond The Sea" Summer concert.
 
-{{< tweet >}}
+{{< tweet 1017705968233168897 >}}
 
 **Footscray-Yarraville City Band** - Marching for the ANZAC Day Parade and in the opening of an AFL game.
 

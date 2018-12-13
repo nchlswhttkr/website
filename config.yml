@@ -3,24 +3,27 @@ languageCode: "en-us"
 title: "Nicholas Whittaker"
 enableEmoji: true
 
+disableKinds:
+  - "taxonomyTerm"
+
 params:
   me:
-    name: Nicholas Whittaker
-    username: nchlswhttkr
+    name: "Nicholas Whittaker"
+    username: "nchlswhttkr"
   identities:
-    - site: Email
-      link: mailto:nchlswhttkr+enquiries@gmail.com
-    - site: Twitter
-      link: https://twitter.com/nchlswhttkr/
-    - site: Github
-      link: https://github.com/nchlswhttkr/
-    - site: GitLab
-      link: https://gitlab.com/nchlswhttkr/
-    - site: LinkedIn
-      link: https://linkedin.com/in/nchlswhttkr/
-    # - site: Bitbucket
-    # - site: Medium
-    # - site: Soundcloud
-    # - site: npm
-    # - site: Facebook
-    # - site: Travis
+    - site: "Email"
+      link: "mailto:nchlswhttkr+enquiries@gmail.com"
+    - site: "Twitter"
+      link: "https://twitter.com/nchlswhttkr/"
+    - site: "Github"
+      link: "https://github.com/nchlswhttkr/"
+    - site: "GitLab"
+      link: "https://gitlab.com/nchlswhttkr/"
+    - site: "LinkedIn"
+      link: "https://linkedin.com/in/nchlswhttkr/"
+    # - site: "Bitbucket"
+    # - site: "Medium"
+    # - site: "Soundcloud"
+    # - site: "npm"
+    # - site: "Facebook"
+    # - site: "Travis"
