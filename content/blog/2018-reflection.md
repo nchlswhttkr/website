@@ -10,8 +10,6 @@ As another year passes by, I think it's time to reflect on the experiences I've 
 
 <!--more-->
 
-This time around, I've also tried to write a bit more about how I've felt in terms of mental health, as I think this is good for me emotionally.
-
 ---
 
 ## Music
@@ -24,33 +22,65 @@ Music continues to be a strong driving force for me, and the times I spend playi
 
 With Western Brass, I continued to play euphonium. We managed to place 3rd in our grade at the National Band Championships, and once again we competed at states, although this time we placed in the middle of the pack. Not to say I'm disappointed with the result though, I think the band has the ability to win the competition if they can find the dedication to do it. In its current state though, I feel there is indecision over whether the band plays primarily for fun or whether it intends to take competing seriously. Between this, the lack of a consistent concert repertoire, and the inconsistent attendance by some members, I feel this has been a bit of a rockier year for the band.
 
-<!-- Continuing to play with Western #TODO -->
+![Western Brass at the Australian National Band Championships, 3rd of 12 in C grade](/media/2018-reflection/western-brass.jpg)
 
-On the lighter side though, I've managed to encourage a friend to join me at the rehearsals over in Footscray. With the partner bands, the Footscray-Yarraville City Band and the Hyde Street Youth Band, I've also had the opportunity to march with them at the ANZAC parade and the Grand Final Parade.
+<span>_Western Brass at the Australian National Band Championships, 3rd of 12 in C grade_</span>
+
+<!-- Continuing to play with Western #TODO -->
 
 ### Glen Eira Band
 
 The Glen Eira Band has certainly been my favourite to play with this year though. We've been joined by Bayside Brass at our rehearsals for quite a while now, since the two bands are both currently experiencing lower memberships. This has allowed us to rehearse with something closer to a full band though, as we regularly manage to have two rows of cornets and a strong bass section. A new member joined us on trombone this year as well, and this has meant I've been able to focus on only having to play euphonium for the band, instead of having to switch parts between gigs. Some older players have returned to play with the band as well.
 
+![Most Improved Player Award, Glen Eira Band](/media/2018-reflection/trophy.jpg)
+
+<span>_Most Improved Player 2018, Glen Eira Band_</span>
+
 ### Monash Philharmonic Orchestra
 
-The Monash Philharmonic Orchestra has generally been fun to play with as well, although my own attendance has been lower than I would have hoped for. For most of the first semester this year I was absent from rehearsals, excluding the few that would come in the lead up to a concert, due to university classes running into the evening (_who runs a tutorial from 6-9pm on a Thursday?_). My schedule has generally been more hectic with the addition of working hours too, and this has come into effect as well. I think the concert I enjoyed playing most with the orchestra was the concerto concert in the middle of the year, despite only playing in a single piece for the concert myself, because I had the opportunity to watch my friend perform his own solo (Vivaldi Concerto).
-
-For the end of year summer concert, I also played with the Monash Jazz Orchestra, which was probably the first time I've played jazz trombone in these past two years.
+The Monash Philharmonic Orchestra has been fun to play with as well, although my own attendance has been lower than I would have hoped for, due to largely to conflicting schedules. For the first half this year I was largely absent from rehearsals, due to university classes running into the evening (_Monash has decided that having 3 hour labs until 9pm is acceptable, I don't support this_). Between these classes and other work, I was only available for the few weeks immediately prior to the Autumn concert. The concert this year that I enjoyed playing most with the MPO was the concerto concert in the middle of the year, despite only playing in a single piece for the concert myself. This was because I had the opportunity to watch my friend perform his own solo (A violin concerto from Winter, of Vivaldi's Four Seasons).
 
 ### Glen Eira Youth Orchestra
+
+![Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert](/media/2018-reflection/geyo.jpg)
+
+<span>_Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert_</span>
+
+### Misc Ensembles
+
+**Bayside Brass** - Christmas carols along Church Street for a few Saturday mornings in December.
+
+**Monash Jazz Orchestra** - 3rd trombone for the "Beyond The Sea" Summer concert.
+
+{{< tweet >}}
+
+**Footscray-Yarraville City Band** - Marching for the ANZAC Day Parade and in the opening of an AFL game.
+
+**Hyde Street Youth Band** - Marching for the AFL Grand Final Day Parade.
+
+**Tramways Band** - TBC
+
+**Brighton Uniting Church Band** - Playing euphonium for their annual Christmas service.
 
 ---
 
 ## Lawn Bowls
 
+![Accepting a prize at the "Charcoal Challenge", a charity bowls day](/media/2018-reflection/bowls-prize.jpg)
+
+<span>_Accepting a prize at the "Charcoal Challenge", a charity bowls day_</span>
+
 ### Team/Singles Competitions
 
-I had a good year of lawn bowls this time around. Playing pennant games on a Saturday afternoon was usually enjoyable and a good way to step back from the stresses of other commitments. I also had another go at competing in the club minor championships (open to members who have not won any club championships) and managed to take out the trophy this year. Following on from this, I also signed up for the men's singles championships, though this is still underway.
+I had a good year of lawn bowls this time around. Playing pennant games on a Saturday afternoon was enjoyable and a good way to step back from the stresses of other commitments. I also had another go at competing in the club minor championships (open to members who have not yet won any club trophies) and managed to win the trophy. Following on from this, I also signed up for the men's singles championships. Although I didn't come out on top in the end, I'm still proud that I was able to make it to the semi finals, taking two games off strong bowlers from the club.
 
 ### Social Bowls
 
-Bowls has proven to be a good opportunity to connect with my friends, as there is little stopping players from picking up a bowl to play themselves. I attended a few charity days for Coatesville Bowling Club, including one where I brought university friends, and this was a very enjoyable experience. After exams in the second semester, I also brought a host of friends from university down for social bowls. I really enjoyed doing this, because it gave me a much needed social opportunity and reprieve from work and university.
+![An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss](/media/2018-reflection/social-bowls.jpg)
+
+<span>_An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss_</span>
+
+Bowls has proven to be a good opportunity to connect with my friends, as the sport is incredibly accessible. I attended a few charity days for Coatesville Bowling Club, including one where I brought along university friends, and this was a very enjoyable experience. After exams in the second semester, I also brought a host of friends from university down for social bowls. I really enjoyed doing this, because it gave me a much needed social opportunity and reprieve from work and university.
 
 I plan to have more days like this in future. Social charity days, such as triples and fours charity days, are perfect for this.
 
@@ -62,11 +92,11 @@ I plan to have more days like this in future. Social charity days, such as tripl
 
 With the new year at university, I certainly found the level 2 subjects more interesting. These assumed prior knowledge, and covered more content in-depth. The units I found particularly interesting were the units on databases, computation theory and operating systems.
 
-However, with work running at the same time, I definitely feel like I struggled to attend a satisfactory number of classes and lectures, and in some cases I was attending more for the sake of marks rather than for my own benefit/knowledge. Previously, I've been able to cruise through my classes and miss the occasional lecture/tutorial, but this semester particularly stood out for me, as there were days where I opted to stay in bed rather than head out for classes.
+However, with work running at the same time, I definitely feel like I struggled to attend a satisfactory number of classes and lectures, and in some cases I was attending more for the sake of participation marks rather than for my own benefit/knowledge. Previously, I've been able to cruise through my classes and miss the occasional lecture/tutorial, but this last semester particularly stood out for me, as there were days where I opted to stay in bed rather than head out for classes.
 
 <!-- #TODO Discuss my attitudes to study -->
 
-For the first half of 2019, I'll be on a work placement at Monash University technology and support branch, eSolutions. Having a placement under my current employer should prove interesting, but I hope to use it as an opportunity to get to know more people around the workplace, and to hopefully take on a role with more responsibility. Where possible I'm hoping to shift the focus off the fact that I'm still a student, and instead be seen as an important asset to the teams I'll be working with.
+For the first half of 2019, I'll be on a work placement at Monash University technology and support branch, eSolutions. Having a placement under my current employer should prove interesting, but I hope to use it as an opportunity to get to know more people around the workplace, and to hopefully take on a role with more responsibility. Where possible I'm hoping to shift the focus off the fact that I'm still a student, and instead try to be seen as an important asset to the teams I'll be working with.
 
 ### WIRED
 
@@ -76,7 +106,11 @@ I served as the marketing officer for [WIRED](https://wired.org.au) this past ye
 
 ## Work
 
-I plan to write a more thorough reflection in a separate post.
+For the past year I've had the pleasure of working at eSolutions, delivering [MonPlan](https://monplan.apps.monash.edu) for students at Monash University.
+
+With the arrival of the new year, I'll be returning to eSolutions as part of a work placement for my degree.
+
+I plan to write a more thorough reflection on both my placement and my time at MonPlan when the placement concludes.
 
 ---
 
@@ -98,6 +132,7 @@ These events were fun, though I find that I'm usually going to enjoy the weekend
 
 ### Personal Projects
 
+gi
 I never really found the time to work on a personal project this year, or at least anything substantiative. I've certainly been learning, whether it be in terms of programming knowledge or just general development practice. Hopefully I'll be able to make something come to fruition in the coming months.
 
 <!-- Mention Hacktoberfest -->
@@ -117,6 +152,10 @@ I bought a Switch, it was worth it.
 It was sad to see that the comic book shop I've been with these past 5 years, Classic Comics, announcing that they intend to close down at the end of the year. I first developed an interest in comics back on a music tour to America with my high school jazz band in 2013, and they've been my first choice ever since.
 
 The series I've been following this year have Mister Miracle and Wayward, both of which came to a conclusion in the past few months. Outside of this, I've managed to get my hands on all the volumes of Saga, and I'm hoping to get through reading all of them some time in the new year.
+
+![My comic collection as of December 2018](/media/2018-reflection/comics.jpg)
+
+<span>_My comic collection as of December 2018_</span>
 
 ---
 

@@ -10,11 +10,11 @@ This past weekend I had the pleasure of attending Facebook’s 2018 Regional Hac
 
 <!--more-->
 
-![The balloon sign for #fbmelhack18](/media/facebook-hack-2018/1.jpg)
+![The balloon sign for #fbmelhack18](/media/facebook-hack-2018/balloons.jpg)
 
 Teaming up with my good friend Patrick, we went in as a pair and a welcoming attitude for those without a team. In the end, we teamed up with Tij, another CS student at Monash, as well as Hugh from Melbourne University.
 
-![Team Java Binks: Myself, Patrick, Tij and Hugh](/media/facebook-hack-2018/2.jpg)
+![Team Java Binks: Myself, Patrick, Tij and Hugh](/media/facebook-hack-2018/team.jpg)
 
 <span>_Team Java Binks: Myself, Patrick, Tij, and Hugh_</span>
 
@@ -26,7 +26,7 @@ Over the course of the event, we ended up setting up a front-end with a simple b
 
 In the end, our pitch went well and while we didn’t take out any prizes, we all felt proud of what we’d accomplished in just 24 hours.
 
-![Posing with Grace, Curtis and Bambi](/media/facebook-hack-2018/3.jpg)
+![Posing with Grace, Curtis and Bambi](/media/facebook-hack-2018/posing.jpg)
 
 <span>_Posing with Grace, Curtis and Bambi_</span>
 
@@ -40,6 +40,6 @@ You can find a copy of our repo for the hack on [GitHub](https://github.com/nchl
 
 The next hackathon on the calendar for me is [UNIHACK](https://unihack.net/), and it’s safe to say I’m looking forward to more freebies, fun, and hopefully a win!
 
-![As well as a Facebook snuggie, I ended up winning an Instragram hoodie in the raffle!](/media/facebook-hack-2018/4.jpg)
+![As well as a Facebook snuggie, I ended up winning an Instragram hoodie in the raffle!](/media/facebook-hack-2018/hoodie.jpg)
 
 <span>_As well as a Facebook snuggie, I ended up winning an Instragram hoodie in the raffle!_</span>
