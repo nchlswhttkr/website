@@ -10,8 +10,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metu
 
 <!--more-->
 
-Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
-
 ## Heading 2
 
 ### Heading 3
@@ -22,11 +20,21 @@ Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur ad
 
 ###### Heading 6
 
+Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
+
 _italics_
 
 **bold**
 
 ~~strike~~
+
+Text<sub>with subtext</sub>
+
+Text<sup>with supertext</sup>
+
+Text with [a link](https://nchlswhttkr.com/) in it.
+
+---
 
 - Foo
   - Foo
@@ -35,10 +43,6 @@ _italics_
 - Bar
 - Baz
 
-Text<sub>with subtext</sub>
-
-Text<sup>with supertext</sup>
-
 1.  1
 1.  2
 1.  3
@@ -46,10 +50,12 @@ Text<sup>with supertext</sup>
 - [ ] Incompete
 - [x] Complete
 
+---
+
 ```c
 #include <stdio.h>
 
-// I'm including this really long line of source code to show that scrolling sideways works.
+// I'm including this really long line of code to show that scrolling sideways works.
 
 int main () {
   printf("Hello world!\n");
@@ -59,7 +65,7 @@ int main () {
 
 I maintain the site source code on the `dev` branch, then deploy builds from `master`.
 
-[A link](https://nchlswhttkr.com/)
+---
 
 ![An image](/media/nicholas.png)
 
@@ -70,3 +76,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metu
 ---
 
 Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
+
+---
+
+{{< tweet 902019752251465728 >}}
+
+---

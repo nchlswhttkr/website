@@ -7,14 +7,15 @@
   <body>
     {{ partial "header.html" . }}
     <main>
+      <article>{{ .Content }}</article>
       {{ range.Data.Pages }}
       <article>
+        <hr />
         <h2>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
         </h2>
         <h3>{{ .Description }}</h3>
         <p>{{ .Summary }}</p>
-        <hr />
       </article>
       {{ end }}
     </main>
