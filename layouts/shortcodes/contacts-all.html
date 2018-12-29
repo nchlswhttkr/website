@@ -1,0 +1,10 @@
+<div class="contact">
+  {{ range.Site.Params.Identities }}
+  <a href="{{ .link }}" target="_blank" rel="noreferrer">
+    <img
+      src="{{ .Site.BaseURL }}media/icons/{{ lower (.site) }}.svg"
+      alt="{{ .site }}"
+    />
+  </a>
+  {{ end }}
+</div>

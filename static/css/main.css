@@ -15,7 +15,7 @@ body > * > * {
   padding: 0 16px;
   margin: 0 auto;
   min-width: 300px;
-  max-width: 750px;
+  max-width: 680px; /* This seems to be the default printer width */
 }
 
 a {
@@ -24,7 +24,7 @@ a {
 
 hr {
   color: #1a99b5;
-  margin: 64px 0;
+  margin: 24px 0;
 }
 
 header,
@@ -54,10 +54,11 @@ article {
 }
 
 article > p {
-  line-height: 1.5em;
+  line-height: 1.3em;
 }
 
 article > ul > li {
+  margin: 8px 0;
   list-style-type: square;
 }
 
@@ -82,57 +83,49 @@ article > pre {
   max-width: 650px;
 }
 
+article > blockquote {
+  margin: 16px 0;
+  padding: 8px 0 8px 16px;
+  border-left: 2px solid #1a99b5;
+}
+
+article > blockquote > * {
+  margin: 8px 0;
+}
+
 .twitter-tweet {
   margin: 0 auto;
 }
 
-.button {
-  box-sizing: border-box;
-  border-radius: 3px;
-  padding: 8px 8px;
-  white-space: nowrap;
-  line-height: 2.4em;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
+.contact {
+  display: flex;
 }
 
-.github {
-  background-color: #24292e;
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.bitbucket {
-  background-color: #0747a6;
+.contact > * {
+  margin: 4px 8px;
 }
 
-.gitlab {
-  background-color: #d14f36;
+.contact > * > img {
+  height: 32px;
 }
 
-.twitter {
-  background-color: #1da1f2;
-}
+@media print {
+  nav,
+  header,
+  footer,
+  .hide-on-print {
+    display: none;
+  }
 
-.facebook {
-  background-color: #3b5998;
-}
-
-.npm {
-  background-color: #cb3837;
-}
-
-.linkedin {
-  background-color: #0077b5;
-}
-
-.email {
-  background-color: #dd4f42;
-}
-
-.medium {
-  background-color: #000000;
-}
-
-.soundcloud {
-  background-color: #ff5500;
+  main {
+    padding: 0;
+    font-size: 14px;
+  }
 }

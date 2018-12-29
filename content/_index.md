@@ -1,6 +1,6 @@
 ---
 title: "Nicholas Whittaker"
-description: "Student, Developer, Musician"
+description: "Developer, Musician and Lawn Bowler"
 ---
 
 ## Hello World!
@@ -15,25 +15,19 @@ I'm currently studying Computer Science in a Monash University. Outside of study
 
 ---
 
-## Experience
-
-For a full resume, please [contact me personally](#contact).
-
-**Monash University - eSolutions** \
-Junior Software Developer, _Jan 2018 - Present_ \
-Frontend for [MonPlan](https://monplan.github.io/), enabling interactive course planning for Monash University students and staff.
-
-**Code Camp** \
-Assistant Teacher, _Jun 2017 - Dec 2017_ \
-Educating kids in the logic of programming, and helping them to build their own games over the course of a holiday program.
-
----
-
 ## Contact
 
 _Send me a postcard, drop me a line..._
 
-{{< contact >}}
+{{< contacts-all >}}
+
+---
+
+## Resume
+
+This is located on a separate page, where you can ~~[read and print it](/resume/)~~.
+
+If you would like a full resume, I would suggest you [contact me directly](#contact).
 
 ---
 
@@ -43,6 +37,6 @@ _Send me a postcard, drop me a line..._
 
 ## [Blog](/blog/)
 
-Browse the scribble collection
+_Browse the scribble collection_
 
 I like to write down my thoughts and experiences every now and them, feel free to [give them a read](/blog/).

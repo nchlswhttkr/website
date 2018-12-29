@@ -4,6 +4,8 @@ Built using [Hugo](https://gohugo.io).
 
 If you are reading this on **GitLab**, please be aware that this is just a mirror of the repository on [GitHub](https://github.com/nchlswhttkr/nchlswhttkr.github.io).
 
+Icons for this site are adapted from those provided by Font Awesome, see their license [here](https://fontawesome.com/license/free).
+
 ---
 
 ## Getting Started

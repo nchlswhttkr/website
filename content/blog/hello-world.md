@@ -34,6 +34,8 @@ Text<sup>with supertext</sup>
 
 Text with [a link](https://nchlswhttkr.com/) in it.
 
+> "I have definitely said these things" - _Nicholas Whittaker_
+
 ---
 
 - Foo
