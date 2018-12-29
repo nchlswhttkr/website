@@ -6,6 +6,7 @@
 set -e
 
 git stash -k -u
+git clean -d -f # Stashing restores deleted files, remove them before building
 
 hugo
 

@@ -13,6 +13,8 @@ params:
   identities:
     - site: "Email"
       link: "mailto:nchlswhttkr@gmail.com"
+    - site: "LinkedIn"
+      link: "https://linkedin.com/in/nchlswhttkr/"
     - site: "Twitter"
       link: "https://twitter.com/nchlswhttkr/"
     - site: "Github"
@@ -21,8 +23,6 @@ params:
       link: "https://gitlab.com/nchlswhttkr/"
     - site: "Bitbucket"
       link: "https://bitbucket.org/nchlswhttkr/"
-    - site: "LinkedIn"
-      link: "https://linkedin.com/in/nchlswhttkr/"
     - site: "Medium"
       link: "https://medium.com/@nchlswhttkr/"
     # - site: "Soundcloud"
