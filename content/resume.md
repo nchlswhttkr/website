@@ -18,11 +18,10 @@ description: "This page can be printed"
 
 Frontend developer for [MonPlan](https://monplan.apps.monash.edu/), an interactive course planning application. This sees use by both students and faculty staff, and has set Monash apart from other Australian universities.
 
-> **Code Camp**
-
+> **Code Camp** \
 > Teacher _(Jun 2017 - Dec 2017)_
 
-A holiday program designed to introduce young children to programming and computer logic. I helped them learn the basics of coding, as well as how to build and debug their own games.
+A holiday program designed to introduce young children to programming and computer logic. I helped them learn and understand the basics of coding, and to build and debug their own games.
 
 ---
 
@@ -37,6 +36,6 @@ It gives insight into the IT industry, and helps students build their own toolbo
 > **Community** \
 > _Mentoring, Music, and Lawn Bowls_
 
-- Student mentor and committee member for [WIRED](https://wired.org.au) for IT at Monash
-- Low brass musician, playing around Melbourne with brass bands and orchestras
+- Student mentor, volunteer and former committee for [WIRED](https://wired.org.au) for IT at Monash
+- Low brass musician, playing with orchestras and brass bands across Melbourne
 - Member and volunteer barman for Coatesville Bowling Club

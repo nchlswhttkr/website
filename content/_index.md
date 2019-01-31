@@ -3,15 +3,13 @@ title: "Nicholas Whittaker"
 description: "Developer, Musician and Lawn Bowler"
 ---
 
-## Hello World!
+## Hey, I'm Nicholas!
 
 ## :wave: :wave: :wave:
 
-### I'm Nicholas, a developer in Melbourne, Australia
+I'm a developer in Melbourne, Australia. Aside from code, music is a strong passion of mine. Most evenings of the week you'd be sure to find me rehearsing with a brass band or orchestra. Outside of music, I also enjoy playing a good game of lawn bowls.
 
-I'm a fan of many things, including cats, comics, and coding. Music is my passion, and most evenings of the week you'd be sure to find me rehearsing with a brass band or orchestra. Outside of music, I also enjoy playing the occassional game of lawn bowls.
-
-I'm currently studying Computer Science in a Monash University. Outside of studying and community involvement, I also work with Monash University eSolutions as a developer. Some of my past work includes helping to build [MonPlan](https://monplan.apps.monash.edu), an interactive course planner for students.
+I'm currently studying Computer Science in a Monash University. Outside of studying and community involvement, I also work with eSolutions at Monash University as a developer. My most notable past work includes helping to build and release [MonPlan](https://monplan.apps.monash.edu/), an interactive course planner for students, as an enterprise service for the university.
 
 ---
 
@@ -25,9 +23,9 @@ _Send me a postcard, drop me a line..._
 
 ## Resume
 
-This is located on a separate page, where you can ~~[read and print it](/resume/)~~.
+This is located on a separate page, where you can [read and print it](/resume/).
 
-If you would like a full resume, I would suggest you [contact me directly](#contact).
+If you would like to know more, try [reaching out to me](#contact)!
 
 ---
 
