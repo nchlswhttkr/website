@@ -45,9 +45,9 @@ Text with [a link](https://nchlswhttkr.com/) in it.
 - Bar
 - Baz
 
-1.  1
-1.  2
-1.  3
+1.  The first item
+1.  The second item
+1.  The third and final item
 
 - [ ] Incompete
 - [x] Complete

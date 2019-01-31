@@ -4,7 +4,7 @@ title: "Nicholas Whittaker"
 enableEmoji: true
 
 disableKinds:
-  - "taxonomyTerm"
+  - "taxonomyTerm" # I don't currently use categories/tags
 
 params:
   me:
@@ -21,10 +21,9 @@ params:
       link: "https://github.com/nchlswhttkr/"
     - site: "GitLab"
       link: "https://gitlab.com/nchlswhttkr/"
-    - site: "Bitbucket"
-      link: "https://bitbucket.org/nchlswhttkr/"
     - site: "Medium"
       link: "https://medium.com/@nchlswhttkr/"
+    # - site: "Bitbucket"
     # - site: "Soundcloud"
     # - site: "Facebook"
     # - site: "Twitch"

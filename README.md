@@ -1,22 +1,22 @@
-# [nchlswhttkr.github.io](https://nchlswhttkr.github.io)
+# nchlswhttkr.com
 
 Built using [Hugo](https://gohugo.io).
 
-If you are reading this on **GitLab**, please be aware that this is just a mirror of the repository on [GitHub](https://github.com/nchlswhttkr/nchlswhttkr.github.io).
+If you are reading this on **GitLab**, please note that edits should be made to the upstream [GitHub repo](https://github.com/nchlswhttkr.github.io).
 
-Icons for this site are adapted from those provided by Font Awesome, see their license [here](https://fontawesome.com/license/free).
+Icons for this site are modified from those provided by Font Awesome, see their license [here](https://fontawesome.com/license/free).
 
 ---
 
 ## Getting Started
 
-After cloning, run the following command to set up git hooks.
+After cloning, run the following command to set up git hooks. You may also need to install [Hugo](https://gohugo.io/install).
 
 ```
 sh scripts/init.sh
 ```
 
-The `dev` branch is used for templates and content, then the built static site is deployed via `master`. When you commmit to the `dev` branch, the site will be automatically rebuilt and committed via a git hook. It is then deployed when you push from the superproject.
+The `dev` branch is used for templates and content, then the built static site is deployed via `master` or from a pipeline. When you commmit to the `dev` branch, the site will be automatically rebuilt and committed via a git hook. It is then deployed when you push.
 
 ---
 
