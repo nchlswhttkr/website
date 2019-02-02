@@ -9,8 +9,8 @@
     <main>
       <article>{{ .Content }}</article>
       {{ range.Data.Pages }}
+      <hr />
       <article>
-        <hr />
         <h2>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
         </h2>

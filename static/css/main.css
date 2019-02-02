@@ -1,8 +1,8 @@
 body {
-  padding: 0;
   margin: 0;
   font-family: sans-serif;
   background-color: #1a99b5;
+  color: #333;
 }
 
 body > * {
@@ -24,7 +24,6 @@ a {
 
 hr {
   color: #1a99b5;
-  margin: 24px 0;
 }
 
 header,
@@ -49,12 +48,17 @@ main {
   padding: 32px 0;
 }
 
-article {
-  margin: 16px inherit;
+/* Add more spacing between items in the blog index only */
+main > hr {
+  margin: 40px auto;
 }
 
 article > p {
   line-height: 1.3em;
+}
+
+article > p > code {
+  font-size: 1.3em;
 }
 
 /* needs to apply to nested lists, not just direct children */
@@ -77,8 +81,9 @@ article ul > li {
 article > p > img {
   display: block;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 95%;
   max-height: 60vh;
+  box-shadow: 0px 2px 4px #333;
 }
 
 article > * > span {

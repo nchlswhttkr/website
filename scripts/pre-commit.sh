@@ -9,7 +9,6 @@ git stash -k -u
 git clean -d -f # Stashing restores deleted files, remove them before building
 
 hugo --cleanDestinationDir --baseURL "https://nchlswhttkr.github.io/"
-rm public/CNAME
 
 cd public
 git add .

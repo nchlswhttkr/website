@@ -1,9 +1,9 @@
 ---
 title: "Nicholas Whittaker"
-description: "This page can be printed"
+description: ""
 ---
 
-<span class='hide-on-print'>**_You can print this page, and only the resume should be appear._**</span>
+<span class='hide-on-print'>**_You can print this page, and only the resume will show. Make sure your browser is not changing the zoom percentage._**</span>
 
 ## <span>Nicholas Whittaker</span>
 
@@ -13,29 +13,33 @@ description: "This page can be printed"
 
 ---
 
-> **Monash University - eSolutions** \
-> Junior Software Developer _(Jan 2018 - Present)_
+> **Employment**
 
-Frontend developer for [MonPlan](https://monplan.apps.monash.edu/), an interactive course planning application. This sees use by both students and faculty staff, and has set Monash apart from other Australian universities.
+**Monash University eSolutions** \
+Junior Software Developer _(Jan 2018 - Present)_
 
-> **Code Camp** \
-> Teacher _(Jun 2017 - Dec 2017)_
+Frontend Developer (React) and Engagement Lead for [MonPlan](https://monplan.apps.monash.edu/), which launched in October 2018 as Monash University's enterprise application for students to plan their studies and receive digital course advice.
 
-A holiday program designed to introduce young children to programming and computer logic. I helped them learn and understand the basics of coding, and to build and debug their own games.
+**Code Camp** \
+Teacher _(Jun 2017 - Dec 2017)_
+
+I helped young children in this holiday program learn the basics of coding to build their own games. As a teacher, I made sure that campers were understanding the logic of computers while also enjoying their time at camp.
 
 ---
 
-> **Bachelor of Computer Science** \
-> Monash University _(2016 - Present)_
+> **Education**
 
-A combination of practical and theoretical IT units, this course fosters critical thinking and design skills, covering the principles of software development and data analysis. \
-It gives insight into the IT industry, and helps students build their own toolbox for problem solving in their professional work.
+**Bachelor of Computer Science** \
+Monash University _(2016 - Present)_
+
+<!-- A combination of practical and theoretical IT units, this course fosters critical thinking and design skills, covering the principles of software development and data analysis. \ -->
+<!-- It gives insight into the IT industry, and helps students build their own toolbox for problem solving in their professional work. -->
 
 ---
 
 > **Community** \
 > _Mentoring, Music, and Lawn Bowls_
 
-- Student mentor, volunteer and former committee for [WIRED](https://wired.org.au) for IT at Monash
+- Volunteer, student mentor and past committee for [WIRED](https://wired.org.au), supporting IT at Monash
 - Low brass musician, playing with orchestras and brass bands across Melbourne
 - Member and volunteer barman for Coatesville Bowling Club
