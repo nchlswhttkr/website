@@ -3,7 +3,7 @@ title: "I Moved My Website"
 description: "A small change, an hour of debugging"
 date: 2019-01-31T12:00:00+10:00
 draft: false
-slug: "new-website-setup"
+slug: "i-moved-my-website"
 ---
 
 I may not have been on the #movingtogitlab train, but recently I decided to try moving my website from GitHub Pages to GitLab pages. Trouble ensued, but helpful documentation saved the way!
