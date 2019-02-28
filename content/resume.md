@@ -3,13 +3,17 @@ title: "Nicholas Whittaker"
 description: ""
 ---
 
-<span class='hide-on-print'>**_You can print this page, and only the resume will show. Make sure your browser is not changing the zoom percentage._**</span>
+<span class='hide-on-print'>
+**_You can print this page, and only the resume will show! Make sure your browser is using the default zoom percentage._**
+</span>
 
 ## <span>Nicholas Whittaker</span>
 
 <span>Developer, Musician, Lawn Bowler --- Melbourne, Australia</span>
 
 {{< contacts-resume >}}
+
+<span>_Phone number, referrals upon request_</span>
 
 ---
 
@@ -18,12 +22,12 @@ description: ""
 **Monash University eSolutions** \
 Junior Software Developer _(Jan 2018 - Present)_
 
-Frontend Developer (React) and Engagement Lead for [MonPlan](https://monplan.apps.monash.edu/), which launched in October 2018 as Monash University's enterprise application for students to plan their studies and receive digital course advice.
+Frontend Developer (React/Redux) and Engagement Lead for [MonPlan](https://monplan.apps.monash.edu/), which launched in October 2018 as Monash University's enterprise application for students to plan their studies online and receive digital course advice.
 
 **Code Camp** \
 Teacher _(Jun 2017 - Dec 2017)_
 
-I helped young children in this holiday program learn the basics of coding to build their own games. As a teacher, I made sure that campers were understanding the logic of computers while also enjoying their time at camp.
+I helped young children learn the basics of coding to build their own games in this holiday program. As a teacher, I made sure that campers were understanding the logic of computers while having fun with games development.
 
 ---
 
@@ -38,8 +42,7 @@ Monash University _(2016 - Present)_
 ---
 
 > **Community** \
-> _Mentoring, Music, and Lawn Bowls_
 
 - Volunteer, student mentor and past committee for [WIRED](https://wired.org.au), supporting IT at Monash
-- Low brass musician, playing with orchestras and brass bands across Melbourne
+- Brass musician, playing with community bands and orchestras around Melbourne, and competing at a state and national level
 - Member and volunteer barman for Coatesville Bowling Club

@@ -15,7 +15,7 @@ body > * > * {
   padding: 0 16px;
   margin: 0 auto;
   min-width: 300px;
-  max-width: 680px; /* This seems to be the default printer width */
+  max-width: 800px;
 }
 
 a {
@@ -23,7 +23,7 @@ a {
 }
 
 hr {
-  color: #1a99b5;
+  border-color: #1a99b5;
 }
 
 header,
@@ -54,11 +54,11 @@ main > hr {
 }
 
 article > p {
-  line-height: 1.3em;
+  line-height: 1.4em;
 }
 
 article > p > code {
-  font-size: 1.3em;
+  font-size: inherit; /* <code/> doesn't inherit */
 }
 
 /* needs to apply to nested lists, not just direct children */
@@ -80,7 +80,7 @@ article ul > li {
 
 article > p > img {
   display: block;
-  margin: 0 auto;
+  margin: 32px auto;
   max-width: 95%;
   max-height: 60vh;
   box-shadow: 0px 2px 4px #333;
@@ -104,6 +104,7 @@ article > blockquote {
   margin: 16px 0;
   padding: 8px 0 8px 16px;
   border-left: 2px solid #1a99b5;
+  font-size: 1.1em;
 }
 
 article > blockquote > * {
@@ -116,7 +117,7 @@ article > blockquote > * {
 
 .contact {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -129,12 +130,12 @@ article > blockquote > * {
 
 .contact > a > img {
   height: 24px;
-  min-width: 32px;
+  min-width: 40px;
 }
 
 .contact > a > p {
-  flex: 0 1 180px;
   margin: 0 0 0 8px;
+  min-width: 200px;
 }
 
 @media print {
@@ -148,9 +149,5 @@ article > blockquote > * {
   main {
     padding: 0;
     font-size: 14px;
-  }
-
-  a {
-    text-decoration: none;
   }
 }
