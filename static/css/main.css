@@ -71,6 +71,7 @@ article ol {
 article ul > li,
 article ol > li {
   margin: 8px 0;
+  line-height: 1.4em;
 }
 
 /* needs to apply to nested lists, not just direct children */
