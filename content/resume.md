@@ -19,17 +19,17 @@ description: ""
 
 > **Employment**
 
-**Monash University eSolutions** \
+**Monash University (eSolutions)** \
 Junior Software Developer _(Jan 2018 - Present)_
 
-Frontend Developer (React/Redux) and Engagement Lead for [MonPlan](https://monplan.apps.monash.edu/), launched in October 2018 as Monash University's enterprise application for students to plan their studies and receive course advice digitally.
+Frontend Developer (React/Redux) and Engagement Lead for [MonPlan](https://monplan.apps.monash.edu/), released to production in October 2018 as Monash University's enterprise application for students to plan their studies and receive digital course advice.
 
-Currently a Software Developer with the ERAMIS replatform, bringing a key research application to the cloud (Node @ Serverless).
+Currently working as a Software Developer on the ERAMIS replatform, bringing a key research application to the cloud (Node @ Serverless, PostgreSQL, React).
 
 **Code Camp** \
 Teacher _(Jun 2017 - Dec 2017)_
 
-I helped young children learn the basics of coding to build their own games in this holiday program. As a teacher, I made sure that campers were understanding the logic of computers while having fun with games development.
+I helped young children learn the basics of coding, building their own games in a holiday program. As a teacher, I made sure that campers were understanding the logic of computers while also having fun with games development.
 
 ---
 
@@ -46,6 +46,6 @@ Monash University _(2016 - Present)_
 > **Community**
 
 - Volunteer, student mentor and past committee for [WIRED](https://wired.org.au), supporting IT at Monash
-- Brass musician with Melbourne's community bands and orchestras, competing at states and nationals
+- Musician with brass bands and orchestras around Melbourne, playing community gigs and competing at a state and national level
 - Member and volunteer barman for Coatesville Bowling Club
-- Lover of tech talks, hackathon attendee (Unihack, GovHack, Facebook) and OSS contributor
+- Lover of tech talks, hackathon attendee (Unihack, GovHack, Facebook Hack) and occasional contributor to open-source
