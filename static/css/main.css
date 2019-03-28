@@ -151,4 +151,12 @@ article > blockquote > * {
     padding: 0;
     font-size: 14px;
   }
+
+  a {
+    text-decoration: none;
+  }
+
+  .contact > a {
+    text-decoration: #000 underline;
+  }
 }
