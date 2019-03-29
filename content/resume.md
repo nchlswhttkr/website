@@ -36,7 +36,7 @@ I helped young children learn the basics of coding, building their own games in 
 > **Education**
 
 **Bachelor of Computer Science** \
-Monash University _(2016 - Present)_
+Monash University _(2017 - Present)_
 
 <!-- A combination of practical and theoretical IT units, this course fosters critical thinking and design skills, covering the principles of software development and data analysis. \ -->
 <!-- It gives insight into the IT industry, and helps students build their own toolbox for problem solving in their professional work. -->
