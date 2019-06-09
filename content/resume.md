@@ -4,7 +4,7 @@ description: ""
 ---
 
 <span class='hide-on-print'>
-**_You can print this page, and only the resume will show! Make sure your browser is using the default zoom percentage._**
+**_You can print this page, and only the resume will show! Make sure your browser is set to the default zoom level._**
 </span>
 
 ## <span>Nicholas Whittaker</span>
@@ -13,8 +13,6 @@ description: ""
 
 {{< contacts-resume >}}
 
-<span>_Phone number upon request_</span>
-
 ---
 
 > **Employment**
@@ -22,9 +20,11 @@ description: ""
 **Monash University (eSolutions)** \
 Junior Software Developer _(Jan 2018 - Present)_
 
-Frontend Developer (React/Redux) and Engagement Lead for [MonPlan](https://monplan.apps.monash.edu/), released to production in October 2018 as Monash University's enterprise application for students to plan their studies and receive digital course advice.
+Frontend Developer (React/Redux) and Engagement for [MonPlan](https://monplan.apps.monash.edu/), an application for Monash students to plan their studies and receive course advice online.
 
-Currently working as a Software Developer on the ERAMIS replatform, bringing a key research application to the cloud (Node @ Serverless, PostgreSQL, React).
+Working together with a team of fellow students, we launched MonPlan as the University's official application for course planning in October 2018.
+
+Currently working on a cloud replatform (Node @ AWS Lambda, PostgreSQL, React) of ERAMIS, a tool used by Monash to report on research to the Australian Government.
 
 **Code Camp** \
 Teacher _(Jun 2017 - Dec 2017)_
@@ -48,4 +48,4 @@ Monash University _(2017 - Present)_
 - Volunteer, student mentor and past committee for [WIRED](https://wired.org.au), supporting IT at Monash
 - Musician with brass bands and orchestras around Melbourne, playing community gigs and competing at a state and national level
 - Member and volunteer barman for Coatesville Bowling Club
-- Lover of tech talks, hackathon attendee (Unihack, GovHack, Facebook Hack) and occasional contributor to open-source
+- Lover of tech talks, hackathon attendee (Unihack, GovHack, Facebook Hack) and hobby open-source contributor
