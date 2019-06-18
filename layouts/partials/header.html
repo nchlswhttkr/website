@@ -8,6 +8,8 @@
 <header>
   <div>
     <h1>{{ .Title }}</h1>
+    {{ if .Description }}
     <h2>{{ .Description }}</h2>
+    {{ end }}
   </div>
 </header>

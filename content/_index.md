@@ -3,9 +3,9 @@ title: "Nicholas Whittaker"
 description: "Developer, Musician and Lawn Bowler"
 ---
 
-## Hey, I'm Nicholas!
+<span class='profile-image'>![A Minish person from The Legend of Zelda: The Minish Cap](/media/nicholas.png)</span>
 
-## :wave: :wave: :wave:
+## Hey, I'm Nicholas!
 
 I’m a developer in Melbourne, Australia. Aside from coding, music is my strongest passion. Most evenings of the week, you’ll be sure to find me rehearsing with a brass band or orchestra in Melbourne. Outside of music, I also enjoy playing a good game of lawn bowls.
 

@@ -1,7 +1,11 @@
+:root {
+  --theme-color: #508248;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #1a99b5;
+  background-color: var(--theme-color);
   color: #333;
 }
 
@@ -24,7 +28,7 @@ a {
 
 hr {
   border: 0px;
-  border-top: 2px solid #1a99b5;
+  border-top: 3px solid var(--theme-color);
 }
 
 header,
@@ -46,7 +50,6 @@ nav > ul > li {
 
 main {
   background-color: #fff;
-  padding: 32px 0;
 }
 
 /* Add more spacing between items in the blog index only */
@@ -105,12 +108,17 @@ article > pre {
 article > blockquote {
   margin: 16px 0;
   padding: 8px 0 8px 16px;
-  border-left: 2px solid #1a99b5;
+  border-left: 2px solid var(--theme-color);
   font-size: 1.1em;
 }
 
 article > blockquote > * {
   margin: 8px 0;
+}
+
+.profile-image > img {
+  height: 256px;
+  border-radius: 50%;
 }
 
 .twitter-tweet {
