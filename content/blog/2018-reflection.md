@@ -32,7 +32,7 @@ A new member joined us on trombone this year as well, and this has meant I've be
 
 ![Most Improved Player Award, Glen Eira Band](/media/blog/2018-reflection/trophy.jpg)
 
-<span>_Most Improved Player 2018, Glen Eira Band_</span>
+<span class="center-text">_Most Improved Player 2018, Glen Eira Band_</span>
 
 ### Western Brass
 
@@ -44,7 +44,7 @@ On the lighter side though, I've convinced a friend to join me at rehearsals on 
 
 ![Western Brass at the Australian National Band Championships, 3rd of 12 in C grade](/media/blog/2018-reflection/western-brass.jpg)
 
-<span>_Western Brass at the Australian National Band Championships, 3rd of 12 in C grade_</span>
+<span class="center-text">_Western Brass at the Australian National Band Championships, 3rd of 12 in C grade_</span>
 
 ### Monash Philharmonic Orchestra
 
@@ -62,7 +62,7 @@ I'm also very happy to be playing 2<sup>nd</sup> trombone as opposed to 1<sup>st
 
 ![Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert](/media/blog/2018-reflection/geyo.jpg)
 
-<span>_Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert_</span>
+<span class="center-text">_Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert_</span>
 
 ### Misc Ensembles
 
@@ -94,7 +94,7 @@ Following on from this, I also signed up for the men's singles championships. Al
 
 ![Accepting a prize at the "Charcoal Challenge", a charity bowls day](/media/blog/2018-reflection/bowls-prize.jpg)
 
-<span>_Accepting a prize at the "Charcoal Challenge", a charity bowls day_</span>
+<span class="center-text">_Accepting a prize at the "Charcoal Challenge", a charity bowls day_</span>
 
 ### Social Bowls
 
@@ -104,7 +104,7 @@ I plan to have more days like this in future. Social charity days, such as tripl
 
 ![An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss](/media/blog/2018-reflection/social-bowls.jpg)
 
-<span>_An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss_</span>
+<span class="center-text">_An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss_</span>
 
 I also now do a few bar shifts for the club now, I find it rather therapeutic.
 
@@ -134,7 +134,7 @@ I served as the marketing officer for [WIRED](https://wired.org.au) this past ye
 
 ![MC for Unihack Mini](/media/blog/2018-reflection/wired.jpg)
 
-<span>_MC for Unihack Mini_</span>
+<span class="center-text">_MC for Unihack Mini_</span>
 
 I wasn't elected back to the committee for the coming year, but with a placement running for the first half of the year, it's probably for the better. Since I'll still be heading into Clayton everyday, I can still offer volunteer help. With my involvement being voluntary now, I think that will also help my reduce my heavy workload.
 
@@ -154,7 +154,7 @@ You can also read more about the Facebook Hack in my [reflection post](/blog/fac
 
 {{< tweet 1060468874083102720 >}}
 
-<span>_Shoutout to my team from GovHack!_</span>
+<span class="center-text">_Shoutout to my team from GovHack!_</span>
 
 These events were fun, though I feel that I'm usually going moreso to enjoy the weekend hanging out with friends rather than to seriously compete. I'm still deciding how involved I want to be next year, but if I'm going to commit to a hackathon going forward, it would serve me better to dedicate my time and effort to only one or two events. At events this year, all productivity/useful output from me usually ceased in the evening of the first night, and I would end up heading home or lounging about, contributing very little for my team. I want to curb this going forward.
 
@@ -190,7 +190,7 @@ The series I've been following this year have Mister Miracle and Wayward, both o
 
 ![My comic collection as of December 2018](/media/blog/2018-reflection/comics.jpg)
 
-<span>_Wayward and Mister Miracle, from my collection of comics_</span>
+<span class="center-text">_Wayward and Mister Miracle, from my collection of comics_</span>
 
 ---
 
@@ -204,7 +204,7 @@ Next year I'm setting and hoping to keep a few resolutions.
 
 - **Ensuring I don't miss breakfast**, because this year I've had too many mornings where I've dashed out the door without a proper meal.
 
-<span>**Here's to 2019!**</span>
+<span class="center-text">**Here's to 2019!**</span>
 
 ---
 

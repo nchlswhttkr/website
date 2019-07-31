@@ -2,14 +2,12 @@
 <html lang="en">
   <head>
     {{ partial "meta.html" . }}
-    <meta name="author" content="{{ .Site.Params.Me.Name }}" />
-    <meta property="og:type" content="article" />
+    <link rel="stylesheet" type="text/css" href="/blog-article.css" />
   </head>
-
   <body>
     {{ partial "header.html" . }}
     <main>
-      <article>{{ .Content }}</article>
+      <div>{{ .Content }}</div>
     </main>
     {{ partial "footer.html" . }}
   </body>

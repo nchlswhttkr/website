@@ -6,6 +6,13 @@
         >Submit a PR</a
       >!
     </p>
-    <p>Developed using <a href="https://gohugo.io/">Hugo</a></p>
+    <p>Powered using <a href="https://gohugo.io/">Hugo</a></p>
+    <div class="footer-icons">
+      {{ range.Site.Params.Identities }}
+      <a href="{{ .link }}" target="_blank" rel="noreferrer">
+        <img src="{{ .icon }}" alt="{{ .prompt }}" />
+      </a>
+      {{ end }}
+    </div>
   </div>
 </footer>

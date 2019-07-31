@@ -3,21 +3,21 @@
   <head>
     {{ partial "meta.html" . }}
   </head>
-
   <body>
     {{ partial "header.html" . }}
     <main>
-      <article>{{ .Content }}</article>
-      {{ range.Data.Pages }}
-      <hr />
-      <article>
-        <h2>
+      <div>
+        {{ .Content }}
+        {{ range.Data.Pages }}
+        <br />
+        <h3>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h2>
-        <h3>{{ .Description }}</h3>
-        <p>{{ .Summary }}</p>
-      </article>
-      {{ end }}
+        </h3>
+        <p>
+          <em>{{ .Date.Format "Jan 2, 2006"}}</em> - {{ .Description }}
+        </p>
+        {{ end }}
+      </div>
     </main>
     {{ partial "footer.html" . }}
   </body>

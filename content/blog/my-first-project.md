@@ -22,20 +22,20 @@ Let's skip a couple of weeks ahead. I've been working to improve the way in whic
 
 While looking at another repo for a discord bot that reports DotA2 matches, I noticed they were sending requests to "api.steampowered.com". Turns out Steam's API had the capability to provide up-to-date stats about DotA2. Suddenly, my process is greatly simplified. All I had to do was send a GetHeroes and GetGameItems request and parse the returned JSON.
 
-```
+```json
 {
-    "name": "npc_dota_hero_antimage",
-    "id": 1,
+  "name": "npc_dota_hero_antimage",
+  "id": 1
 }
 ```
 
 Success! I could now use this name ID to find an icon's URL and request it from DotA2's CDN, but I still didn't have access to the current in-game hero name. This was fixed by adding "language=en" as a parameter in my query, and I was good to go.
 
-```
+```json
 {
-    "name": "npc_dota_hero_antimage",
-    "id": 1,
-    "localized_name": "Anti-Mage"
+  "name": "npc_dota_hero_antimage",
+  "id": 1,
+  "localized_name": "Anti-Mage"
 }
 ```
 
