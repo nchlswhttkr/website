@@ -13,28 +13,14 @@ As a developer, I'm always looking to solve technical problems, gain experience 
 
 I'm currently studying Computer Science in a Monash University. Outside of studying and community involvement, I also work with eSolutions at Monash University as a developer. My proudest work was helping to build and release [MonPlan](https://monplan.apps.monash.edu/), an interactive course planner for students, as an enterprise service for the university.
 
-<!--
-
 ---
 
-## Contact
+## [Blog](/blog/)
 
-_Send me a postcard, drop me a line..._
+I like to write down my thoughts and experiences every now and them, feel free to [give them a read](/blog/)!
 
 ---
 
 ## [Resume](/resume/)
 
 This is located on a separate page, where you can [read and print it](/resume/).
-
-If you would like to know more, try [reaching out to me](#contact)!
-
--->
-
----
-
-## [Blog](/blog/)
-
-_Browse the scribble collection_
-
-I like to write down my thoughts and experiences every now and them, feel free to [give them a read](/blog/)!

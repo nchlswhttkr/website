@@ -4,11 +4,11 @@
 
 .blog-article p,
 .blog-article li {
-  line-height: 1.4em;
+  line-height: 1.3em;
 }
 
-.blog-article p code {
-  font-size: 1em;
+.blog-article code {
+  font-size: 1.23em; /* <code/> blocks seem to use a smaller font-size */
 }
 
 .blog-article ul,
@@ -26,7 +26,7 @@
 
 .blog-article img {
   display: block;
-  margin: 32px auto;
+  margin: 8px auto;
   max-width: 95%;
   max-height: 60vh;
   box-shadow: 0px 2px 4px #333;
@@ -44,9 +44,13 @@
 .blog-article blockquote {
   padding: 0 0 0 16px;
   border-left: 2px solid var(--theme-color);
-  font-size: 1.1em;
 }
 
 .blog-article .center-text {
+  display: block;
   text-align: center;
+}
+
+.blog-article .twitter-tweet {
+  margin: 0 auto;
 }

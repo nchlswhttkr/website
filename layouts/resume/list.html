@@ -2,13 +2,12 @@
 <html lang="en">
   <head>
     {{ partial "meta.html" . }}
-    <meta property="og:type" content="article" />
-    <link rel="stylesheet" type="text/css" href="/blog-article.css" />
+    <link rel="stylesheet" type="text/css" href="/resume.css" />
   </head>
   <body>
     {{ partial "header.html" . }}
     <main>
-      <article class="blog-article constrain-width">{{ .Content }}</article>
+      <div class="constrain-width resume">{{ .Content }}</div>
     </main>
     {{ partial "footer.html" . }}
   </body>

@@ -6,7 +6,9 @@ draft: false
 slug: "mastering-time-management"
 ---
 
-_"Life moves pretty fast. If you don't stop and look around once in a while, you could miss it."_
+> _"Life moves pretty fast. If you don't stop and look around once in a while, you could miss it."_
+>
+> Ferris Bueller's Day Off
 
 <!--more-->
 

@@ -46,6 +46,6 @@ I decided to go for a walk and hoped everything would fix itself, maybe the stat
 
 Coming back half an hour later, my website was back in proper shape. Business as usual!
 
-At this point I'm still not sure what caused some requests to 404. I'm sure the reason will haunt me for many years to come, or however long it takes for me to properly investigat the architecture behind GitLab Pages.
+At this point I'm still not sure what caused some requests to 404. I'm sure the reason will haunt me for many years to come, or however long it takes for me to properly investigate the architecture behind GitLab Pages.
 
 Until then, I hope you enjoyed reading about my experience going through this, and seeing how it was resolved!

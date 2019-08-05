@@ -9,19 +9,6 @@ body {
   color: #333;
 }
 
-body > * {
-  box-sizing: border-box;
-  padding: 8px 0;
-}
-
-body > * > * {
-  box-sizing: border-box;
-  padding: 0 16px;
-  margin: 0 auto;
-  min-width: 300px;
-  max-width: 700px;
-}
-
 a {
   color: inherit;
 }
@@ -52,6 +39,14 @@ main {
   background-color: #fff;
 }
 
+.constrain-width {
+  box-sizing: border-box;
+  padding: 8px 16px;
+  margin: 0 auto;
+  min-width: 300px;
+  max-width: 700px;
+}
+
 .footer-icons a {
   text-decoration: none;
   margin-right: 8px;
@@ -65,33 +60,6 @@ main {
   border-radius: 50%;
 }
 
-.twitter-tweet {
-  margin: 0 auto;
-}
-
-.contact {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-.contact > a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 8px;
-}
-
-.contact > a > img {
-  height: 24px;
-  min-width: 40px;
-}
-
-.contact > a > p {
-  margin: 0 0 0 8px;
-  min-width: 200px;
-}
-
 @media print {
   nav,
   header,
@@ -102,14 +70,9 @@ main {
 
   main {
     padding: 0;
-    font-size: 14px;
   }
 
   a {
     text-decoration: none;
-  }
-
-  .contact > a {
-    text-decoration: #000 underline;
   }
 }

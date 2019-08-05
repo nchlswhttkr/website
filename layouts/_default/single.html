@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
     {{ partial "meta.html" . }}
-    <link rel="stylesheet" type="text/css" href="/blog-article.css" />
   </head>
   <body>
     {{ partial "header.html" . }}
     <main>
-      <div>{{ .Content }}</div>
+      {{ .Content }}
     </main>
     {{ partial "footer.html" . }}
   </body>
