@@ -1,5 +1,5 @@
 .blog-article > * {
-  margin: 16px 0;
+  margin: 16px 0 24px;
 }
 
 .blog-article p,
@@ -9,6 +9,7 @@
 
 .blog-article code {
   font-size: 1.23em; /* <code/> blocks seem to use a smaller font-size */
+  font-weight: 700;
 }
 
 .blog-article ul,

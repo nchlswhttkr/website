@@ -8,7 +8,7 @@ Icons for this site are modified from those provided by Font Awesome, see their 
 
 Shoutout to [favicon.io](https://favicon.io/) for the favicon, sweet!
 
-Install git hooks using `scripts/init.sh`, make sure you have [Hugo](https://gohugo.io/install/) installed.
+<!-- Install git hooks using `scripts/init.sh`, make sure you have [Hugo](https://gohugo.io/install/) installed. -->
 
 **Why not git submodules?**
 

@@ -51,7 +51,7 @@ description: ""
 
 - Built [MonPlan](https://monplan.apps.monash.edu/) with a student team, helping Monash students plan their studies
 - Launched [MonPlan](https://monplan.apps.monash.edu/) as the University's course planning service in October 2018
-- Worked in partnership with the Research Performance unit on cloud-based application to manage research reporting
+- Worked in partnership with the Research Performance unit on a cloud-based application to manage research reporting
 
 <div class="left-right-divide">
   <p>
