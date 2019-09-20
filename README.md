@@ -8,10 +8,4 @@ Icons for this site are modified from those provided by Font Awesome, see their 
 
 Shoutout to [favicon.io](https://favicon.io/) for the favicon, sweet!
 
-<!-- Install git hooks using `scripts/init.sh`, make sure you have [Hugo](https://gohugo.io/install/) installed. -->
-
-**Why not git submodules?**
-
-I wasn't quite able to make this approach work. I ended up getting errors inside a git hook script when trying to execute git commands on the submodule, but I did not encounter these problems when running from CLI. It might be possible to fix these using a certain combination of the `-C`, `--git-dir`, and `--work-tree` flags, but I wasn't able to find the config that worked in a reasonable amount of time.
-
-The current approach (a gitignore'd directory) is easier to maintain and understand.
+I originally used [git hooks to manage site builds and deployments](https://github.com/nchlswhttkr/nchlswhttkr.github.io/tree/78aebf88a3490bffe5408aefdacdb36d8c077976), but with GitHub Actions/GitLab CI there is no need to leverage this anymore.
