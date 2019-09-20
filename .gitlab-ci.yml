@@ -1,4 +1,4 @@
-image: registry.gitlab.com/pages/hugo:0.55.4 # fails with >0.55.4 <=0.56.2
+image: registry.gitlab.com/pages/hugo:latest # no v0 tag, this is fine
 
 pages:
   script:
