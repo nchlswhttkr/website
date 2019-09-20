@@ -1,0 +1,5 @@
+name: Deploy to GH Pages
+description: Deploys to GH Pages by pushing to master
+runs:
+  using: docker
+  image: Dockerfile
