@@ -3,7 +3,7 @@ title: "2018 Reflection"
 description: "A reflection on the past year"
 date: 2018-12-22T12:00:00+10:00
 draft: false
-slug: "2018-reflection"
+layout: "single"
 ---
 
 As another year passes by, I think it's time to reflect on the experiences I've had and to look back on some of the highlights as well!
@@ -30,7 +30,7 @@ The Glen Eira Band has certainly been my favourite to play with this year. We've
 
 A new member joined us on trombone this year as well, and this has meant I've been able to focus on playing only uphonium for the band, instead of having to switch parts between gigs. Some members from past years have also returned to play with the band as well.
 
-![Most Improved Player Award, Glen Eira Band](/media/blog/2018-reflection/trophy.jpg)
+![Most Improved Player Award, Glen Eira Band](./trophy.jpg)
 
 <span class="center-text">_Most Improved Player 2018, Glen Eira Band_</span>
 
@@ -42,7 +42,7 @@ Currently, I feel the band lacks consistent repertoire, and runs mostly from gig
 
 On the lighter side though, I've convinced a friend to join me at rehearsals on a Tuesday evening, making the journey to and from Footscray much more bearable. I hope this continues in the coming year.
 
-![Western Brass at the Australian National Band Championships, 3rd of 12 in C grade](/media/blog/2018-reflection/western-brass.jpg)
+![Western Brass at the Australian National Band Championships, 3rd of 12 in C grade](./western-brass.jpg)
 
 <span class="center-text">_Western Brass at the Australian National Band Championships, 3rd of 12 in C grade_</span>
 
@@ -60,7 +60,7 @@ Whilst the ensemble still relies on the support of ring-in musicians, I feel con
 
 I'm also very happy to be playing 2<sup>nd</sup> trombone as opposed to 1<sup>st</sup> trombone, mostly because I feel like it encourages the lead trombone to feel more important, and allows me to worry less about needing to lead a section.
 
-![Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert](/media/blog/2018-reflection/geyo.jpg)
+![Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert](./geyo.jpg)
 
 <span class="center-text">_Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert_</span>
 
@@ -92,7 +92,7 @@ I had a good year of lawn bowls. Playing club pennant games on a Saturday aftern
 
 Following on from this, I also signed up for the men's singles championships. Although I didn't come out on top in the end, I'm still proud that I was able to make it to the semi finals, taking games off two strong bowlers from the club along the way.
 
-![Accepting a prize at the "Charcoal Challenge", a charity bowls day](/media/blog/2018-reflection/bowls-prize.jpg)
+![Accepting a prize at the "Charcoal Challenge", a charity bowls day](./bowls-prize.jpg)
 
 <span class="center-text">_Accepting a prize at the "Charcoal Challenge", a charity bowls day_</span>
 
@@ -102,7 +102,7 @@ Bowls has proven to be a good opportunity to connect with my friends, as the spo
 
 I plan to have more days like this in future. Social charity days, such as triples/fours charity days, are great for this.
 
-![An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss](/media/blog/2018-reflection/social-bowls.jpg)
+![An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss](./social-bowls.jpg)
 
 <span class="center-text">_An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss_</span>
 
@@ -132,7 +132,7 @@ As I [mentioned above](#work), I'll be on a placement at eSolutions for the firs
 
 I served as the marketing officer for [WIRED](https://wired.org.au) this past year, which primarily involving managing social media and sending weekly newsletters. Working with the committee was enjoyable, but I feel like I did not put sufficient effort into fulfilling my role, and that could have had greater input at meetings.
 
-![MC for Unihack Mini](/media/blog/2018-reflection/wired.jpg)
+![MC for Unihack Mini](./wired.jpg)
 
 <span class="center-text">_MC for Unihack Mini_</span>
 
@@ -188,7 +188,7 @@ Sadly though, the comic book shop I've been with for the past 5 years, Classic C
 
 The series I've been following this year have Mister Miracle and Wayward, both of which came to a conclusion in the past few months. Outside of this, I've managed to get my hands on all the volumes of Saga, and I'm hoping to get through reading all of them some time in the new year break.
 
-![My comic collection as of December 2018](/media/blog/2018-reflection/comics.jpg)
+![My comic collection as of December 2018](./comics.jpg)
 
 <span class="center-text">_Wayward and Mister Miracle, from my collection of comics_</span>
 

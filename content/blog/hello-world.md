@@ -3,7 +3,7 @@ title: "Hello World"
 description: "Testing out markdown"
 date: 2017-01-01T12:00:00+10:00
 draft: false
-slug: "hello-world"
+layout: "single"
 ---
 
 I use this article to make sure any styling changes I make don't break.

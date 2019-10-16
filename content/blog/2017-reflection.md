@@ -3,7 +3,7 @@ title: "2017 Reflection"
 description: "A reflection on the past year"
 date: 2017-12-23T12:00:00+10:00
 draft: false
-slug: "2017-reflection"
+layout: "single"
 ---
 
 Ah 2017, what a year. As the year closes with the festive season, there is no better time to think back to all the things that have happened for me.

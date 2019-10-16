@@ -1,6 +1,7 @@
 ---
 title: "Nicholas Whittaker"
 description: ""
+layout: "resume"
 ---
 
 <span class='hide-on-print'>

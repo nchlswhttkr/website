@@ -3,7 +3,7 @@ title: "Good Technical Presentations"
 description: "Making tech talks and workshops greats one!"
 date: 2019-04-25T12:00:00+10:00
 draft: false
-slug: "good-technical-presentations"
+layout: "single"
 ---
 
 I've had the pleasure of attending several tech talks and workshops in the past year, so I thought it would be good to write up some of the things I've observed and liked, as well as how I think some more troublesome areas and issues can be avoided.

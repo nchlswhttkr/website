@@ -1,6 +1,8 @@
 ---
 title: "Nicholas Whittaker"
 description: "Developer, Musician and Lawn Bowler"
+type: "blog"
+layout: "single"
 ---
 
 <span class='profile-image'>![A Minish folk from The Legend of Zelda: The Minish Cap](/media/nicholas.png)</span>

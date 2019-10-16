@@ -1,3 +1,7 @@
+.resume {
+  max-width: 680px;
+}
+
 .resume .contact {
   display: flex;
   justify-content: space-evenly;

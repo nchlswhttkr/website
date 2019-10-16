@@ -3,7 +3,7 @@ title: "I Moved My Website"
 description: "A small change, an hour of debugging"
 date: 2019-01-31T12:00:00+10:00
 draft: false
-slug: "i-moved-my-website"
+layout: "single"
 ---
 
 I may not have been on the #movingtogitlab train, but recently I decided to try moving my website from GitHub Pages to GitLab pages. Trouble ensued, but helpful documentation saved the way!
@@ -14,7 +14,7 @@ For reference, this site runs through Cloudflare nameservers. At the time of wri
 
 The first step was changing my DNS config in Cloudflare to use a CNAME pointing to `nchlswhttkr.gitlab.io`, replacing the original `nchlswhttkr.github.io`. A few changes later and a 5 minute wait later and I'm presented with this beauty.
 
-![GitLab Pages returns a 404](/media/blog/i-moved-my-website/the-classic-404.png)
+![GitLab Pages returns a 404](./the-classic-404.png)
 
 <span class="center-text">_You thought this was only going to be a one-step process?_</span>
 
@@ -26,7 +26,7 @@ Success! Cloudflare has switched over, now I just need to flick some switches on
 
 Not knowing anything about these certificates, I left the fields blank and hit submit.
 
-![Submitting requires certificate and key fields to be filled for HTTPS-only sites](/media/blog/i-moved-my-website/you-need-keys.png)
+![Submitting requires certificate and key fields to be filled for HTTPS-only sites](./you-need-keys.png)
 
 <span class="center-text">_Not quite what I was hoping for..._</span>
 
@@ -36,7 +36,7 @@ Thanks to this, a lot of time spent worrying and searching was saved - the lesso
 
 After following their instructions and giving the changes a few minutes to apply, I checked up on my site.
 
-![HTML with no CSS applied](/media/blog/i-moved-my-website/css-not-required.png)
+![HTML with no CSS applied](./css-not-required.png)
 
 <span class="center-text">_This is where I give a shoutout to [https://motherfuckingwebsite.com](https://motherfuckingwebsite.com)_</span>
 
