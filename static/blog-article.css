@@ -28,9 +28,15 @@
 .blog-article img {
   display: block;
   margin: 8px auto;
-  max-width: 95%;
-  max-height: 60vh;
+  min-width: 240px;
+  max-width: 70%;
+  transition: max-width 0.3s;
   box-shadow: 0px 2px 4px #333;
+}
+
+.blog-article img:hover {
+  max-width: 100%;
+  transition: max-width 0.2s;
 }
 
 .blog-article pre {
