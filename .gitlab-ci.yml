@@ -1,8 +1,7 @@
-image: docker:stable
+image: docker.pkg.github.com/nchlswhttkr/hugo-compress/hugo-compress:latest
 pages:
   script:
-    - docker login -p nchlswhttkr -u $GITHUB_LOGIN_SECRET
-    - docker run -v $CI_BUILDS_DIR:/src -w /src docker.pkg.github.com/nchlswhttkr/hugo-compress/hugo-compress:latest
+    - sh /opt/build.sh
   artifacts:
     paths:
       - public
