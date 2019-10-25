@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: docker login docker.pkg.github.com -u nchlswhttkr -p ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - uses: docker://docker.pkg.github.com/nchlswhttkr/hugo-compress/hugo-compress:latest
       - uses: ./.github/push-to-master-action
         env:
