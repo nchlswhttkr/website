@@ -1,7 +1,8 @@
-image: docker.pkg.github.com/nchlswhttkr/hugo-compress/hugo-compress:latest
+image: registry.gitlab.com/pages/hugo:latest # no v0 tag, this is fine
+
 pages:
   script:
-    - sh /opt/build.sh
+    - hugo
   artifacts:
     paths:
       - public
