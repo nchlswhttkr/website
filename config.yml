@@ -33,3 +33,6 @@ params:
     - prompt: "Find me on LinkedIn"
       icon: "/media/icons/linkedin.svg"
       link: "https://linkedin.com/in/nchlswhttkr/"
+    - prompt: "Verify me on Keybase"
+      icon: "/media/icons/keybase.svg"
+      link: "https://keybase.io/nchlswhttkr/"
