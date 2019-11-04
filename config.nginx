@@ -35,7 +35,13 @@ server {
     server_name blog.nchlswhttkr.com;
     return 301 https://nchlswhttkr.com/blog$request_uri;
 }
-
+# Redirect dalordish.nchlswhttkr.com/* to nchlswhttkr.com/1337_h4x/*
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name dalordish.nchlswhttkr.com;
+    return 301 https://nchlswhttkr.com/1337_h4x$request_uri;
+}
 # Redirect resume.nchlswhttkr.com to nchlswhttkr.com/resume
 server {
     listen 80;
