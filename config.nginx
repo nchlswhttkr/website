@@ -1,0 +1,53 @@
+server {
+    listen 443 ssl;
+    server_name nchlswhttkr.com;
+
+    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+
+    gzip on;
+    gzip_types text/css text/javascript application/javascript application/json
+    gzip_min_length 1k;
+
+    root /home/nchlswhttkr/nchlswhttkr.com;
+
+    rewrite ^([^.]*[^/])$ $1/ permanent;
+    
+    location / {
+        try_files $uri $uri/ /404.html;
+    }
+}
+
+# Enforce HTTPS
+server {
+    listen 80;
+    server_name nchlswhttkr.com;
+    return 301 https://nchlswhttkr.com$request_uri;
+}
+
+# Redirect blog.nchlswhttkr.com/* to nchlswhttkr.com/blog/*
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name blog.nchlswhttkr.com;
+    return 301 https://nchlswhttkr.com/blog$request_uri;
+}
+
+# Redirect resume.nchlswhttkr.com to nchlswhttkr.com/resume
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name resume.nchlswhttkr.com;
+    return 301 https://nchlswhttkr.com/resume/;
+}
+
+# Catch-all for other subdomains
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name *.nchlswhttkr.com;
+    return 301 https://nchlswhttkr.com$request_uri;
+}
