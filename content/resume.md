@@ -52,7 +52,7 @@ layout: "resume"
 
 - Built [MonPlan](https://monplan.apps.monash.edu/) with a student team, helping Monash students plan their studies
 - Launched [MonPlan](https://monplan.apps.monash.edu/) as the University's course planning service in October 2018
-- Worked in partnership with the Research Performance unit to bring their research reporting to the cloud
+- Worked in partnership with the Research Performance unit on a cloud-based application to manage research reporting
 
 <div class="left-right-divide">
   <p>
@@ -65,16 +65,16 @@ layout: "resume"
   </p>
 </div>
 
-- Taught children the basics of coding, building their own games in a holiday program
+- Taught children the basics of coding by building games in a holiday program
 - Helped campers have a fun, positive experience while learning computer logic
 
 ---
 
 ### Skills & Interests
 
-I'm always keen to **solve problems** and to learn new concepts and technologies. I believe in **learning through application**, and so I try to publish my work on [GitHub](https://github.com/nchlswhttkr) when possible! I'm currently in love with automating testing and deployments with **CI/CD**.
+I'm always keen to **solve problems** and to learn new concepts and technologies. I believe in **learning through application**, and so I try to publish my work on [GitHub](https://github.com/nchlswhttkr) when possible! I'm currently in love with **CI/CD**, automating testing and deployments.
 
-I'm passionate about developing applications and ! I've worked with frameworks such as **React**, **Django** and **Express**, and deployed projects with **AWS**, **GCP** and **Digital Ocean**.
+I'm passionate about developing for the web, the largest and most accessible platform around! I've worked with frameworks such as **React**, **Django** and **Express**, and deployed projects with **AWS**, **GCP** and **Digital Ocean**.
 
 ---
 
@@ -98,4 +98,4 @@ I'm passionate about developing applications and ! I've worked with frameworks s
 - Volunteer, student mentor and past committee for [WIRED](https://wired.org.au), supporting IT at Monash
 - Musician with brass bands and orchestras around Melbourne, playing in competitions and community gigs
 - Bowler and volunteer barman for Coatesville Bowling Club
-  <!-- - Lover of tech talks, conferences, hackathons  -->
+- Lover of tech talks, conferences, hackathons and hobby open-source contributor

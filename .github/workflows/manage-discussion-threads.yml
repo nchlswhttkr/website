@@ -1,5 +1,0 @@
-name: Manage Discussion Threads
-
-on:
-  issue:
-    types: [opened]
