@@ -3,4 +3,5 @@ steps:
     command: hugo
   - wait
   - label: ":shipit:"
+    if: build.branch == master
     command: rsync -a $PWD /home/nchlswhttkr/nchlswhttkr.com
