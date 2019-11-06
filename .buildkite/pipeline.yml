@@ -3,4 +3,4 @@ steps:
     command: hugo
   - wait
   - label: ":shipit:"
-    command: rsync -a . /home/nchlswhttkr/nchlswhttkr.com
+    command: rsync -a $PWD /home/nchlswhttkr/nchlswhttkr.com
