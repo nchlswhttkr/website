@@ -1,0 +1,6 @@
+steps:
+  - label: ":hugo:"
+    command: hugo
+  - wait
+  - label: ":shipit:"
+    command: rsync -a . /home/nchlswhttkr/nchlswhttkr.com
