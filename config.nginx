@@ -44,6 +44,13 @@ server {
     return 301 https://nchlswhttkr.com/resume/;
 }
 
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name source.nchlswhttkr.com;
+    return 301 https://github.com/nchlswhttkr/nchlswhttkr.com/;
+}
+
 # Catch-all for other subdomains
 server {
     listen 80;

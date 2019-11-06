@@ -10,7 +10,7 @@ I've had the pleasure of attending several tech talks and workshops in the past 
 
 <!--more-->
 
-These are just my opinions on presentations, so it's fine to have a differing view to what I'm saying. If you've got suggestions for how I could amend this, you can always [open up an issue or PR for discussion](https://github.com/nchlswhttkr/nchlswhttkr.github.io)!
+These are just my opinions on presentations, so it's fine to have a differing view to what I'm saying. If you've got suggestions for how I could amend this, you can always [open up an issue or PR for discussion](https://source.nchlswhttkr.com)!
 
 {{< tweet 1113368040555417600 >}}
 
