@@ -3,5 +3,7 @@ steps:
     command: hugo
   - wait
   - label: ":shipit:"
-    if: build.branch == "master"
-    command: rsync -a $PWD/public /home/nchlswhttkr/nchlswhttkr.com
+    branches: master
+    command:
+    - hugo
+    - rsync -a $PWD/public /home/nchlswhttkr/nchlswhttkr.com
