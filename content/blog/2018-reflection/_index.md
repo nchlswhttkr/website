@@ -4,6 +4,7 @@ description: "A reflection on the past year"
 date: 2018-12-22T12:00:00+10:00
 draft: false
 layout: "single"
+cover: "western-brass.jpg"
 ---
 
 As another year passes by, I think it's time to reflect on the experiences I've had and to look back on some of the highlights as well!

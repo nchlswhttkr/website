@@ -4,6 +4,7 @@ description: "A hackathon reflection"
 date: 2018-05-28T12:00:00+10:00
 draft: false
 layout: "single"
+cover: "balloons.jpg"
 ---
 
 This past weekend I had the pleasure of attending Facebook’s 2018 Regional Hackathon in Melbourne!

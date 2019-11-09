@@ -5,7 +5,7 @@ type: "blog"
 layout: "single"
 ---
 
-<span class='profile-image'>![A Minish folk from The Legend of Zelda: The Minish Cap](/media/nicholas.png)</span>
+<span class='profile-image'>![My profile picture, which changes over time](/media/monty.jpg)</span>
 
 ## Hey, I'm Nicholas!
 

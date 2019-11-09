@@ -1,6 +1,5 @@
 ---
 title: "Nicholas Whittaker"
-description: ""
 layout: "resume"
 ---
 
