@@ -4,11 +4,10 @@ Built with [Hugo](https://gohugo.io/) \
 Deployed with [Buildkite](https://buildkite.com) \
 Comments powered by [utterances](https://utteranc.es)
 
-
 You can find a backup version of this site available via [GitHub Pages](https://nchlswhttkr.github.io).
 
 ---
 
 Icons for this site are modified from those provided by Font Awesome, see [their license](https://fontawesome.com/license/free/).
 
-The favicon is generated using [favicon.io](https://favicon.io/).
+The favicon is generated using [favicon.io](https://favicon.io/) (Ultra is the font used).
