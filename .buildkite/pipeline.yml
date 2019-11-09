@@ -6,4 +6,4 @@ steps:
     branches: master
     command:
     - hugo
-    - rsync -a $PWD/public /home/nchlswhttkr/nchlswhttkr.com
+    - rsync -a --delete $PWD/public/ /home/nchlswhttkr/nchlswhttkr.com
