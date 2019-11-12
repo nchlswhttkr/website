@@ -1,0 +1,5 @@
+name: "Create discussion for blog post"
+description: "Create an issue for Utterances and add it to a blog post"
+runs:
+  using: "node12"
+  main: "index.js"
