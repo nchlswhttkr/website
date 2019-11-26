@@ -1,11 +1,13 @@
 ---
-title: "Nicholas Whittaker"
+title: "Resume"
 layout: "resume"
 ---
 
-<span class='hide-on-print'>
-**_You can print this page, and only the resume will show! Make sure your browser is set to the default zoom level._**
-</span>
+<p class='hide-on-print resume-preamble'>
+<strong><em>You can print this page, and only the resume will show!<br>Make sure your browser is set to the default zoom level.</em></strong>
+<br>
+Alternatively, you can download a <a href="/resume.pdf" target="_blank" rel="noreferrer">copy in PDF</a>.
+</p>
 
 ## Nicholas Whittaker
 
@@ -15,6 +17,10 @@ layout: "resume"
   <a href="mailto:nchlswhttkr@gmail.com" target="_blank" rel="noreferrer">
     <img src="/media/icons/email-color.svg" alt="Email" />
     <p>nchlswhttkr@gmail.com</p>
+  </a>
+  <a href="https://github.com/nchlswhttkr" target="_blank" rel="noreferrer">
+    <img src="/media/icons/github-color.svg" alt="GitHub" />
+    <p>github.com/nchlswhttkr</p>
   </a>
   <a
     href="https://linkedin.com/in/nchlswhttkr"
@@ -27,10 +33,6 @@ layout: "resume"
   <a href="https://nchlswhttkr.com" target="_blank" rel="noreferrer">
     <img src="/media/icons/website-color.svg" alt="Website" />
     <p>nchlswhttkr.com</p>
-  </a>
-  <a href="https://github.com/nchlswhttkr" target="_blank" rel="noreferrer">
-    <img src="/media/icons/github-color.svg" alt="GitHub" />
-    <p>github.com/nchlswhttkr</p>
   </a>
 </div>
 
@@ -49,9 +51,9 @@ layout: "resume"
   </p>
 </div>
 
-- Built [MonPlan](https://monplan.apps.monash.edu/) with a student team, helping Monash students plan their studies
-- Launched [MonPlan](https://monplan.apps.monash.edu/) as the University's course planning service in October 2018
-- Worked in partnership with the Research Performance unit on a cloud-based application to manage research reporting
+- Developed [MonPlan](#monplan), Monash's service for study planning and online course advice
+- Engaged with and presented to faculties and departments across Monash to introduce and launch MonPlan in 2018
+- Partnered with the Research unit on placement to bring their reporting apps to the cloud
 
 <div class="left-right-divide">
   <p>
@@ -64,16 +66,47 @@ layout: "resume"
   </p>
 </div>
 
-- Taught children the basics of coding by building games in a holiday program
-- Helped campers have a fun, positive experience while learning computer logic
+- Taught children the basics of coding, building their own games in a holiday program
+- Ensured campers had a fun, positive experience while learning the logic of computers
 
 ---
 
-### Skills & Interests
+### Projects
 
-I'm always keen to **solve problems** and to learn new concepts and technologies. I believe in **learning through application**, and so I try to publish my work on [GitHub](https://github.com/nchlswhttkr) when possible! I'm currently in love with **CI/CD**, automating testing and deployments.
+<div class="left-right-divide">
+  <p id='monplan'>
+    <strong>MonPlan</strong>
+    <br>
+    <em>JavaScript (React, Redux, React DnD)</em>
+  </p>
+  <p>
+    <a href="https://monplan.apps.monash.edu" target="_blank" rel="noreferrer"><em>monplan.apps.monash.edu</em></a>
+  </p>
+</div>
 
-I'm passionate about developing for the web, the largest and most accessible platform around! I've worked with frameworks such as **React**, **Django** and **Express**, and deployed projects with **AWS**, **GCP** and **Digital Ocean**.
+- I was a frontend developer with a team of students, and together we delivered Monash University's **first online course planning service**.
+- I gave MonPlan a major UI upgrade over 2018, making it **responsive** and **accessible** to all users while upgrading our UI framework under the hood.
+- We also introduced new features, including course advice from faculty staff and enrolment validation, while maintaining existing functionality for our student users.
+
+<div class="left-right-divide">
+  <p>
+    <strong>Mellophone</strong>
+    <br>
+    <em>TypeScript (React), Python (Django) with GitLab CI</em>
+  </p>
+  <p>
+    <a href="https://github.com/nchlswhttkr/mellophone" target="_blank" rel="noreferrer"><em>github.com/nchlswhttkr/mellophone</em></a>
+  </p>
+</div>
+
+Mellophone is an app for taking meeting minutes, which I started it as a hobby project to explore new technologies and to own the full stack.
+
+- The frontend is **React (TypeScript)** with tests in **Jest** using **React Testing Library**.
+- Backend is a **Django** application that follows RESTful principles.
+- A **GitLab CI** pipeline runs end to end (**Selenium**) and unit tests, before deploying to a **Digital Ocean** droplet.
+- I taught myself **Docker** to set up an isolated environment for development and CI.
+
+<hr class='print-page-break'>
 
 ---
 
@@ -81,20 +114,34 @@ I'm passionate about developing for the web, the largest and most accessible pla
 
 <div class="left-right-divide">
   <p>
-    <strong>Bachelor of Computer Science - Data Science</strong>
+    <strong>Bachelor of Computer Science</strong>
     <br/>
     Monash University
   </p>
   <p>
-    <em>2017 - Present</em>
+    <em>2017 - 2019</em>
   </p>
 </div>
+
+Specialising in Data Science with an Industry-Based Learning placement in 2019.
 
 ---
 
 ### Community
 
 - Volunteer, student mentor and past committee for [WIRED](https://wired.org.au), supporting IT at Monash
+- Open source contributor attending conferences, meetups and hackathons in Melbourne
 - Musician with brass bands and orchestras around Melbourne, playing in competitions and community gigs
-- Bowler and volunteer barman for Coatesville Bowling Club
-- Lover of tech talks, conferences, hackathons and hobby open-source contributor
+- Bowler and barman for Coatesville Bowling Club
+
+---
+
+### Skills & Interests
+
+I'm most confident with the frontend web stack, building with **React** and using developer tools to ensure an accessible and consistent user experience.
+
+I'm keen about automation, and like to use CI/CD in my work to test and deploy my projects to **Digital Ocean**, **AWS** and **GCP**. Recently, I've been using **GitLab CI** and **Buildkite**.
+
+Currently, I'm teaching myself **Golang** and exploring **Docker** further. I believe in learning by applying, and try to show this through my projects on [GitHub](https://github.com/nchlswhttkr) for others to see!
+
+---

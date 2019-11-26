@@ -9,11 +9,11 @@ layout: "single"
 
 ## Hey, I'm Nicholas!
 
-I’m a developer in Melbourne, Australia. Aside from coding, music is my strongest passion. Most evenings of the week, you’ll be sure to find me rehearsing with a brass band or orchestra in Melbourne. Outside of music, I also enjoy playing a good game of lawn bowls.
+I'm a developer in Melbourne Australia, with a passion for music. Most evenings of the week, you'll be sure to find me rehearsing with a brass band or orchestra around Melbourne. Outside of music, I also enjoy playing a good game of lawn bowls!
 
-As a developer, I'm always looking to solve technical problems, gain experience with new technologies, and grow my own knowledge so that I can share it with those around me.
+I'm keen for frontend web development and automation, but working with the full stack isn't something I shy away from! I'm always looking to learn new technologies to put them into use, and to share what I learn with those around me.
 
-I'm currently studying Computer Science in a Monash University. Outside of studying and community involvement, I also work with eSolutions at Monash University as a developer. My proudest work was helping to build and release [MonPlan](https://monplan.apps.monash.edu/), an interactive course planner for students, as an enterprise service for the university.
+I study Computer Science at Monash University. I've been involved with IT at Monash through the [WIRED](https://wired.org.au), with the hackathons and workshops for students interested in IT. I've also worked with eSolutions at Monash University, and launched [MonPlan](https://monplan.apps.monash.edu) with a team of fellow students to make study planning and online course advice accessible and understandable for Monash students.
 
 ---
 
