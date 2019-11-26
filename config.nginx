@@ -1,5 +1,5 @@
 server {
-    listen 443 ssl;
+    listen 443 ssl http2;
     server_name nchlswhttkr.com;
 
     ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
@@ -15,7 +15,7 @@ server {
     root /home/nchlswhttkr/nchlswhttkr.com;
 
     rewrite ^([^.]*[^/])$ $1/ permanent;
-    
+
     location / {
         try_files $uri $uri/ /404.html;
     }
@@ -49,12 +49,4 @@ server {
     listen 443 ssl;
     server_name source.nchlswhttkr.com;
     return 301 https://github.com/nchlswhttkr/nchlswhttkr.com/;
-}
-
-# Catch-all for other subdomains
-server {
-    listen 80;
-    listen 443 ssl;
-    server_name *.nchlswhttkr.com;
-    return 301 https://nchlswhttkr.com$request_uri;
 }
