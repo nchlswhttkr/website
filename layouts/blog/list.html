@@ -4,18 +4,15 @@
     {{ partial "meta.html" . }}
   </head>
   <body>
-    {{ partial "header.html" . }}
+    {{ partial "nav.html" . }} {{ partial "header.html" . }}
     <main>
       <div class="constrain-width">
-        {{ .Content }}
-        {{ range.Data.Pages }}
+        {{ .Content }} {{ range.Data.Pages }}
         <br />
         <h3>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
         </h3>
-        <p>
-          <em>{{ .Date.Format "Jan 2, 2006"}}</em> - {{ .Description }}
-        </p>
+        <p><em>{{ .Date.Format "Jan 2, 2006"}}</em> - {{ .Description }}</p>
         {{ end }}
       </div>
     </main>

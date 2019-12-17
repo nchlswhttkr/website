@@ -1,5 +1,5 @@
 .blog-article > * {
-  margin: 16px 0 24px;
+  margin: 16px auto 24px;
 }
 
 .blog-article p,
@@ -7,8 +7,8 @@
   line-height: 1.3em;
 }
 
-.blog-article code {
-  font-size: 1.23em; /* <code/> blocks seem to use a smaller font-size */
+.blog-article p code {
+  font-size: 1.5em; /* <code/> blocks seem to use a smaller font-size */
   font-weight: 700;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .blog-article li {
-  margin: 8px 0;
+  padding: 4px 0;
 }
 
 .blog-article ul > li {
@@ -43,9 +43,8 @@
   box-sizing: border-box;
   margin: 16px auto;
   padding: 16px;
-  box-shadow: 0px 2px 5px #888;
+  box-shadow: 0px 2px 4px #333;
   overflow: scroll;
-  max-width: 800px;
 }
 
 .blog-article blockquote {
@@ -58,10 +57,13 @@
   text-align: center;
 }
 
-.blog-article .twitter-tweet {
-  margin: 0 auto;
+.blog-article .utterances {
+  margin-top: 80px;
 }
 
-.blog-article .utterances-divider {
-  margin-top: 80px;
+@media print {
+  .utterances,
+  .utterances-divider {
+    display: none;
+  }
 }

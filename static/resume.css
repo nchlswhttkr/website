@@ -84,13 +84,28 @@ p.resume-preamble {
 }
 
 @media print {
+  nav,
+  header,
+  footer,
+  .hide-on-print {
+    display: none;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
   .resume .contact a,
   .resume .left-right-divide a {
     text-decoration: underline;
   }
 
   .resume .print-page-break {
-    break-after: page;
     display: block;
+    break-after: page;
   }
 }

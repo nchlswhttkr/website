@@ -6,11 +6,10 @@
     <link rel="stylesheet" type="text/css" href="/blog-article.css" />
   </head>
   <body>
-    {{ partial "header.html" . }}
+    {{ partial "nav.html" . }} {{ partial "header.html" . }}
     <main>
       <article class="constrain-width blog-article">
-        {{ .Content }}
-        {{ partial "utterances.html" . }}
+        {{ .Content }} {{ partial "utterances.html" . }}
       </article>
     </main>
     {{ partial "footer.html" . }}

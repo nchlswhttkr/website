@@ -59,20 +59,3 @@ main {
   height: 256px;
   border-radius: 50%;
 }
-
-@media print {
-  nav,
-  header,
-  footer,
-  .hide-on-print {
-    display: none;
-  }
-
-  main {
-    padding: 0;
-  }
-
-  a {
-    text-decoration: none;
-  }
-}
