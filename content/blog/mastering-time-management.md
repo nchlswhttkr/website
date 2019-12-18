@@ -2,7 +2,6 @@
 title: "Mastering Time Management"
 description: "How I make sure I'm using my time well"
 date: 2018-09-28T12:00:00+10:00
-draft: false
 layout: "single"
 ---
 

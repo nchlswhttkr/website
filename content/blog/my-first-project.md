@@ -2,7 +2,6 @@
 title: "My First Project"
 description: "Lessons learned from my first project"
 date: 2017-11-28T12:00:00+10:00
-draft: false
 layout: "single"
 ---
 

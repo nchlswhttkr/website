@@ -2,7 +2,6 @@
 title: "Unihack 2017"
 description: "A hackathon reflection"
 date: 2017-11-28T12:00:00+10:00
-draft: false
 layout: "single"
 ---
 
