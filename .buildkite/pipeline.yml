@@ -1,9 +1,13 @@
 steps:
   - label: ":hugo:"
+    agents:
+      deploy-nchlswhttkr.com: true
     command: hugo
   - wait
   - label: ":shipit:"
     branches: master
+    agents:
+      deploy-nchlswhttkr.com: true
     command:
       - hugo
       - rsync -a --chown :nchlswhttkr.com --delete $PWD/public/ /home/nchlswhttkr/nchlswhttkr.com
