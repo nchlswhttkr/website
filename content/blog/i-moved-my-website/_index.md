@@ -2,7 +2,6 @@
 title: "I Moved My Website"
 description: "A small change, an hour of debugging"
 date: 2019-01-31T12:00:00+10:00
-draft: false
 layout: "single"
 ---
 

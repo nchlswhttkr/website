@@ -2,7 +2,6 @@
 title: "Hello World"
 description: "Testing out markdown"
 date: 2017-01-01T12:00:00+10:00
-draft: false
 layout: "single"
 utterances: 1
 ---

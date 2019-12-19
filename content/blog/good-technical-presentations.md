@@ -2,7 +2,6 @@
 title: "Good Technical Presentations"
 description: "Making tech talks and workshops greats one!"
 date: 2019-04-25T12:00:00+10:00
-draft: false
 layout: "single"
 ---
 

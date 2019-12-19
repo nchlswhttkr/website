@@ -2,7 +2,6 @@
 title: "Facebook Hack 2018"
 description: "A hackathon reflection"
 date: 2018-05-28T12:00:00+10:00
-draft: false
 layout: "single"
 cover: "balloons.jpg"
 ---

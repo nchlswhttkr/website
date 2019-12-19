@@ -2,7 +2,6 @@
 title: "Simple Static Sites"
 description: "My setup for building and deploying a personal website"
 date: 2017-05-29T12:00:00+10:00
-draft: false
 layout: "single"
 ---
 

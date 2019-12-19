@@ -2,7 +2,6 @@
 title: "Hacktoberfest 2019 Workshop"
 description: "Running a Hacktoberfest workshop at Monash University"
 date: 2019-10-20T12:00:00+10:00
-draft: false
 layout: "single"
 cover: "cover.jpg"
 ---

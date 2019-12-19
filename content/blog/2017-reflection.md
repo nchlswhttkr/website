@@ -2,7 +2,6 @@
 title: "2017 Reflection"
 description: "A reflection on the past year"
 date: 2017-12-23T12:00:00+10:00
-draft: false
 layout: "single"
 ---
 
