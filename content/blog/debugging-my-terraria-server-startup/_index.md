@@ -4,7 +4,7 @@ description: "My server would start up under a specific set of circumstances, bu
 date: 2019-12-18T12:00:00+10:00
 layout: "single"
 cover: "terraria.png"
-# utterances: 0
+utterances: 10
 ---
 
 Recently, I had an interesting debugging session with my Terraria server, which I've been working to automate.
