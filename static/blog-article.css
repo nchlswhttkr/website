@@ -32,14 +32,12 @@
   break-inside: avoid;
   min-width: 240px;
   max-width: 70%;
-  max-height: 60vh;
   transition: max-width 0.3s;
   box-shadow: 0px 2px 4px #333;
 }
 
 .blog-article img:hover {
   max-width: 100%;
-  max-height: unset;
   transition: max-width 0.2s;
 }
 
