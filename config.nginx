@@ -50,3 +50,15 @@ server {
     server_name source.nchlswhttkr.com;
     return 301 https://github.com/nchlswhttkr/nchlswhttkr.com/;
 }
+
+# https://github.com/nchlswhttkr/barhack
+server {
+    listen 443 ssl;
+    server_name barhack.nchlswhttkr.com;
+
+    root /home/barhack;
+
+    location /builds {
+        try_files $uri /404.html;
+    }
+}
