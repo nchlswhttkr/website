@@ -41,7 +41,7 @@ With the release of iOS 12, Apple brought out [Shortcuts](https://apps.apple.com
 
 ![A screenshot of the shortcut to start Terraria - a command starts the server over SSH](./shortcut.png)
 
-<span class="center-text">_Yes, I still love my iPhone SE, Apple please drop iPhone SE 2_</span>
+_<span class="center-text">Yes, I still love my iPhone SE, Apple please drop iPhone SE 2</span>_
 
 Initially this seemed to work fine, I could run the Shortcut and the server unit would start.
 
@@ -53,7 +53,7 @@ Sometimes the server would inexplicably shut down right after starting up. From 
 
 ![Debug logs, showing the server shutting down immediately after it starts](./debug-logs.png)
 
-<span class="center-text">_Notice that the server starts up and shuts down in the space of a second_</span>
+_<span class="center-text">Notice that the server starts up and shuts down in the space of a second</span>_
 
 After investigating with some sleep statements, I realised that the server was not actually shutting down after starting up. It was shutting down _after my Shortcut script finished running_. This wasn't good, because I didn't think it would be possible to debug the problem if it was from some internal _Apple_ &copy; logic I didn't have visibility over.
 
@@ -77,4 +77,4 @@ With that problem out of the way, I was able to start and stop the server withou
 
 ![A start and stop button on the home screen of my iPhone](./home-screen.png)
 
-<span class="center-text">_Gigantamax Meowth is a longboi_</span>
+_<span class="center-text">Gigantamax Meowth is a longboi</span>_

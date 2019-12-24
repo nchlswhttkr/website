@@ -88,7 +88,7 @@ I maintain the site source code on the `dev` branch, then deploy builds from `ma
 
 ![An image](/media/nicholas.png)
 
-<span class="center-text">_A caption for the above image_</span>
+_<span class="center-text">A caption for the above image</span>_
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metus. Nam suscipit euismod orci at sagittis. Donec vitae convallis enim. Pellentesque iaculis, ligula eu condimentum sodales, nulla metus blandit diam, non maximus tellus dolor vitae ipsum. Aliquam at cursus lacus, eget eleifend quam.
 

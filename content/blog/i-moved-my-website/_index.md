@@ -15,7 +15,7 @@ The first step was changing my DNS config in Cloudflare to use a CNAME pointing 
 
 ![GitLab Pages returns a 404](./the-classic-404.png)
 
-<span class="center-text">_You thought this was only going to be a one-step process?_</span>
+_<span class="center-text">You thought this was only going to be a one-step process?</span>_
 
 Success! Cloudflare has switched over, now I just need to flick some switches on GitLab and it'll be all smiles, right? I'd just need to go through the process on [GitLab Pages' setup section for custom domains](https://about.gitlab.com/2016/04/07/gitlab-pages-setup#custom-domains), and I'd be finished.
 
@@ -27,7 +27,7 @@ Not knowing anything about these certificates, I left the fields blank and hit s
 
 ![Submitting requires certificate and key fields to be filled for HTTPS-only sites](./you-need-keys.png)
 
-<span class="center-text">_Not quite what I was hoping for..._</span>
+_<span class="center-text">Not quite what I was hoping for...</span>_
 
 So, something is missing here. A few minutes of searching later and I stumble across an article from the GitLab blog about [using Cloudflare with GitLab Pages](https://about.gitlab.com/2017/02/07/setting-up-gitlab-pages-with-cloudflare-certificates).
 
@@ -37,7 +37,7 @@ After following their instructions and giving the changes a few minutes to apply
 
 ![HTML with no CSS applied](./css-not-required.png)
 
-<span class="center-text">_This is where I give a shoutout to [https://motherfuckingwebsite.com](https://motherfuckingwebsite.com)_</span>
+_<span class="center-text">This is where I give a shoutout to [https://motherfuckingwebsite.com](https://motherfuckingwebsite.com)</span>_
 
 Although `index.html` was loading, other requests for CSS and media were failing with a [404 response](https://httpstatusdogs.com/404).
 

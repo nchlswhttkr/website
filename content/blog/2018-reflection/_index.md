@@ -32,7 +32,7 @@ A new member joined us on trombone this year as well, and this has meant I've be
 
 ![Most Improved Player Award, Glen Eira Band](./trophy.jpg)
 
-<span class="center-text">_Most Improved Player 2018, Glen Eira Band_</span>
+_<span class="center-text">Most Improved Player 2018, Glen Eira Band</span>_
 
 ### Western Brass
 
@@ -44,7 +44,7 @@ On the lighter side though, I've convinced a friend to join me at rehearsals on 
 
 ![Western Brass at the Australian National Band Championships, 3rd of 12 in C grade](./western-brass.jpg)
 
-<span class="center-text">_Western Brass at the Australian National Band Championships, 3rd of 12 in C grade_</span>
+_<span class="center-text">Western Brass at the Australian National Band Championships, 3rd of 12 in C grade</span>_
 
 ### Monash Philharmonic Orchestra
 
@@ -62,7 +62,7 @@ I'm also very happy to be playing 2<sup>nd</sup> trombone as opposed to 1<sup>st
 
 ![Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert](./geyo.jpg)
 
-<span class="center-text">_Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert_</span>
+_<span class="center-text">Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert</span>_
 
 ### Misc Ensembles
 
@@ -94,7 +94,7 @@ Following on from this, I also signed up for the men's singles championships. Al
 
 ![Accepting a prize at the "Charcoal Challenge", a charity bowls day](./bowls-prize.jpg)
 
-<span class="center-text">_Accepting a prize at the "Charcoal Challenge", a charity bowls day_</span>
+_<span class="center-text">Accepting a prize at the "Charcoal Challenge", a charity bowls day</span>_
 
 ### Social Bowls
 
@@ -104,7 +104,7 @@ I plan to have more days like this in future. Social charity days, such as tripl
 
 ![An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss](./social-bowls.jpg)
 
-<span class="center-text">_An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss_</span>
+_<span class="center-text">An afternoon of social bowls with James (photographer), Richard, Amelia, myself, Cameron, Lachlan, Patrick, Izzy, and Moss</span>_
 
 I also now do a few bar shifts for the club now, I find it rather therapeutic.
 
@@ -134,7 +134,7 @@ I served as the marketing officer for [WIRED](https://wired.org.au) this past ye
 
 ![MC for Unihack Mini](./wired.jpg)
 
-<span class="center-text">_MC for Unihack Mini_</span>
+_<span class="center-text">MC for Unihack Mini</span>_
 
 I wasn't elected back to the committee for the coming year, but with a placement running for the first half of the year, it's probably for the better. Since I'll still be heading into Clayton everyday, I can still offer volunteer help. With my involvement being voluntary now, I think that will also help my reduce my heavy workload.
 
@@ -154,7 +154,7 @@ You can also read more about the Facebook Hack in my [reflection post](/blog/fac
 
 {{< tweet 1060468874083102720 >}}
 
-<span class="center-text">_Shoutout to my team from GovHack!_</span>
+_<span class="center-text">Shoutout to my team from GovHack!</span>_
 
 These events were fun, though I feel that I'm usually going moreso to enjoy the weekend hanging out with friends rather than to seriously compete. I'm still deciding how involved I want to be next year, but if I'm going to commit to a hackathon going forward, it would serve me better to dedicate my time and effort to only one or two events. At events this year, all productivity/useful output from me usually ceased in the evening of the first night, and I would end up heading home or lounging about, contributing very little for my team. I want to curb this going forward.
 
@@ -190,7 +190,7 @@ The series I've been following this year have Mister Miracle and Wayward, both o
 
 ![My comic collection as of December 2018](./comics.jpg)
 
-<span class="center-text">_Wayward and Mister Miracle, from my collection of comics_</span>
+_<span class="center-text">Wayward and Mister Miracle, from my collection of comics</span>_
 
 ---
 
