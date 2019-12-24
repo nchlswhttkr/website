@@ -32,6 +32,13 @@ server {
 server {
     listen 80;
     listen 443 ssl;
+
+    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+
     server_name blog.nchlswhttkr.com;
     return 301 https://nchlswhttkr.com/blog$request_uri;
 }
@@ -40,6 +47,13 @@ server {
 server {
     listen 80;
     listen 443 ssl;
+
+    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+
     server_name resume.nchlswhttkr.com;
     return 301 https://nchlswhttkr.com/resume/;
 }
@@ -47,6 +61,13 @@ server {
 server {
     listen 80;
     listen 443 ssl;
+
+    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+
     server_name source.nchlswhttkr.com;
     return 301 https://github.com/nchlswhttkr/nchlswhttkr.com/;
 }
@@ -54,6 +75,13 @@ server {
 # https://github.com/nchlswhttkr/barhack
 server {
     listen 443 ssl;
+
+    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+
     server_name barhack.nchlswhttkr.com;
 
     root /home/barhack;
