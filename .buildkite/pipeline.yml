@@ -10,4 +10,4 @@ steps:
       deploy-nchlswhttkr.com: true
     command:
       - hugo
-      - rsync -a --chown :nchlswhttkr.com --delete $PWD/public/ /home/nchlswhttkr/nchlswhttkr.com
+      - rsync -a --delete $PWD/public/ nchlswhttkr@$DEPLOYMENT_IP:~/nchlswhttkr.com
