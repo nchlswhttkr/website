@@ -3,6 +3,7 @@ languageCode: "en-us"
 title: "Nicholas Whittaker"
 enableEmoji: true
 pygmentsCodeFences: true
+buildFuture: true
 
 disableKinds:
   - "taxonomyTerm" # I don't currently use categories/tags
