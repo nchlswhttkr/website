@@ -8,7 +8,7 @@
 }
 
 .blog-article p code {
-  font-size: 1.3em; /* <code/> blocks seem to use a smaller font-size */
+  font-size: 1.2em; /* <code/> blocks seem to use a smaller font-size */
 }
 
 .blog-article ul,
@@ -67,5 +67,9 @@
   .utterances,
   .utterances-divider {
     display: none;
+  }
+
+  .blog-article img {
+    max-width: 100%;
   }
 }
