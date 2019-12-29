@@ -11,7 +11,7 @@ aliases:
 
 > _**Forenote**_ \
 > After wrapping up and doing further investigating, I found out that the Buildkite team have published a [JSON schema for pipeline files](https://github.com/buildkite/pipeline-schema) that can be used for validation. \
-> I suppose the next step now is to incorporate this into my service!
+> I've added that as [an option on my service](https://github.com/nchlswhttkr/barhack#usage).
 
 ---
 
@@ -134,7 +134,7 @@ Looking within Buildkite, a build was kicked off, and later cancelled when the p
 Checking the status in our API also shows that validation passed!
 
 ```sh
-curl -H "Authorization: Basic <my-auth-details>" "https://barhack.nchlswhttkr.com/lint/5e33c2dc-3368-462e-9ff9-b1e6b1380487"
+curl -H "Authorization: Basic <my-auth-details>" "https://barhack.nchlswhttkr.com/lint-with-build/5e33c2dc-3368-462e-9ff9-b1e6b1380487"
 # {"status": "PASSED"}
 ```
 
