@@ -29,9 +29,11 @@ Buildkite can be used to set up all kinds of automated processes, usually in rel
 
 These processes are called _pipelines_, and each pipeline is tied a Git repository. Buildkite listens for events from this repository, such as when code is pushed or a pull request is opened.
 
-When these events happen, a _build_ is started. Each build follows a series of steps. The steps for a build are determined by which pipeline it belongs to.
+When these events happen, a _build_ is started. Each build follows a series of _steps_. The steps for a build are determined by which pipeline it belongs to.
 
-These steps are called _jobs_, and usually have a single purpose. A job might check that code meets a style guide, run tests, or deploy to a production/staging environment. When the script for a job finishes successfully, the job has passed. When all the jobs for a build pass, the build itself passes.
+There are different types of steps. The one I'll be focusing on is the command step, which specifies the configuration and script for a _job_. Other types of steps can wait for previous steps to succeed before allowing further steps to run, or block the build until a user unblocks it from Buildkite's UI. I won't be focusing on these though.
+
+Jobs are single purpose pieces of work, much like a script or command you'd run locally on your machine. A job might check that code meets a style guide, run tests, or deploy to a production/staging environment. When the script for a job finishes successfully, the job has passed. When all the jobs for a build pass, the build itself passes.
 
 Jobs are executed by _agents_, job runners provided [open source from Buildkite](https://github.com/buildkite/agent) to host on your servers/architecture. With a large number of agents many jobs can be run concurrently, with each agent running its assigned job and reporting the results back to Buildkite.
 
@@ -47,7 +49,7 @@ _<span class="center-text">Don't worry too much about the syntax, just see how i
    Uploading this file creates two more jobs.
 1. The first of these new jobs attempts to build my site using [Hugo](https://gohugo.io).
 1. The second job builds (each job runs in a clean checkout of the repository) and deploys my website. \
-   The chevron/arrow denotes that this job will only run after all previous jobs have succeeded. It won't run if the previous job fails.
+   The chevron/arrow denotes that this job will only run after all previous jobs have succeeded. This is a wait step, and it stops the deploy step from running if a prior job fails.
 
 ![A series of jobs running on Buildkite, where all jobs have run successfully and the build has succeeded](./website-build.png)
 
