@@ -43,7 +43,7 @@ As an example, here's the pipeline for [my website](https://source.nchlswhttkr.c
 
 ![A set of steps in a configuration file, that build and deploy a website generated with Hugo](./website-pipeline.png)
 
-_<span class="center-text">Don't worry too much about the syntax, just see how it defines two steps, each with a set of commands.</span>_
+{{% image-caption %}}Don't worry too much about the syntax, just see how it defines two steps, each with a set of commands.{{%/ image-caption %}}
 
 1. The Buildkite agent looks for a pipeline file to upload, and finds `.buildkite/pipeline.yml`. \
    Uploading this file creates two more jobs.
@@ -75,11 +75,11 @@ To persist this information beyond the lifetime of a build, I ended up writing t
 
 ![A build in Buildkite, where the job to upload the target pipeline file has succeeded and the build is subsequently cancelled](./build-22.png)
 
-_<span class="center-text">Validation in this pipeline succeeds, and the rest of the build is cancelled.</span>_
+{{% image-caption %}}Validation in this pipeline succeeds, and the rest of the build is cancelled.{{%/ image-caption %}}
 
 ![A build in Buildkite, where the job to upload the target pipeline file has failed and so the build fails](./build-23.png)
 
-_<span class="center-text">Validation in this pipeline fails, and no further jobs are run.</span>_
+{{% image-caption %}}Validation in this pipeline fails, and no further jobs are run.{{%/ image-caption %}}
 
 ### Doing a bit better!
 
@@ -127,7 +127,7 @@ So I went ahead and chucked together a quick server with [hapi](https://hapi.dev
 
 ![A request in Postman to upload a file, with a response including a URL to view the validation status](./upload-pipeline.png)
 
-_<span class="center-text">Uploading a pipeline with two steps to be validated.</span>_
+{{% image-caption %}}Uploading a pipeline with two steps to be validated.{{%/ image-caption %}}
 
 Looking within Buildkite, a build was kicked off, and later cancelled when the pipline upload succeeded. The pipeline was valid!
 
