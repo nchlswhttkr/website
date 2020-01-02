@@ -58,7 +58,7 @@ It paid off, as GitHub makes it easy to fork a repository, commit a single file,
 
 ![Stickers!](./stickers.jpg)
 
-_<span class="center-text">I wasn't lying about a kilogram of stickers!</span>_
+{{% image-caption %}}I wasn't lying about a kilogram of stickers!{{%/ image-caption %}}
 
 That's just about a wrap on everything I wanted to talk about. I hope you've been able to pick up something away from my own reflections! Thanks for reading!
 
