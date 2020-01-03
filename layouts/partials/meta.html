@@ -18,11 +18,11 @@
 {{ else }}
 <meta
   name="twitter:image"
-  content="https://og-image.nchlswhttkr.now.sh/{{ urlquery .Title }}.jpeg"
+  content="https://og-image.nchlswhttkr.now.sh/{{ urls.Parse .Title }}.jpeg"
 />
 <meta
   property="og:image"
-  content="https://og-image.nchlswhttkr.now.sh/{{ urlquery .Title }}.jpeg"
+  content="https://og-image.nchlswhttkr.now.sh/{{ urls.Parse .Title }}.jpeg"
 />
 {{ end }}
 <link rel="stylesheet" type="text/css" href="/main.css" />
