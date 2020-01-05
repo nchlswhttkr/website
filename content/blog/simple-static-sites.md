@@ -2,7 +2,6 @@
 title: "Simple Static Sites"
 description: "My setup for building and deploying a personal website"
 date: 2017-05-29T12:00:00+10:00
-layout: "single"
 ---
 
 Personal websites! Everyone wants to have one, but nobody wants to go through the bother of maintaining, updating them, and fixing them. I thought I'd go through my personal setup, and show how I build and deploy my own site.

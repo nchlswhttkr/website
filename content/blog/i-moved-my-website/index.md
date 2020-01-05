@@ -2,7 +2,6 @@
 title: "I Moved My Website"
 description: "A small change, an hour of debugging"
 date: 2019-01-31T12:00:00+10:00
-layout: "single"
 ---
 
 I may not have been on the #movingtogitlab train, but recently I decided to try moving my website from GitHub Pages to GitLab pages. Trouble ensued, but helpful documentation saved the way!
@@ -20,7 +19,7 @@ The first step was changing my DNS config in Cloudflare to use a CNAME pointing 
 Success! Cloudflare has switched over, now I just need to flick some switches on GitLab and it'll be all smiles, right? I'd just need to go through the process on [GitLab Pages' setup section for custom domains](https://about.gitlab.com/2016/04/07/gitlab-pages-setup#custom-domains), and I'd be finished.
 
 > Add your domain to the first field: `mydomain.com`
-
+>
 > If you have an SSL/TLS digital certificate and its key, add them to their respective fields. If you don't, just leave the fields blank.
 
 Not knowing anything about these certificates, I left the fields blank and hit submit.

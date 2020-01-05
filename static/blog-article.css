@@ -1,14 +1,17 @@
 .blog-article > * {
-  margin: 16px auto 24px;
+  margin: 20px auto;
+}
+
+.blog-article > h2,
+.blog-article > h3,
+.blog-article > hr {
+  margin-top: 48px;
 }
 
 .blog-article p,
 .blog-article li {
-  line-height: 1.3em;
-}
-
-.blog-article p code {
-  font-size: 1.2em; /* <code/> blocks seem to use a smaller font-size */
+  line-height: 1.3rem;
+  font-size: 1rem;
 }
 
 .blog-article ul,

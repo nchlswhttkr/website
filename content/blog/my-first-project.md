@@ -2,7 +2,6 @@
 title: "My First Project"
 description: "Lessons learned from my first project"
 date: 2017-11-28T12:00:00+10:00
-layout: "single"
 ---
 
 Often, the first steps in developing any project are the most critical. _"What environment should I be working in?"_ _"How to I implement X feature?"_ I found out the hard way today why taking these first steps seriously is important.

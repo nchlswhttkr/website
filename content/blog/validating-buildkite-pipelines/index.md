@@ -2,18 +2,17 @@
 title: "Validating Buildkite Pipelines"
 description: "Buliding a service to validate Buildkite pipeline files"
 date: 2019-12-27T12:00:00.000Z
-layout: "single"
 # cover: "website-pipeline.png"
 utterances: 13
 aliases:
   - ./linting-buildkite-pipelines
 ---
 
-> _**Forenote**_ \
-> After wrapping up and doing further investigating, I found out that the Buildkite team have published a [JSON schema for pipeline files](https://github.com/buildkite/pipeline-schema) that can be used for validation. \
+> _**Forenote**_
+>
+> After wrapping up and doing further investigating, I found out that the Buildkite team have published a [JSON schema for pipeline files](https://github.com/buildkite/pipeline-schema) that can be used for validation.
+>
 > I've added that as [an option on my service](https://github.com/nchlswhttkr/barhack#usage).
-
----
 
 {{< tweet 1208417061896015872 >}}
 

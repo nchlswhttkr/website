@@ -2,7 +2,6 @@
 title: "2018 Reflection"
 description: "A reflection on the past year"
 date: 2018-12-22T12:00:00+10:00
-layout: "single"
 cover: "western-brass.jpg"
 ---
 

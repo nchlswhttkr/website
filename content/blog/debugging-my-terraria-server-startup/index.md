@@ -2,7 +2,6 @@
 title: "Debugging My Terraria Server Startup"
 description: "My server would start up under a specific set of circumstances, but mysteriously failed otherwise..."
 date: 2019-12-18T12:00:00+10:00
-layout: "single"
 cover: "terraria.png"
 utterances: 10
 ---
