@@ -25,7 +25,7 @@ params:
       link: "/"
     - prompt: "Subscribe to an RSS feed"
       icon: "/media/icons/rss.svg"
-      link: "/index.xml"
+      link: "/blog/index.xml"
     - prompt: "Send me an email"
       icon: "/media/icons/email.svg"
       link: "mailto:nchlswhttkr@gmail.com"

@@ -8,6 +8,10 @@ aliases:
   - ./linting-buildkite-pipelines
 ---
 
+So I've been using [Buildkite](https://buildkite.com) a bit lately and loving it. Last weekend I had the thought of building a service to validate the `pipeline.yml` files it uses for configuration.
+
+<!--more-->
+
 > _**Forenote**_
 >
 > After wrapping up and doing further investigating, I found out that the Buildkite team have published a [JSON schema for pipeline files](https://github.com/buildkite/pipeline-schema) that can be used for validation.
@@ -15,8 +19,6 @@ aliases:
 > I've added that as [an option on my service](https://github.com/nchlswhttkr/barhack#usage).
 
 {{< tweet 1208417061896015872 >}}
-
-So I've been using [Buildkite](https://buildkite.com) a bit lately and loving it. Last weekend I had the thought of building a service to validate the `pipeline.yml` files it uses for configuration.
 
 It's similar to an offering from GitLab with their [CI lint](https://gitlab.com/ci/lint) tool, which can validate your `.gitlab-ci.yml` files, and I thought it would be a good challenge to implement.
 

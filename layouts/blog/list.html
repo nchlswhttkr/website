@@ -12,7 +12,8 @@
         <h3>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
         </h3>
-        <p><em>{{ .Date.Format "Jan 2, 2006"}}</em> - {{ .Description }}</p>
+        <p><em>{{ .Date.Format "Jan 2, 2006"}}</em></p>
+        <p>{{ .Description }}</p>
         {{ end }}
       </div>
     </main>
