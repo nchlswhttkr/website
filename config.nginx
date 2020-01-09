@@ -84,5 +84,5 @@ server {
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
 
     server_name www.nchlswhttkr.com;
-    return 301 https://nchlswhttkr.com/blog$request_uri;
+    return 301 https://nchlswhttkr.com$request_uri;
 }
