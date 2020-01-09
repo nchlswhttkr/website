@@ -72,8 +72,9 @@ server {
     return 301 https://github.com/nchlswhttkr/nchlswhttkr.com/;
 }
 
-# https://github.com/nchlswhttkr/barhack
+# Redirect WWW traffic to root domain
 server {
+    listen 80;
     listen 443 ssl;
 
     ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
@@ -82,11 +83,6 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
 
-    server_name barhack.nchlswhttkr.com;
-
-    root /home/barhack;
-
-    location /builds {
-        try_files $uri /404.html;
-    }
+    server_name www.nchlswhttkr.com;
+    return 301 https://nchlswhttkr.com/blog$request_uri;
 }
