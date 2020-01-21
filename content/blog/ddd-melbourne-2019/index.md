@@ -1,20 +1,18 @@
 ---
 title: "DDD Melbourne 2019"
-description: "A conference reflection"
+description: "Reflections, discussions and thoughts from attending DDD Melbourne 2019"
 date: 2019-08-13T12:00:00+10:00
-draft: false
-slug: "ddd-melbourne-2019"
 ---
 
-I had the pleasure of attending DDD Melbourne this past weekend, seeing talks from many people in Melbourne's tech space. Across 5 tracks of talks, there was a wide array of presentations on a variety of technical, personal and professional topics.
+I had the pleasure of attending [DDD Melbourne](https://dddmelbourne.com/) this past weekend, seeing talks from many people in Melbourne's tech space, and others coming in from abroad. Across 5 tracks of talks, there was a wide array of presentations on a variety of technical, personal and professional topics.
 
 <!--more-->
+
+First of all the, least I can do as well is give thanks to the team at [JuniorDev](https://juniordev.io) who gave me a discount code to attend DDD. They run monthly meetups where members from Melbourne's tech community can give presentations.
 
 I mightn't have been able to attend all the presentations on the day, but there's no harm in writing about the ones I was able to see!
 
 I was originally planning to write up my thoughts on all of the presentations. I've since changed my mind and limited discussion to some of the meatier bits.
-
-First of all the least I can do is give thanks to the team at [JuniorDev](https://juniordev.io), who gave me a discount code to attend DDD. They run monthly meetups where members from Melbourne's tech community can give presentations.
 
 ![A photo of the DDD 10th anniversary logo, with the inset caption "It's a great day"](./snap.png)
 
@@ -22,11 +20,11 @@ First of all the least I can do is give thanks to the team at [JuniorDev](https:
 
 [Rob Crowley](https://twitter.com/robdcrowley) / [Slides](https://speakerdeck.com/robcrowley/graphql-grpc-or-rest-resolving-the-api-developers-dilemma)
 
-Admittedly a lot of this talk when over my head. Having usually worked as a frontend developer with usually REST-style APIs, I was able to recognise SOAP, but terms like gRPC/OData went over my head.
+Admittedly a lot of this talk when over my head. Having usually worked as a frontend developer with usually REST-style APIs, I was able to recognise terms like SOAP, but terms like gRPC/OData went over my head. Interesting stuff to look up after the fact though.
 
-The most important takeaway for me was recognising that more often than not, the architecture/development of a solution is dictated by its environment and the requirements set out for it.
+The most important takeaway for me was recognising that, more often than not, the architecture/development of a solution is dictated by its environment and the requirements set out for it.
 
-This can include considerations like the expected API consumers, where you might only need to cater to a single application/process, or you may need to make something generally available to a wider audience (think public APIs like Reddit or Twitter). You could go for a standard response format with a resource-focused approach like REST, or allow clients to refine a query for their own convenience, a-la GraphQL.
+This can include considerations like the expected API consumers, as you might only need to cater to a single application/process, or may need to make something generally available to a wider audience (think public APIs like Reddit or Twitter). You could go for a standard response format with a resource-focused approach like REST, or allow clients to refine a query for their own convenience, a-la GraphQL.
 
 ## Microfrontends
 
@@ -40,7 +38,7 @@ The main strength I found appealing with this approach is that it allows for fro
 
 Since each applet is self-sufficient, its maintenance can be handled by a single team as well. There is less need to coordinate/align releases between teams, allowing them to move at their own rates and without stepping on each other's toes.
 
-The cost of using microfrontends is that you can't (easily) share state between applets, as they're not "aware" of each other. Sharing code is also not possible/simple, meaning applets might waste client resources downloading the same frontend framework and button components each time the user goes from page to page.
+The cost of using microfrontends is that you can't (easily) share state between applets, as they're not "aware" of each other. Sharing code is also not possible/simple, meaning applets might waste client resources downloading the same frontend framework and UI components each time the user goes from page to page.
 
 In short, the simultaneous strength and weakness of microfrontends is that each applet is self-contained. The isolation grants a great deal of independence, but requires a worst-case assumption when it comes to external dependencies. That is, nothing is shared and everything must be loaded.
 
