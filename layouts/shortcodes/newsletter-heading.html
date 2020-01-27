@@ -1,0 +1,21 @@
+<!-- https://flatuicolors.com/palette/au -->
+{{ $color := "#fff" }}
+<!---->
+{{ if ( eq ( .Get 0 ) "Articles" ) }} {{ $color = "#7ed6df"}} {{ end }}
+<!---->
+{{ if ( eq ( .Get 0 ) "Videos" ) }} {{ $color = "#ff7979"}} {{ end }}
+<!---->
+{{ if ( eq ( .Get 0 ) "Music" ) }} {{ $color = "#badc58"}} {{ end }}
+<!---->
+{{ if ( eq ( .Get 0 ) "Games" ) }} {{ $color = "#ffbe76"}} {{ end }}
+
+<h2
+  style="
+  background-color: {{ $color }};
+  padding: 4px 0;
+  margin: 8px 0;
+  text-align: center
+  "
+>
+  {{ .Get 0 }}
+</h2>
