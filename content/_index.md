@@ -26,3 +26,9 @@ I'm also trying out curating a small [newsletter](/newsletter/) of content I fin
 ## [Resume](/resume/)
 
 This is located on a separate page, where you can [read and print it](/resume/).
+
+---
+
+## Contact
+
+You can find various methods to reach me in the site footer.

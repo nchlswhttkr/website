@@ -9,5 +9,5 @@ steps:
     agents:
       deploy-nchlswhttkr.com: true
     command:
-      - hugo
+      - hugo --minify
       - rsync -a --delete $PWD/public/ nchlswhttkr@$DEPLOYMENT_IP:~/nchlswhttkr.com
