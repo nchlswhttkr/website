@@ -19,6 +19,8 @@ I study Computer Science at Monash University. I've been involved with IT at Mon
 
 I like to write down my thoughts and experiences every now and them, feel free to [give them a read](/blog/)!
 
+I'm also trying out curating a small [newsletter](/newsletter/) of content I find interesting.
+
 ---
 
 ## [Resume](/resume/)
