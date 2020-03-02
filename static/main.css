@@ -1,61 +1,65 @@
 :root {
-  --theme-color: #006cab;
+    --theme-color: #006cab;
 }
 
 body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: var(--theme-color);
-  color: #333;
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
 }
 
 a {
-  color: inherit;
+    color: inherit;
 }
 
 hr {
-  border: 0px;
-  border-top: 2px solid var(--theme-color);
+    border: 0px;
+    border-top: 2px solid var(--theme-color);
+}
+
+header,
+footer {
+    background-color: var(--theme-color);
 }
 
 header,
 footer,
 nav {
-  color: #fff;
+    color: #fff;
 }
 
 nav {
-  background-color: #333;
+    background-color: #333;
 }
 
 nav li {
-  padding-right: 12px;
-  font-weight: 700;
-  list-style-type: none;
-  display: inline-block;
+    padding-right: 12px;
+    font-weight: 700;
+    list-style-type: none;
+    display: inline-block;
 }
 
 main {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .constrain-width {
-  box-sizing: border-box;
-  padding: 8px 16px;
-  margin: 0 auto;
-  min-width: 300px;
-  max-width: 800px;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 800px;
 }
 
 .footer-icons a {
-  text-decoration: none;
-  margin-right: 8px;
+    text-decoration: none;
+    margin-right: 8px;
 }
 .footer-icons img {
-  height: 24px;
+    height: 24px;
 }
 
 .profile-image > img {
-  height: 256px;
-  border-radius: 50%;
+    height: 256px;
+    border-radius: 50%;
 }

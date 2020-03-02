@@ -31,9 +31,9 @@ In the end, our pitch went well and while we didn’t take out any prizes, we al
 
 ## What I learned from #fbmelhack18
 
-- Don’t be afraid to **join up with strangers** for the event! More often than not, they’re just participants looking to make the most of the experience, and there’s certainly no harm in being accommodating!
-- Focus on building your product **from the ground up**. It’s incredibly easy to build on a simple idea and expand it to something greater later. When you begin with something large-scale, you’re only going to find yourself cutting it to pieces in the hours before the “hacking stop” deadline to ensure you’re ready to present.
-- **Socialise** with other participants! Hackathons are where people from all assortments of backgrounds come together to build and compete. You’re sure to learn something from speaking to all the other attendees, and you might end up making a few new friends along the way!
+-   Don’t be afraid to **join up with strangers** for the event! More often than not, they’re just participants looking to make the most of the experience, and there’s certainly no harm in being accommodating!
+-   Focus on building your product **from the ground up**. It’s incredibly easy to build on a simple idea and expand it to something greater later. When you begin with something large-scale, you’re only going to find yourself cutting it to pieces in the hours before the “hacking stop” deadline to ensure you’re ready to present.
+-   **Socialise** with other participants! Hackathons are where people from all assortments of backgrounds come together to build and compete. You’re sure to learn something from speaking to all the other attendees, and you might end up making a few new friends along the way!
 
 You can find a copy of our repo for the hack on [GitHub](https://github.com/nchlswhttkr/fbmelhack18/)!
 

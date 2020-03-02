@@ -16,7 +16,7 @@ You can find the code to run the server like I did in [this Gist](https://gist.g
 
 ---
 
-At the moment, I pay US$5 for a Digital Ocean droplet (about ~AU$8 after conversion and taxes) to host my hobby projects. This includes my [personal website](https://nchlswhttkr.com), [Mellophone](https://mellophone.pink/), and a [Buildkite](https://buildkite.com/) agent. This droplet sees minimal traffic at the moment, and usually only sits at about 20-30% memory usage. I've been thinking about how to make greater use of this droplet for a while now.
+At the moment, I pay US$5 for a DigitalOcean droplet (about ~AU$8 after conversion and taxes) to host my hobby projects. This includes my [personal website](https://nchlswhttkr.com), [Mellophone](https://mellophone.pink/), and a [Buildkite](https://buildkite.com/) agent. This droplet sees minimal traffic at the moment, and usually only sits at about 20-30% memory usage. I've been thinking about how to make greater use of this droplet for a while now.
 
 As a challenge to myself, I decided to try hosting a Terraria server. I went with Terraria because of its minimal requirements (only 500MB of memory is needed, so I don't have to upgrade) and because I can test the connection easily with my Terraria client on Steam.
 

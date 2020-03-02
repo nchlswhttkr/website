@@ -1,13 +1,13 @@
 steps:
-  - label: ":hugo:"
-    agents:
-      deploy-nchlswhttkr.com: true
-    command: hugo
-  - wait
-  - label: ":shipit:"
-    branches: master
-    agents:
-      deploy-nchlswhttkr.com: true
-    command:
-      - hugo --minify
-      - rsync -a --delete $PWD/public/ nchlswhttkr@$DEPLOYMENT_IP:~/nchlswhttkr.com
+    - label: ":hugo:"
+      agents:
+          deploy-nchlswhttkr.com: true
+      command: hugo
+    - wait
+    - label: ":shipit:"
+      branches: master
+      agents:
+          deploy-nchlswhttkr.com: true
+      command:
+          - hugo --minify
+          - rsync -a --delete $PWD/public/ nchlswhttkr@$DEPLOYMENT_IP:~/nchlswhttkr.com

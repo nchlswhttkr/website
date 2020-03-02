@@ -47,13 +47,13 @@ Alternatively, you can download a <a href="/resume.pdf" target="_blank" rel="nor
     Junior Software Developer 
   </p>
   <p>
-    <em>January 2018 - June 2019</em>
+    <em>Jan 2018 - Jun 2019</em>
   </p>
 </div>
 
-- Developed [MonPlan](#monplan), Monash's service for study planning and online course advice
-- Engaged with and presented to faculties and departments across Monash to introduce and launch MonPlan in 2018
-- Partnered with the Research unit on placement to bring their reporting apps to the cloud
+-   Developed [MonPlan](#monplan), Monash's service for study planning and online course advice
+-   Engaged with and presented to faculties and departments across Monash to introduce and launch MonPlan in 2018
+-   Partnered with the Research unit on placement to bring their reporting apps to the cloud
 
 <div class="left-right-divide">
   <p>
@@ -62,12 +62,12 @@ Alternatively, you can download a <a href="/resume.pdf" target="_blank" rel="nor
     Teacher
   </p>
   <p>
-    <em>June 2017 - December 2017</em>
+    <em>Jun 2017 - Dec 2017</em>
   </p>
 </div>
 
-- Taught children the basics of coding, building their own games in a holiday program
-- Ensured campers had a fun, positive experience while learning the logic of computers
+-   Taught children the basics of coding, building their own games in a holiday program
+-   Ensured campers had a fun, positive experience while learning the logic of computers
 
 ---
 
@@ -84,9 +84,9 @@ Alternatively, you can download a <a href="/resume.pdf" target="_blank" rel="nor
   </p>
 </div>
 
-- I was a frontend developer with a team of students, and together we delivered Monash University's **first online course planning service**.
-- I gave MonPlan a major UI upgrade over 2018, making it **responsive** and **accessible** to all users while upgrading our UI framework under the hood.
-- We also introduced new features, including course advice from faculty staff and enrolment validation, while maintaining existing functionality for our student users.
+-   I was a frontend developer with a team of students, and together we delivered Monash University's **first online course planning service**.
+-   I gave MonPlan a major UI upgrade over 2018, making it **responsive** and **accessible** to all users while upgrading our UI framework under the hood.
+-   We also introduced new features, including course advice from faculty staff and enrolment validation, while maintaining existing functionality for our student users.
 
 <div class="left-right-divide">
   <p>
@@ -101,10 +101,10 @@ Alternatively, you can download a <a href="/resume.pdf" target="_blank" rel="nor
 
 Mellophone is an app for taking meeting minutes, which I started it as a hobby project to explore new technologies and to own the full stack.
 
-- The frontend is **React (TypeScript)** with tests in **Jest** using **React Testing Library**.
-- Backend is a **Django** application that follows RESTful principles.
-- A **GitLab CI** pipeline runs end to end (**Selenium**) and unit tests, before deploying to a **Digital Ocean** droplet.
-- I taught myself **Docker** to set up an isolated environment for development and CI.
+-   The frontend is **React (TypeScript)** with tests using **React Testing Library**.
+-   Backend is a **Django** application that follows RESTful principles.
+-   **GitLab CI** pipeline runs unit tests and end to end tests before deploying to a **DigitalOcean** droplet.
+-   I taught myself **Docker** to set up an controlled environment for development and CI.
 
 <hr class='print-page-break'>
 
@@ -129,10 +129,10 @@ Specialising in Data Science with an Industry-Based Learning placement in 2019.
 
 ### Community
 
-- Volunteer, student mentor and past committee for [WIRED](https://wired.org.au), supporting IT at Monash
-- Open source contributor attending conferences, meetups and hackathons in Melbourne
-- Musician with brass bands and orchestras around Melbourne, playing in competitions and community gigs
-- Bowler and barman for Coatesville Bowling Club
+-   Volunteer, student mentor and past committee for [WIRED](https://wired.org.au), supporting IT at Monash
+-   Open source contributor attending conferences, meetups and hackathons in Melbourne
+-   Musician with brass bands and orchestras around Melbourne, playing in competitions and community gigs
+-   Bowler and barman for Coatesville Bowling Club
 
 ---
 
@@ -140,7 +140,7 @@ Specialising in Data Science with an Industry-Based Learning placement in 2019.
 
 I'm most confident with the frontend web stack, building with **React** and using developer tools to ensure an accessible and consistent user experience.
 
-I'm keen about automation, and like to use CI/CD in my work to test and deploy my projects to **Digital Ocean**, **AWS** and **GCP**. Recently, I've been using **GitLab CI** and **Buildkite**.
+I'm keen about automation, and like to use CI/CD in my work to test and deploy my projects to **DigitalOcean**, **AWS** and **GCP**. Recently, I've been using **GitLab CI** and **Buildkite**.
 
 Currently, I'm teaching myself **Golang** and exploring **Docker** further. I believe in learning by applying, and try to show this through my projects on [GitHub](https://github.com/nchlswhttkr) for others to see!
 

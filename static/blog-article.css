@@ -1,78 +1,78 @@
 .blog-article > * {
-  margin: 20px auto;
+    margin: 20px auto;
 }
 
 .blog-article > h2,
 .blog-article > h3,
 .blog-article > hr {
-  margin-top: 48px;
+    margin-top: 48px;
 }
 
 .blog-article p,
 .blog-article li {
-  line-height: 1.3rem;
-  font-size: 1rem;
+    line-height: 1.3rem;
+    font-size: 1rem;
 }
 
 .blog-article ul,
 .blog-article ol {
-  padding-left: 18px;
+    padding-left: 18px;
 }
 
 .blog-article li {
-  padding: 4px 0;
+    padding: 4px 0;
 }
 
 .blog-article ul > li {
-  list-style-type: square;
+    list-style-type: square;
 }
 
 .blog-article img {
-  position: relative;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  break-inside: avoid;
-  min-width: 240px;
-  max-width: 70%;
-  transition: max-width 0.3s;
-  box-shadow: 0px 2px 4px #333;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    break-inside: avoid;
+    min-width: 240px;
+    max-width: 70%;
+    transition: max-width 0.3s;
+    box-shadow: 0px 2px 4px #333;
 }
 
 .blog-article img:hover {
-  max-width: 100%;
-  transition: max-width 0.2s;
+    max-width: 100%;
+    transition: max-width 0.2s;
 }
 
 .blog-article pre {
-  box-sizing: border-box;
-  margin: 16px auto;
-  padding: 16px;
-  box-shadow: 0px 2px 4px #333;
-  overflow: scroll;
+    box-sizing: border-box;
+    margin: 16px auto;
+    padding: 16px;
+    box-shadow: 0px 2px 4px #333;
+    overflow: scroll;
 }
 
 .blog-article blockquote {
-  padding: 0 0 0 16px;
-  border-left: 2px solid var(--theme-color);
+    padding: 0 0 0 16px;
+    border-left: 2px solid var(--theme-color);
 }
 
 .blog-article .center-text {
-  display: block;
-  text-align: center;
+    display: block;
+    text-align: center;
 }
 
 .blog-article .utterances-foreword {
-  margin-top: 80px;
+    margin-top: 80px;
 }
 
 @media print {
-  .utterances,
-  .utterances-divider {
-    display: none;
-  }
+    .utterances,
+    .utterances-divider {
+        display: none;
+    }
 
-  .blog-article img {
-    max-width: 100%;
-  }
+    .blog-article img {
+        max-width: 100%;
+    }
 }

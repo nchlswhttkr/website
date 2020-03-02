@@ -70,9 +70,9 @@ After a lunch break and a breather from the morning presentations, I made my way
 
 There were different areas covered in the panel
 
-- Bootcamps and alternative pathways into the IT industry, along with the benefits/drawbacks they bring
-- Plateuing as a developer, and finding the drive to continue grow
-- The traits that differentiate junior developers from more senior roles, and how to know what to work on
+-   Bootcamps and alternative pathways into the IT industry, along with the benefits/drawbacks they bring
+-   Plateuing as a developer, and finding the drive to continue grow
+-   The traits that differentiate junior developers from more senior roles, and how to know what to work on
 
 An interesting discussion focused around the difference between junior developers and mid/senior developers. It's a mix of the individual's self-perception, and it's contextual to the business/environment/work accomplished.
 
@@ -108,10 +108,10 @@ In this case, the performance of our chosen service had gradually improved over 
 
 When it comes to work in large systems, problems can arise from anywhere in the pipeline. Understanding the complete stack is important if performance matters. In the case of Marcel's work, handling an incredibly high volume of requests, there was work done in many places.
 
-- The code itself
-- The debugging tools you use
-- The generation of mock requests
-- Monitoring/measuring the performance of the system
+-   The code itself
+-   The debugging tools you use
+-   The generation of mock requests
+-   Monitoring/measuring the performance of the system
 
 ## Locknote
 
@@ -124,9 +124,9 @@ I can see why this was the closing talk. Nostaligia kick for sure.
 
 I've got a few last thoughts that don't really tie themselves to any particular talk, but I still feel like noting down.
 
-- Sponsor bingo was great fun and an effective way to encourage interaction between attendees and sponsors. It made it easier for sponsors to strike up a conversation with attendees, as they visited each stall for a stamp.
-- It was good to see coloured lanyards for photo opportunities (a yellow lanyard for those who didn't want pictures of them taken). If resources/planning allow, a middleground colour for "permission first" would be great to see - that may just be my personal preference though.
-- There's got to be a designer out there who will come up with a double-sided name tag, I had to flip my lanyard over so many times that day.
+-   Sponsor bingo was great fun and an effective way to encourage interaction between attendees and sponsors. It made it easier for sponsors to strike up a conversation with attendees, as they visited each stall for a stamp.
+-   It was good to see coloured lanyards for photo opportunities (a yellow lanyard for those who didn't want pictures of them taken). If resources/planning allow, a middleground colour for "permission first" would be great to see - that may just be my personal preference though.
+-   There's got to be a designer out there who will come up with a double-sided name tag, I had to flip my lanyard over so many times that day.
 
 Going to DDD this year has been a fantastic experience, and has me excited to be part of more of these events in future.
 

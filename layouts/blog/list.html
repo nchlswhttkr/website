@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {{ partial "meta.html" . }}
-    <link rel="stylesheet" type="text/css" href="/main.css" />
-    <style>
-      h3 {
-        margin-top: 64px;
-      }
-    </style>
-  </head>
-  <body>
-    {{ partial "nav.html" . }} {{ partial "header.html" . }}
-    <main>
-      <div class="constrain-width">
-        {{ .Content }} {{ range .Data.Pages }}
-        <h3>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h3>
-        <p><em>{{ .Date.Format "Jan 2, 2006"}}</em></p>
-        <p>{{ .Description }}</p>
-        {{ end }}
-      </div>
-    </main>
-    {{ partial "footer.html" . }}
-  </body>
+    <head>
+        {{ partial "meta.html" . }}
+        <link rel="stylesheet" type="text/css" href="/main.css" />
+        <style>
+            h3 {
+                margin-top: 64px;
+            }
+        </style>
+    </head>
+    <body>
+        {{ partial "nav.html" . }} {{ partial "header.html" . }}
+        <main>
+            <div class="constrain-width">
+                {{ .Content }} {{ range .Data.Pages }}
+                <h3>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                <p><em>{{ .Date.Format "Jan 2, 2006"}}</em></p>
+                <p>{{ .Description }}</p>
+                {{ end }}
+            </div>
+        </main>
+        {{ partial "footer.html" . }}
+    </body>
 </html>

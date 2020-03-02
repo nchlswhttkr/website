@@ -22,8 +22,8 @@ While looking at another repo for a discord bot that reports DotA2 matches, I no
 
 ```json
 {
-  "name": "npc_dota_hero_antimage",
-  "id": 1
+    "name": "npc_dota_hero_antimage",
+    "id": 1
 }
 ```
 
@@ -31,9 +31,9 @@ Success! I could now use this name ID to find an icon's URL and request it from 
 
 ```json
 {
-  "name": "npc_dota_hero_antimage",
-  "id": 1,
-  "localized_name": "Anti-Mage"
+    "name": "npc_dota_hero_antimage",
+    "id": 1,
+    "localized_name": "Anti-Mage"
 }
 ```
 

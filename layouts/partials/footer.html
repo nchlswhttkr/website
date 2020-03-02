@@ -1,20 +1,20 @@
 <footer>
-  <div class="constrain-width">
-    <p>
-      <a href="/">Home</a> / <a href="/blog/">Blog</a> /
-      <a href="/newsletter/">Newsletter</a> /
-      <a href="{{ .Site.Params.Source }}">Source</a>
-    </p>
-    <p>
-      Powered by <a href="https://gohugo.io/">Hugo</a> and
-      <a href="https://buildkite.com/">Buildkite</a>
-    </p>
-    <div class="footer-icons">
-      {{ range .Site.Params.Identities }}
-      <a href="{{ .link }}" target="_blank" rel="noreferrer">
-        <img src="{{ .icon }}" alt="{{ .prompt }}" />
-      </a>
-      {{ end }}
+    <div class="constrain-width">
+        <p>
+            <a href="/">Home</a> / <a href="/blog/">Blog</a> /
+            <a href="/newsletter/">Newsletter</a> /
+            <a href="{{ .Site.Params.Source }}">Source</a>
+        </p>
+        <p>
+            Powered by <a href="https://gohugo.io/">Hugo</a> and
+            <a href="https://buildkite.com/">Buildkite</a>
+        </p>
+        <div class="footer-icons">
+            {{ range .Site.Params.Identities }}
+            <a href="{{ .link }}" target="_blank" rel="noreferrer">
+                <img src="{{ .icon }}" alt="{{ .prompt }}" />
+            </a>
+            {{ end }}
+        </div>
     </div>
-  </div>
 </footer>

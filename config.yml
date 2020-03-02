@@ -6,41 +6,41 @@ pygmentsCodeFences: true
 buildFuture: true
 
 disableKinds:
-  - "taxonomyTerm" # I don't currently use categories/tags
+    - "taxonomyTerm" # I don't currently use categories/tags
 
 # https://gohugo.io/getting-started/configuration-markup/#goldmark
 markup:
-  goldmark:
-    renderer:
-      unsafe: true
+    goldmark:
+        renderer:
+            unsafe: true
 
 params:
-  me:
-    name: "Nicholas Whittaker"
-    username: "nchlswhttkr"
-  source: "https://source.nchlswhttkr.com/"
-  identities:
-    - prompt: "Find this website"
-      icon: "/media/icons/website.svg"
-      link: "/"
-    - prompt: "Subscribe to an RSS feed"
-      icon: "/media/icons/rss.svg"
-      link: "/blog/index.xml"
-    - prompt: "Send me an email"
-      icon: "/media/icons/email.svg"
-      link: "mailto:nchlswhttkr@gmail.com"
-    - prompt: "Find me on GitHub"
-      icon: "/media/icons/github.svg"
-      link: "https://github.com/nchlswhttkr/"
-    - prompt: "Find me on GitLab"
-      icon: "/media/icons/gitlab.svg"
-      link: "https://gitlab.com/nchlswhttkr/"
-    - prompt: "Find me on Twitter"
-      icon: "/media/icons/twitter.svg"
-      link: "https://twitter.com/nchlswhttkr/"
-    - prompt: "Find me on LinkedIn"
-      icon: "/media/icons/linkedin.svg"
-      link: "https://linkedin.com/in/nchlswhttkr/"
-    - prompt: "Verify me on Keybase"
-      icon: "/media/icons/keybase.svg"
-      link: "https://keybase.io/nchlswhttkr/"
+    me:
+        name: "Nicholas Whittaker"
+        username: "nchlswhttkr"
+    source: "https://source.nchlswhttkr.com/"
+    identities:
+        - prompt: "Find this website"
+          icon: "/media/icons/website.svg"
+          link: "/"
+        - prompt: "Subscribe to an RSS feed"
+          icon: "/media/icons/rss.svg"
+          link: "/blog/index.xml"
+        - prompt: "Send me an email"
+          icon: "/media/icons/email.svg"
+          link: "mailto:nchlswhttkr@gmail.com"
+        - prompt: "Find me on GitHub"
+          icon: "/media/icons/github.svg"
+          link: "https://github.com/nchlswhttkr/"
+        - prompt: "Find me on GitLab"
+          icon: "/media/icons/gitlab.svg"
+          link: "https://gitlab.com/nchlswhttkr/"
+        - prompt: "Find me on Twitter"
+          icon: "/media/icons/twitter.svg"
+          link: "https://twitter.com/nchlswhttkr/"
+        - prompt: "Find me on LinkedIn"
+          icon: "/media/icons/linkedin.svg"
+          link: "https://linkedin.com/in/nchlswhttkr/"
+        - prompt: "Verify me on Keybase"
+          icon: "/media/icons/keybase.svg"
+          link: "https://keybase.io/nchlswhttkr/"

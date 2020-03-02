@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {{ partial "meta.html" . }}
-    <meta property="og:type" content="article" />
-  </head>
-  <body style="margin: 8px; font-family: monospace;">
-    <main
-      style="
+    <head>
+        {{ partial "meta.html" . }}
+        <meta property="og:type" content="article" />
+    </head>
+    <body style="margin: 8px; font-family: monospace;">
+        <main
+            style="
       max-width: 600px;
       min-width: 300px;
       margin: 0 auto;
       background-color: #ddd;
       padding: 8px 16px;"
-    >
-      <article>
-        <h1>
-          <a style="color: inherit;" href="{{ .Permalink }}">{{ .Title }}</a>
-        </h1>
-        <p>
-          Published {{ .Date.Format "02 Jan 2006" }} by
-          <a href="/">Nicholas Whittaker</a>
-        </p>
-        <p>
-          {{ .Content }}
-        </p>
-        <p style="display: flex; margin-top: 32px;">
-          {{ if ne .PrevInSection nil }}
-          <a style="color: inherit;" href="{{ .PrevInSection.Permalink }}"
-            ><< Previous</a
-          >
-          {{ end }}
-          <span style="flex: 1;"></span>
-          {{ if ne .NextInSection nil }}
-          <a style="color: inherit;" href="{{ .NextInSection.Permalink }}"
-            >Next >></a
-          >
-          {{ end }}
-        </p>
-      </article>
-    </main>
-  </body>
+        >
+            <article>
+                <h1>
+                    <a style="color: inherit;" href="{{ .Permalink }}"
+                        >{{ .Title }}</a
+                    >
+                </h1>
+                <p>
+                    Published {{ .Date.Format "02 Jan 2006" }} by
+                    <a href="/">Nicholas Whittaker</a>
+                </p>
+                <p>
+                    {{ .Content }}
+                </p>
+                <p style="display: flex; margin-top: 32px;">
+                    {{ if ne .PrevInSection nil }}
+                    <a
+                        style="color: inherit;"
+                        href="{{ .PrevInSection.Permalink }}"
+                        ><< Previous</a
+                    >
+                    {{ end }}
+                    <span style="flex: 1;"></span>
+                    {{ if ne .NextInSection nil }}
+                    <a
+                        style="color: inherit;"
+                        href="{{ .NextInSection.Permalink }}"
+                        >Next >></a
+                    >
+                    {{ end }}
+                </p>
+            </article>
+        </main>
+    </body>
 </html>

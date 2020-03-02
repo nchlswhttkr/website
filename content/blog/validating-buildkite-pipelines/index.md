@@ -5,7 +5,7 @@ date: 2019-12-27T12:00:00.000Z
 # cover: "website-pipeline.png"
 utterances: 13
 aliases:
-  - ./linting-buildkite-pipelines
+    - ./linting-buildkite-pipelines
 ---
 
 So I've been using [Buildkite](https://buildkite.com) a bit lately and loving it. Last weekend I had the thought of building a service to validate the `pipeline.yml` files it uses for configuration.
@@ -120,9 +120,9 @@ At this point it's worth noting that since jobs can be executed concurrently acr
 
 Now that I could validate a provided file and save the result, it was time to make an application over the top. This would be for end users to upload their file and to view the result, as well as something to prepare and kick off a build. I had a pretty good idea of the process I wanted now, having already built the functionality I needed.
 
-- A client uploads their `pipeline.yml` file.
-- This file is stored, and a build is initiated to validate it.
-- A client can check the status of their file validation.
+-   A client uploads their `pipeline.yml` file.
+-   This file is stored, and a build is initiated to validate it.
+-   A client can check the status of their file validation.
 
 So I went ahead and chucked together a quick server with [hapi](https://hapi.dev) to accept a file upload, kick off the build, and show the validation status. Thankfully, Nginx's support for [Basic authentication](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/) made it easy to limit access to this API so only I could upload a file.
 

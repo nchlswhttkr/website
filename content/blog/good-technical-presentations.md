@@ -26,9 +26,9 @@ Another ingredient to successful presentations is the actual content that a pres
 
 If you're doing anything involving code, whether it's showing screenshots of code or something written in your editor of choice, try to make sure it's concise and easily legible. I think there are three key points to this.
 
-- Prefer **larger fonts**, since it's almost certain you'll have people trying to read code from all across the room, at different distances and angles
-- Find a color/presentation/editor theme that **suits television screens and projectors**, which usually means something with simple, accessible colors and a high contrast ratio
-- **Keep them brief**, because this isn't a code review and people should be spending their time listening to you rather than comprehending lines of code
+-   Prefer **larger fonts**, since it's almost certain you'll have people trying to read code from all across the room, at different distances and angles
+-   Find a color/presentation/editor theme that **suits television screens and projectors**, which usually means something with simple, accessible colors and a high contrast ratio
+-   **Keep them brief**, because this isn't a code review and people should be spending their time listening to you rather than comprehending lines of code
 
 ## Opinions left undone
 

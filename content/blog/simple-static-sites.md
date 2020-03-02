@@ -20,8 +20,8 @@ My goal was to eliminate as much effort from my side as possible when it comes t
 
 My first approach was quite naive but effective.
 
-- Have the base directory point to the `dev` branch
-- Have a `.gitignore`'d subdirectory pointed at the `master` branch
+-   Have the base directory point to the `dev` branch
+-   Have a `.gitignore`'d subdirectory pointed at the `master` branch
 
 This approach is simple and understandable, but I found a few drawbacks with it. This setup struggles to be **portable**, as you have to keep setting up the `public` folder when moving from computer to computer, and at the time it was **unwieldy** to have to keep on remembering to push after each build.
 

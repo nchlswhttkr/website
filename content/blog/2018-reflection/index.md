@@ -197,11 +197,11 @@ The series I've been following this year have Mister Miracle and Wayward, both o
 
 Next year I'm setting and hoping to keep a few resolutions.
 
-- **Abiding by a more consistent sleep schedule** to help avoid the feeling of fatigue that can sometimes plague me during the day.
+-   **Abiding by a more consistent sleep schedule** to help avoid the feeling of fatigue that can sometimes plague me during the day.
 
-- **Effectively managing my time commitments** to give myself more freedom to do what I want with my time, and to ensure I don't end up feeling burnt out.
+-   **Effectively managing my time commitments** to give myself more freedom to do what I want with my time, and to ensure I don't end up feeling burnt out.
 
-- **Ensuring I don't miss breakfast**, because this year I've had too many mornings where I've dashed out the door without a proper meal.
+-   **Ensuring I don't miss breakfast**, because this year I've had too many mornings where I've dashed out the door without a proper meal.
 
 <span class="center-text">**Here's to 2019!**</span>
 
