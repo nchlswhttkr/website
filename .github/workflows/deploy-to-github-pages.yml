@@ -1,12 +1,13 @@
 name: Build & Deploy
 
-on: push
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  mirror:
-    name: Deploy mirror to GitHub Pages
+  build:
     runs-on: ubuntu-latest
-    if: "github.ref == 'refs/heads/master'"
     steps:
       - uses: actions/checkout@v1
       - run: sed -i "s;https://nchlswhttkr.com;https://nchlswhttkr.github.io;" config.yml
@@ -14,17 +15,3 @@ jobs:
       - uses: ./.github/push-to-github-pages
         env:
           PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          REPOSITORY: "nchlswhttkr.github.io"
-          BRANCH: "master"
-  preview:
-    name: Deploy preview to GitHub Pages
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - run: sed -i "s;https://nchlswhttkr.com;https://preview.nchlswhttkr.com;" config.yml
-      - uses: docker://registry.gitlab.com/pages/hugo:latest
-      - uses: ./.github/push-to-github-pages
-        env:
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          REPOSITORY: "nchlswhttkr.com"
-          BRANCH: "gh-pages"
