@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
-            - run: sed -i "s;https://nchlswhttkr.com;https://nchlswhttkr.github.io;" config.yml
+            - run: 'sed -i ''s;baseURL:.*;baseURL: "https://nchlswhttkr.github.io";'' config.yml'
             - uses: docker://registry.gitlab.com/pages/hugo:latest
             - uses: ./.github/push-to-github-pages
               env:

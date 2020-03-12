@@ -8,19 +8,7 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
 
-    gzip on;
-    gzip_types text/css text/javascript application/javascript application/json
-    gzip_min_length 1k;
-
-    root /home/nchlswhttkr/nchlswhttkr.com;
-
-    rewrite ^([^.]*[^/])$ $1/ permanent;
-
-    error_page 404 /404.html;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
+    return 301 https://nicholas.cloud$request_uri
 }
 
 # Enforce HTTPS
@@ -71,7 +59,7 @@ server {
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
 
     server_name source.nchlswhttkr.com;
-    return 301 https://github.com/nchlswhttkr/nchlswhttkr.com/;
+    return 301 https://nicholas.cloud/goto/source/;
 }
 
 # Redirect WWW traffic to root domain

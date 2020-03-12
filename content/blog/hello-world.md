@@ -31,7 +31,7 @@ Text<sub>with subtext</sub>
 
 Text<sup>with supertext</sup>
 
-Text with [a link](https://nchlswhttkr.com/) in it.
+Text with [a link](/) in it.
 
 > "I have definitely said these things" - _Nicholas Whittaker_
 
