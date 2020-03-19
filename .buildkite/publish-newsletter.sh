@@ -2,7 +2,7 @@
 
 # $1    - The receiving mailing list address
 
-set -euo pipefail
+set -eu
 
 curl --fail "https://nicholas.cloud/newsletter/$NEWSLETTER_ISSUE/" > email.html
 curl --fail "https://templates.mailchimp.com/services/html-to-text/" --data-urlencode html@email.html > email.text
