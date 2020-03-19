@@ -14,18 +14,13 @@
       padding: 8px 16px;"
         >
             <article>
-                <h1>
-                    <a style="color: inherit;" href="{{ .Permalink }}"
-                        >{{ .Title }}</a
+                <h1>{{ .Title }}</h1>
+                <p>
+                    <a href="{{ .Permalink }}"
+                        >Published {{ .Date.Format "02 Jan 2006" }}</a
                     >
-                </h1>
-                <p>
-                    Published {{ .Date.Format "02 Jan 2006" }} by
-                    <a href="/">Nicholas Whittaker</a>
                 </p>
-                <p>
-                    {{ .Content }}
-                </p>
+                {{ .Content }}
                 <p style="display: flex; margin-top: 32px;">
                     {{ if ne .PrevInSection nil }}
                     <a
@@ -44,6 +39,17 @@
                     {{ end }}
                 </p>
             </article>
+            <br />
+            <p>
+                <a href="https://nicholas.cloud/newsletter/subscribe/"
+                    >Subscribe</a
+                >
+                to be notified when I publish a new newsletter issue!
+            </p>
+            <p>
+                If you no longer want to receive emails, you can
+                <a href="%mailing_list_unsubscribe_url%">unsubscribe</a>.
+            </p>
         </main>
     </body>
 </html>

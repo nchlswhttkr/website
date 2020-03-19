@@ -2,11 +2,13 @@ steps:
   - label: ":email: Preview"
     agents:
       deploy-personal-website: true
-    command:
-      - ".buildkite/publish-newsletter.sh 'newsletter-preview@mailgun.nicholas.cloud'"
+    command: ".buildkite/publish-newsletter.sh"
+    env:
+      MAILING_LIST_ADDRESS: newsletter-preview@mailgun.nicholas.cloud
   - block: "Publish?"
   - label: ":email: Ship it!"
     agents:
       deploy-personal-website: true
-    command:
-      - ".buildkite/publish-newsletter.sh 'newsletter@mailgun.nicholas.cloud'"
+    command: ".buildkite/publish-newsletter.sh"
+    env:
+      MAILING_LIST_ADDRESS: newsletter@mailgun.nicholas.cloud
