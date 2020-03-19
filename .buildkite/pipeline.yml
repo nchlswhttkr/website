@@ -13,7 +13,7 @@ steps:
       - rsync -a --delete $PWD/public/ nicholas@$DEPLOYMENT_IP:/var/www/nicholas.cloud
   - wait
   - label: ":rolled_up_newspaper:"
-    # branches: master
+    branches: master
     agents:
       deploy-personal-website: true
     command: "bash .buildkite/trigger-newsletter-if-new-issue.sh"
