@@ -16,4 +16,4 @@ steps:
     branches: master
     agents:
       deploy-personal-website: true
-    command: ".buildkite/trigger-newsletter-if-new-issue.sh"
+    command: .buildkite/trigger-newsletter-if-new-issue.sh

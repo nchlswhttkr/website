@@ -4,8 +4,6 @@ set -eu
 
 git diff-tree --no-commit-id --name-status -r HEAD | grep "^A.content/newsletter/....-..\.md" | cut -f 2 | sed -n 's;content/newsletter/\(....-..\)\.md;\1;p' > new-newsletters.txt
 
-echo "2020-01" >> new-newsletters.txt # TEMPORARY, WILL BE REMOVED SOON
-
 while read NEWSLETTER; do
     echo "
         steps:

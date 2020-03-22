@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /resume/
 Disallow: /newsletter/subscribe/
+Disallow: /goto/

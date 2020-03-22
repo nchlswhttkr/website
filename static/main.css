@@ -43,6 +43,17 @@ main {
     background-color: #fff;
 }
 
+@media (prefers-color-scheme: dark) {
+    main {
+        background-color: #333;
+        color: #fff;
+    }
+
+    img {
+        background-color: #fff;
+    }
+}
+
 .constrain-width {
     box-sizing: border-box;
     padding: 8px 16px;
