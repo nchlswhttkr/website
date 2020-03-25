@@ -16,9 +16,11 @@
             <article>
                 <h1>{{ .Title }}</h1>
                 <p>
+                    Published
                     <a href="{{ .Permalink }}"
-                        >Published {{ .Date.Format "02 Jan 2006" }}</a
+                        >{{ .Date.Format "02 Jan 2006" }}</a
                     >
+                    by <a href="{{ .Site.BaseURL }}">Nicholas</a>
                 </p>
                 {{ .Content }}
                 <p style="display: flex; margin-top: 32px;">
