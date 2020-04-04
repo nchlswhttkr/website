@@ -1,9 +1,4 @@
 steps:
-  - label: ":hugo:"
-    agents:
-      deploy-personal-website: true
-    command: hugo
-  - wait
   - label: ":shipit:"
     branches: master
     agents:
