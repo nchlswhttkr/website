@@ -52,6 +52,10 @@ main {
     main img {
         background-color: #fff;
     }
+
+    hr {
+        border-top-color: #fff;
+    }
 }
 
 .constrain-width {
