@@ -23,12 +23,12 @@ I also curate a small [newsletter](/newsletter/) of content I find interesting. 
 
 ---
 
-## [Resume](/resume/)
-
-This is located on a separate page, where you can [read and print it](/resume/).
-
----
-
 ## Contact
 
 You can find various methods to reach me in the site footer.
+
+---
+
+## [Resume](/resume/)
+
+This is located on a separate page, where you can [read it](/resume/) or [download a PDF copy](/resume.pdf).

@@ -5,7 +5,7 @@ steps:
       deploy-personal-website: true
     command:
       - hugo --minify --cleanDestinationDir
-      - rsync -a -v --itemize-changes --checksum --delete $PWD/public/ nicholas@$DEPLOYMENT_IP:/var/www/nicholas.cloud
+      - rsync --archive --no-times -v --itemize-changes --checksum --delete $PWD/public/ nicholas@$DEPLOYMENT_IP:/var/www/nicholas.cloud
   - wait
   - label: ":rolled_up_newspaper:"
     branches: master
