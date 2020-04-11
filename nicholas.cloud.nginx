@@ -14,9 +14,6 @@ server {
 
     root /var/www/nicholas.cloud;
 
-    # Ensures we use the index for routes not leading to a file
-    rewrite ^[^.]*[^/]$ $uri/ permanent;
-
     error_page 404 /404.html;
 
     location / {
