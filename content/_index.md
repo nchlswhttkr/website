@@ -15,7 +15,7 @@ I study Computer Science at Monash University. I've been involved with IT at Mon
 
 ---
 
-## [Blog](/blog/)
+## Blog
 
 I like to write down my thoughts and experiences every now and them, feel free to [give them a read](/blog/)!
 
@@ -29,6 +29,6 @@ You can find various methods to reach me in the site footer.
 
 ---
 
-## [Resume](/resume/)
+## Resume
 
 This is located on a separate page, where you can [read it](/resume/) or [download a PDF copy](/resume.pdf).

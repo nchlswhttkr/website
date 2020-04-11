@@ -4,54 +4,64 @@
         {{ partial "meta.html" . }}
         <meta property="og:type" content="article" />
     </head>
-    <body style="margin: 8px; font-family: monospace;">
-        <main
-            style="
-      max-width: 600px;
-      min-width: 300px;
-      margin: 0 auto;
-      background-color: #ddd;
-      padding: 8px 16px;"
-        >
-            <article>
-                <h1>{{ .Title }}</h1>
-                <p>
-                    Published
-                    <a href="{{ .Permalink }}"
-                        >{{ .Date.Format "02 Jan 2006" }}</a
-                    >
-                    by <a href="{{ .Site.BaseURL }}">Nicholas</a>
-                </p>
-                {{ .Content }}
-                <p style="display: flex; margin-top: 32px;">
-                    {{ if ne .PrevInSection nil }}
-                    <a
-                        style="color: inherit;"
-                        href="{{ .PrevInSection.Permalink }}"
-                        ><< Previous</a
-                    >
-                    {{ end }}
-                    <span style="flex: 1;"></span>
-                    {{ if ne .NextInSection nil }}
-                    <a
-                        style="color: inherit;"
-                        href="{{ .NextInSection.Permalink }}"
-                        >Next >></a
-                    >
-                    {{ end }}
-                </p>
-            </article>
-            <br />
-            <p>
-                <a href="https://nicholas.cloud/newsletter/subscribe/"
-                    >Subscribe</a
-                >
-                to be notified when I publish a new newsletter issue!
-            </p>
-            <p>
-                If you no longer want to receive emails, you can
-                <a href="%mailing_list_unsubscribe_url%">unsubscribe</a>.
-            </p>
-        </main>
+
+    <!-- prettier-ignore -->
+    <body style="margin: 0;">
+    <table style="
+        background-color: #ddd;
+        font-family: monospace;
+        padding: 16px 8px;
+        margin: 0;
+        width: 100%;
+        ">
+        <tbody>
+            <tr>
+                <td>
+                    <table align="center" style="
+                        margin: 0 auto;
+                        max-width: 800px;
+                        box-sizing: border-box;
+                        padding: 8px 16px;
+                        background-color: #fff;
+                        ">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <article>
+                                        <h1>{{ .Title }}</h1>
+                                        {{ .Content }}
+                                    </article>
+                                    <p style="display: flex; margin-top: 32px;">
+                                        {{ if ne .PrevInSection nil }}
+                                        <a style="color: inherit;" href="{{ .PrevInSection.Permalink }}"><< Previous</a>
+                                        {{ end }}
+                                        <span style="flex: 1;"></span>
+                                        {{ if ne .NextInSection nil }}
+                                        <a style="color: inherit;" href="{{ .NextInSection.Permalink }}">Next >></a>
+                                        {{ end }}
+                                    </p>
+                                    <br/>
+                                    <p>
+                                        Published
+                                        <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan 2006" }}</a>
+                                        by
+                                        <a href="{{ .Site.BaseURL }}">Nicholas</a>
+                                    </p>
+                                    <p>
+                                        <a href="https://nicholas.cloud/newsletter/subscribe/">Subscribe</a>
+                                        to be notified when I publish a new newsletter issue!
+                                    </p>
+                                    <p>
+                                        If you no longer want to receive emails, you can
+                                        <a href="%mailing_list_unsubscribe_url%">unsubscribe</a>.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     </body>
 </html>
