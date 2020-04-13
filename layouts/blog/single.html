@@ -3,8 +3,10 @@
     <head>
         {{ partial "meta.html" . }}
         <meta property="og:type" content="article" />
-        <link rel="stylesheet" type="text/css" href="/main.css" />
-        <link rel="stylesheet" type="text/css" href="/blog-article.css" />
+
+        <!-- prettier-ignore -->
+        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
+        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "blog-article.css" | minify ).Permalink }}" />
     </head>
     <body>
         {{ partial "nav.html" . }} {{ partial "header.html" . }}

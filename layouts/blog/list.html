@@ -2,7 +2,10 @@
 <html lang="en">
     <head>
         {{ partial "meta.html" . }}
-        <link rel="stylesheet" type="text/css" href="/main.css" />
+
+        <!-- prettier-ignore -->
+        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
+
         <style>
             main > div {
                 padding: 0 8px;
