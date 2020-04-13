@@ -4,8 +4,12 @@
         {{ partial "meta.html" . }}
         <link rel="stylesheet" type="text/css" href="/main.css" />
         <style>
+            main > div {
+                padding: 0 8px;
+            }
+
             h3 {
-                margin-top: 64px;
+                margin-top: 80px; /* Create space between articles */
             }
         </style>
     </head>
@@ -13,7 +17,9 @@
         {{ partial "nav.html" . }} {{ partial "header.html" . }}
         <main>
             <div class="constrain-width">
-                {{ .Content }} {{ range .Data.Pages }}
+                {{ .Content }}
+                <!--  -->
+                {{ range .Data.Pages }}
                 <h3>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </h3>

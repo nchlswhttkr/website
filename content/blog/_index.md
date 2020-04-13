@@ -7,6 +7,4 @@ description: "A collection of scribbles"
 
 I like to jot down the occasional reflection and technical writeup, and you can find them all here!
 
-If you use an RSS reader, you can also subscribe to my [RSS feed](./index.xml)!
-
----
+If you use an RSS reader, you can also subscribe to my [RSS feed](/rss)!

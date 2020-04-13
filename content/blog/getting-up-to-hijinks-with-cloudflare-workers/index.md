@@ -18,9 +18,9 @@ One of the first steps for a new customer is use Cloudflare as their domain's na
 
 This arrangement also puts them in the prime position to offer serverless execution at the network edge.
 
-![A diagram of how Cloudflare implements serverless JavaScript workers, with an edge server handling requests from end users and proxying them to an origin server.](./serverless-at-edge.svg)
+![A diagram of how Cloudflare implements serverless JavaScript workers, with an edge server handling requests from end users and proxying them to an origin server.](https://www.cloudflare.com/img/learning/serverless/serverless-javascript/serverless-javascript-running-on-edge-server.svg)
 
-{{% image-caption %}}Image credit: [Cloudflare](https://www.cloudflare.com/en-au/learning/serverless/serverless-javascript/){{%/ image-caption %}}
+{{% image-caption %}}Image credit to [Cloudflare](https://www.cloudflare.com/en-au/learning/serverless/serverless-javascript/){{%/ image-caption %}}
 
 ## What does serverless mean?
 

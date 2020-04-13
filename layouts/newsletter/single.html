@@ -6,12 +6,8 @@
     </head>
 
     <!-- prettier-ignore -->
-    <body style="margin: 0;">
+    <body>
     <table style="
-        background-color: #ddd;
-        font-family: monospace;
-        padding: 16px 8px;
-        margin: 0;
         width: 100%;
         ">
         <tbody>
@@ -21,12 +17,10 @@
                         margin: 0 auto;
                         max-width: 800px;
                         box-sizing: border-box;
-                        padding: 8px 16px;
-                        background-color: #fff;
                         ">
                         <tbody>
                             <tr>
-                                <td>
+                                <td style="font-family: monospace;">
                                     <article>
                                         <h1>{{ .Title }}</h1>
                                         {{ .Content }}

@@ -32,4 +32,4 @@ As the year neared a close, my friend Eric suggested I apply for a position on t
 
 As 2018 nears, I look forward to continuing to maintain a standard of excellence. With my new job at monPlan, the nearing Australian National Band Championships over the Easter weekend, and a whole year of university coming up, 2018 looks to be big, busy and exciting as always!
 
-<span class="center-text">**I welcome the challenge!**</span>
+<span class="center-text"><strong>I welcome the challenge!</strong></span>

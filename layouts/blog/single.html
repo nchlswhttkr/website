@@ -9,9 +9,11 @@
     <body>
         {{ partial "nav.html" . }} {{ partial "header.html" . }}
         <main>
-            <article class="constrain-width blog-article">
-                {{ .Content }} {{ partial "utterances.html" . }}
-            </article>
+            <div class="constrain-width">
+                <article class="blog-article">
+                    {{ .Content }} {{ partial "utterances.html" . }}
+                </article>
+            </div>
         </main>
         {{ partial "footer.html" . }}
     </body>

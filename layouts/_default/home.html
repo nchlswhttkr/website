@@ -5,13 +5,21 @@
         <meta property="og:type" content="article" />
         <link rel="stylesheet" type="text/css" href="/main.css" />
         <link rel="stylesheet" type="text/css" href="/blog-article.css" />
+        <style>
+            .profile-image > img {
+                height: 256px;
+                border-radius: 50%;
+            }
+        </style>
     </head>
     <body>
         {{ partial "nav.html" . }} {{ partial "header.html" . }}
         <main>
-            <article class="constrain-width blog-article">
-                {{ .Content }} {{ partial "utterances.html" . }}
-            </article>
+            <div class="constrain-width">
+                <article class="blog-article">
+                    {{ .Content }} {{ partial "utterances.html" . }}
+                </article>
+            </div>
         </main>
         {{ partial "footer.html" . }}
     </body>
