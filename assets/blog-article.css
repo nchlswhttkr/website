@@ -36,7 +36,8 @@ and then centering it.
 .blog-article {
     overflow: hidden;
 }
-.blog-article img {
+.blog-article img,
+.blog-article video {
     max-width: calc(100% + 16px);
     position: relative;
     top: 0;
