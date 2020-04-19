@@ -3,8 +3,6 @@ title: "Blog"
 description: "A collection of scribbles"
 ---
 
-**Everything my own, none can hope to imitate!**
+I occassionally jot down reflections and technical writeups, and you can read them all here!
 
-I like to jot down the occasional reflection and technical writeup, and you can find them all here!
-
-If you use an RSS reader, you can also subscribe to my [RSS feed](/rss)!
+If you'd like, you can [subscribe to my RSS feed](/rss/).

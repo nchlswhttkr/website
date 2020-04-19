@@ -1,0 +1,17 @@
+.list-foreword,
+.list-posts {
+    margin: 0 8px;
+    line-height: 1.3rem;
+}
+
+.list-posts > * {
+    margin: 12px 0;
+}
+
+.list-posts .date {
+    opacity: 0.8;
+}
+
+.list-posts .spacer {
+    margin-top: 80px;
+}

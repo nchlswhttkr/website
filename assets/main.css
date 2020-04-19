@@ -34,7 +34,8 @@ nav {
 
 header > div,
 footer > div,
-nav ul {
+nav > ul {
+    box-sizing: border-box;
     padding: 8px;
 }
 

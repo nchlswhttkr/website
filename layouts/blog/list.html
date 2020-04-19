@@ -5,30 +5,34 @@
 
         <!-- prettier-ignore -->
         <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
+        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "blog-list.css" | minify ).Permalink }}" />
 
-        <style>
-            main > div {
-                padding: 0 8px;
-            }
-
-            h3 {
-                margin-top: 80px; /* Create space between articles */
-            }
-        </style>
+        <style></style>
     </head>
     <body>
         {{ partial "nav.html" . }} {{ partial "header.html" . }}
         <main>
             <div class="constrain-width">
-                {{ .Content }}
+                <div class="list-foreword">
+                    {{ .Content }}
+                </div>
                 <!--  -->
-                {{ range .Data.Pages }}
-                <h3>
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </h3>
-                <p><em>{{ .Date.Format "Jan 2, 2006"}}</em></p>
-                <p>{{ .Description }}</p>
-                {{ end }}
+                <div class="list-posts">
+                    {{ range .Data.Pages }}
+                    <div class="spacer"></div>
+                    <p class="date">
+                        <code>
+                            {{ .Date.Format "2006-01-02"}} //
+                            <!--  -->
+                            {{ math.Ceil (div .WordCount 150.0) }} min read
+                        </code>
+                    </p>
+                    <h3>
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h3>
+                    <p>{{ .Description }}</p>
+                    {{ end }}
+                </div>
             </div>
         </main>
         {{ partial "footer.html" . }}
