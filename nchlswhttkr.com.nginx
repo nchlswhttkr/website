@@ -2,8 +2,8 @@ server {
     listen 443 ssl http2;
     server_name nchlswhttkr.com;
 
-    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
-    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_certificate /home/nicholas/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nicholas/nchlswhttkr.com.key;
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
@@ -23,8 +23,8 @@ server {
     listen 80;
     listen 443 ssl;
 
-    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
-    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_certificate /home/nicholas/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nicholas/nchlswhttkr.com.key;
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
@@ -38,8 +38,8 @@ server {
     listen 80;
     listen 443 ssl;
 
-    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
-    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_certificate /home/nicholas/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nicholas/nchlswhttkr.com.key;
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
@@ -52,8 +52,8 @@ server {
     listen 80;
     listen 443 ssl;
 
-    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
-    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_certificate /home/nicholas/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nicholas/nchlswhttkr.com.key;
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
@@ -67,8 +67,8 @@ server {
     listen 80;
     listen 443 ssl;
 
-    ssl_certificate /home/nchlswhttkr/nchlswhttkr.com.certificate;
-    ssl_certificate_key /home/nchlswhttkr/nchlswhttkr.com.key;
+    ssl_certificate /home/nicholas/nchlswhttkr.com.certificate;
+    ssl_certificate_key /home/nicholas/nchlswhttkr.com.key;
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
