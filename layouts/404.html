@@ -2,7 +2,9 @@
 <html lang="en">
     <head>
         {{ partial "meta.html" . }}
-        <link rel="stylesheet" type="text/css" href="/main.css" />
+        
+        <!-- prettier-ignore -->
+        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
     </head>
     <body>
         {{ partial "nav.html" . }} {{ partial "header.html" . }}
