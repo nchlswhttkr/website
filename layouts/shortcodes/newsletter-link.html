@@ -1,13 +1,7 @@
-<p style="margin: 8px 0; text-align: right;">
-    <a
-        href="{{ .Get 0 }}"
-        target="_blank"
-        rel="noreferrer"
-        style="
-            color: inherit;
-            text-decoration-thickness: 2px;
-            font-weight: 700;
-        "
-        >{{ default "View" ( .Get 1 ) }} >></a
-    >
+{{ $url := .Get 0 }}
+<!--  -->
+{{ $domain := index (findRE "([a-z0-9-]+\\.)+[a-z]+" $url) 0 }}
+
+<p class="link">
+    <a href="{{ $url }}" target="_blank" rel="noreferrer">{{ $domain }} >></a>
 </p>

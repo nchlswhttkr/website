@@ -3,21 +3,60 @@
     <head>
         {{ partial "meta.html" . }}
         <meta property="og:type" content="article" />
+        <style type="text/css">
+            .inner-table {
+                box-sizing: border-box;
+                margin: 0 auto;
+                max-width: 800px;
+            }
+
+            article h2 {
+                padding: 4px 0;
+                margin: 32px 0 8px;
+                text-align: center;
+            }
+
+            /* https://flatuicolors.com/palette/au  */
+            article h2.read {
+                background-color: #7ed6df;
+            }
+            article h2.watch {
+                background-color: #ff7979;
+            }
+            article h2.listen {
+                background-color: #badc58;
+            }
+            article h2.play {
+                background-color: #ffbe76;
+            }
+
+            article h3 {
+                margin: 16px 0 8px;
+            }
+
+            article p {
+                margin: 8px 0;
+                line-height: 1.3rem;
+            }
+
+            article p.link {
+                text-align: right;
+            }
+
+            article p.link a {
+                color: inherit;
+                font-weight: 700;
+            }
+        </style>
     </head>
 
     <!-- prettier-ignore -->
     <body>
-    <table style="
-        width: 100%;
-        ">
+    <table style="width: 100%;">
         <tbody>
             <tr>
                 <td>
-                    <table align="center" style="
-                        margin: 0 auto;
-                        max-width: 800px;
-                        box-sizing: border-box;
-                        ">
+                    <table align="center" class="inner-table">
                         <tbody>
                             <tr>
                                 <td style="font-family: monospace;">
