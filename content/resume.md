@@ -4,14 +4,10 @@ layout: "resume"
 ---
 
 <p class='hide-on-print resume-preamble'>
-<strong><em>You can print this page, and only the resume will show!<br>Make sure your browser is set to the default zoom level.</em></strong>
-<br>
-Alternatively, you can download a <a href="/resume.pdf" target="_blank" rel="noreferrer">copy in PDF</a>.
+You can download a <a href="/resume.pdf" target="_blank" rel="noreferrer">PDF copy</a> of this resume.
 </p>
 
 ## Nicholas Whittaker
-
-### Developer, Musician, Lawn Bowler --- Melbourne, Australia
 
 <div class="contact">
   <a href="mailto:nchlswhttkr@gmail.com" target="_blank" rel="noreferrer">
@@ -85,7 +81,7 @@ Alternatively, you can download a <a href="/resume.pdf" target="_blank" rel="nor
 </div>
 
 -   I was a frontend developer with a team of students, and together we delivered Monash University's **first online course planning service**.
--   I gave MonPlan a major UI upgrade over 2018, making it **responsive** and **accessible** to all users while upgrading our UI framework under the hood.
+-   I gave MonPlan a major UI upgrade over 2018, making it **responsive and accessible** to all users while upgrading our UI framework under the hood.
 -   We also introduced new features, including course advice from faculty staff and enrolment validation, while maintaining existing functionality for our student users.
 
 <div class="left-right-divide">
@@ -99,12 +95,12 @@ Alternatively, you can download a <a href="/resume.pdf" target="_blank" rel="nor
   </p>
 </div>
 
-Mellophone is an app for taking meeting minutes, which I started it as a hobby project to explore new technologies and to own the full stack.
+A hobby project to reinforce my own knowledge and learn new technologies.
 
 -   The frontend is **React (TypeScript)** with tests using **React Testing Library**.
 -   Backend is a **Django** application that follows RESTful principles.
--   **GitLab CI** pipeline runs unit tests and end to end tests before deploying to a **DigitalOcean** droplet.
--   I taught myself **Docker** to set up an controlled environment for development and CI.
+-   Automated unit and end-to-end testing and deployment with **GitLab CI** to **DigitalOcean**.
+-   I taught myself **Docker** to set up a stable CI and development environment.
 
 <hr class='print-page-break'>
 
@@ -130,6 +126,7 @@ Specialising in Data Science with an Industry-Based Learning placement in 2019.
 ### Community
 
 -   Volunteer, student mentor and past committee for [WIRED](https://wired.org.au), supporting IT at Monash
+-   Logistics officer with UNIHACK, running Australia's largest hackathon for university students
 -   Open source contributor attending conferences, meetups and hackathons in Melbourne
 -   Musician with brass bands and orchestras around Melbourne, playing in competitions and community gigs
 -   Bowler and barman for Coatesville Bowling Club

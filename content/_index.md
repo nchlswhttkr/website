@@ -7,25 +7,27 @@ description: "Developer, Musician and Lawn Bowler"
 
 ## Hey, I'm Nicholas!
 
-I'm a developer in Melbourne Australia, with a passion for music. Most evenings of the week, you'll be sure to find me rehearsing with a brass band or orchestra around Melbourne. Outside of music, I also enjoy playing a good game of lawn bowls!
+I'm a developer in Melbourne, Australia. Web development and automation are my passion, and I'm always looking to explore new things and share what I learn with those around me!
 
-I'm keen for frontend web development and automation, but working with the full stack isn't something I shy away from! I'm always looking to learn new technologies to put them into use, and to share what I learn with those around me.
+In my spare time, I rehearse and play with brass bands and orchestras around Melbourne. Catch me playing euphonium or trombone at street marches or competitions!
 
-I study Computer Science at Monash University. I've been involved with IT at Monash through the [WIRED](https://wired.org.au), with the hackathons and workshops for students interested in IT. I've also worked with eSolutions at Monash University, and launched [MonPlan](https://monplan.apps.monash.edu) with a team of fellow students to make study planning and online course advice accessible and understandable for Monash students.
+I studied Computer Science at Monash University, and helped launch a new course planning service for staff and students, [MonPlan](https://monplan.apps.monash.edu/). I've also been a part of running hackathons and workshops for IT students as a volunteer and committee member for [WIRED](https://wired.org.au/).
+
+Currently, I'm a part of the logistics crew with [UNIHACK](https://unihack.net/), running hackathons for students at Australian universities.
 
 ---
 
 ## Blog
 
-I like to write down my thoughts and experiences every now and them, feel free to [give them a read](/blog/)!
+I like to write about the technologies I use, and pen the odd reflection. You can find all my posts on [my blog](/blog/).
 
-I also curate a small [newsletter](/newsletter/) of content I find interesting. You can view it online, or subscribe to receive it via email!
+I also like to share interesting pieces and content that I love in [my newsletter](/newsletter/). You can also [subscribe](/newsletter/subscribe/) to receive it via email!
 
 ---
 
 ## Contact
 
-You can find various methods to reach me in the site footer.
+You can find several methods to reach me in the site footer, I recommend either email or Twitter.
 
 ---
 

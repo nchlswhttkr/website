@@ -33,9 +33,9 @@ When it came to my website, I had a few motivations to improve how I was using r
 -   Timestamps were not reliable in identifying new/updated files to transfer
 -   Files were being updated on the remote even if their contents had not changed
 
-The last point is of concern because when [Nginx serves static files for my website](https://github.com/nchlswhttkr/website/blob/6cdee73a859c70d8dacd723ec1780114d604315b/nicholas.cloud.nginx#L20), it uses a file's last modified timestamp to set the `Last-Modified` header for caching purposes. The less these timestamps change, the more often clients would be able to save resources by falling back to a cached copy of my site.
+The last point was of concern because when [Nginx serves static files for my website](https://github.com/nchlswhttkr/website/blob/6cdee73a859c70d8dacd723ec1780114d604315b/nicholas.cloud.nginx#L20), it uses a file's modification timestamp to set the `Last-Modified` header for caching purposes. The less often this timestamp was changed, the more often clients would be able to save resources by falling back to a cached copy of my site.
 
-It was in my best interests to help rsync avoid making unnecessary updates while deploying.
+It was in my interests to help rsync avoid making unnecessary updates while deploying.
 
 ## Improving my script
 
@@ -90,10 +90,11 @@ This was the point where I thought to look back over exactly what that `-a` opti
 -a, --archive       archive mode; equals -rlptgoD (no -H,-A,-X)
 ```
 
-So `-a` implies several options, many related to file metadata - owner, group, permissions and, sure enough, **timestamp**.
+So `-a` implies several options, many related to file metadata: owner, group, permissions and, sure enough, **timestamp**.
 
 I had my culprit.
 
+<!-- TODO https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#for_video_acting_as_an_animated_gif_replacement -->
 <video autoplay="true" muted="true" loop="true" src="https://media.tenor.com/videos/ec4e9072f89d8d86c01e19906df7dcb1/mp4">
 <p>An animation of the dancing pallbearers meme.</p>
 </video>
@@ -125,7 +126,7 @@ Apr 13 07:34
 
 ## Is this better/optimal?
 
-While I prefer this updated rsync command, it's worth noting that there a lot of moving to consider.
+While I prefer this updated rsync command, it's worth noting that there a lot of moving partss to consider.
 
 -   The delta-transfer algorithm rsync employs greatly reduces the amount of data transferred when two files are largely similar/identical
 -   Generating/comparing checksums may actually be slower than relying on timestamps and the false positives they entail

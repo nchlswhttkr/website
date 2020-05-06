@@ -33,6 +33,10 @@
     list-style-type: square;
 }
 
+.resume h2 {
+    font-size: 2rem;
+}
+
 .resume h2,
 .resume h3 {
     margin: 12px 0;
@@ -42,7 +46,7 @@
 
 .resume p,
 .resume li {
-    line-height: 1.3em;
+    line-height: 1.4rem;
 }
 
 .resume li {

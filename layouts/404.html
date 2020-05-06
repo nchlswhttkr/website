@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         {{ partial "meta.html" . }}
-        
+
         <!-- prettier-ignore -->
         <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
     </head>
@@ -10,14 +10,16 @@
         {{ partial "nav.html" . }} {{ partial "header.html" . }}
         <main>
             <div class="constrain-width">
-                <h1><a href="/">Return Home?</a></h1>
-                <p>
-                    If you believe this page is missing and should exist,
-                    consider
-                    <a href="{{ .Site.Params.Source }}issues/new/"
-                        >opening an issue</a
-                    >.
-                </p>
+                <div style="padding: 0 8px;">
+                    <h1><a href="/">Return Home?</a></h1>
+                    <p>
+                        If you believe this page is missing and should exist,
+                        consider
+                        <a href="{{ .Site.Params.Source }}issues/new/"
+                            >opening an issue</a
+                        >.
+                    </p>
+                </div>
             </div>
         </main>
         {{ partial "footer.html" . }}
