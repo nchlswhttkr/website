@@ -3,7 +3,7 @@
 <meta name="author" content="{{ .Site.Params.Me.Name }}" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="/favicon.png" type="image/png" />
+<link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.png" />
 
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:title" content="{{ .Title }}" />
@@ -19,12 +19,6 @@
 <meta name="twitter:image" content="{{ .Permalink }}{{ .Params.Cover }}" />
 <meta property="og:image" content="{{ .Permalink }}{{ .Params.Cover }}" />
 {{ else }}
-<meta
-    name="twitter:image"
-    content="https://og-image.nchlswhttkr.now.sh/{{ urls.Parse .Title }}.jpeg"
-/>
-<meta
-    property="og:image"
-    content="https://og-image.nchlswhttkr.now.sh/{{ urls.Parse .Title }}.jpeg"
-/>
+<meta name="twitter:image" content="{{.Site.BaseURL }}media/monty.jpg" />
+<meta property="og:image" content="{{.Site.BaseURL }}media/monty.jpg" />
 {{ end }}

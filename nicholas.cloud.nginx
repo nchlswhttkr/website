@@ -24,6 +24,11 @@ server {
     location ~* ^/(rss|feed)/$ {
         try_files /blog/index.xml =404;
     }
+
+    location /files/ {
+        alias /home/nicholas/public-files/;
+        autoindex on;
+    }
 }
 
 # Enforce HTTPS

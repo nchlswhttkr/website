@@ -2,7 +2,6 @@
 title: "Getting Up to Hijinks With Cloudflare Workers"
 description: "Cloudflare has a serverless offering, let's explore!"
 date: 2020-03-02T12:00:00.000Z
-# cover: ""
 utterances: 18
 ---
 
@@ -44,7 +43,7 @@ I think the ["How It Works"](https://developers.cloudflare.com/workers/about/how
 The script for a worker has some fairly light boilerplate, where an event listener is created to respond to incoming requests.
 
 ```js
-addEventListener("fetch", event => {
+addEventListener("fetch", (event) => {
     event.respondWith(handleRequest(event.request));
 });
 
@@ -81,7 +80,7 @@ I could set up a worker to run on all `/blog/...` routes, logging pages as they'
 Here's a rough example.
 
 ```js
-addEventListener("fetch", event => {
+addEventListener("fetch", (event) => {
     event.passThroughOnException();
     event.respondWith(handleRequest(event));
 });
@@ -94,7 +93,7 @@ async function handleRequest(event) {
         event.waitUntil(
             fetch("https://example.com/", {
                 method: "POST",
-                body: matched[1]
+                body: matched[1],
             })
         );
     }
@@ -123,7 +122,7 @@ Slack allows you to make apps for your own workspaces, so I made an "Echo" app f
 Let's go ahead and write up a worker to accept requests and echo the headers and body to Slack. I've stripped away the error-handling logic here to keep it concise.
 
 ```js
-addEventListener("fetch", event => {
+addEventListener("fetch", (event) => {
     event.respondWith(handleRequest(event.request));
 });
 
@@ -160,9 +159,9 @@ ${BODY}
     await fetch("https://hooks.slack.com/...", {
         method: "POST",
         headers: {
-            "Content-type": "application/json"
+            "Content-type": "application/json",
         },
-        body: JSON.stringify({ text })
+        body: JSON.stringify({ text }),
     });
 
     return new Response("Accepted", { status: 201 });
@@ -204,7 +203,7 @@ Given workers run by listening for requests, it's possible to have the handler f
 While it isn't recommended practice, we can do it nonetheless! Let's look at a basic example.
 
 ```js
-addEventListener("fetch", event => {
+addEventListener("fetch", (event) => {
     event.respondWith(handleRequest(event.request));
 });
 
@@ -214,8 +213,8 @@ async function handleRequest(request) {
     return new Response(`<h1>${++counter} request/s made!</h1>`, {
         status: 200,
         headers: {
-            "Content-Type": "text/html"
-        }
+            "Content-Type": "text/html",
+        },
     });
 }
 ```
