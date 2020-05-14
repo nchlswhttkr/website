@@ -15,7 +15,7 @@ while read NEWSLETTER; do
             env:
               NEWSLETTER_ISSUE: $NEWSLETTER
               MAILING_LIST_ADDRESS: newsletter-preview@mailgun.nicholas.cloud
-          - block: Publish?
+          - block: \"Publish newsletter #$NEWSLETTER?\"
             key: approve-newsletter-$NEWSLETTER
             depends_on: preview-newsletter-$NEWSLETTER
           - label: \":email: Publish\"

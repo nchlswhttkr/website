@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /resume/
+Disallow: /resume.pdf
 Disallow: /newsletter/subscribe/
 Disallow: /goto/
+Disallow: /files/
