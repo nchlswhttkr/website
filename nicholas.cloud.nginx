@@ -29,6 +29,10 @@ server {
         alias /home/nicholas/public-files/;
         autoindex on;
     }
+
+    location ~* ^/resume(/|\.pdf)?$ {
+        return 301 https://nicholas.cloud/files/resume.pdf;
+    }
 }
 
 # Enforce HTTPS

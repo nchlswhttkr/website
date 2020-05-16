@@ -28,9 +28,3 @@ I also like to share interesting pieces and content that I love in [my newslette
 ## Contact
 
 You can find several methods to reach me in the site footer, I recommend either email or Twitter.
-
----
-
-## Resume
-
-This is located on a separate page, where you can [read it](/resume/) or [download a PDF copy](/resume.pdf).
