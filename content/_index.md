@@ -27,4 +27,4 @@ I also like to share interesting pieces and content that I love in [my newslette
 
 ## Contact
 
-You can find several methods to reach me in the site footer, I recommend either email or Twitter.
+You can reach me by [email](mailto:nchlswhttkr@gmail.com) or on [Twitter](https://twitter.com/nchlswhttkr/).

@@ -47,10 +47,14 @@ Text with [a link](/) in it.
 
 ---
 
+```sh
+osascript -e 'display notification "Hello world!" sound name "frog"'
+```
+
 ```c
 #include <stdio.h>
 
-// I'm including this really long line of code to show that scrolling sideways works.
+// I'm including this really long line of code to show that scrolling sideways works. Look at how long it is, it just extends off the page!
 
 int main () {
   printf("Hello world!\n");
@@ -72,6 +76,71 @@ export default class CookieReader {
         );
         return match ? match[1] : "";
     }
+}
+```
+
+```diff
+- rsync --archive --no-times -v          --itemize-changes --checksum --delete $PWD/public/ nicholas@$DEPLOYMENT_IP:/var/www/nicholas.cloud
++ rsync --recursive          --verbose   --itemize-changes --checksum --delete $PWD/public/ nicholas@$DEPLOYMENT_IP:/var/www/nicholas.cloud
+```
+
+```applescript
+on idle
+
+	try
+		do shell script "rsync --delete --checksum --recursive --itemize-changes ~/public-files/ nicholas@nicholas.cloud:~/public-files/ > /tmp/sync.log"
+		display notification "Successfully synced" with title "Sync" sound name "purr"
+	on error
+		display alert "Could not sync files to remote server" as critical
+		quit
+	end try
+
+	return 60 * 60
+
+end idle
+```
+
+```py
+class IdentityService:
+    """
+    Implements all identity-related logic, usually about the current user and
+    their current session (whether they are authenticated).
+    """
+
+    @staticmethod
+    def get_required_session_user(request):
+        """
+        Will return a user's identity if they are authenticated, but will throw
+        if no user is authenticated.
+        This can be used to as the first step in handling a request, stopping
+        users who are not authenticating from proceeding.
+        """
+        user = IdentityService.get_session_user(request)
+        if user is None:
+            raise AuthenticationRequiredException(
+                "You are not logged in, authentication is required."
+            )
+        return user
+```
+
+```rs
+let database: &str;
+let mut path = PathBuf::new(); // Guess Rust wants this declared here
+
+if let Some(value) = matches.value_of("database") {
+    database = value
+} else {
+    let home;
+    if cfg!(windows) {
+        home = env::var("APPDATA")?;
+    } else {
+        home = env::var("HOME")?;
+    }
+    path.push(&home);
+    path.push(".bookmark");
+    fs::create_dir_all(&path)?;
+    path.push("bookmarks.db");
+    database = path.to_str().unwrap();
 }
 ```
 
