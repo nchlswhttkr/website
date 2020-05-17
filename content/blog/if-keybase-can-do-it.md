@@ -1,42 +1,42 @@
 ---
 title: "If Keybase Can Do It"
-description: "Recreating the functionality Keybase's file sharing service"
+description: "Recreating the file sharing functionality of Keybase"
 date: 2020-05-12T12:00:00.000Z
 ---
 
-[Keybase](https://keybase.pub) has a really nice feature that lets you share sync files around under your account, and optionally to make them publicly accessible.
+[Keybase](https://keybase.pub) has a really nice feature where you can sync files between your devices, and (optionally) make them publicly accessible.
 
-They were also [acquired by Zoom](https://keybase.io/blog/keybase-joins-zoom) last week. While I think it's early days to say whether this means good or bad things for Keybase, it seemed like a timely opportunity to recreate some of their services for myself.
+They were also [acquired by Zoom](https://keybase.io/blog/keybase-joins-zoom) last week. While I think it's too early to say whether this means good or bad things for Keybase, it seemed like a timely opportunity to try recreating this feature I love.
 
 <!--more-->
 
-Keybase also helps with proving my identity across other mediums, but digging into that is work for another day. It did get me into the habit of signing my commits though, which has been a good learning experience!
+With this post, I thought it would be interesting to talk a little about my process when approaching a problem like this. Maybe the journey isn't as interesting as the end result, but it can't hurt to write about it!
 
-But back to the task at hand. We're here to talk about file sharing, not how I could botch up cryptography implementations.
+## Break it down
 
-## What are the moving parts?
-
-With projects like this, I like to start by trying to identify why I'm building something.
+I'm rebuilding something that already exists, so let's start with a high-level description of what Keybase does for me. In particular, what are the key elements to it?
 
 > With minimal interaction, Keybase allows me to make files on my machine visible to the web.
 
-The key benefit here is that it's mostly hands-free. Sharing files publicly can be easily done (publish to GitHub, upload to Google Drive), but action on my part is needed to upload and share the files.
+The key benefit here is that it's almost entirely hands-free. Publicly sharing files is something that can already be easily done with plenty of drag-and-drop programs, but I need to go through a web UI or client to make this happen.
 
-From here, it's time to start digging for a more precise description of where my solution starts and ends. In this case, what exactly does Keybase do for me?
+How does Keybase implement this? There's more to dig into to here, and I think it's about understanding where the solution starts and ends. Nitty-gritty details!
 
 > Files located inside `/Keybase/public/nchlswhttkr/` can be viewed in near real time at `https://keybase.pub/nchlswhttkr/`.
 
-So I need some way of getting directory contents to a web-facing location, with changes actively being carried across. If I can see what's in the directory from a web request, we're good.
+I need a way to get directory contents synced to a web-facing location, with changes being actively carried across. With that in place, so long as I can see what's inside the directory from a web request, we're good!
 
-Given serving web traffic directly off my machine isn't the wisest idea, some work needs to be done elsewhere. I could go with a object storage in a cloud provider, but in the interests of keeping my bills down I'll stick with my existing web server.
+I'll need something to handle file serving for me, since I don't want to handle web traffic on my own machine. I could use object storage with a cloud provider, but in the interest of avoiding bills I'll stick with my existing web server.
 
-Let's wrap this up with a rough description of the end product.
+Assuming my web server is able to handle the requests, the remaining work involves keeping it in sync with whatever might be happening locally. So two moving parts overall, clean enough.
 
-> When files are created/edited/deleted locally, they are synced to my remote web server. This server makes them available to the web.
+Let's wrap this up with a rough description of the end product and get onto building!
+
+> When filesystem changes happens locally, they are synced to my remote web server. This server then makes the files available to the web.
 
 ## Serving files to the web is easy
 
-This was a pretty quick addition to my Nginx config.
+This was a pretty quick addition to the Nginx config for my server, on it goes!
 
 ```diff
   server {
@@ -50,19 +50,17 @@ This was a pretty quick addition to my Nginx config.
   }
 ```
 
-With an `alias` to server local files for matching locations and the `autoindex` directice to generate directory views on index routes, visitors could browse my files.
+With an `alias` to serve local files for matching locations and the `autoindex` directice to generate directory views on index routes, web visitors can browse my public files.
 
 ## Syncing files between devices is hard
 
-I have files in `~/public-files/`.
+I have files I want share in `~/public-files/`. I want them on the remote at `~/public-files/`. I want them synced automatically/in the background.
 
-I want them on the remote at `~/public-files/`.
+That shouldn't be too difficult to set up right?
 
-I want them synced in the background.
+Coveniently enough, I happen to know that macOS comes with a built-in framework for scripting automation! With any compliant implementation of their [Open Scripting Architecture](https://en.wikipedia.org/wiki/AppleScript#Open_Scripting_Architecture), you can programmatically interact with the system.
 
-Coveniently enough, macOS comes with a built-in framework for automation! With any compliant implementation of their Open Scripting Architecture, you can programmatically interact with the system.
-
-Meet AppleScript.
+Meet AppleScript. This snippet syncs my files every hour, showing me an alert to investigate if something ever goes dreadfully wrong.
 
 ```applescript
 on idle
@@ -80,25 +78,23 @@ on idle
 end idle
 ```
 
-With this snippet, I can sync files to the remote every hour. If something goes wrong, I'm alerted to investigate.
+Maybe not the prettiest, but it gets the job done and it comes with some very nice features!
 
-Another benefit of packaging my script this way is that macOS will actually treat it like an application. It appears in my dock and it can be set to open when I log in.
+Aside from being able to easily show system-integrated elements like notifications, I can also package this snippet so that macOS treats it like an application! This means I can have a sync "app" appear in my dock when it's active, starting up when I log in.
 
-This about meets the requirements I set out earlier for this solution. I manage the applicable files locally, and they're available to the web soon with no action needed on my part.
+This about meets the requirements I set out earlier. I can manage files locally, and they're available to the web soon after with no action needed on my part.
 
-Compared to other tools (cron, systemd), it's unwieldy. However, the ability to smoothly integrate system-level functionality, like notifications, results in a much better user experience for me.
+Compared to other tools (cron, systemd) it might be unwieldy, but for me the system integrations make it much friendlier to work with.
 
-We can actually make one last change to make it even a little better though!
+However, we can actually introduce one last change to make it a little better though!
 
 ## Replacing a background job with a manual trigger
 
-There's a useful little app called Automator that comes on macOS, which provides similar capabilities to these OSA scripts but behind a GUI.
+There's a useful little app that comes with macOS called Automator. Automator lets you set up a similar level of automation to what you can achieve with AppleSCript, but through a GUI. In Automator, the automation documents are called workflows.
 
-If your macOS device has a touch bar, it can list any "Quick Action" workflows you create in Automator. Given these actions can run AppleScript, this makes it possible to trigger syncing from the comfort of the touch bar!
+If your macOS machine is like mine and has a touch bar, it can be set to show any "Quick Action" workflows you create in Automator. Given a workflow can itself run AppleScript, I can run my snippet from the comfort of my touch bar!
 
-Instead of a recurring script, I can trigger syncing from my touch bar!
-
-While it's technically more effort than running my script as an application, but it's a nice tradeoff for being able to sync at my own discretion.
+While it _is more effort_ than letting an automated process to the syncing for me, I think it's a nice trade to be able to sync at my discretion.
 
 So there you have it, file syncing from my machine to the web!
 
@@ -106,9 +102,9 @@ If you'd like to see the end result, just head to [https://nicholas.cloud/files/
 
 ## Thanks
 
-I wouldn't have known about macOS automation if [Josh Parnham](https://joshparnham.com/) hadn't given a talk on it.
+I wouldn't have known about macOS automation if [Josh Parnham](https://joshparnham.com/) hadn't given a talk on it a few years ago.
 
-You can find [the slides on GitHub](https://github.com/josh-/automating-macOS-with-JXA-presentation) to see what he spoke about, as well as links to a lot of resources on jumping into automatoin in macOS!
+You can find [his slides on GitHub](https://github.com/josh-/automating-macOS-with-JXA-presentation) to see what he spoke about, as well as links to plenty of resources on jumping into automatoin in macOS!
 
 ---
 
@@ -117,3 +113,5 @@ As as aside, it's worth noting that you can also convert my AppleScript right ba
 ```sh
 osascript -e 'display notification "Hello world!" sound name "frog"'
 ```
+
+As another aside, it's also worth mentioned that you can hook automation like this directly into filesystem events, but that wasn't something I investigated while writing this.
