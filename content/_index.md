@@ -1,6 +1,5 @@
 ---
 title: "Nicholas Whittaker"
-description: "Developer, Musician and Lawn Bowler"
 ---
 
 <span class='profile-image'>![My profile picture, which changes over time](/media/monty.jpg)</span>

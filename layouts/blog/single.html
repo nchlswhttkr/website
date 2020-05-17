@@ -11,10 +11,11 @@
     <body>
         {{ partial "nav.html" . }} {{ partial "header.html" . }}
         <main>
-            <div class="constrain-width">
+            <div class="constrain-width pad-content">
                 <article class="blog-article">
-                    {{ .Content }} {{ partial "utterances.html" . }}
+                    {{ .Content }}
                 </article>
+                {{ partial "utterances.html" . }}
             </div>
         </main>
         {{ partial "footer.html" . }}

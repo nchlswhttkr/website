@@ -1,5 +1,5 @@
 .blog-article > * {
-    margin: 24px 8px;
+    margin: 24px 16px;
 }
 
 .blog-article > h2,
@@ -37,7 +37,7 @@ and then centering it.
 }
 .blog-article img,
 .blog-article video {
-    max-width: calc(100% + 16px);
+    max-width: calc(100% + 32px);
     position: relative;
     top: 0;
     left: 50%;
