@@ -58,6 +58,10 @@ main > div {
         color: #fff;
     }
 
+    main > div {
+        background-color: #333;
+    }
+
     main img {
         background-color: #fff;
     }
