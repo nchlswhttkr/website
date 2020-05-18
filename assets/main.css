@@ -69,6 +69,10 @@ main > div {
     hr {
         border-top-color: #fff;
     }
+
+    pre {
+        color: #333;
+    }
 }
 
 .constrain-width {
