@@ -187,3 +187,5 @@ Notice how we don't `await` the result of `streamMarkdownFromUrl()`, since that 
 However, there is a compromise that comes with preparing our response in chunks. If anything goes wrong while preparing the markdown portion of our response, we can't return a `500` status or the like. We've already sent a `200` in our initial chunk. The cost of our little optimisation game.
 
 Is it worth it? Maybe not for a critical production service, but it feels pretty good to shorten the critical path.
+
+Anyway, go [browse some markdown](https://markdown-reader.nchlswhttkr.workers.dev). If you've got your own document to read, just add a `?url=https://...` parameter.
