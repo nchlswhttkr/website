@@ -1,11 +1,5 @@
 <footer>
     <div class="constrain-width">
-        <p>
-            Powered by <a href="https://gohugo.io/">Hugo</a>,
-            <a href="https://buildkite.com/">Buildkite</a> and
-            <a href="https://cloudflare.com">Cloudflare</a> – see the
-            <a href="{{ .Site.Params.Source }}">source</a>!
-        </p>
         <div class="footer-icons">
             {{ range .Site.Params.Identities }}
             <a href="{{ .link }}" target="_blank" rel="noreferrer">
@@ -13,5 +7,11 @@
             </a>
             {{ end }}
         </div>
+        <p>
+            Powered by <a href="https://gohugo.io/">Hugo</a>,
+            <a href="https://buildkite.com/">Buildkite</a> and
+            <a href="https://cloudflare.com">Cloudflare</a> – source on
+            <a href="https://github.com/nchlswhttkr/website/">GitHub</a>!
+        </p>
     </div>
 </footer>

@@ -1,5 +1,6 @@
 .blog-article > * {
     margin: 24px 16px;
+    break-inside: avoid;
 }
 
 .blog-article > h2,
@@ -55,9 +56,24 @@ and then centering it.
     overflow: scroll;
 }
 
+.blog-article hr {
+    border: 0px;
+    border-top: 2px solid var(--theme-color);
+}
+
 .blog-article blockquote {
     padding-left: 16px;
     border-left: 2px solid var(--theme-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    .blog-article hr {
+        border-top-color: #fff;
+    }
+
+    .blog-article blockquote {
+        border-left-color: #fff;
+    }
 }
 
 .blog-article .center-text {
@@ -67,4 +83,8 @@ and then centering it.
 
 .blog-article .twitter-tweet {
     width: unset !important; /* Isolated hack to override bad styling, sorry */
+}
+
+.blog-article .foreword {
+    font-family: monospace;
 }

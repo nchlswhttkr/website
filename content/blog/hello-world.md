@@ -2,7 +2,6 @@
 title: "Hello World"
 description: "Testing out markdown"
 date: 2017-01-01T12:00:00+10:00
-utterances: 1
 ---
 
 I use this article to make sure any styling changes I make don't break.
@@ -141,6 +140,15 @@ if let Some(value) = matches.value_of("database") {
     fs::create_dir_all(&path)?;
     path.push("bookmarks.db");
     database = path.to_str().unwrap();
+}
+```
+
+```css
+.show-text::after {
+    content: "A special message!";
+    color: var(--theme-color);
+    background-color: #fff;
+    font-weight: 700;
 }
 ```
 

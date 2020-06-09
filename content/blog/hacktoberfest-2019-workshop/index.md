@@ -63,7 +63,7 @@ That's just about a wrap on everything I wanted to talk about. I hope you've bee
 
 ---
 
-### Debugging deployments to GitHub Pages
+## Debugging deployments to GitHub Pages
 
 _A little offhand thing I learned as well..._
 

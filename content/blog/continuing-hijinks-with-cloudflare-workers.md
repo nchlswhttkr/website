@@ -2,8 +2,6 @@
 title: "Continuing Hijinks With Cloudflare Workers"
 description: "Once was not enough, so did more experimenting!"
 date: 2020-05-24T12:00:00.000Z
-# cover: ""
-utterances: 26
 ---
 
 A while back I wrote about [a few uses for Cloudflare Workers](../getting-up-to-hijinks-with-cloudflare-workers). I've been trying a few more things since then, so now I can dive into even more uses for Cloudflare Workers!

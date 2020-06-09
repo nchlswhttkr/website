@@ -2,7 +2,6 @@ baseURL: "https://nicholas.cloud/"
 languageCode: "en-us"
 title: "Nicholas Whittaker"
 enableEmoji: true
-pygmentsCodeFences: true
 buildFuture: true
 
 disableKinds:
@@ -20,7 +19,7 @@ params:
   me:
     name: "Nicholas Whittaker"
     username: "nchlswhttkr"
-  source: "https://nicholas.cloud/goto/source/"
+  source: "https://github.com/nchlswhttkr/website/"
   identities:
     - prompt: "Find this website"
       icon: "/media/icons/website.svg"

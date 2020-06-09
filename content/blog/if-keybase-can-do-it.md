@@ -2,7 +2,6 @@
 title: "If Keybase Can Do It"
 description: "Recreating the file sharing functionality of Keybase"
 date: 2020-05-16T12:00:00.000Z
-utterances: 25
 ---
 
 [Keybase](https://keybase.pub) has a really nice feature where you can sync files between your devices, and (optionally) make them publicly accessible.

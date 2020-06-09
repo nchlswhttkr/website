@@ -2,7 +2,6 @@
 title: "A Pretty Little Bit of Rsync"
 description: "The unexpectedly lengthy story about improving one line in a script"
 date: 2020-04-14T12:00:00.000Z
-utterances: 22
 ---
 
 Recently I've grown to love using [rsync](https://rsync.samba.org/), a tool for transferring files between local and remote destinations.

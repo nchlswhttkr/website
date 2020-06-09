@@ -2,7 +2,6 @@
 title: "Getting Up to Hijinks With Cloudflare Workers"
 description: "Cloudflare has a serverless offering, let's explore!"
 date: 2020-03-02T12:00:00.000Z
-utterances: 18
 ---
 
 You may have heard of [Workers](https://workers.dev), a product from Cloudflare that lets you run JavaScript/WebAssembly in a serverless fashion on Cloudflare's network.

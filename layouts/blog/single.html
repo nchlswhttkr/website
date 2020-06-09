@@ -13,9 +13,14 @@
         <main>
             <div class="constrain-width pad-content">
                 <article class="blog-article">
+                    <p class="foreword">
+                        Posted
+                        <a href="{{ .Permalink }}"
+                            >{{ .Date.Format "January 02, 2006" }}</a
+                        >
+                    </p>
                     {{ .Content }}
                 </article>
-                {{ partial "utterances.html" . }}
             </div>
         </main>
         {{ partial "footer.html" . }}

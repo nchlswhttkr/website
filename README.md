@@ -2,8 +2,6 @@
 
 I also run a few [Cloudflare Workers](https://github.com/nchlswhttkr/workers/) on this website!
 
-Icons for this site are modified from those provided by Font Awesome, see [their license](https://fontawesome.com/license/free/).
-
-The favicon is generated using [favicon.io](https://favicon.io/) (Ultra is the font used).
+Icons for this site are provided by Font Awesome, see [their license](https://fontawesome.com/license/free/).
 
 Background patterns courtesy of [Hero Patterns](https://www.heropatterns.com/).

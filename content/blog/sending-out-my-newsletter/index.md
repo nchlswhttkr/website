@@ -2,7 +2,6 @@
 title: "Sending Out My Newsletter"
 description: "With a little help from Buildkite, Mailgun and Cloudflare!"
 date: 2020-03-22T12:00:00.000Z
-utterances: 21
 ---
 
 For the last while I've been collecting interesting articles, videos and music albums that I've liked into a [newsletter](/newsletter/). As a next step, I decided that I'd like to start emailing this newsletter out to a list of subscribers.
@@ -86,4 +85,4 @@ There's still further work for me to do on this arrangement, but it's mostly sty
 
 You're more than welcome to check out [my newsletter](/newsletter/), and if you'd like to subscribe you can to receive it in your email inbox too!
 
-If you're interested in seeing all the code powering this, you can check out the repo of [my website](https://nicholas.cloud/goto/source) and [the worker](https://github.com/nchlswhttkr/workers#newsletter-subscription-form) for accepting subscriptions!
+If you're interested in seeing all the code powering this, you can check out the repo of [my website](https://github.com/nchlswhttkr/website/) and [the worker](https://github.com/nchlswhttkr/workers#newsletter-subscription-form) for accepting subscriptions!

@@ -16,14 +16,14 @@ Currently, I'm a part of the logistics crew with [UNIHACK](https://unihack.net/)
 
 ---
 
+## Contact
+
+You can reach me by [email](mailto:nchlswhttkr@gmail.com) or on [Twitter](https://twitter.com/nchlswhttkr/).
+
+---
+
 ## Blog
 
 I like to write about the technologies I use, and pen the odd reflection. You can find all my posts on [my blog](/blog/).
 
 I also like to share interesting pieces and content that I love in [my newsletter](/newsletter/). You can also [subscribe](/newsletter/subscribe/) to receive it via email!
-
----
-
-## Contact
-
-You can reach me by [email](mailto:nchlswhttkr@gmail.com) or on [Twitter](https://twitter.com/nchlswhttkr/).
