@@ -1,0 +1,22 @@
+<button onclick="toggleClass()">Toggle message</button>
+<p id="target">Click the above button to show the message!&nbsp;</p>
+
+<style>
+    .show-text::after {
+        content: "A special message!";
+        color: var(--theme-color);
+        background-color: #fff;
+        font-weight: 700;
+    }
+</style>
+
+<script>
+    function toggleClass() {
+        const target = document.getElementById("target");
+        if (target.className) {
+            target.className = "";
+        } else {
+            target.className = "show-text";
+        }
+    }
+</script>
