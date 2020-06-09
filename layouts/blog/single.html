@@ -7,6 +7,9 @@
         <!-- prettier-ignore -->
         <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
         <link rel="stylesheet" type="text/css" href="{{ (resources.Get "blog-article.css" | minify ).Permalink }}" />
+        {{ if in .Content "class=\"highlight\"" }}
+        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "highlight.css" | minify ).Permalink }}" />
+        {{ end }}
     </head>
     <body>
         {{ partial "nav.html" . }} {{ partial "header.html" . }}

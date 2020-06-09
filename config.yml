@@ -13,7 +13,8 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    style: friendly
+    # style: vs
+    noClasses: false
 
 params:
   me:
