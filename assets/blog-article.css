@@ -68,11 +68,11 @@ and then centering it.
 
 @media (prefers-color-scheme: dark) {
     .blog-article hr {
-        border-top-color: #fff;
+        border-top-color: #ccc;
     }
 
     .blog-article blockquote {
-        border-left-color: #fff;
+        border-left-color: #ccc;
     }
 }
 
