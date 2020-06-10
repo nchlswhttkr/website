@@ -41,9 +41,6 @@ Text with [a link](/) in it.
 1.  The second item
 1.  The third and final item
 
--   [ ] Incompete
--   [x] Complete
-
 ---
 
 ```sh
@@ -147,9 +144,13 @@ if let Some(value) = matches.value_of("database") {
 .show-text::after {
     content: "A special message!";
     color: var(--theme-color);
-    background-color: #fff;
+    background-color: var(--light-color);
     font-weight: 700;
 }
+```
+
+```html
+{{% css-hidden-message-demo %}}
 ```
 
 I maintain the site source code on the `dev` branch, then deploy builds from `master`.

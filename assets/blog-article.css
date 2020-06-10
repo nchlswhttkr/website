@@ -6,7 +6,7 @@
 .blog-article > h2,
 .blog-article > h3,
 .blog-article > hr {
-    margin-top: 48px;
+    margin-top: 64px;
 }
 
 .blog-article p,
@@ -68,11 +68,11 @@ and then centering it.
 
 @media (prefers-color-scheme: dark) {
     .blog-article hr {
-        border-top-color: #ccc;
+        border-top-color: var(--content-color);
     }
 
     .blog-article blockquote {
-        border-left-color: #ccc;
+        border-left-color: var(--content-color);
     }
 }
 
