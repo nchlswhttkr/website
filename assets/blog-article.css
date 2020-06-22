@@ -56,6 +56,12 @@ and then centering it.
     overflow: scroll;
 }
 
+@media print {
+    .blog-article pre {
+        white-space: pre-wrap;
+    }
+}
+
 .blog-article hr {
     border: 0px;
     border-top: 2px solid var(--theme-color);
