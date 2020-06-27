@@ -1,9 +1,11 @@
 <button onclick="toggleClass()">Toggle message</button>
-<p id="target">Click the above button to show the message!&nbsp;</p>
+<p aria-label="Your special message appears here" id="target">
+    Click the above button to show the message!&nbsp;
+</p>
 
 <style>
     .show-text::after {
-        content: "A special message!";
+        content: attr(aria-label);
         color: var(--theme-color);
         background-color: var(--light-color);
         font-weight: 700;

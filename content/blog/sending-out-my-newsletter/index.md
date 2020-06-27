@@ -49,7 +49,7 @@ curl --fail "https://api.eu.mailgun.net/v3/mailgun.nicholas.cloud/messages" \
     --data-urlencode text@email.text
 ```
 
-To improve the delivery of emails, it's important to include a plaintext counterpart for the HTML content of the email. Conveniently, the folks at Mailchimp have a [tool to generate this email text](https://templates.mailchimp.com/resources/html-to-text/). Better yet, it can be `curl`ed!
+To improve the delivery of emails, it's important to include a plaintext counterpart for the HTML content of the email. Conveniently, the folks at Mailchimp have a [tool to generate this email text](https://templates.mailchimp.com/resources/html-to-text/). Better yet, you can `curl` it!
 
 Once the messages have been accepted by Mailgun, I can sit back and wait for them to be delivered! Mailgun manages the sending here, and even adds an unsubscribe link for me through their templating system!
 
