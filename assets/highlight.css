@@ -87,3 +87,7 @@
 .chroma .language-css .kc {
     color: #f8f8f2;
 }
+.chroma .language-html .o,
+.chroma .language-css .o {
+    color: #f8f8f2;
+}

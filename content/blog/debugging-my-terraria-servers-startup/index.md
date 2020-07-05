@@ -9,13 +9,9 @@ aliases:
 
 Recently, I had an interesting debugging session with my Terraria server, which I've been working to automate.
 
-<!--more-->
-
 This has been one of the more complex problems I've encountered and fixed, so I'm writing about it for others to learn from!
 
-You can find the code to run the server like I did in [this Gist](https://gist.github.com/nchlswhttkr/53680d4abb106160fccd5fe820b23bd7), though I recommend only looking at it after you've finished reading.
-
----
+<!--more-->
 
 At the moment, I pay US$5 for a DigitalOcean droplet (about ~AU$8 after conversion and taxes) to host my hobby projects. This includes my [personal website](https://nchlswhttkr.com), [Mellophone](https://mellophone.pink/), and a [Buildkite](https://buildkite.com/) agent. This droplet sees minimal traffic at the moment, and usually only sits at about 20-30% memory usage. I've been thinking about how to make greater use of this droplet for a while now.
 
@@ -78,3 +74,5 @@ With that problem out of the way, I was able to start and stop the server withou
 ![A start and stop button on the home screen of my iPhone](./home-screen.png)
 
 {{% image-caption %}}Gigantamax Meowth is a longboi{{%/ image-caption %}}
+
+You can find the code to run the server like I did in [this Gist](https://gist.github.com/nchlswhttkr/53680d4abb106160fccd5fe820b23bd7)!
