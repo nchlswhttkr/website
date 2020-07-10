@@ -17,10 +17,6 @@ markup:
     noClasses: false
 
 params:
-  me:
-    name: "Nicholas Whittaker"
-    username: "nchlswhttkr"
-  source: "https://github.com/nchlswhttkr/website/"
   identities:
     - prompt: "Find this website"
       icon: "/media/icons/website.svg"

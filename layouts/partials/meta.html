@@ -1,24 +1,25 @@
+<!-- prettier-ignore -->
+{{ $coverImage := printf "%s%s" .Site.BaseURL "media/monty.jpg" }}
+{{ $coverImageAlt := "Avatar of Nicholas Whittaker" }}
+{{ if ( isset .Params "cover" ) }}
+    {{ if not ( isset .Params "coveralt" ) }}
+        {{ errorf "Expected an alt text for cover image for ./content/%s" .File.Path }}
+    {{ end }}
+    {{ $coverImage = printf "%s%s" .Permalink .Params.Cover }}
+    {{ $coverImageAlt = .Params.CoverAlt }}
+{{ end }}
+
 <title>{{ .Title }}</title>
 <meta name="description" content="{{ .Description }}" />
-<meta name="author" content="{{ .Site.Params.Me.Name }}" />
+<meta name="author" content="Nicholas Whittaker" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.png" />
-
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:description" content="{{ .Description }}" />
-
+<meta property="og:image" content="{{ $coverImage }}" />
+<meta property="og:image:alt" content="{{ $coverImageAlt }}" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@{{ .Site.Params.Me.Username }}" />
-<meta name="twitter:creator" content="@{{ .Site.Params.Me.Username }}" />
-<meta name="twitter:title" content="{{ .Title }}" />
-<meta name="twitter:description" content="{{ .Description }}" />
-
-{{ if (isset .Params "cover") }}
-<meta name="twitter:image" content="{{ .Permalink }}{{ .Params.Cover }}" />
-<meta property="og:image" content="{{ .Permalink }}{{ .Params.Cover }}" />
-{{ else }}
-<meta name="twitter:image" content="{{.Site.BaseURL }}media/monty.jpg" />
-<meta property="og:image" content="{{.Site.BaseURL }}media/monty.jpg" />
-{{ end }}
+<meta name="twitter:site" content="@nchlswhttkr" />
+<meta name="twitter:creator" content="@nchlswhttkr" />

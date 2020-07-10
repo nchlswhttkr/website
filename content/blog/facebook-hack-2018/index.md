@@ -3,13 +3,14 @@ title: "Facebook Hack 2018"
 description: "A hackathon reflection"
 date: 2018-05-28T12:00:00+10:00
 cover: "balloons.jpg"
+coveralt: "A balloon sign with the hackathon's social media hashtag"
 ---
 
 This past weekend I had the pleasure of attending Facebook’s 2018 Regional Hackathon in Melbourne!
 
 <!--more-->
 
-![The balloon sign for #fbmelhack18](./balloons.jpg)
+![A balloon sign with the hackathon's social media hashtag](./balloons.jpg)
 
 Teaming up with my good friend Patrick, we went in as a pair and a welcoming attitude for those without a team. In the end, we teamed up with Tij, another CS student at Monash, as well as Hugh from Melbourne University.
 

@@ -2,7 +2,6 @@
 title: "This Website Will Disappear One Day"
 description: "Decay might be inescapable, but that doesn't mean you shouldn't enjoy the present"
 date: 2020-06-21T12:00:00.000Z
-# cover: ""
 ---
 
 The web. The internet. Call it what you want, it's a funny thing. A feat of engineering that's managed to create and connect the modern world as we know it.

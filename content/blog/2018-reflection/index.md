@@ -3,6 +3,7 @@ title: "2018 Reflection"
 description: "A reflection on the past year"
 date: 2018-12-22T12:00:00+10:00
 cover: "western-brass.jpg"
+coveralt: "Western Brass at the Australian National Band Championships 2018"
 ---
 
 As another year passes by, I think it's time to reflect on the experiences I've had and to look back on some of the highlights as well!
@@ -41,9 +42,9 @@ Currently, I feel the band lacks consistent repertoire, and runs mostly from gig
 
 On the lighter side though, I've convinced a friend to join me at rehearsals on a Tuesday evening, making the journey to and from Footscray much more bearable. I hope this continues in the coming year.
 
-![Western Brass at the Australian National Band Championships, 3rd of 12 in C grade](./western-brass.jpg)
+![Western Brass at the Australian National Band Championships 2018](./western-brass.jpg)
 
-{{% image-caption %}}Western Brass at the Australian National Band Championships, 3rd of 12 in C grade{{%/ image-caption %}}
+{{% image-caption %}}3rd of 12 in our grade!{{%/ image-caption %}}
 
 ### Monash Philharmonic Orchestra
 

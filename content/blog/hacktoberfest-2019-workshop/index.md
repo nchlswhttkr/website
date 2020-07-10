@@ -3,6 +3,7 @@ title: "Hacktoberfest 2019 Workshop"
 description: "Running a Hacktoberfest workshop at Monash University"
 date: 2019-10-20T12:00:00+10:00
 cover: "cover.jpg"
+coveralt: "Promtional materials for Hacktoberfest 2019"
 ---
 
 Last week I had the opportunity to run a workshop with at Monash University in celebration of [Hacktoberfest](https://hacktoberfest.digitalocean.com). The night itself focused on exploring open source software development. Exploring what open source software is, the implications it has for the world of software development and IT systems, and how contributions can be made. We also had a little security spin, examining how projects that are open source make tradeoffs in security.
