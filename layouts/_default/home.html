@@ -1,29 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        {{ partial "meta.html" . }}
-        <meta property="og:type" content="article" />
+{{ define "css" }}
+<!-- prettier-ignore -->
+<link rel="stylesheet" type="text/css" href="{{ (resources.Get "blog-article.css" | minify ).Permalink }}" />
+<style>
+    #avatar {
+        float: right;
+        left: 0;
+        transform: none;
+        width: 200px;
+    }
+    @media (max-width: 599px) {
+        #avatar {
+            display: none;
+        }
+    }
+</style>
+<!-- prettier-ignore -->
+{{ end }}
 
-        <!-- prettier-ignore -->
-        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
-        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "blog-article.css" | minify ).Permalink }}" />
-
-        <style>
-            .profile-image > img {
-                height: 256px;
-                border-radius: 50%;
-            }
-        </style>
-    </head>
-    <body>
-        {{ partial "nav.html" . }} {{ partial "header.html" . }}
-        <main>
-            <div class="constrain-width">
-                <article class="blog-article pad-content">
-                    {{ .Content }}
-                </article>
-            </div>
-        </main>
-        {{ partial "footer.html" . }}
-    </body>
-</html>
+{{ define "main" }}
+<article class="blog-article">
+    <picture>
+        <source srcset="/media/monty.jpg" media="(min-width: 600px)" />
+        <img id="avatar" alt="Avatar of Nicholas Whittaker" src="" />
+    </picture>
+    {{ .Content }}
+</article>
+{{ end }}

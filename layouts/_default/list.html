@@ -1,0 +1,23 @@
+{{ define "css" }}
+<!-- prettier-ignore -->
+<link rel="stylesheet" type="text/css" href="{{(resources.Get "blog-list.css" | minify ).Permalink }}" />
+{{ end }}
+
+{{ define "main" }}
+<div class="blog-list">
+    {{ .Content }} {{ range .Data.Pages }}
+    <div class="spacer"></div>
+    <p class="date">
+        <code>
+            {{ .Date.Format "2006-01-02" }} //
+            <!--  -->
+            {{ math.Ceil (div .WordCount 150.0) }} min read
+        </code>
+    </p>
+    <h3>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h3>
+    <p>{{ .Description }}</p>
+    {{ end }}
+</div>
+{{ end }}

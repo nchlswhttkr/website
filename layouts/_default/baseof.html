@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ partial "meta.html" . }}
+        <!-- prettier-ignore -->
+        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
+        {{ block "css" . }} {{ end }}
+    </head>
+    <body>
+        <nav>
+            <ul class="constrain-width">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/newsletter/">Newsletter</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <div class="constrain-width">
+                <h1>{{ .Title }}</h1>
+                {{ if .Description }}
+                <h2>{{ .Description }}</h2>
+                {{ end }}
+            </div>
+        </header>
+
+        <main>
+            <div class="constrain-width">
+                {{ block "main" . }} {{ end }}
+            </div>
+        </main>
+
+        <footer>
+            <div class="constrain-width">
+                <div class="footer-icons">
+                    {{ range .Site.Params.Identities }}
+                    <a href="{{ .link }}" target="_blank" rel="noreferrer">
+                        <img src="{{ .icon }}" alt="{{ .prompt }}" />
+                    </a>
+                    {{ end }}
+                </div>
+                <p>
+                    Powered by <a href="https://gohugo.io/">Hugo</a>,
+                    <a href="https://buildkite.com/">Buildkite</a> and
+                    <a href="https://cloudflare.com">Cloudflare</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

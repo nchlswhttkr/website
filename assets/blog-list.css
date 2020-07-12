@@ -1,17 +1,19 @@
-.list-foreword,
-.list-posts {
-    margin: 0 16px;
-    line-height: 1.4rem;
+.blog-list {
+    padding: 32px 16px;
 }
 
-.list-posts > * {
-    margin: 12px 0;
+.blog-list > * {
+    margin: 0 0 16px;
 }
 
-.list-posts .date {
+.blog-list > *:last-child {
+    margin-bottom: 0;
+}
+
+.blog-list .date {
     opacity: 0.8;
 }
 
-.list-posts .spacer {
-    margin-top: 80px;
+.blog-list .spacer {
+    margin-top: 64px;
 }
