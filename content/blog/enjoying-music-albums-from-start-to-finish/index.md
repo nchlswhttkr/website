@@ -6,7 +6,7 @@ date: 2020-07-04T12:00:00.000Z
 
 There's a lot of ways to listen to music in this day and age. You might see it live, streamed over the internet or played from a vinyl record. Today though, I want to advocate for a particular approach to listening to recordings.
 
-Take an album and let it run from its first track until conclusion. Don't put it on shuffle. Don't only play the most popular tracks. Listen to everything the album has to offer in the order in the order that it's listed.
+Take an album and let it run from its first track until conclusion. Don't put it on shuffle. Don't only play the most popular tracks. Listen to everything the album has to offer, in the order in the order that it's listed.
 
 <!--more-->
 

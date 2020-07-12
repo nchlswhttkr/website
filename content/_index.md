@@ -2,24 +2,29 @@
 title: "Nicholas Whittaker"
 ---
 
-<span class='profile-image'>![My profile picture, which changes over time](/media/monty.jpg)</span>
+**Nice to meet you, I'm Nicholas!** :wave:
 
-## Hey, I'm Nicholas!
+I'm a developer with a passion for web development and automation!
 
-I'm a developer in Melbourne, Australia. Web development and automation are my passion, and I'm always looking to explore new things and share what I learn with those around me!
+In my spare time, I rehearse and play with brass bands and orchestras around my hometown of Melbourne, Australia.
 
-In my spare time, I rehearse and play with brass bands and orchestras around Melbourne. Catch me playing euphonium or trombone at street marches or competitions!
+You might also find me playing the odd game of lawn bowls.
 
-I studied Computer Science at Monash University, and helped launch a new course planning service for staff and students, [MonPlan](https://monplan.apps.monash.edu/). I've also been a part of running hackathons and workshops for IT students as a volunteer and committee member for [WIRED](https://wired.org.au/).
+## About
 
-Currently, I'm a part of the logistics crew with [UNIHACK](https://unihack.net/), running hackathons for Australian university students.
+I studied Computer Science at Monash University and helped launch [MonPlan](https://monplan.apps.monash.edu/), the University's official course planning service built for students by students.
+
+I've been involved in running workshops, hackathons and events for IT students as a volunteer and committee member with [WIRED](https://wired.org.au/). Currently, I'm a part of the logistics crew with [UNIHACK](https://unihack.net/), organising Australia's largest hackathon for university students.
 
 ## Contact
 
-You can reach me by [email](mailto:nchlswhttkr@gmail.com) or on [Twitter](https://twitter.com/nchlswhttkr/).
+You can find my other accounts in the site footer.
+
+-   [Email](mailto:nicholas@nicholas.cloud)
+-   [Twitter](https://twitter.com/nchlswhttkr/)
 
 ## Blog
 
-I like to write about the technologies I use, and pen the odd reflection. You can find all my posts on [my blog](/blog/).
+I love writing about my thoughts and experiences with different pieces of technology, and penning the odd reflection here and there. You can read all of my posts on [my blog](/blog/).
 
-I also like to share interesting pieces and content that I love in [my newsletter](/newsletter/). You can also receive it via email if you choose to [subscribe](/newsletter/subscribe/)!
+In addition to my blog, I also like to share interesting pieces and content I find in [my newsletter](/newsletter/). If you [subscribe](/newsletter/subscribe/), I'll email you each new issue as I publish them!

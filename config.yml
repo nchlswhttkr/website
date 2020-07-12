@@ -26,7 +26,7 @@ params:
       link: "/rss/"
     - prompt: "Send me an email"
       icon: "/media/icons/email.svg"
-      link: "mailto:nchlswhttkr@gmail.com"
+      link: "mailto:nicholas@nicholas.cloud"
     - prompt: "Find me on GitHub"
       icon: "/media/icons/github.svg"
       link: "https://github.com/nchlswhttkr/"

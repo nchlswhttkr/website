@@ -4,6 +4,8 @@ description: "Cloudflare has a serverless offering, let's explore!"
 date: 2020-03-02T12:00:00.000Z
 ---
 
+> _Update: If this isn't enough for you, I've done [more experimenting](../continuing-hijinks-with-cloudflare-workers) that you can read about!_
+
 You may have heard of [Workers](https://workers.dev), a product from Cloudflare that lets you run JavaScript/WebAssembly in a serverless fashion on Cloudflare's network.
 
 I've been toying with them recently, and I thought it would be fun to share some of the uses I've come up with for them!
