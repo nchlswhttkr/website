@@ -102,9 +102,7 @@ If you'd like to see the end result, just head to [https://nicholas.cloud/files/
 
 ## Thanks
 
-I wouldn't have known about macOS automation if [Josh Parnham](https://joshparnham.com/) hadn't given a talk on it a few years ago.
-
-You can find [his slides on GitHub](https://github.com/josh-/automating-macOS-with-JXA-presentation) to see what he spoke about, as well as links to plenty of resources on jumping into automatoin in macOS!
+I wouldn't have known about macOS automation if [Josh Parnham](https://joshparnham.com/) hadn't given a talk on it a few years ago. You can find [his slides on GitHub](https://github.com/josh-/automating-macOS-with-JXA-presentation) to see what he spoke about, as well as links to plenty of resources on jumping into automation in macOS!
 
 ---
 
@@ -114,4 +112,4 @@ As as aside, it's worth noting that you can also convert my AppleScript right ba
 osascript -e 'display notification "Hello world!" sound name "frog"'
 ```
 
-As another aside, it's also worth mentioned that you can hook automation like this directly into filesystem events, but that wasn't something I investigated while writing this.
+As another aside, it's also worth mentioning that you can hook automation like this directly into filesystem events, but that wasn't something I looked at while writing this.

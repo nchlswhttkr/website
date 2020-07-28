@@ -1,12 +1,10 @@
+# prettier-ignore
 steps:
   - label: ":shipit:"
     branches: master
     agents:
       deploy-personal-website: true
-    command:
-      - hugo --minify --cleanDestinationDir
-      - sed -i 's/[a-z.* ]*{}//g' public/highlight.min.css
-      - rsync --recursive --verbose --itemize-changes --checksum --delete $PWD/public/ /var/www/nicholas.cloud
+    command: .buildkite/build.sh
   - wait
   - label: ":rolled_up_newspaper:"
     branches: master

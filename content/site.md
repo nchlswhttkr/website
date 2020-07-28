@@ -13,11 +13,11 @@ Almost all content and code sits in a [single Github repo](https://github.com/nc
 
 I use the static site generator [Hugo](https://gohugo.io/) (with my own theme) to build my website.
 
-As I write and push changes to Github, [Buildkite](https://buildkite.com/) schedules builds to be run. Conveniently, they a free tier for community/open source projects!
+As I write and push changes to Github, [Buildkite](https://buildkite.com/) schedules builds to be run. Good thing they have a free tier for community/open source projects!
 
 ## Serving incoming traffic
 
-I run everything off an aged Raspberry Pi (model 1B, plain Raspbian for now) on my home network. It's not the fastest arrangement, but it meets my needs and saves me paying for cloud compute capacity.
+I run everything off an aging Raspberry Pi (model 1B, plain Raspbian for now) on my home network. It's not the fastest arrangement, but it meets my needs and saves me paying for cloud compute capacity.
 
 A Buildkite agent continuously checks for new jobs and rebuilds my site as needed. It performs other scripted work as well, like [sending out new issues of my newsletter](/blog/sending-out-my-newsletter/).
 
