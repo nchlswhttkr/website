@@ -170,3 +170,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metu
 Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
 
 {{< tweet 902019752251465728 >}}
+
+{{< youtube "x3HYRYGZtH0" >}}
+
+{{% vimeo "452492906" %}}

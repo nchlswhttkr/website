@@ -19,9 +19,9 @@ As I write and push changes to Github, [Buildkite](https://buildkite.com/) sched
 
 I run everything off an aging Raspberry Pi (model 1B, plain Raspbian for now) on my home network. It's not the fastest arrangement, but it meets my needs and saves me paying for cloud compute capacity.
 
-A Buildkite agent continuously checks for new jobs and rebuilds my site as needed. It performs other scripted work as well, like [sending out new issues of my newsletter](/blog/sending-out-my-newsletter/).
+A Buildkite agent continuously checks for new jobs and rebuilds my site as needed. It performs other scripted work as well, like [scheduling delivery of my newsletter](/blog/sending-out-my-newsletter/).
 
-Web traffic is handled by [Nginx](https://nginx.org/en/). It makes serving static content a breeze, while still giving me a great deal of fliexibility. For example, my RSS feedis aliased to common paths (like `/feed` for Wordpress sites) to make it easier to find.
+Web traffic is handled by [Nginx](https://nginx.org/en/). It makes serving static content a breeze, while still giving me a great deal of fliexibility. For example, my RSS feed is aliased to common paths (like `/feed` for Wordpress sites) to make it easier to find.
 
 ## Domain management
 
