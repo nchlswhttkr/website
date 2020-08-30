@@ -5,34 +5,37 @@ enableEmoji: true
 buildFuture: true
 
 disableKinds:
-  - "taxonomyTerm" # I don't currently use categories/tags
+    - "taxonomyTerm" # I don't currently use categories/tags
 
 # https://gohugo.io/getting-started/configuration-markup/#goldmark
 markup:
-  goldmark:
-    renderer:
-      unsafe: true
-  highlight:
-    # style: vs
-    noClasses: false
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        # style: vs
+        noClasses: false
 
 params:
-  identities:
-    - prompt: "Find this website"
-      icon: "/media/icons/website.svg"
-      link: "/"
-    - prompt: "Subscribe to an RSS feed"
-      icon: "/media/icons/rss.svg"
-      link: "/rss/"
-    - prompt: "Send me an email"
-      icon: "/media/icons/email.svg"
-      link: "mailto:nicholas@nicholas.cloud"
-    - prompt: "Find me on GitHub"
-      icon: "/media/icons/github.svg"
-      link: "https://github.com/nchlswhttkr/"
-    - prompt: "Find me on Twitter"
-      icon: "/media/icons/twitter.svg"
-      link: "https://twitter.com/nchlswhttkr/"
-    - prompt: "Find me on LinkedIn"
-      icon: "/media/icons/linkedin.svg"
-      link: "https://linkedin.com/in/nchlswhttkr/"
+    identities:
+        - prompt: "Find this website"
+          icon: "/media/icons/website.svg"
+          link: "/"
+        - prompt: "Subscribe to an RSS feed"
+          icon: "/media/icons/rss.svg"
+          link: "/rss/"
+        - prompt: "Send me an email"
+          icon: "/media/icons/email.svg"
+          link: "mailto:nicholas@nicholas.cloud"
+        - prompt: "Find me on GitHub"
+          icon: "/media/icons/github.svg"
+          link: "https://github.com/nchlswhttkr/"
+        - prompt: "Find me on Twitter"
+          icon: "/media/icons/twitter.svg"
+          link: "https://twitter.com/nchlswhttkr/"
+        - prompt: "Find me on LinkedIn"
+          icon: "/media/icons/linkedin.svg"
+          link: "https://linkedin.com/in/nchlswhttkr/"
+        - prompt: "Find me on Twitch"
+          icon: "/media/icons/twitch.svg"
+          link: "https://twitch.tv/nicholas_dot_cloud/"

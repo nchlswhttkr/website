@@ -16,6 +16,8 @@ I studied Computer Science at Monash University and helped launch [MonPlan](http
 
 I've been involved in running workshops, hackathons and events for IT students as a volunteer and committee member with [WIRED](https://wired.org.au/). Currently, I'm a part of the logistics crew with [UNIHACK](https://unihack.net/), organising Australia's largest hackathon for university students.
 
+I always try to be public about what I'm learning and working on, in the hope that I can help others learn new things too! You can find most of my work either covered in [my blog](/blog/) or published on [GitHub](https://github.com/nchlswhttkr/).
+
 ## Contact
 
 You can find my other accounts in the site footer.

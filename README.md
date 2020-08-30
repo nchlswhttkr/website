@@ -6,4 +6,4 @@ Source code for [my website](https://nicholas.cloud/). See also the source code 
 
 Icons for this site are provided by Font Awesome, see [their license](https://fontawesome.com/license/free/).
 
-Background patterns courtesy of [Hero Patterns](https://www.heropatterns.com/).
+Background pattern courtesy of [Hero Patterns](https://www.heropatterns.com/).

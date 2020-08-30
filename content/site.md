@@ -11,13 +11,15 @@ These are all the main parts that I can think of off the top of my head. If you'
 
 Almost all content and code sits in a [single Github repo](https://github.com/nchlswhttkr/website/).
 
-I use the static site generator [Hugo](https://gohugo.io/) (with my own theme) to build my website.
+I use the static site generator [Hugo](https://gohugo.io/) (with my own theme) to build my website. It's fast, meets my needs for templating/content management, and handles extra features RSS feeds out of the box.
+
+I like being able to write my posts locally in markdown. Being plain text makes it easy to write and edit, and if I ever need something more complex I can drop in custom HTML with shortcode snippets using Hugo.
 
 As I write and push changes to Github, [Buildkite](https://buildkite.com/) schedules builds to be run. Good thing they have a free tier for community/open source projects!
 
 ## Serving incoming traffic
 
-I run everything off an aging Raspberry Pi (model 1B, plain Raspbian for now) on my home network. It's not the fastest arrangement, but it meets my needs and saves me paying for cloud compute capacity.
+I run everything off an aging Raspberry Pi (model 1B, plain Raspbian for now) on my home network. It's not the fastest arrangement, but it meets my needs and saves me paying for cloud compute/storage/bandwidth.
 
 A Buildkite agent continuously checks for new jobs and rebuilds my site as needed. It performs other scripted work as well, like [scheduling delivery of my newsletter](/blog/sending-out-my-newsletter/).
 
@@ -31,7 +33,7 @@ I've got `nicholas.cloud` registered with [Porkbun](https://porkbun.com). Not al
 
 I keep `nchlswhttkr.com` registered with Cloudflare (no markup!) for legacy reasons, because I don't like link rot and it only takes [a few rules in Nginx](https://github.com/nchlswhttkr/website/blob/HEAD/nchlswhttkr.com.nginx) to redirect to my newer domain.
 
-The nameservers for both domains are with Cloudflare, because it's easier to manage DNS records when my traffic is proxied through Cloudflare. The added benefit of caching is nice too, though I get a negligible amount of traffic.
+The nameservers for both domains are with Cloudflare, because it's easier to manage DNS records when my traffic is proxied through their network. The added benefit of caching is nice too, though I get a negligible amount of traffic.
 
 My main reason for using Cloudflare is [Cloudflare Workers](https://workers.dev), which are great when I need little more than what a purely static website offers. Hooray for serverless!
 

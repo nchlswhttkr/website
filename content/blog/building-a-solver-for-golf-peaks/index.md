@@ -122,3 +122,5 @@ I'm sure the durations of the delays between moves and level loading can be fine
 Like I mentioned earlier, you can find all the code powering this solver on [GitHub](https://github.com/nchlswhttkr/golf-peaks/). A few _interesting_ workarounds are still included, like how I made `parse.py` avoid getting stuck when it had to deal with unknown YAML tags from Unity.
 
 I hope you've enjoyed reading about how I built this solver! I know I certainly enjoyed embracing the chaos while building it, pushing to complete level after level while working around the accruing weight of my hastily-written code.
+
+And if you're looking for a great puzzler to spend some of your idle time on, I can heartily recommend [Golf Peaks](https://afterburn.itch.io/golf-peaks).
