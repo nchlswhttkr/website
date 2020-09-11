@@ -43,6 +43,13 @@ Text with [a link](/) in it.
 
 ---
 
+| Column 1 | Column 2 |
+| -------- | -------- |
+| A        | B        |
+| C        | D        |
+
+---
+
 ```sh
 osascript -e 'display notification "Hello world!" sound name "frog"'
 ```

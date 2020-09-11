@@ -11,7 +11,7 @@
     :root {
         --content-color: #ddd; /* just a little softer than #fff */
         --background-color: #333;
-        --softer-background-color: #333;
+        --softer-background-color: #444;
     }
 }
 

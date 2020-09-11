@@ -25,13 +25,17 @@
         </header>
 
         <main>
-            <div class="constrain-width">
-                {{ block "main" . }} {{ end }}
-            </div>
+            <div class="constrain-width">{{ block "main" . }} {{ end }}</div>
         </main>
 
         <footer>
             <div class="constrain-width">
+                <p>
+                    Powered by <a href="https://gohugo.io/">Hugo</a>,
+                    <a href="https://buildkite.com/">Buildkite</a> and
+                    <a href="https://cloudflare.com">Cloudflare</a> – want to
+                    <a href="/site/">know more</a>?
+                </p>
                 <div class="footer-icons">
                     {{ range .Site.Params.Identities }}
                     <a href="{{ .link }}" target="_blank" rel="noreferrer">
@@ -39,12 +43,6 @@
                     </a>
                     {{ end }}
                 </div>
-                <p>
-                    Powered by <a href="https://gohugo.io/">Hugo</a>,
-                    <a href="https://buildkite.com/">Buildkite</a> and
-                    <a href="https://cloudflare.com">Cloudflare</a> – want to
-                    <a href="/site/">know more</a>?
-                </p>
             </div>
         </footer>
     </body>

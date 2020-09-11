@@ -72,7 +72,7 @@ It's not uncommon these days to see news items and blog posts open with large he
 
 To solve this, placeholders are used to temporarily fill an image's space while it loads. When the original image finishes loading, it's changed out with the placeholder.
 
-My favourite example of this is the [gatsby-image plugin](https://www.gatsbyjs.org/packages/gatsby-image/), which creates a smaller copy of the target image by tracing an SVG version or by drastically shrinking its dimensions. This copy can then be base64 encoded and served inline with the main document.
+My favourite example of this is the [gatsby-image plugin](https://www.gatsbyjs.org/packages/gatsby-image/), which creates a smaller copy of the target image by either tracing an SVG version or by drastically shrinking its dimensions. This copy can then be base64 encoded and served inline with the main document.
 
 This leads to a few neat benefits and considerations.
 
@@ -101,7 +101,6 @@ In the case of Can I Leave Melbourne, the fix was to [only access the API direct
 
 ```tsx
 // Copyright 2020 Terence Huynh
-// https://creativecommons.org/licenses/by-sa/4.0/
 
 const [navigator, setNavigator] = React.useState<Navigator | null>(null);
 

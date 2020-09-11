@@ -11,7 +11,7 @@ These are all the main parts that I can think of off the top of my head. If you'
 
 Almost all content and code sits in a [single Github repo](https://github.com/nchlswhttkr/website/).
 
-I use the static site generator [Hugo](https://gohugo.io/) (with my own theme) to build my website. It's fast, meets my needs for templating/content management, and handles extra features RSS feeds out of the box.
+I use the static site generator [Hugo](https://gohugo.io/) (with my own theme) to build my website. It's fast, meets my needs for templating/content management, and handles extra features like RSS feeds out of the box.
 
 I like being able to write my posts locally in markdown. Being plain text makes it easy to write and edit, and if I ever need something more complex I can drop in custom HTML with shortcode snippets using Hugo.
 
