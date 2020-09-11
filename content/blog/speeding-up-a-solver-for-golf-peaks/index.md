@@ -2,8 +2,8 @@
 title: "Speeding Up a Solver for Golf Peaks"
 description: "Now that it's working, make it work fast!"
 date: 2020-09-05T12:00:00.000Z
-# cover: ""
-# coveralt: ""
+cover: "10-01.png"
+coveralt: "A golf puzzle game where the player needs to hit the ball into the goal"
 ---
 
 Previously, I wrote about [how I built a solver for the puzzle game Golf Peaks](../building-a-solver-for-golf-peaks/). In closing, I had a few ideas on how it could be sped up and improved. Over the last few days, I've been trying some of these ideas out, and measuring the results!
@@ -365,7 +365,7 @@ Considering we used to take almost 10 seconds, this is a pretty good result!
 
 Since we've been benchmarking each change to the solver, we can also take a closer look at how it's improved over time!
 
-![](./average-process-execution-time.png)
+![A line graph that's generally descending with each change, aside from a large spike at one point that goes outside the chart's bounds](./average-process-execution-time.png)
 
 {{% image-caption %}}Oh R my old friend, I've missed your data-wrangling capabilities...{{%/ image-caption %}}
 
@@ -385,7 +385,7 @@ Some levels, like `10-01`, were repeat offenders and consistently bogged down th
 
 While our solver has been getting faster overall, there's another interesting tidbit to dig into with these benchmarks: The spread of level completion times has been decreasing.
 
-![](./level-completion-time-normalised.png)
+![A series of dot plots, marking how long each level in a run took to solve in comparison to the slowest and fastest level](./level-completion-time-normalised.png)
 
 Each run has a level it struggles with. Sometimes, this level is responsible for more than half the benchmark's runtime. With successive changes though, the solver spends less and less time on these "single worst levels" compared to the main pack. In the final couple of runs, there are now several levels sharing most of the runtime.
 
@@ -418,7 +418,7 @@ It's still definitely possible to go faster, but I'm very happy with the current
 
 Of course we can! Our analysis earlier showed that we have about five levels which take notably longer to solve than the rest. If there's some unifying element between them, it might hint at where improvements are needed. Let's take a look at the worst offender.
 
-![](./08-08.png)
+![A maze level of conveyor belts, the player has an entire handful of the 1 unit moves](./08-08.png)
 
 All of these cards have the same value! This stems back to an initial decision I made when writing this solver to have it _treat every card as unique_. It was easiest to think about the moves available to me if all I had to do was iterate an array, removing cards as I used them. While this was nice in the beginning, it means our solver isn't aware that it has duplicate cards it can skip!
 
