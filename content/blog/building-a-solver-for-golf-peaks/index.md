@@ -115,7 +115,7 @@ It's worth considering applying _memoization_ too, particularly for larger level
 
 The solver currently returns the first successful path it finds, _even if better/faster solutions exist_. Trying all paths may yield a solution of fewer moves, which would shave several seconds off execution in game. It's something the test and benchmark though, since trying all paths will also take longer.
 
-A _graph-based algorithm_ is also worth considering. With a little wrangling, a level could be expressed as a weighted, directed graph. Finding a solution is then a matter of finding the cheapest path that doesn't exceed the available move quota. Without diving into complexity analysis and benchmarking though, I don't feel like this would produce a faster solver in practice.
+A _graph-based algorithm_ is also worth considering. With a little wrangling, a level could be expressed as a weighted, directed graph. Finding a solution is then a matter of finding the cheapest path that doesn't exceed the available move quota. Without diving into complexity analysis and benchmarking though, I'm not sure how this would perform in comparison to the current search approach.
 
 I'm sure the durations of the delays between moves and level loading can be fine-tuned. Playing through every level takes just over 25 minutes at the moment, but it's definitely possible to shave a couple of minutes from this.
 
@@ -124,3 +124,5 @@ Like I mentioned earlier, you can find all the code powering this solver on [Git
 I hope you've enjoyed reading about how I built this solver! I know I certainly enjoyed embracing the chaos while building it, pushing to complete level after level while working around the accruing weight of my hastily-written code.
 
 And if you're looking for a great puzzler to spend some of your idle time on, I can heartily recommend [Golf Peaks](https://afterburn.itch.io/golf-peaks).
+
+> _Update: I've managed to [greatly improve the performance of my solver](../speeding-up-a-solver-for-golf-peaks/) with the help of this reflection!_
