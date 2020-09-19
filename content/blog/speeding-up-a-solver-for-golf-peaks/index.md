@@ -89,7 +89,7 @@ done
 # sys     0m2.071s
 ```
 
-There's 120 level files that need to be parsed and solved here, so taking over 10 seconds isn't _too_ bad. It leaves plenty of room for improvement though!
+There's 120 level files that need to be parsed and solved here, so taking around 10 seconds isn't _too_ bad. It leaves plenty of room for improvement though!
 
 Solving a level takes two components, each their own program.
 
@@ -402,7 +402,7 @@ done | xargs -P 8 -I "{}" /bin/bash -c "{}"
 # sys     0m1.459s
 ```
 
-In the span of a second, Golf Peaks is beaten! Parallel work isn't always practical or applicable, but it's viable here!
+In just over a second, Golf Peaks is beaten! Parallel work isn't always practical or applicable, but it's viable here!
 
 ![](https://i.redd.it/xmms2okp1p431.jpg)
 

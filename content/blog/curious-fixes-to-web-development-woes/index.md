@@ -2,8 +2,6 @@
 title: "Curious Fixes to Web Development Woes"
 description: "Investigations into solutions and workarounds I've seen in the wild"
 date: 2020-07-27T12:00:00.000Z
-# cover: ""
-# coveralt: ""
 ---
 
 A while back, I wrote about the [inner workings of a neat CSS trick](../hiding-secret-links-with-css/) I spotted in use on a website. The world of software development is rife with these kinds of tricks, so why not look at more of them in another blog post?
