@@ -11,3 +11,4 @@ steps:
     agents:
       deploy-personal-website: true
     command: .buildkite/trigger-newsletter-if-new-issue.sh
+    if: 'build.source != "schedule"'
