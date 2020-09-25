@@ -1,14 +1,13 @@
 # prettier-ignore
 steps:
-  - label: ":shipit:"
-    branches: master
+  - label: ':shipit:'
+    if: 'build.branch == "main"'
     agents:
       deploy-personal-website: true
     command: .buildkite/build.sh
   - wait
   - label: ":rolled_up_newspaper:"
-    branches: master
+    if: 'build.branch == "main" && build.source != "schedule"'
     agents:
       deploy-personal-website: true
     command: .buildkite/trigger-newsletter-if-new-issue.sh
-    if: 'build.source != "schedule"'
