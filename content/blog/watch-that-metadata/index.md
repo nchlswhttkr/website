@@ -20,13 +20,13 @@ Last week I was reading an online blog where the author had uploaded several pho
 
 As an example, I'm going to use a photo from [another online blog](https://martinfowler.com/photos/70.html). With a downloaded copy of the photo, we can inspect its details locally.
 
-![](./metadata.png)
+![A list of details about a photograph, including the location where the photo was taken and specs about the camera's model, colour settings and exposure](./metadata.png)
 
 There's a host of useful information here! The key part is that latitude and longitude at the bottom. Plug that into your navigation service of choice, and you can find exactly where the photo was taken.
 
 Hello Cape Arago!
 
-![](./martin-fowler.jpg)
+![Two similar photos of the same coastline, highlighting a large rocky outcrop and fauna along the cliffside](./martin-fowler.jpg)
 
 {{% image-caption %}}Image credit to [Martin Fowler](https://martinfowler.com/photos/70.html) (left) and [Tim Groce](https://goo.gl/maps/RxhWVhn4GBW9qGf38) (right){{%/ image-caption %}}
 
