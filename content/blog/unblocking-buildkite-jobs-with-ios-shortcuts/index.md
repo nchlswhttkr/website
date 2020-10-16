@@ -18,7 +18,7 @@ To quickly recap the necessary technical details, I use [Buildkite](https://buil
 
 This second job is blocked from running until I give manual approval. Looking at a recent build, you can see the final "Publish" job only runs after I've explicitly unblocked it.
 
-![](./build.png)
+![A set of three tasks, with the last one labelled "Publish" separated from the other two. Between them is a label that reads "Nicholas Whittaker unblocked this yesterday at 7:35pm"](./build.png)
 
 As I said before, this is easy to do through Buildkite's web UI, but it still takes a moment to get it done. After reviewing a preview newsletter, I wanted to be able to send it out with minimal action on my part.
 
