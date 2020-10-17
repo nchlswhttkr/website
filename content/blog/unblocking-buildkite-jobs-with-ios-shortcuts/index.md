@@ -63,7 +63,7 @@ If I had to give advice for those of you making your own shortcuts, I'd highligh
 -   If you're confined to a small phone screen, **plan out** as much of your action as you can before writing it. Shortcuts has poor support for dynamic text sizing, so your screen can only fit two or three actions at any time. A small screen also makes scrolling and rearranging actions incredibly laborious.
 -   When in doubt, consult the [User Guide](https://support.apple.com/guide/shortcuts/welcome/ios) and [Shortcuts subreddit](https://shortcuts.reddit.com/).
 
-Until next time, happy automation!
+Here's the full shortcut if you're interested in adapting it for your needs. Until next time, happy automation!
 
 ![](./shortcut.png)
 
@@ -76,5 +76,5 @@ PS - FFmpeg and ImageMagick are once again incredibly useful tools for media pro
 ffmpeg -vn -to 00:00:39.500 -i piano.mov -an -to 00:00:39.500 -i screen-recording.mp4 -c:a aac -c:v libx265 -tag:v hvc1 buildkite.mp4
 
 # Knit together a collection of screenshots from iCloud, with glob syntax
-magick ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Downloads/Unblock\ jobs\ * -append /tmp/shortcut.png
+magick "~/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Unblock jobs *" -append /tmp/shortcut.png
 ```
