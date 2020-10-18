@@ -3,5 +3,3 @@
 Source code for [my website](https://nicholas.cloud/). See also the source code for [a few workers](https://github.com/nchlswhttkr/workers/) I run.
 
 Icons courtesy of [Feather](https://feathericons.com/), favicon made with [Font Awesome](https://fontawesome.com/license/free/).
-
-Background pattern courtesy of [Hero Patterns](https://www.heropatterns.com/).

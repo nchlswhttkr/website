@@ -1,31 +1,47 @@
 :root {
-    --theme-color: #8c356a;
-    --dark-color: #333;
-    --light-color: #fff;
-    --content-color: #333;
+    --theme-text-color: #fff;
+    --theme-color: #555d25;
+    --text-color: #333;
     --background-color: #fff;
-    --softer-background-color: #eee;
+    --secondary-background-color: #eee;
+    --background-image: url("/rungutjirpa.jpg");
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --content-color: #ddd; /* just a little softer than #fff */
+        --text-color: #ddd; /* just a little softer than #fff */
         --background-color: #333;
-        --softer-background-color: #444;
+        --secondary-background-color: #444;
     }
 }
 
 body {
-    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238c356a' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     margin: 0;
     font-family: sans-serif;
-    background-color: var(--softer-background-color);
-    color: var(--content-color);
+    color: var(--text-color);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 600px) {
     body {
-        background-image: none;
+        background-image: var(--background-image);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        padding-bottom: 100vh;
+    }
+
+    header {
+        padding-top: 20vh;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.3),
+                    rgba(0, 0, 0, 0.3)
+                ),
+                var(--background-image);
+        }
     }
 }
 
@@ -33,19 +49,11 @@ a {
     color: inherit;
 }
 
-header,
-footer,
-nav {
-    color: var(--light-color);
-}
-
 header > *,
-footer > * {
-    background-color: var(--theme-color);
-}
-
+footer > *,
 nav > * {
-    background-color: var(--dark-color);
+    color: var(--theme-text-color);
+    background-color: var(--theme-color);
 }
 
 header > div,
@@ -73,7 +81,7 @@ main > div {
 
 /* images with transparent backgrounds */
 main img {
-    background-color: var(--light-color);
+    background-color: #fff;
 }
 
 .constrain-width {
@@ -83,14 +91,10 @@ main img {
 }
 
 .footer-icons {
-    margin: 16px 0;
+    margin: 8px 0;
 }
 
 .footer-icons a {
     text-decoration: none;
     margin-right: 8px;
-}
-
-.footer-icons img {
-    height: 24px;
 }
