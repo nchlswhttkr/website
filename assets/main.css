@@ -4,7 +4,6 @@
     --text-color: #333;
     --background-color: #fff;
     --secondary-background-color: #eee;
-    --background-image: url("/rungutjirpa.jpg");
 }
 
 @media (prefers-color-scheme: dark) {

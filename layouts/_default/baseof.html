@@ -1,7 +1,11 @@
-{{ $title := .Title }}
+{{ $title := .Title }} {{ $background := "/rungutjirpa.jpg" }}
 <!-- prettier-ignore -->
 {{ if and (eq .Kind "term") (eq .Data.Plural "tags") }}
     {{ $title = printf "Posts tagged #%s" .Title }}
+{{ end }}
+<!-- prettier-ignore -->
+{{ if isset .Params "background" }}
+    {{ $background = printf "%s%s" .Permalink .Params.background }}
 {{ end }}
 
 <!DOCTYPE html>
@@ -10,8 +14,18 @@
     <head>
         <title>{{ $title }}</title>
         {{ partial "meta.html" . }}
-        <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
+        <link rel="stylesheet" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
         {{ block "css" . }} {{ end }}
+        <style>
+            :root {
+                --background-image: url("{{ $background }}");
+            }
+        </style>
+        {{ if isset .Params "color" }}
+        <style>
+            :root { --theme-color: {{ .Params.Color }}; }
+        </style>
+        {{ end }}
     </head>
     <body>
         <nav>
@@ -82,9 +96,11 @@
                     <a href="https://cloudflare.com">Cloudflare</a> – want to
                     <a href="/site/">know more</a>?
                 </p>
+                {{ if not ( isset .Params "background" ) }}
                 <p>
                     Background photograph is from <a href="https://www.openstreetmap.org/node/2183385926#map=19/-23.67393/133.71910">Rungutjirpa, Arrernte country</a>
                 </p>
+                {{ end }}
             </div>
         </footer>
     </body>

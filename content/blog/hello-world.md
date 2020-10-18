@@ -2,6 +2,7 @@
 title: "Hello World"
 description: "Testing out markdown"
 date: 2017-01-01T12:00:00+1100
+color: "#cc2d79"
 ---
 
 I use this article to make sure any styling changes I make don't break.
