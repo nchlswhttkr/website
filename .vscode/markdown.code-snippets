@@ -1,0 +1,23 @@
+{
+    "newsletter-link": {
+        "prefix": "newsletter-link",
+        "scope": "markdown",
+        "body": [
+            "### ${1:title}",
+            "",
+            "${2:description}",
+            "",
+            "{{% newsletter-link \"${3:$CLIPBOARD}\" %}}",
+            "",
+            "---",
+            ""
+        ],
+        "description": "newsletter-link"
+    },
+    "image-caption": {
+        "prefix": "image-caption",
+        "scope": "markdown",
+        "body": ["{{% image-caption %}}${1:caption}{{%/ image-caption %}}"],
+        "description": "image-caption"
+    }
+}
