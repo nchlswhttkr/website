@@ -8,26 +8,39 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
 
-    gzip on;
-    gzip_types text/css text/javascript application/javascript application/json
-    gzip_min_length 1k;
+    # Cloudflare applies Brotli, this isn't necessary at the moment
+    # gzip on;
+    # gzip_types text/css text/javascript application/javascript application/json
+    # gzip_min_length 1k;
 
     root /var/www/nicholas.cloud;
+    autoindex on;
+
+    # By default allow stale cache for 30 mins, stay fresh on proxy for 30 mins
+    add_header "Cache-Control" "public, max-age=0, s-maxage=1800, stale-while-revalidate=1800";
 
     error_page 404 /404.html;
 
     location / {
-        try_files $uri $uri/ =404;
-    }
+        # Cache media on clients for a month
+        location ~* \.(gif|jpg|jpeg|png|svg)$ {
+            add_header "Cache-Control" "public, max-age=2592000, s-maxage=3600";
+        }
 
-    # Common aliases for RSS feeds
-    location ~* ^/(rss|feed|atom)(/|\.xml)?$ {
-        try_files /blog/index.xml =404;
+        # Cache styling on clients for two days
+        location ~* \.css$ {
+            add_header "Cache-Control" "public, max-age=172800, s-maxage=3600";
+        }
+
+        # Common aliases for RSS feeds
+        location ~* ^/(rss|feed|atom)(/|\.xml)?$ {
+            try_files /blog/index.xml =404;
+        }
     }
 
     location /files/ {
         alias /home/nicholas/public-files/;
-        autoindex on;
+        add_header "Cache-Control" "public, max-age=0, s-maxage=300";
     }
 
     location ~* ^/resume(/|\.pdf)?$ {
