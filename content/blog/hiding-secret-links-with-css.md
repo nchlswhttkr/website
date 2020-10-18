@@ -1,7 +1,10 @@
 ---
 title: "Hiding Secret Links With CSS"
 description: "There's beauty all around, even in the inlined styles of a webpage"
-date: 2020-06-08T12:00:00.000Z
+date: 2020-06-08T12:00:00+1000
+tags:
+    - css
+    - webdev
 ---
 
 Every now and then I like to browse the hiring pages of companies I like and admire.

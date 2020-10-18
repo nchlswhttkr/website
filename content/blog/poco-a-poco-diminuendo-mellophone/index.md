@@ -1,7 +1,13 @@
 ---
 title: "Poco a Poco Diminuendo, Mellophone"
 description: "An opportunity to write about the cool components of a hobby project"
-date: 2020-04-20T12:00:00.000Z
+date: 2020-04-20T12:00:00+1000
+tags:
+    - django
+    - docker
+    - gitlab
+    - react
+    - reflections
 ---
 
 Just shy of two years ago (judging by the initial commit on a private repo), I started a little project called [Mellophone](https://github.com/nchlswhttkr/mellophone).
@@ -26,7 +32,7 @@ One of the main pain points with development across devices is the dreaded "work
 
 I taught myself Docker and managed to get the backend server and database working together with Docker Compose. This effort paid itself back immediately when the database adapter refused to work on macOS, citing an outdated (though technically not deprecated) version of OpenSSL.
 
-Chuck it all in an Ubuntu container and problems like that are toast! Was it worth the performanc/productivity drop that comes from working with containers? That's a debate for another day.
+Chuck it all in an Ubuntu container and problems like that are toast! Was it worth the performance/productivity drop that comes from working with containers? That's a debate for another day.
 
 I deliberate wrote the Django server configuration with **production-first** options in mind. If I encountered problems locally, I would fix them in a local-only config. To this day, the [production settings](https://github.com/nchlswhttkr/mellophone/blob/master/mellophone/mellophone/settings_production.py) are no different from the defaults!
 

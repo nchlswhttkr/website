@@ -1,8 +1,15 @@
+{{ $title := .Title }}
+<!-- prettier-ignore -->
+{{ if and (eq .Kind "term") (eq .Data.Plural "tags") }}
+    {{ $title = printf "Posts tagged #%s" .Title }}
+{{ end }}
+
 <!DOCTYPE html>
 <html lang="en">
+    <!-- prettier-ignore -->
     <head>
+        <title>{{ $title }}</title>
         {{ partial "meta.html" . }}
-        <!-- prettier-ignore -->
         <link rel="stylesheet" type="text/css" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
         {{ block "css" . }} {{ end }}
     </head>
@@ -17,7 +24,7 @@
 
         <header>
             <div class="constrain-width">
-                <h1>{{ .Title }}</h1>
+                <h1>{{ $title }}</h1>
                 {{ if .Description }}
                 <h2>{{ .Description }}</h2>
                 {{ end }}

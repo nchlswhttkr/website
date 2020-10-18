@@ -1,7 +1,10 @@
 ---
 title: "I Moved My Website"
 description: "A small change, an hour of debugging"
-date: 2019-01-31T12:00:00+10:00
+date: 2019-01-31T12:00:00+1100
+tags:
+    - gitlab
+    - webdev
 ---
 
 I may not have been on the #movingtogitlab train, but recently I decided to try moving my website from GitHub Pages to GitLab pages. Trouble ensued, but helpful documentation saved the way!

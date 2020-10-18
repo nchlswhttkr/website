@@ -2,6 +2,10 @@
 title: "Unblocking Buildkite Jobs With iOS Shortcuts"
 description: "I could do it, I didn't stop to think whether I should do it"
 date: 2020-10-16T14:00:00+1100
+tags:
+    - automation
+    - buildkite
+    - ios-shortcuts
 ---
 
 For a while now, I've been automatically [sending out my newsletter](../sending-out-my-newsletter/) as a part of the deployment process for my website. It's a great convenience that means I can focus on writing and publishing new content, instead of worrying about generating and delivering actual emails.

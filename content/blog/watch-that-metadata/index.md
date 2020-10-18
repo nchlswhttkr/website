@@ -1,9 +1,9 @@
 ---
 title: "Watch That Metadata!"
 description: "Leaking sensitive data from the comfort of your phone"
-date: 2020-10-02T12:00:00.000Z
-# cover: ""
-# coveralt: ""
+date: 2020-10-02T12:00:00+1000
+tags:
+    - privacy
 ---
 
 Metadata, or "data about data", is a useful thing to have.

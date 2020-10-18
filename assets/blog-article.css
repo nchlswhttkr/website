@@ -117,6 +117,7 @@ as wide as their container + padding, then centre with an offset and transform.
     width: unset !important; /* Isolated hack to override bad styling, sorry */
 }
 
-.blog-article .foreword {
+.blog-article .postscript {
+    padding-top: 24px;
     font-family: monospace;
 }

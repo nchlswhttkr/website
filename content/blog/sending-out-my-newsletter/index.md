@@ -1,7 +1,12 @@
 ---
 title: "Sending Out My Newsletter"
 description: "With a little help from Buildkite, Mailgun and Cloudflare!"
-date: 2020-03-22T12:00:00.000Z
+date: 2020-03-22T12:00:00+1100
+tags:
+    - automation
+    - buildkite
+    - cloudflare-workers
+    - mailgun
 ---
 
 For the last while I've been collecting interesting articles, videos and music albums that I've liked into a [newsletter](/newsletter/). As a next step, I decided that I'd like to start emailing this newsletter out to a list of subscribers.

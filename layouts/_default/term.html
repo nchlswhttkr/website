@@ -5,9 +5,6 @@
 
 {{ define "main" }}
 <div class="blog-list">
-    {{ .Content }}
-    <div class="spacer"></div>
-    <!--  -->
     {{ range .Data.Pages }}
     <h3>
         <a href="{{ .Permalink }}">{{ .Title }}</a>

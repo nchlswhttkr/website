@@ -1,11 +1,15 @@
 ---
 title: "Debugging My Terraria Server's Startup"
 description: "My server would start up under a specific set of circumstances, but mysteriously failed otherwise..."
-date: 2019-12-18T12:00:00+10:00
+date: 2019-12-18T12:00:00+1100
 cover: "terraria.png"
 coveralt: 'My character on the Terraria server saying "Hello world!"'
 aliases:
     - ./debugging-my-terraria-server-startup
+tags:
+    - automation
+    - ios-shortcuts
+    - linux
 ---
 
 Recently, I had an interesting debugging session with my Terraria server, which I've been working to automate.

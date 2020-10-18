@@ -1,6 +1,11 @@
 ---
 title: "Site"
 description: "The inner workings of nicholas dot cloud"
+tags:
+    - buildkite
+    - cloudflare-workers
+    - hugo
+    - nginx
 ---
 
 There's a few more moving parts to my website than there were when [I first made it years ago](/blog/simple-static-sites/), so I've put this page together to cover all the pieces!
@@ -31,7 +36,7 @@ I originally called `nchlswhttkr.com` my home, but later moved over to `nicholas
 
 I've got `nicholas.cloud` registered with [Porkbun](https://porkbun.com). Not all registrars support the `.cloud` TLD, but thankfully Porkbun do! I've been happy so far with their pricing and customer support.
 
-I keep `nchlswhttkr.com` registered with Cloudflare (no markup!) for legacy reasons, because I don't like link rot and it only takes [a few rules in Nginx](https://github.com/nchlswhttkr/website/blob/HEAD/nchlswhttkr.com.nginx) to redirect to my newer domain.
+I keep `nchlswhttkr.com` registered with [Cloudflare](https://cloudflare.com) (no markup!) for legacy reasons, because I don't like link rot and it only takes [a few rules in Nginx](https://github.com/nchlswhttkr/website/blob/HEAD/nchlswhttkr.com.nginx) to redirect to my newer domain.
 
 The nameservers for both domains are with Cloudflare, because it's easier to manage DNS records when my traffic is proxied through their network. The added benefit of caching is nice too, though I get a negligible amount of traffic.
 

@@ -1,9 +1,9 @@
 ---
 title: "A Blazing Fast Solver for Golf Peaks!"
 description: "Trying a few final approaches to get one last speed boost"
-date: 2020-09-12T12:00:00.000Z
-# cover: ""
-# coveralt: ""
+date: 2020-09-12T12:00:00+1000
+tags:
+    - rust
 ---
 
 > _"Well here we are again, it's always such a pleasure"_

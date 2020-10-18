@@ -1,10 +1,12 @@
 ---
 title: "Getting Up to Hijinks With Cloudflare Workers"
 description: "Cloudflare has a serverless offering, let's explore!"
-date: 2020-03-02T12:00:00.000Z
+date: 2020-03-02T12:00:00+1100
+tags:
+    - javascript
+    - cloudflare-workers
+    - serverless
 ---
-
-> _Update: If this isn't enough for you, I've done [more experimenting](../continuing-hijinks-with-cloudflare-workers) that you can read about!_
 
 You may have heard of [Workers](https://workers.dev), a product from Cloudflare that lets you run JavaScript/WebAssembly in a serverless fashion on Cloudflare's network.
 
@@ -187,7 +189,7 @@ In the published worker though, `ENV_SECRET_KEY` gets replaced with a secret.
 
 ![An identical snippet of code, but a variable has been replace with a string — a secret value](./published-secret.png)
 
-> Aside: Since I've started writing this post, Cloudflare have added the ability to [manage environment variables and secrets](https://blog.cloudflare.com/workers-secrets-environment/) through their CLI and dashboard. Although my workaround is redundant, I've left it in because it's an interesting solution.
+_Aside: Since I've started writing this post, Cloudflare have added the ability to [manage environment variables and secrets](https://blog.cloudflare.com/workers-secrets-environment/) through their CLI and dashboard. Although my workaround is redundant, I've left it in because it's an interesting solution._
 
 With this configured as a part of the build step, my secrets were hidden from the public but visible to me!
 
@@ -239,3 +241,7 @@ Something I didn't dig into is the ability to run WebAssembly in addition to Jav
 Cloudflare have published a [number of templates](https://developers.cloudflare.com/workers/templates/) for various Workers if you'd like to see more examples of them in action!
 
 I hope you've found this piece interesting. You can find most of the code from this post in my [repo of workers](https://github.com/nchlswhttkr/workers) on GitHub!
+
+---
+
+_Update: If this isn't enough for you, I've done [more experimenting](../continuing-hijinks-with-cloudflare-workers/) that you can read about!_

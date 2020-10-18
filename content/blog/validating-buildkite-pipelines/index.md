@@ -1,9 +1,13 @@
 ---
 title: "Validating Buildkite Pipelines"
 description: "Buliding a service to validate Buildkite pipeline files"
-date: 2019-12-27T12:00:00.000Z
+date: 2019-12-27T12:00:00+1100
 aliases:
-    - ./linting-buildkite-pipelines
+    - ./linting-buildkite-pipelines/
+tags:
+    - buildkite
+    - javascript
+    - nginx
 ---
 
 So I've been using [Buildkite](https://buildkite.com) a bit lately and loving it. Last weekend I had the thought of building a service to validate the `pipeline.yml` files it uses for configuration.

@@ -1,9 +1,11 @@
 ---
 title: "Facebook Hack 2018"
 description: "A hackathon reflection"
-date: 2018-05-28T12:00:00+10:00
+date: 2018-05-28T12:00:00+1000
 cover: "balloons.jpg"
 coveralt: "A balloon sign with the hackathon's social media hashtag"
+tags:
+    - hackathons
 ---
 
 This past weekend I had the pleasure of attending Facebook’s 2018 Regional Hackathon in Melbourne!

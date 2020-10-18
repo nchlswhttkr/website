@@ -1,34 +1,40 @@
 ---
 title: "Hello World"
 description: "Testing out markdown"
-date: 2017-01-01T12:00:00+10:00
+date: 2017-01-01T12:00:00+1100
 ---
 
 I use this article to make sure any styling changes I make don't break.
 
 <!--more-->
 
-## Heading 2
+## Text and images
 
-### Heading 3
+### Subheading
 
-Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
-
-_italics_
-
-**bold**
-
-~~strike~~
-
-Text<sub>with subtext</sub>
-
-Text<sup>with supertext</sup>
-
-Text with [a link](/) in it.
-
-> "I have definitely said these things" - _Nicholas Whittaker_
+Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat.
 
 ---
+
+Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
+
+This is an example of _emphasised_ test.
+
+This an an example of **bold** text.
+
+This is an example of ~~strikethough~~ text.
+
+This text includes a [link](/).
+
+> This text is in a blockquote
+
+This text includes an `inline code block`.
+
+![An image](/media/monty.jpg)
+
+{{% image-caption %}}A caption for the above image{{%/ image-caption %}}
+
+## Tables and lists
 
 -   Foo
     -   Foo
@@ -41,14 +47,12 @@ Text with [a link](/) in it.
 1.  The second item
 1.  The third and final item
 
----
-
 | Column 1 | Column 2 |
 | -------- | -------- |
 | A        | B        |
 | C        | D        |
 
----
+## Code block and syntax highlighting
 
 ```sh
 osascript -e 'display notification "Hello world!" sound name "frog"'
@@ -90,15 +94,15 @@ export default class CookieReader {
 ```applescript
 on idle
 
-	try
-		do shell script "rsync --delete --checksum --recursive --itemize-changes ~/public-files/ nicholas@nicholas.cloud:~/public-files/ > /tmp/sync.log"
-		display notification "Successfully synced" with title "Sync" sound name "purr"
-	on error
-		display alert "Could not sync files to remote server" as critical
-		quit
-	end try
+    try
+        do shell script "rsync --delete --checksum --recursive --itemize-changes ~/public-files/ nicholas@nicholas.cloud:~/public-files/ > /tmp/sync.log"
+        display notification "Successfully synced" with title "Sync" sound name "purr"
+    on error
+        display alert "Could not sync files to remote server" as critical
+        quit
+    end try
 
-	return 60 * 60
+    return 60 * 60
 
 end idle
 ```
@@ -148,11 +152,10 @@ if let Some(value) = matches.value_of("database") {
 ```
 
 ```css
-.show-text::after {
-    content: "A special message!";
-    color: var(--theme-color);
-    background-color: var(--light-color);
-    font-weight: 700;
+.blog-article .twitter-tweet {
+    /* Isolated hack to override inline styling, sorry */
+    width: unset !important;
+    margin: 16px auto !important;
 }
 ```
 
@@ -160,24 +163,10 @@ if let Some(value) = matches.value_of("database") {
 {{% css-hidden-message-demo %}}
 ```
 
-I maintain the site source code on the `dev` branch, then deploy builds from `master`.
-
----
-
-![An image](/media/nicholas.png)
-
-{{% image-caption %}}A caption for the above image{{%/ image-caption %}}
-
-![An image](/media/monty.jpg)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac porttitor metus. Nam suscipit euismod orci at sagittis. Donec vitae convallis enim. Pellentesque iaculis, ligula eu condimentum sodales, nulla metus blandit diam, non maximus tellus dolor vitae ipsum. Aliquam at cursus lacus, eget eleifend quam.
-
----
-
-Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat. Proin vel metus mattis tellus vulputate pretium a a sem. Duis at sem aliquam, suscipit lorem ut, venenatis enim. In at dui tempus lacus auctor commodo id id nunc. Nam sit amet lobortis libero. Aenean at nunc et purus fringilla consectetur. Sed nisi libero, gravida in eros ut, sodales condimentum ex.
+## Embedded content
 
 {{< tweet 902019752251465728 >}}
 
 {{< youtube "x3HYRYGZtH0" >}}
 
-{{% vimeo "452492906" %}}
+{{% vimeo "468393883" %}}

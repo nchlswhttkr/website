@@ -1,16 +1,16 @@
 ---
 title: "2018 Reflection"
 description: "A reflection on the past year"
-date: 2018-12-22T12:00:00+10:00
+date: 2018-12-22T12:00:00+1100
 cover: "western-brass.jpg"
 coveralt: "Western Brass at the Australian National Band Championships 2018"
+tags:
+    - reflections
 ---
 
 As another year passes by, I think it's time to reflect on the experiences I've had and to look back on some of the highlights as well!
 
 <!--more-->
-
----
 
 ## Music
 
@@ -82,8 +82,6 @@ I've also been a part of a few other ensembles this year, offering my help when 
 
 {{< tweet 1017705968233168897 >}}
 
----
-
 ## Lawn Bowls
 
 ### Team/Singles Competitions
@@ -108,15 +106,11 @@ I plan to have more days like this in future. Social charity days, such as tripl
 
 I also now do a few bar shifts for the club now, I find it rather therapeutic.
 
----
-
 ## Work
 
 For the past year I've had the pleasure of working at [Monash University eSolutions](https://www.monash.edu/esolutions), delivering [MonPlan](https://monplan.apps.monash.edu), a course planning application, for students at Monash University.
 
 With the arrival of 2019, I'll be returning to eSolutions under the industry placement program for IT students at Monash University. I hope to use this as an opportunity to take on greater responsibilty within my projects, and to apply what I've learned in the past 12 months.
-
----
 
 ## University
 
@@ -138,8 +132,6 @@ I served as the marketing officer for [WIRED](https://wired.org.au) this past ye
 
 I wasn't elected back to the committee for the coming year, but with a placement running for the first half of the year, it's probably for the better. Since I'll still be heading into Clayton everyday, I can still offer volunteer help. With my involvement being voluntary now, I think that will also help my reduce my heavy workload.
 
----
-
 ## Dev
 
 ### Juniordev / LevelsConf
@@ -150,7 +142,7 @@ I took the time this year to attend a few developer-focused events when I had th
 
 I've begun to feel like hackathons aren't the type of event for me, but nonetheless I endavoured to attend a few throughout the year. This started off with the Facebook Regional Hack in May, [Unihack](https://unihack.net/) in July and [GovHack](https://www.govhack.org/) in September. I was also involved with running Unihack Mini as a part of WIRED, though I didn't participate myself.
 
-You can also read more about the Facebook Hack in my [reflection post](/blog/facebook-hack-2018).
+You can also read more about the Facebook Hack in my [reflection post](../facebook-hack-2018/).
 
 {{< tweet 1060468874083102720 >}}
 
@@ -169,8 +161,6 @@ I did [Hacktoberfest](https://hacktoberfest.digitalocean.com) again this year, g
 Last year, I added a [blacklist to filter unimportant item usage stats](https://github.com/odota/web/pull/1286) in a match analysis service for DOTA2. This year, I ended up writing a new feature for a tool written by Microsoft for consolidating multiple JavaScript projects into a single location. With this incorporated and released, you can now [include Git hooks with a your project](https://github.com/Microsoft/web-build-tools/pull/916)!
 
 This December, I've also been doing the [Advent of Code](https://adventofcode.com) challenge, though with work, university and music still running, I'm a little bit behind. I'll see where I end up at the end of the year.
-
----
 
 ## Misc
 
@@ -192,8 +182,6 @@ The series I've been following this year have Mister Miracle and Wayward, both o
 
 {{% image-caption %}}Wayward and Mister Miracle, from my collection of comics{{%/ image-caption %}}
 
----
-
 ## Looking Forward
 
 Next year I'm setting and hoping to keep a few resolutions.
@@ -205,7 +193,5 @@ Next year I'm setting and hoping to keep a few resolutions.
 -   **Ensuring I don't miss breakfast**, because this year I've had too many mornings where I've dashed out the door without a proper meal.
 
 <span class="center-text"><strong>Here's to 2019!</strong></span>
-
----
 
 {{< youtube pMFDBA2rKTI >}}

@@ -1,10 +1,15 @@
 ---
 title: "Continuing Hijinks With Cloudflare Workers"
 description: "Once was not enough, so did more experimenting!"
-date: 2020-05-24T12:00:00.000Z
+date: 2020-05-24T12:00:00+1000
+tags:
+    - cloudflare-workers
+    - golang
+    - javascript
+    - serverless
 ---
 
-A while back I wrote about [a few uses for Cloudflare Workers](../getting-up-to-hijinks-with-cloudflare-workers). I've been trying a few more things since then, so now I can dive into even more uses for Cloudflare Workers!
+A while back I wrote about [a few uses for Cloudflare Workers](../getting-up-to-hijinks-with-cloudflare-workers/). I've been trying a few more things since then, so now I can dive into even more uses for Cloudflare Workers!
 
 <!--more-->
 
@@ -22,18 +27,18 @@ package main
 var called = 0
 
 func main() {
-	called++
-	println("Hello from TinyGo! Called", called, "times so far!")
+    called++
+    println("Hello from TinyGo! Called", called, "times so far!")
 }
 
 //export multiply
 func multiply(x, y int) int {
-	return x * y
+    return x * y
 }
 
 //export runSayHello
 func runSayHello() {
-	sayHello()
+    sayHello()
 }
 
 func sayHello()
@@ -89,7 +94,7 @@ Go-as-WASM relies on several JavaScript bindings at runtime, which come bundled 
 
 I opted to use [TinyGo](https://tinygo.org/) for this instead of the main Go toolchain. Cloudflare has a [hard limit of 1MB](https://developers.cloudflare.com/workers/about/limits/#script-size) on scripts and bindings (like our WASM), and while Go's "Hello world!" only comes to ~350KB gzipped, it's a lot of uneccessary bloat when alternatives exist. At the moment, the web editor also displays an unknown error (`10013`?) when handling plain Go rather than TinyGo.
 
-The runtime environment can be a bit unpredictable. You'll find yourself needing to polyfill a few things, like the [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance), because Cloudflare does not allow scripts to [measure their runtime](https://developers.cloudflare.com/workers/about/security/).
+The runtime environment can be a bit unpredictable. You'll find yourself needing to polyfill a few things, like the [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance), because Cloudflare [does not allow scripts to measure their runtime](https://developers.cloudflare.com/workers/about/security/).
 
 In terms of imports/exports, my understanding is that exports need to be explicit to the compiler (hence `//exports multiply`), and imported functions should have a declaration, but no body.
 

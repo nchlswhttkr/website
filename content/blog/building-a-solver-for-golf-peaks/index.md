@@ -1,9 +1,13 @@
 ---
 title: "Building a Solver for Golf Peaks"
 description: "A retrospective on a recent weekend project"
-date: 2020-08-28T12:00:00.000Z
+date: 2020-08-28T12:00:00+1000
 cover: "cover.png"
 coveralt: "A video game puzzle where the player uses various moves to get a golf ball into the hole"
+tags:
+    - applescript
+    - python
+    - rust
 ---
 
 Recently I played [Golf Peaks](https://afterburn.itch.io/golf-peaks), a golf-based puzzler from [Afterburn Games](http://afterburn.games/). I really enjoyed completing all of its levels, so last week I decided to try my hand at building a solver for it.
@@ -125,4 +129,6 @@ I hope you've enjoyed reading about how I built this solver! I know I certainly 
 
 And if you're looking for a great puzzler to spend some of your idle time on, I can heartily recommend [Golf Peaks](https://afterburn.itch.io/golf-peaks).
 
-> _Update: I've managed to [greatly improve the performance of my solver](../speeding-up-a-solver-for-golf-peaks/) with the help of this reflection!_
+---
+
+_Update: I've managed to [greatly improve the performance of my solver](../speeding-up-a-solver-for-golf-peaks/) with the help of this reflection!_

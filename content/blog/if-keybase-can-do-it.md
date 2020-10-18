@@ -1,10 +1,14 @@
 ---
 title: "If Keybase Can Do It"
 description: "Recreating the file sharing functionality of Keybase"
-date: 2020-05-16T12:00:00.000Z
+date: 2020-05-16T12:00:00+1000
+tags:
+    - applescript
+    - nginx
+    - rsync
 ---
 
-[Keybase](https://keybase.pub) has a really nice feature where you can sync files between your devices, and (optionally) make them publicly accessible.
+[Keybase](https://keybase.pub/) has a really nice feature where you can sync files between your devices, and (optionally) make them publicly accessible.
 
 They were also [acquired by Zoom](https://keybase.io/blog/keybase-joins-zoom) last week. While I think it's too early to say whether this means good or bad things for Keybase, it seemed like a timely opportunity to try recreating this feature I love.
 
@@ -65,15 +69,15 @@ Meet AppleScript. This snippet syncs my files every hour, showing me an alert to
 ```applescript
 on idle
 
-	try
-		do shell script "rsync --delete --checksum --recursive --itemize-changes ~/public-files/ nicholas@nicholas.cloud:~/public-files/ > /tmp/sync.log"
-		display notification "Successfully synced" with title "Sync" sound name "purr"
-	on error
-		display alert "Could not sync files to remote server" as critical
-		quit
-	end try
+    try
+        do shell script "rsync --delete --checksum --recursive --itemize-changes ~/public-files/ nicholas@nicholas.cloud:~/public-files/ > /tmp/sync.log"
+        display notification "Successfully synced" with title "Sync" sound name "purr"
+    on error
+        display alert "Could not sync files to remote server" as critical
+        quit
+    end try
 
-	return 60 * 60
+    return 60 * 60
 
 end idle
 ```

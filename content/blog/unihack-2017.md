@@ -1,7 +1,10 @@
 ---
 title: "Unihack 2017"
 description: "A hackathon reflection"
-date: 2017-11-28T12:00:00+10:00
+date: 2017-11-28T12:00:00+1100
+tags:
+    - hackathons
+    - reflections
 ---
 
 Teaming up with some fellow friends from Monash, we went in as **Angry React Native**. We worked using Bluecat bluetooth beacons to incorporate IoT into the dine-in restaurant experience.

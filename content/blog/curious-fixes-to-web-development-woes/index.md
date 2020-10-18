@@ -1,7 +1,11 @@
 ---
 title: "Curious Fixes to Web Development Woes"
 description: "Investigations into solutions and workarounds I've seen in the wild"
-date: 2020-07-27T12:00:00.000Z
+date: 2020-07-27T12:00:00+1000
+tags:
+    - css
+    - react
+    - webdev
 ---
 
 A while back, I wrote about the [inner workings of a neat CSS trick](../hiding-secret-links-with-css/) I spotted in use on a website. The world of software development is rife with these kinds of tricks, so why not look at more of them in another blog post?
@@ -58,7 +62,7 @@ Enter the `<picture>` element. It's designed to hint at alternative sizes and fo
 
 It's not good to leave the `src` attribute empty, so you can supply a small base64 encoded image if you want to keep everything valid. Either way, this image will not be displayed on smaller devices.
 
-> _Aside: Another solution is to specify that the avatar image should be [lazy loaded](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading), but I wanted to see if there was an alternative way to do it._
+_Aside: Another solution is to specify that the avatar image should be [lazy loaded](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading), but I wanted to see if there was an alternative way to do it._
 
 ## Placeholders for large media content
 
@@ -112,7 +116,7 @@ const handleShare = async () => {
 };
 ```
 
-> _Aside: I think [opting out of pre-rendering for this section of the page](https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr) might be another way to fix this, but with the tradeoff that the section will not show if a client isn't running JavaScript._
+_Aside: I think [opting out of pre-rendering for this section of the page](https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr) might be another way to fix this, but with the tradeoff that the section will not show if a client isn't running JavaScript._
 
 ## Filling the screen width with CSS
 

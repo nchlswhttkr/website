@@ -2,10 +2,9 @@ baseURL: "https://nicholas.cloud/"
 languageCode: "en-us"
 title: "Nicholas Whittaker"
 enableEmoji: true
-buildFuture: true
 
-disableKinds:
-    - "taxonomyTerm" # I don't currently use categories/tags
+taxonomies:
+    tag: tags
 
 # https://gohugo.io/getting-started/configuration-markup/#goldmark
 markup:

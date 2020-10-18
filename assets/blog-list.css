@@ -3,7 +3,7 @@
 }
 
 .blog-list > * {
-    margin: 0 0 12px;
+    margin: 0 0 4px;
     line-height: 1.4rem;
 }
 
@@ -11,10 +11,16 @@
     margin-bottom: 0;
 }
 
-.blog-list .date {
+.blog-list .post-details {
+    font-family: monospace;
     opacity: 0.8;
+    margin-bottom: 24px;
+}
+
+.blog-list .post-details:last-child {
+    margin-bottom: 0;
 }
 
 .blog-list .spacer {
-    margin-top: 64px;
+    margin-top: 32px;
 }

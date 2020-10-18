@@ -1,9 +1,12 @@
 ---
 title: "Speeding Up a Solver for Golf Peaks"
 description: "Now that it's working, make it work fast!"
-date: 2020-09-05T12:00:00.000Z
+date: 2020-09-05T12:00:00+1000
 cover: "10-01.png"
 coveralt: "A golf puzzle game where the player needs to hit the ball into the goal"
+tags:
+    - python
+    - rust
 ---
 
 Previously, I wrote about [how I built a solver for the puzzle game Golf Peaks](../building-a-solver-for-golf-peaks/). In closing, I had a few ideas on how it could be sped up and improved. Over the last few days, I've been trying some of these ideas out, and measuring the results!
@@ -447,3 +450,7 @@ Good job making it here! I hope you've picked up something new while reading thi
 If you're interested in doing your own analysis, you can find all the benchmarking results included with the repo on [GitHub](https://github.com/nchlswhttkr/golf-peaks)!
 
 As always, if you're on the hunt for a puzzle game to play this week or any week, give [Golf Peaks](https://afterburn.itch.io/golf-peaks) a shot!
+
+---
+
+_Update: After trying a few last improvements, it turns out the solver can be [even faster](../a-blazing-fast-solver-for-golf-peaks/)!_

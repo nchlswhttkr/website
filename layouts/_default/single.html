@@ -8,13 +8,16 @@
 
 {{ define "main" }}
 <article class="blog-article">
+    {{ .Content }}
+    <!--  -->
     {{ if eq .Section "blog" }}
-    <p class="foreword">
+    <p class="postscript">
         Posted
         <a href="{{ .Permalink }}">{{ .Date.Format "January 02, 2006" }}</a>
+        {{ if isset .Params "tags" }}with tags{{ end }} {{ range .Params.tags }}
+        <a href="/tags/{{ . }}/">#{{ . }}</a>
+        {{ end }}
     </p>
     {{ end }}
-    <!--  -->
-    {{ .Content }}
 </article>
 {{ end }}

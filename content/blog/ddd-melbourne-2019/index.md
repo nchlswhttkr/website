@@ -1,7 +1,10 @@
 ---
 title: "DDD Melbourne 2019"
 description: "Reflections, discussions and thoughts from attending DDD Melbourne 2019"
-date: 2019-08-13T12:00:00+10:00
+date: 2019-08-13T12:00:00+1000
+tags:
+    - conferences
+    - reflections
 ---
 
 I had the pleasure of attending [DDD Melbourne](https://dddmelbourne.com/) this past weekend, seeing talks from many people in Melbourne's tech space, and others coming in from abroad. Across 5 tracks of talks, there was a wide array of presentations on a variety of technical, personal and professional topics.

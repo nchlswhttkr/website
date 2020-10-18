@@ -1,7 +1,9 @@
 ---
 title: "Kubo and the Two Strings"
 description: "A review I wrote some time ago, now online!"
-date: 2016-09-18T00:00:00.000Z
+date: 2016-09-18T00:00:00+1000
+tags:
+    - reviews
 ---
 
 I was looking through some old writing I'd done and found this review I wrote on the 2016 Laika movie, _Kubo and the Two Strings_. I figured it was worth publishing here as well.

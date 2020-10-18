@@ -1,7 +1,9 @@
 ---
 title: "Enjoying Music Albums From Start to Finish"
 description: "Appreciating albums in the age of the playlist"
-date: 2020-07-04T12:00:00.000Z
+date: 2020-07-04T12:00:00+1000
+tags:
+    - music
 ---
 
 There's a lot of ways to listen to music in this day and age. You might see it live, streamed over the internet or played from a vinyl record. Today though, I want to advocate for a particular approach to listening to recordings.
@@ -20,7 +22,7 @@ You can't listen to "Dollar Days" and "I Can't Give Everything Away" in isolatio
 
 {{% youtube "iZs2sVlkiQc" %}}
 
-There's brief moments of joy you get when you listen to albums uninterrupted too, courtesy of a little musical device called a segue. I think it's captivating when one song flows into the next in an album. Take the closing final tracks in Gorillaz's _Demon Days_, "Don't Get Lost In Heaven" and "Demon Days", as an example. Personally I consider them to be a single piece, given how they fade together.
+There's brief moments of joy you get when you listen to albums uninterrupted too, courtesy of a little musical device called a segue. I think it's captivating when one song flows into the next in an album. Take the closing tracks in Gorillaz's _Demon Days_, "Don't Get Lost In Heaven" and "Demon Days", as an example. Personally I consider them to be a single piece, given how they fade together.
 
 ## Perhaps it's not the style of today
 

@@ -1,8 +1,8 @@
 ---
 title: "This Post Will Disappear After Two Weeks"
 description: "That's right, there's self-destructing blog posts now"
-date: 2020-09-25T12:00:00.000Z
-expirydate: 2020-10-09T12:00:00.000Z
+date: 2020-09-25T12:00:00+1000
+expirydate: 2020-10-09T12:00:00+1000
 ---
 
 I've been toying with the idea of writing expiring blog posts for a while now, ever since discovering the `expiryDate` variable in Hugo.
