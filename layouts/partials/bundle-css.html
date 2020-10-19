@@ -1,0 +1,9 @@
+<!-- TODO partialCached may eventually be a viable optimisation -->
+<!-- prettier-ignore -->
+{{ $name := printf "%s.css" (delimit . "_") }}
+{{ $resources := slice }}
+{{ range . }}
+    {{ $resources = append (resources.Get (printf "%s.css" .) | resources.Minify ) $resources }}
+{{ end }}
+{{ $file := resources.Concat $name $resources }}
+<link rel="stylesheet" href="{{ $file.Permalink }}" />

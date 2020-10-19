@@ -2,6 +2,6 @@
 
 set -eu
 
+sed -i 's/[a-z.* ]*{ *}//g' assets/highlight.css
 hugo --minify --cleanDestinationDir
-sed -i 's/[a-z.* ]*{}//g' public/highlight.min.css
 rsync --recursive --verbose --itemize-changes --checksum --delete $PWD/public/ /var/www/nicholas.cloud

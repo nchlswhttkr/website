@@ -1,6 +1,6 @@
 {{ define "css" }}
 <!-- prettier-ignore -->
-<link rel="stylesheet" type="text/css" href="{{ (resources.Get "blog-article.css" | minify ).Permalink }}" />
+{{ partial "bundle-css.html" ( slice "blog-article" "main" ) }}
 <style>
     #avatar {
         float: right;

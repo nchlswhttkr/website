@@ -14,9 +14,8 @@
     <head>
         <title>{{ $title }}</title>
         {{ partial "meta.html" . }}
-        <link rel="stylesheet" href="{{ (resources.Get "main.css" | minify ).Permalink }}" />
+        <link rel="preload" href="{{ $background }}" as="image" media="(min-width: 600px)" />
         {{ block "css" . }} {{ end }}
-        <link rel="preload" href="{{ $background }}" as="image" media="min-width: 600px" />
         <style>
             :root {
                 --background-image: url("{{ $background }}");
