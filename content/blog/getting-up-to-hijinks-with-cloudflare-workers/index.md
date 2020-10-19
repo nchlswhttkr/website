@@ -6,9 +6,10 @@ tags:
     - javascript
     - cloudflare-workers
     - serverless
+series: "cloudflare-workers-hijinks"
 ---
 
-You may have heard of [Workers](https://workers.dev), a product from Cloudflare that lets you run JavaScript/WebAssembly in a serverless fashion on Cloudflare's network.
+You may have heard of [Workers](https://workers.dev/), a product from Cloudflare that lets you run JavaScript/WebAssembly in a serverless fashion on Cloudflare's network.
 
 I've been toying with them recently, and I thought it would be fun to share some of the uses I've come up with for them!
 
@@ -241,7 +242,3 @@ Something I didn't dig into is the ability to run WebAssembly in addition to Jav
 Cloudflare have published a [number of templates](https://developers.cloudflare.com/workers/templates/) for various Workers if you'd like to see more examples of them in action!
 
 I hope you've found this piece interesting. You can find most of the code from this post in my [repo of workers](https://github.com/nchlswhttkr/workers) on GitHub!
-
----
-
-_Update: If this isn't enough for you, I've done [more experimenting](../continuing-hijinks-with-cloudflare-workers/) that you can read about!_

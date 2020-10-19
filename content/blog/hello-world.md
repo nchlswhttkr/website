@@ -37,6 +37,8 @@ This text includes an `inline code block`.
 
 ## Tables and lists
 
+This is an unordered list.
+
 -   Foo
     -   Foo
     -   Bar
@@ -44,9 +46,13 @@ This text includes an `inline code block`.
 -   Bar
 -   Baz
 
+This is an ordered list.
+
 1.  The first item
 1.  The second item
 1.  The third and final item
+
+This is a table.
 
 | Column 1 | Column 2 |
 | -------- | -------- |

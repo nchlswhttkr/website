@@ -8,6 +8,7 @@ tags:
     - applescript
     - python
     - rust
+series: "golf-peaks"
 ---
 
 Recently I played [Golf Peaks](https://afterburn.itch.io/golf-peaks), a golf-based puzzler from [Afterburn Games](http://afterburn.games/). I really enjoyed completing all of its levels, so last week I decided to try my hand at building a solver for it.
@@ -128,7 +129,3 @@ Like I mentioned earlier, you can find all the code powering this solver on [Git
 I hope you've enjoyed reading about how I built this solver! I know I certainly enjoyed embracing the chaos while building it, pushing to complete level after level while working around the accruing weight of my hastily-written code.
 
 And if you're looking for a great puzzler to spend some of your idle time on, I can heartily recommend [Golf Peaks](https://afterburn.itch.io/golf-peaks).
-
----
-
-_Update: I've managed to [greatly improve the performance of my solver](../speeding-up-a-solver-for-golf-peaks/) with the help of this reflection!_

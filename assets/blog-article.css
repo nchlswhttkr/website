@@ -1,5 +1,5 @@
 .blog-article {
-    padding: 32px 16px;
+    padding: 16px;
 }
 
 .blog-article > * {
@@ -24,6 +24,10 @@
 .blog-article ul,
 .blog-article ol {
     padding-left: 32px;
+}
+
+.blog-article p + ul {
+    margin-top: -16px;
 }
 
 .blog-article li {
@@ -88,11 +92,12 @@ as wide as their container + padding, then centre with an offset and transform.
 }
 
 .blog-article hr {
-    border: 0px;
+    border: 1px solid var(--text-color);
 }
 
 .blog-article blockquote {
     padding-left: 16px;
+    border-left: 2px solid var(--text-color);
 }
 
 .blog-article .center-text {
@@ -106,7 +111,11 @@ as wide as their container + padding, then centre with an offset and transform.
     margin: 16px auto !important;
 }
 
-.blog-article .postscript {
-    padding-top: 24px;
+.blog-article aside {
+    margin-bottom: 32px;
     font-family: monospace;
+}
+
+.blog-article aside > * {
+    margin: 0 0 16px;
 }

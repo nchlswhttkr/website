@@ -7,9 +7,10 @@ tags:
     - golang
     - javascript
     - serverless
+series: "cloudflare-workers-hijinks"
 ---
 
-A while back I wrote about [a few uses for Cloudflare Workers](../getting-up-to-hijinks-with-cloudflare-workers/). I've been trying a few more things since then, so now I can dive into even more uses for Cloudflare Workers!
+A while back I wrote about a few things I'd been trying with [Cloudflare Workers](https://workers.dev/). I've been trying a few more things since then, so now I can dive into even more uses for Cloudflare Workers!
 
 <!--more-->
 

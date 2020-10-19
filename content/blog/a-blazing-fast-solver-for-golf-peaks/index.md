@@ -4,15 +4,16 @@ description: "Trying a few final approaches to get one last speed boost"
 date: 2020-09-12T12:00:00+1000
 tags:
     - rust
+series: golf-peaks
 ---
 
 > _"Well here we are again, it's always such a pleasure"_
 
-Over the past few weeks, I've been [building a solver for Golf Peaks](../building-a-solver-for-golf-peaks/) and [improving its performance](../speeding-up-a-solver-for-golf-peaks/) over the course of a few blog posts. Given I've still got a few final ideas I'd like to try, how about one last writeup?
+Over the past few weeks, I've been building a solver for the [puzzle game Golf Peaks](https://afterburn.itch.io/golf-peaks) and improving its performance over the course of a few blog posts. Given I've still got a few final ideas I'd like to try, how about one last writeup?
 
 <!--more-->
 
-The key issue remaining with the solver is that it still treats every card in the player's hand as _uinque_. In levels with many duplicate cards, the solver needlessly tries each of them hoping to find a better solution. I landed on [two different approaches](../speeding-up-a-solver-for-golf-peaks/#can-we-go-even-faster) to resolve this.
+The key issue remaining with the solver is that it still treats every card in the player's hand as _unique_. In levels with many duplicate cards, the solver needlessly tries each of them hoping to find a better solution. I landed on [two different approaches](../speeding-up-a-solver-for-golf-peaks/#can-we-go-even-faster) to resolve this.
 
 It should be noted that in fixing this, our algorithm loses sight of how cards are ordered in the player's hand. In turn, this affects how we generate AppleScript instructions to solve a level. We'll need to scan the player's hand after each move to find where the next card is. As we'll see though, this tradeoff is worth the improvement in solving time.
 
