@@ -1,22 +1,24 @@
+/* CSS for list pages, which follow a very basic structure */
+
 .blog-list {
-    padding: 32px 16px;
+    padding: 16px;
 }
 
 .blog-list > * {
-    margin: 0 0 4px;
+    margin: 0 0 8px;
     line-height: 1.4rem;
 }
 
-.blog-list > *:last-child {
-    margin-bottom: 0;
+.blog-list > h3 {
+    margin-bottom: 4px;
 }
 
 .blog-list .post-details {
     font-family: monospace;
     opacity: 0.8;
     margin-bottom: 24px;
+    line-height: 1.6rem; /* a littie bit wider, for mobiles */
 }
-
 .blog-list .post-details:last-child {
     margin-bottom: 0;
 }

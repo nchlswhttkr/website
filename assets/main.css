@@ -8,9 +8,9 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --text-color: #ddd; /* just a little softer than #fff */
+        --text-color: #eee; /* just a little softer than #fff */
         --background-color: #333;
-        --secondary-background-color: #444;
+        --secondary-background-color: #555;
     }
 }
 
@@ -49,16 +49,17 @@ a {
     color: inherit;
 }
 
+p,
+li,
+code {
+    font-size: 1rem;
+}
+
 header > *,
 footer > *,
 nav > * {
     color: var(--theme-text-color);
     background-color: var(--theme-color);
-}
-
-header > div,
-footer > div,
-nav > ul {
     box-sizing: border-box;
     padding: 16px;
 }
@@ -96,5 +97,5 @@ main img {
 
 .footer-icons a {
     text-decoration: none;
-    margin-right: 16px;
+    margin: 8px 16px 8px 0;
 }

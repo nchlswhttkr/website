@@ -9,7 +9,6 @@
 {{ define "main" }}
 <article class="blog-article">
     <aside>
-        {{ if eq .Section "blog" }}
         <!-- prettier-ignore -->
         <p>
             Posted <a href="{{ .Permalink }}">{{ .Date.Format "January 02, 2006" }}</a>
@@ -18,7 +17,6 @@
             <a href="/tags/{{ . }}/">#{{ . }}</a>
             {{ end }}
         </p>
-        {{ end }}
         <!--  -->
         {{ if isset .Params "series" }}
         <p>

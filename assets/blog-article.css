@@ -1,39 +1,46 @@
+/* CSS for markdown generated pages (blog posts, home pages, misc content...) */
+
+/* MARGINS/SPACING */
 .blog-article {
     padding: 16px;
 }
-
 .blog-article > * {
     margin: 0 0 24px;
     break-inside: avoid;
 }
-
 .blog-article > *:last-child {
     margin-bottom: 0;
 }
-
 .blog-article > h2,
 .blog-article > h3 {
     margin-top: 64px;
 }
 
+/* TEXT AND INLINE MARKUP */
 .blog-article p,
 .blog-article li {
     line-height: 1.4rem;
 }
+.blog-article p code,
+.blog-article li code {
+    border-radius: 4px;
+    padding: 0 4px;
+    background-color: var(--secondary-background-color);
+    overflow-wrap: anywhere;
+}
 
+/* LISTS */
 .blog-article ul,
 .blog-article ol {
     padding-left: 32px;
 }
-
-.blog-article p + ul {
-    margin-top: -16px;
+.blog-article p + ul,
+.blog-article p + ol {
+    margin-top: -16px; /* closer to leading paragraph */
 }
-
 .blog-article li {
     padding: 4px 0;
 }
-
 .blog-article ul > li {
     list-style-type: square;
 }
@@ -45,10 +52,10 @@ as wide as their container + padding, then centre with an offset and transform.
 .blog-article {
     overflow: hidden;
 }
-
 .blog-article img,
 .blog-article video,
 .blog-article .highlight {
+    background-color: #fff; /* images with transparent backgrounds */
     max-width: calc(100% + 32px);
     position: relative;
     top: 0;
@@ -56,15 +63,7 @@ as wide as their container + padding, then centre with an offset and transform.
     transform: translate(-50%, 0);
 }
 
-.blog-article .highlight {
-    width: calc(100% + 32px); /* Only force code blocks wider, not images */
-}
-
-.blog-article pre {
-    padding: 16px;
-    overflow: scroll;
-}
-
+/* TABLES */
 .blog-article table {
     display: block;
     overflow: auto;
@@ -73,49 +72,59 @@ as wide as their container + padding, then centre with an offset and transform.
     border-spacing: 0;
     border-collapse: collapse;
 }
-
 .blog-article th,
 .blog-article td {
     padding: 8px;
     border: 1px solid var(--text-color);
 }
-
 .blog-article thead,
 .blog-article tr:nth-child(2n) {
     background-color: var(--secondary-background-color);
 }
 
+/* CODE BLOCKS */
+.blog-article .highlight {
+    width: calc(100% + 32px); /* Force blocks to occupy page width */
+}
+.blog-article pre {
+    padding: 16px;
+    overflow: scroll;
+}
 @media print {
     .blog-article pre {
         white-space: pre-wrap;
     }
 }
 
+/* BREAKS */
 .blog-article hr {
     border: 1px solid var(--text-color);
 }
 
+/* BLOCK QUOTES */
 .blog-article blockquote {
     padding-left: 16px;
     border-left: 2px solid var(--text-color);
 }
 
+/* used by the image-caption shortcode */
 .blog-article .center-text {
     display: block;
     text-align: center;
 }
 
+/* TWITTER */
 .blog-article .twitter-tweet {
     /* Isolated hack to override inline styling, sorry */
     width: unset !important;
     margin: 16px auto !important;
 }
 
+/* ASIDE */
 .blog-article aside {
     margin-bottom: 32px;
     font-family: monospace;
 }
-
 .blog-article aside > * {
     margin: 0 0 16px;
 }
