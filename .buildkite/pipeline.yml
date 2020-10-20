@@ -1,5 +1,10 @@
 # prettier-ignore
 steps:
+  - label: ':hugo:'
+    agents:
+      deploy-personal-website: true
+    command: hugo
+  - wait
   - label: ':shipit:'
     if: 'build.branch == "main"'
     agents:
