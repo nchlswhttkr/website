@@ -24,7 +24,7 @@ server {
     location / {
         # Cache media on clients for a month
         location ~* \.(gif|jpg|jpeg|png|svg)$ {
-            add_header "Cache-Control" "public, max-age=2592000, s-maxage=3600";
+            add_header "Cache-Control" "public, max-age=2592000, s-maxage=3600, immutable";
         }
 
         # Cache styling on clients for two days
