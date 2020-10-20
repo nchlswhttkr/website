@@ -1,12 +1,15 @@
-{{ $title := .Title }} {{ $background := "/rungutjirpa.jpg" }}
 <!-- prettier-ignore -->
+{{ $title := .Title }}
 {{ if and (eq .Kind "term") (eq .Data.Plural "tags") }}
-    {{ $title = printf "Posts tagged #%s" .Title }}
+{{ $title = printf "Posts tagged #%s" .Title }}
 {{ end }}
 <!-- prettier-ignore -->
+{{ $background := resources.Get "rungutjirpa.jpg" }}
 {{ if isset .Params "background" }}
-    {{ $background = printf "%s%s" .Permalink .Params.background }}
+    {{ $background = .Page.Resources.GetMatch .Params.background }}
 {{ end }}
+{{ $preview := ($background.Resize "96x Linear") }}
+{{ $preview = $preview.Filter (images.GaussianBlur 1.5) }}
 <!-- prettier-ignore -->
 {{ .Scratch.Set "css" (slice "main") }}
 
@@ -16,12 +19,13 @@
     <head>
         <title>{{ $title }}</title>
         {{ partial "meta.html" . }}
-        <link rel="preload" href="{{ $background }}" as="image" media="(min-width: 600px)" />
+        <link rel="preload" href="{{ $background.Permalink }}" as="image" media="(min-width: 600px)" />
         {{ block "css" . }} {{ end }}
         {{ partial "bundle-css.html" . }}
         <style>
             :root {
-                --background-image: url("{{ $background }}");
+                --background-image: url("{{ $background.Permalink }}");
+                --preview-background-image: url('data:image/jpeg;base64,{{ base64Encode $preview.Content }}')
             }
         </style>
         {{ if isset .Params "color" }}
