@@ -1,6 +1,6 @@
 {{ define "css" }}
 <!-- prettier-ignore -->
-{{ partial "bundle-css.html" ( slice "blog-article" "main" ) }}
+{{ .Scratch.Add "css" "blog-article" }}
 <style>
     #avatar {
         float: right;

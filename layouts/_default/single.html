@@ -1,9 +1,8 @@
 {{ define "css" }}
 <!-- prettier-ignore -->
+{{ .Scratch.Add "css" "blog-article" }}
 {{ if in .Content "class=\"highlight\"" }}
-    {{ partial "bundle-css.html" ( slice "blog-article" "highlight" "main" ) }}
-{{ else }}
-    {{ partial "bundle-css.html" ( slice "blog-article" "main" ) }}
+    {{ .Scratch.Add "css" "highlight" }}
 {{ end }}
 {{ end }}
     

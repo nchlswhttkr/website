@@ -1,9 +1,16 @@
-<!-- TODO partialCached may eventually be a viable optimisation -->
-<!-- prettier-ignore -->
-{{ $name := printf "%s.css" (delimit . "_") }}
-{{ $resources := slice }}
-{{ range . }}
-    {{ $resources = append (resources.Get (printf "%s.css" .) | resources.Minify ) $resources }}
+{{ $css := .Scratch.Get "css" }}
+{{ if .Site.IsServer }}
+    <!-- dev mode, serve separate files to aid debugging -->
+    {{ range $css }}
+    <link rel="stylesheet" href="{{ (resources.Get (printf "%s.css" .)).Permalink }}" />
+    {{ end }}
+{{ else }}
+    <!-- build mode, bundle files for fewer requests per page -->
+    {{ $name := printf "%s.css" (delimit $css "_") }}
+    {{ $resources := slice }}
+    {{ range $css }}
+        {{ $resources = append (resources.Get (printf "%s.css" .) | resources.Minify ) $resources }}
+    {{ end }}
+    {{ $file := resources.Concat $name $resources }}
+    <link rel="stylesheet" href="{{ $file.Permalink }}" />
 {{ end }}
-{{ $file := resources.Concat $name $resources }}
-<link rel="stylesheet" href="{{ $file.Permalink }}" />

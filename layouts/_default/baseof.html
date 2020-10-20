@@ -7,6 +7,8 @@
 {{ if isset .Params "background" }}
     {{ $background = printf "%s%s" .Permalink .Params.background }}
 {{ end }}
+<!-- prettier-ignore -->
+{{ .Scratch.Set "css" (slice "main") }}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +18,7 @@
         {{ partial "meta.html" . }}
         <link rel="preload" href="{{ $background }}" as="image" media="(min-width: 600px)" />
         {{ block "css" . }} {{ end }}
+        {{ partial "bundle-css.html" . }}
         <style>
             :root {
                 --background-image: url("{{ $background }}");

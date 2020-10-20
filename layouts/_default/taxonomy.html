@@ -1,6 +1,6 @@
 {{ define "css" }}
 <!-- prettier-ignore -->
-{{ partial "bundle-css.html" ( slice "blog-list" "main" ) }}
+{{ .Scratch.Add "css" "blog-list" }}
 {{ end }}
 
 {{ define "main" }}
