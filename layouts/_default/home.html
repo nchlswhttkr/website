@@ -18,9 +18,11 @@
 {{ end }}
 
 {{ define "main" }}
+{{ $avatar := resources.Get "monty.jpg" }}
+{{ $avatar = $avatar.Resize "200x" }}
 <article class="blog-article">
     <picture>
-        <source srcset="/media/monty.jpg" media="(min-width: 600px)" />
+        <source srcset="{{ $avatar.Permalink }}" media="(min-width: 600px)" />
         <img id="avatar" alt="Avatar of Nicholas Whittaker" src="" />
     </picture>
     {{ .Content }}
