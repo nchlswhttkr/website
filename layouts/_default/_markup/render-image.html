@@ -1,0 +1,16 @@
+{{ $filename := path.Base .Destination }}
+{{ $image := .Page.Resources.GetMatch $filename }}
+
+{{ if eq nil $image }}
+    <img src="{{ .Destination }}" alt="{{ .Text }}" loading="eager" />
+{{ else if strings.HasSuffix $filename "svg" }}
+    <!-- SVGs don't need lazy loading -->
+    <img src="{{ .Destination }}" alt="{{ .Text }}" loading="eager" />
+{{ else }}
+    {{ $text := .Text }}
+    {{ $destination := .Destination }}
+    {{ $path := printf "content/%s%s" .Page.File.Dir $filename }}
+    {{ with (imageConfig $path) }}
+    <img src="{{ $destination }}" alt="{{ $text }}" loading="lazy" width="{{ .Width}}" height="{{ .Height }}" />
+    {{ end }} 
+{{ end }}
