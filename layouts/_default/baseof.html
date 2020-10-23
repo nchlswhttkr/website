@@ -12,6 +12,12 @@
 {{ $preview = $preview.Filter (images.GaussianBlur 1.5) }}
 <!-- prettier-ignore -->
 {{ .Scratch.Set "css" (slice "main") }}
+<!-- prettier-ignore -->
+{{ $favicon := resources.Get "favicon.png" }}
+{{ $color := .Site.Params.Color }}
+{{ if isset .Params "color" }}
+    {{ $color = .Params.Color }}
+{{ end }}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +26,13 @@
         <title>{{ $title }}</title>
         {{ partial "meta.html" . }}
         <link rel="preload" href="{{ $background.Permalink }}" as="image" media="(min-width: 600px)" />
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ ($favicon.Resize (printf "120x png %s" $color)).Permalink }}" />
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ ($favicon.Resize (printf "152x png %s" $color)).Permalink }}" />
+        <link rel="apple-touch-icon" sizes="167x167" href="{{ ($favicon.Resize (printf "167x png %s" $color)).Permalink }}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ ($favicon.Resize (printf "180x png %s" $color)).Permalink }}" />
+        <link rel="icon" sizes="96x96" href="{{ ($favicon.Resize (printf "96x png %s" $color)).Permalink }}" />
+        <link rel="icon" sizes="16x16" href="{{ ($favicon.Resize (printf "16x png %s" $color)).Permalink }}" />
+        <link rel="icon" sizes="32x32" href="{{ ($favicon.Resize (printf "32x png %s" $color)).Permalink }}" />
         {{ block "css" . }} {{ end }}
         {{ partial "bundle-css.html" . }}
         <style>
@@ -28,11 +41,7 @@
                 --preview-background-image: url('data:image/jpeg;base64,{{ base64Encode $preview.Content }}')
             }
         </style>
-        {{ if isset .Params "color" }}
-        <style>
-            :root { --theme-color: {{ .Params.Color }}; }
-        </style>
-        {{ end }}
+        <style>:root { --theme-color: {{ $color }}; }</style>
     </head>
     <body>
         <nav>

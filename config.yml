@@ -14,3 +14,6 @@ markup:
     highlight:
         # style: vs
         noClasses: false
+
+params:
+    color: "#555d25"
