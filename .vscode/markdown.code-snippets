@@ -19,5 +19,15 @@
         "scope": "markdown",
         "body": ["{{% image-caption %}}${1:caption}{{%/ image-caption %}}"],
         "description": "image-caption"
+    },
+    "lazy-video": {
+        "prefix": "lazy-video",
+        "scope": "markdown",
+        "body": [
+          "{{< lazy-video src=\"${1:src}\" poster=\"${2:poster}\" width=\"${3:width}\" height=\"${4:height}\" >}}",
+          "${5:fallback}",
+          "{{</ lazy-video >}}"
+        ],
+        "description": "lazy-video"
     }
 }

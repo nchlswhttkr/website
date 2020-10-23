@@ -119,5 +119,12 @@
                 {{ end }}
             </div>
         </footer>
+        {{ if in .Content "class=\"lozad\"" }}
+        <script>
+            {{ readFile "dependencies/lozad/dist/lozad.min.js" | safeJS }};
+            let observer = lozad();
+            observer.observe();
+        </script>
+        {{ end }}
     </body>
 </html>
