@@ -55,8 +55,10 @@ as wide as their container + padding, then centre with an offset and transform.
 .blog-article img,
 .blog-article video,
 .blog-article .highlight {
+    display: block;
     background-color: #fff; /* images with transparent backgrounds */
     max-width: calc(100% + 32px);
+    height: auto;
     position: relative;
     top: 0;
     left: 50%;
@@ -122,6 +124,7 @@ as wide as their container + padding, then centre with an offset and transform.
 
 /* ASIDE */
 .blog-article aside {
+    opacity: 0.8;
     margin-bottom: 32px;
     font-family: monospace;
 }

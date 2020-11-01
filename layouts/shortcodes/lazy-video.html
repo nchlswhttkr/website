@@ -1,0 +1,35 @@
+<!-- TODO Make more params configurable (autoplay, loop, muted, playsinline) -->
+<!-- prettier-ignore -->
+{{ $poster := .Get "poster" }}
+{{ $src := .Get "src" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+
+<video
+    class="lozad"
+    autoplay="true"
+    muted="true"
+    loop="true"
+    playsinline
+    width="{{ $width }}"
+    height="{{ $height }}"
+    data-poster="{{ $poster }}"
+    data-src="{{ $src }}"
+>
+    {{ .Inner }}
+</video>
+
+<noscript>
+    <video
+        autoplay="true"
+        muted="true"
+        loop="true"
+        playsinline
+        width="{{ $width }}"
+        height="{{ $height }}"
+        poster="{{ $poster }}"
+        src="{{ $src }}"
+    >
+        {{ .Inner }}
+    </video>
+</noscript>
