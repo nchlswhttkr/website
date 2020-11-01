@@ -31,7 +31,7 @@ body {
     }
 
     header {
-        padding-top: 20vh;
+        padding-bottom: 20vh;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -71,9 +71,12 @@ nav li {
     display: inline-block;
 }
 
-header h1,
+header h1 {
+    margin: 0;
+}
 header h2 {
-    margin: 16px 0;
+    margin: 16px 0 0;
+    line-height: 1.2em;
 }
 
 main > div {
