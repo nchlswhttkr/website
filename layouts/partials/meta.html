@@ -1,5 +1,5 @@
 <!-- prettier-ignore -->
-{{ $coverImage := printf "%s%s" .Site.BaseURL "media/monty.jpg" }}
+{{ $coverImage := (resources.Get "monty.jpg").Permalink }}
 {{ $coverImageAlt := "Avatar of Nicholas Whittaker" }}
 {{ if ( isset .Params "cover" ) }}
     {{ if not ( isset .Params "coveralt" ) }}

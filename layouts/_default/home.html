@@ -19,7 +19,6 @@
 
 {{ define "main" }}
 {{ $avatar := resources.Get "monty.jpg" }}
-{{ $avatar = $avatar.Resize "200x" }}
 <article class="blog-article">
     <picture>
         <source srcset="{{ $avatar.Permalink }}" media="(min-width: 600px)" />

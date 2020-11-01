@@ -33,7 +33,7 @@ This text includes a [link](/).
 
 This text includes an `inline code block`.
 
-![A generic image](/media/nicholas.png)
+![Alt text for this generic image](/media/nicholas.png)
 
 {{% image-caption %}}A caption for the above image{{%/ image-caption %}}
 
