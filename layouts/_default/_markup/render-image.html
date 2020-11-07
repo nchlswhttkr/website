@@ -1,13 +1,19 @@
 {{ $filename := path.Base .Destination }}
 {{ $image := .Page.Resources.GetMatch $filename }}
 
+{{ $text := .Text }}
+{{ if eq $text "" }}
+    {{ warnf "Expected alt text for %s in ./content/%s" .Destination .Page.File.Path }}
+{{ else if eq $text "omit-alt-text" }}
+    {{ $text = "" }}
+{{ end }}
+
 {{ if eq nil $image }}
-    <img src="{{ .Destination }}" alt="{{ .Text }}" loading="eager" />
+    <img src="{{ .Destination }}" alt="{{ $text }}" loading="eager" />
 {{ else if strings.HasSuffix $filename "svg" }}
     <!-- SVGs don't need lazy loading -->
-    <img src="{{ .Destination }}" alt="{{ .Text }}" loading="eager" />
+    <img src="{{ .Destination }}" alt="{{ $text }}" loading="eager" />
 {{ else }}
-    {{ $text := .Text }}
     {{ $destination := .Destination }}
     {{ $path := printf "content/%s%s" .Page.File.Dir $filename }}
     {{ with (imageConfig $path) }}

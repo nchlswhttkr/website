@@ -408,7 +408,7 @@ done | xargs -P 8 -I "{}" /bin/bash -c "{}"
 
 In just over a second, Golf Peaks is beaten! Parallel work isn't always practical or applicable, but it's viable here!
 
-![](https://i.redd.it/xmms2okp1p431.jpg)
+![omit-alt-text](https://i.redd.it/xmms2okp1p431.jpg)
 
 ## What does a run look like now?
 

@@ -25,7 +25,7 @@ You can find my other accounts in the site footer.
 
 ## About
 
-I studied Computer Science at Monash University and helped launch [MonPlan](https://monplan.apps.monash.edu/), the University's official course planning service built for students by students.
+I studied Computer Science at Monash University and helped launch [MonPlan](https://monplan.apps.monash.edu/), a course planning service built for students by students.
 
 I've been involved in running workshops, hackathons and events for IT students as a volunteer and committee member with [WIRED](https://wired.org.au/). Currently, I'm a part of the logistics crew with [UNIHACK](https://unihack.net/), organising Australia's largest hackathon for university students.
 

@@ -69,7 +69,7 @@ If I had to give advice for those of you making your own shortcuts, I'd highligh
 
 Here's the full shortcut if you're interested in adapting it for your needs. Until next time, happy automation!
 
-![](./shortcut.png)
+![omit-alt-text](./shortcut.png)
 
 ---
 
