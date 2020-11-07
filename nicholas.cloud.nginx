@@ -16,8 +16,8 @@ server {
     root /var/www/nicholas.cloud;
     autoindex on;
 
-    # By default allow stale cache for 30 mins, stay fresh on proxy for 30 mins
-    add_header "Cache-Control" "public, max-age=0, s-maxage=1800, stale-while-revalidate=1800";
+    # By default everything stays fresh on proxy for 30 mins
+    add_header "Cache-Control" "public, max-age=0, s-maxage=1800";
 
     error_page 404 /404.html;
 
