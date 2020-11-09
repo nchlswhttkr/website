@@ -3,6 +3,8 @@
     --text-color: #333;
     --background-color: #fff;
     --secondary-background-color: #eee;
+    --unvisited-link-color: #198195;
+    --visited-link-color: #8c356a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -10,6 +12,8 @@
         --text-color: #eee; /* just a little softer than #fff */
         --background-color: #333;
         --secondary-background-color: #555;
+        --unvisited-link-color: #eee;
+        --visited-link-color: #eee;
     }
 }
 
@@ -44,9 +48,19 @@ body {
     }
 }
 
+a {
+    color: var(--unvisited-link-color);
+}
+a:visited {
+    color: var(--visited-link-color);
+}
+
 nav a,
 header a,
-footer a {
+footer a,
+nav a:visited,
+header a:visited,
+footer a:visited {
     color: inherit;
 }
 
