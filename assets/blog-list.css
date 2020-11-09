@@ -15,12 +15,17 @@
 
 .blog-list .post-details {
     font-family: monospace;
-    opacity: 0.8;
+    opacity: 0.9;
     margin-bottom: 24px;
     line-height: 1.6rem; /* a littie bit wider, for mobiles */
 }
+
 .blog-list .post-details:last-child {
     margin-bottom: 0;
+}
+
+.blog-list .post-details a {
+    color: inherit;
 }
 
 .blog-list .spacer {

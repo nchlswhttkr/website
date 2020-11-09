@@ -124,7 +124,7 @@ as wide as their container + padding, then centre with an offset and transform.
 
 /* ASIDE */
 .blog-article aside {
-    opacity: 0.8;
+    opacity: 0.9;
     margin-bottom: 32px;
     font-family: monospace;
 }

@@ -44,7 +44,9 @@ body {
     }
 }
 
-a {
+nav a,
+header a,
+footer a {
     color: inherit;
 }
 

@@ -27,7 +27,10 @@
             <!-- prettier-ignore -->
             {{ range where .Site.RegularPages.ByDate "Params.series" .Params.series }}
             <li>
+                {{ if eq .Permalink $.Permalink }} {{ .Title }} (You are here)
+                {{ else }}
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ end }}
             </li>
             {{ end }}
         </ul>
