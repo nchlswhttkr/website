@@ -4,13 +4,6 @@
 {{ $title = printf "Posts tagged #%s" .Title }}
 {{ end }}
 <!-- prettier-ignore -->
-{{ $background := resources.Get "rungutjirpa.jpg" }}
-{{ if isset .Params "background" }}
-    {{ $background = .Page.Resources.GetMatch .Params.background }}
-{{ end }}
-{{ $preview := ($background.Resize "96x Linear") }}
-{{ $preview = $preview.Filter (images.GaussianBlur 1.5) }}
-<!-- prettier-ignore -->
 {{ .Scratch.Set "css" (slice "main") }}
 <!-- prettier-ignore -->
 {{ $favicon := resources.Get "favicon.png" }}
@@ -25,7 +18,6 @@
     <head>
         <title>{{ $title }}</title>
         {{ partial "meta.html" . }}
-        <link rel="preload" href="{{ $background.Permalink }}" as="image" media="(min-width: 600px)" />
         <link rel="apple-touch-icon" sizes="120x120" href="{{ ($favicon.Resize (printf "120x png %s" $color)).Permalink }}" />
         <link rel="apple-touch-icon" sizes="152x152" href="{{ ($favicon.Resize (printf "152x png %s" $color)).Permalink }}" />
         <link rel="apple-touch-icon" sizes="167x167" href="{{ ($favicon.Resize (printf "167x png %s" $color)).Permalink }}" />
@@ -36,9 +28,14 @@
         {{ block "css" . }} {{ end }}
         {{ partial "bundle-css.html" . }}
         <style>
-            :root {
-                --background-image: url("{{ $background.Permalink }}");
-                --preview-background-image: url('data:image/jpeg;base64,{{ base64Encode $preview.Content }}')
+            body {
+                background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='{{ replace $color "#" "%23" }}' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-image: none
+                }
             }
         </style>
         <style>:root { --theme-color: {{ $color }}; }</style>
@@ -112,11 +109,6 @@
                     <a href="https://cloudflare.com">Cloudflare</a> – want to
                     <a href="/site/">know more</a>?
                 </p>
-                {{ if not ( isset .Params "background" ) }}
-                <p>
-                    Background photograph is from <a href="https://www.openstreetmap.org/node/2183385926#map=19/-23.67393/133.71910">Rungutjirpa, Arrernte country</a>
-                </p>
-                {{ end }}
             </div>
         </footer>
         {{ if in .Content "class=\"lozad\"" }}

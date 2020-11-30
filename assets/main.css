@@ -3,8 +3,7 @@
     --text-color: #333;
     --background-color: #fff;
     --secondary-background-color: #eee;
-    --unvisited-link-color: #198195;
-    --visited-link-color: #8c356a;
+    --link-color: var(--theme-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,8 +11,7 @@
         --text-color: #eee; /* just a little softer than #fff */
         --background-color: #333;
         --secondary-background-color: #555;
-        --unvisited-link-color: #eee;
-        --visited-link-color: #eee;
+        --link-color: #eee;
     }
 }
 
@@ -21,38 +19,11 @@ body {
     margin: 0;
     font-family: sans-serif;
     color: var(--text-color);
-}
-
-@media (min-width: 600px) {
-    body {
-        background-image: var(--background-image),
-            var(--preview-background-image);
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        padding-bottom: 100vh;
-    }
-
-    header {
-        padding-bottom: 20vh;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        body {
-            background-image: linear-gradient(
-                    rgba(0, 0, 0, 0.3),
-                    rgba(0, 0, 0, 0.3)
-                ),
-                var(--background-image), var(--preview-background-image);
-        }
-    }
+    background-color: var(--background-color);
 }
 
 a {
-    color: var(--unvisited-link-color);
-}
-a:visited {
-    color: var(--visited-link-color);
+    color: var(--link-color);
 }
 
 nav a,
@@ -115,5 +86,5 @@ main img {
 
 .footer-icons a {
     text-decoration: none;
-    margin: 8px 16px 8px 0;
+    margin: 16px 16px 16px 0;
 }
