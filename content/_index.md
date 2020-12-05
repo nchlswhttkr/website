@@ -12,13 +12,16 @@ You might also find me playing the odd game of lawn bowls.
 
 ## Blog
 
-I write about my experiences, interests and reflections on [my blog](/blog/). If you use an RSS reader, you can [subscribe to my feed](/rss/).
+I write about my experiences, interests and reflections on [my blog](/blog/). You can stay updated with [my RSS feed](/rss/)!
 
-I also curate [a newsletter](/newsletter/) to share interesting pieces and content I love. It's available to read online and by email if you'd like it [sent to your inbox](/newsletter/subscribe/).
+I also curate a newsletter to share interesting pieces and content I love.
+
+-   Every issue is freely available to [read online](/newsletter/).
+-   You can [subscribe for the latest issues](/newsletter/subscribe/), and I'll deliver them straight to your email inbox!
 
 ## Contact
 
-You can find my other accounts in the site footer.
+Here's a couple of ways you can reach me. You can find all my accounts in the site footer.
 
 -   [Email](mailto:nicholas@nicholas.cloud)
 -   [Twitter](https://twitter.com/nchlswhttkr/)

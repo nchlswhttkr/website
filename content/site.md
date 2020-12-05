@@ -12,13 +12,30 @@ There's a few more moving parts to my website than there were when [I first made
 
 These are all the main parts that I can think of off the top of my head. If you've got questions, feel free to [contact me](/#contact)!
 
+## Acknowledgements
+
+All content on this website is my own unless otherwise credited.
+
+With that said, there's a number of tools and services this website depends on. You can read more about them below.
+
+-   [Hugo](https://gohugo.io/) lets me quickly build and preview my website.
+-   [Buildkite](https://buildkite.com/) helps me automate deployments and other assorted jobs.
+-   [Cloudflare](https://cloudflare.com/) handles traffic and my caching needs.
+
+There's several also other libraries and resources that this site uses.
+
+-   Lazy loaded video is made possible with [Lozad](https://github.com/ApoorvSaxena/lozad.js).
+-   Footer icons are provided by [Feather](https://feathericons.com/).
+-   The site favicon uses an icon from [Font Awesome](https://fontawesome.com/license/free/).
+-   Background pattern comes from [Hero Patterns](https://www.heropatterns.com/).
+
 ## Writing and publishing content
 
 Almost all content and code sits in a [single Github repo](https://github.com/nchlswhttkr/website/).
 
 I use the static site generator [Hugo](https://gohugo.io/) (with my own theme) to build my website. It's fast, meets my needs for templating/content management, and handles extra features like RSS feeds out of the box.
 
-I like being able to write my posts locally in markdown. Being plain text makes it easy to write and edit, and if I ever need something more complex I can drop in custom HTML with shortcode snippets using Hugo.
+I like being able to write my posts locally in markdown. It's easy to read and write, and whenever I need something more complex I can easily drop in custom HTML snippets with Hugo.
 
 As I write and push changes to Github, [Buildkite](https://buildkite.com/) schedules builds to be run. Good thing they have a free tier for community/open source projects!
 

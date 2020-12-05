@@ -5,7 +5,7 @@ enableEmoji: true
 enableRobotsTXT: true
 
 taxonomies:
-    tag: tags
+    tag: "tags"
 
 # https://gohugo.io/getting-started/configuration-markup/#goldmark
 markup:
@@ -17,4 +17,4 @@ markup:
         noClasses: false
 
 params:
-    color: "#555d25"
+    color: "#9e3245"
