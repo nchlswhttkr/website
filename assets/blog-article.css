@@ -5,7 +5,7 @@
     padding: 16px;
 }
 .blog-article > * {
-    margin: 0 0 24px;
+    margin: 0 0 18px;
     break-inside: avoid;
 }
 .blog-article > *:last-child {
@@ -124,9 +124,10 @@ as wide as their container + padding, then centre with an offset and transform.
 
 /* ASIDE */
 .blog-article aside {
-    opacity: 0.9;
+    color: var(--secondary-text-color);
     margin-bottom: 32px;
     font-family: monospace;
+    font-style: italic;
 }
 .blog-article aside > * {
     margin: 0 0 16px;

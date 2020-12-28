@@ -1,6 +1,7 @@
 :root {
     --theme-text-color: #fff;
     --text-color: #333;
+    --secondary-text-color: #555;
     --background-color: #fff;
     --secondary-background-color: #eee;
     --link-color: var(--theme-color);
@@ -9,6 +10,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --text-color: #eee; /* just a little softer than #fff */
+        --secondary-text-color: #ccc;
         --background-color: #333;
         --secondary-background-color: #555;
         --link-color: #eee;

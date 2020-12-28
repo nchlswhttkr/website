@@ -15,7 +15,7 @@
 
 .blog-list .post-details {
     font-family: monospace;
-    opacity: 0.9;
+    color: var(--secondary-text-color);
     margin-bottom: 24px;
     line-height: 1.6rem; /* a littie bit wider, for mobiles */
 }
