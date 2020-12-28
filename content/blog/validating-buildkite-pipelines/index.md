@@ -6,8 +6,6 @@ aliases:
     - ./linting-buildkite-pipelines/
 tags:
     - buildkite
-    - javascript
-    - nginx
 ---
 
 So I've been using [Buildkite](https://buildkite.com) a bit lately and loving it. Last weekend I had the thought of building a service to validate the `pipeline.yml` files it uses for configuration.

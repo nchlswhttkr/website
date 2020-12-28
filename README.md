@@ -2,4 +2,4 @@
 
 Source code for [my website](https://nicholas.cloud/). See also the source code for [a few workers](https://github.com/nchlswhttkr/workers/) I run.
 
-See the [main site](https://nicholas.cloud/site/#acknowledgements) for acknowledgements.
+See the [main site](https://nicholas.cloud/site/#acknowledgements) for acknowledgements and attributions.

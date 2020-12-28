@@ -3,7 +3,6 @@ title: "Following Patreon Creators via RSS"
 description: "Building the features I want to see in the world"
 date: 2020-10-23T15:00:00+1100
 tags:
-    - javascript
     - serverless
     - vercel
 ---
