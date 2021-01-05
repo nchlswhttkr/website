@@ -1,0 +1,10 @@
+<!-- https://developer.twitter.com/en/docs/twitter-api/tweets/lookup/api-reference/get-tweets-id -->
+<!-- prettier-ignore -->
+{{ $bearer_token := readFile "secrets/twitter-bearer-token.txt" }}
+{{ $expansions := "author_id" }}
+{{ $user_fields := "name,profile_image_url,url,username" }}
+{{ $json := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/tweet?" (querify "id" (.Get 0) "bearer" $bearer_token "expansions" $expansions "user.fields" $user_fields) }}
+
+{{ range first 1 $json.includes.users }}
+<p>Tweet from {{ .name }}</p>
+{{ end }}

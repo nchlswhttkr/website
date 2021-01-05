@@ -1,0 +1,17 @@
+<!-- prettier-ignore -->
+{{ $secret := "" }}
+{{ if fileExists "secrets/embed-proxy-secret.txt" }}
+    {{ $secret = readFile "secrets/embed-proxy-secret.txt" }}
+{{ end }}
+{{ $json := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/youtube?" (querify "id" (.Get 0) "secret" $secret) }}
+
+<a href="{{ $json.video_url }}" target="_blank" rel="noopener noreferrer">
+    <!-- prettier-ignore -->
+    <img
+        alt="Thumbnail for YouTube video {{ $json.video_title }}"
+        width="640"
+        height="360"
+        src="{{ ((resources.Get "play-video.png").Fill "640x360 Center").Permalink }}"
+        style="background-image: url({{ $json.thumbnail_url }}); background-position: center;"
+    />
+</a>
