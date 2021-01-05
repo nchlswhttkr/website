@@ -5,11 +5,8 @@
     padding: 16px;
 }
 .blog-article > * {
-    margin: 0 0 18px;
+    margin: 0 0 16px;
     break-inside: avoid;
-}
-.blog-article > *:last-child {
-    margin-bottom: 0;
 }
 .blog-article > h2,
 .blog-article > h3 {
@@ -17,12 +14,15 @@
 }
 
 /* TEXT AND INLINE MARKUP */
-.blog-article p,
-.blog-article li {
+.blog-article > p,
+.blog-article > blockquote > p,
+.blog-article > ul > li,
+.blog-article > ol > li {
     line-height: 1.4rem;
 }
-.blog-article p code,
-.blog-article li code {
+.blog-article > p > code,
+.blog-article > ul > li > code,
+.blog-article > ol > li > code {
     border-radius: 4px;
     padding: 0 4px;
     background-color: var(--secondary-background-color);
@@ -30,15 +30,16 @@
 }
 
 /* LISTS */
-.blog-article ul,
-.blog-article ol {
+.blog-article > ul,
+.blog-article > ol {
     padding-left: 32px;
 }
-.blog-article p + ul,
-.blog-article p + ol {
+.blog-article > p + ul,
+.blog-article > p + ol {
     margin-top: -16px; /* closer to leading paragraph */
 }
-.blog-article li {
+.blog-article > ul > li,
+.blog-article > ol > li {
     padding: 4px 0;
 }
 .blog-article ul > li {
@@ -52,9 +53,9 @@ as wide as their container + padding, then centre with an offset and transform.
 .blog-article {
     overflow: hidden;
 }
-.blog-article img,
-.blog-article video,
-.blog-article .highlight {
+.blog-article > p > img,
+.blog-article > p > video,
+.blog-article > .highlight {
     display: block;
     background-color: #fff; /* images with transparent backgrounds */
     max-width: calc(100% + 32px);
@@ -66,7 +67,7 @@ as wide as their container + padding, then centre with an offset and transform.
 }
 
 /* TABLES */
-.blog-article table {
+.blog-article > table {
     display: block;
     overflow: auto;
     width: max-content;
@@ -74,61 +75,67 @@ as wide as their container + padding, then centre with an offset and transform.
     border-spacing: 0;
     border-collapse: collapse;
 }
-.blog-article th,
-.blog-article td {
+.blog-article > table > thead > tr > th,
+.blog-article > table > tbody > tr > td {
     padding: 8px;
     border: 1px solid var(--text-color);
 }
-.blog-article thead,
-.blog-article tr:nth-child(2n) {
+.blog-article > table > thead,
+.blog-article > table > tbody > tr:nth-child(2n) {
     background-color: var(--secondary-background-color);
 }
 
 /* CODE BLOCKS */
-.blog-article .highlight {
+.blog-article > .highlight {
     width: calc(100% + 32px); /* Force blocks to occupy page width */
 }
-.blog-article pre {
+.blog-article > .highlight > pre {
     padding: 16px;
-    overflow: scroll;
+    overflow: scroll auto;
 }
 @media print {
-    .blog-article pre {
+    .blog-article > .highlight > pre {
         white-space: pre-wrap;
     }
 }
 
 /* BREAKS */
-.blog-article hr {
+.blog-article > hr {
     border: 1px solid var(--text-color);
 }
 
 /* BLOCK QUOTES */
-.blog-article blockquote {
+.blog-article > blockquote {
     padding-left: 16px;
     border-left: 2px solid var(--text-color);
 }
 
 /* used by the image-caption shortcode */
-.blog-article .center-text {
+.blog-article > .center-text {
     display: block;
     text-align: center;
 }
 
 /* TWITTER */
-.blog-article .twitter-tweet {
+.blog-article > .twitter-tweet {
     /* Isolated hack to override inline styling, sorry */
     width: unset !important;
     margin: 16px auto !important;
 }
 
+/* BANDCAMP */
+.blog-article > .bandcamp-mini-embed {
+    margin: 16px auto;
+    max-width: 400px;
+}
+
 /* ASIDE */
-.blog-article aside {
+.blog-article > aside {
     color: var(--secondary-text-color);
     margin-bottom: 32px;
     font-family: monospace;
     font-style: italic;
 }
-.blog-article aside > * {
+.blog-article > aside > * {
     margin: 0 0 16px;
 }

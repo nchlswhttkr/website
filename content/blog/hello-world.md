@@ -42,9 +42,6 @@ This text includes an `inline code block`.
 This is an unordered list.
 
 -   Foo
-    -   Foo
-    -   Bar
-    -   Baz
 -   Bar
 -   Baz
 
@@ -179,3 +176,5 @@ if let Some(value) = matches.value_of("database") {
 {{< youtube "x3HYRYGZtH0" >}}
 
 {{% vimeo "468393883" %}}
+
+{{%  bandcamp-album vine another-light %}}
