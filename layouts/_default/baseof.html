@@ -42,6 +42,10 @@
                 }
             }
         </style>
+        {{ if in .Content "class=\"bandcamp-mini-embed\"" }}
+            {{ $styles := readFile "dependencies/bandcamp-mini-embed/dist/bundle.css" | resources.FromString "bandcamp-mini-embed/bundle.css" }}
+            <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+        {{ end }}
     </head>
     <body>
         <nav>

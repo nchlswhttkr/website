@@ -122,6 +122,12 @@ as wide as their container + padding, then centre with an offset and transform.
     margin: 16px auto !important;
 }
 
+/* BANDCAMP */
+.blog-article > .bandcamp-mini-embed {
+    margin: 16px auto;
+    max-width: 400px;
+}
+
 /* ASIDE */
 .blog-article aside {
     color: var(--secondary-text-color);

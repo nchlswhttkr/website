@@ -29,5 +29,11 @@
           "{{</ lazy-video >}}"
         ],
         "description": "lazy-video"
-    }
+    },
+    "bandcamp-album": {
+        "prefix": "bandcamp-album",
+        "scope": "markdown",
+        "body": ["{{< bandcamp-album \"$1\" \"$2\" >}}"],
+        "description": "bandcamp-album"
+    },
 }

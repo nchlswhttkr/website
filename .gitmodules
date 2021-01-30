@@ -1,3 +1,6 @@
 [submodule "dependencies/lozad"]
 	path = dependencies/lozad
 	url = https://github.com/ApoorvSaxena/lozad.js.git
+[submodule "dependencies/bandcamp-mini-embed"]
+	path = dependencies/bandcamp-mini-embed
+	url = https://github.com/nchlswhttkr/bandcamp-mini-embed
