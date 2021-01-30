@@ -19,10 +19,7 @@
         </p>
         <!--  -->
         {{ if isset .Params "series" }}
-        <p>
-            This post is part of a series, you can read accompanying posts
-            below.
-        </p>
+        <p>This post is part of a series!</p>
         <ul>
             <!-- prettier-ignore -->
             {{ range where .Site.RegularPages.ByDate "Params.series" .Params.series }}

@@ -5,11 +5,8 @@
     padding: 16px;
 }
 .blog-article > * {
-    margin: 0 0 18px;
+    margin: 0 0 16px;
     break-inside: avoid;
-}
-.blog-article > *:last-child {
-    margin-bottom: 0;
 }
 .blog-article > h2,
 .blog-article > h3 {

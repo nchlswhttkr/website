@@ -51,7 +51,7 @@ You can see an example in action here, unblocking the "Goodbye" job. I found sys
 
 For a little bit of excitement, I've also thrown in a piano piece I've been learning recently for some easy listening!
 
-{{% vimeo "468393883" %}}
+{{% vimeo 468393883 %}}
 
 In general, I think the Shortcuts app is great if your workflow can be expressed as a fairly linear set of tasks. In my opinion though, there's definitely a point you can reach in terms of complexity where you should start _strongly considering_ other options. For me, this shortcut was around that limit.
 

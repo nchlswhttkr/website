@@ -171,10 +171,10 @@ if let Some(value) = matches.value_of("database") {
 
 ## Embedded content
 
-{{< tweet 902019752251465728 >}}
+{{% tweet 902019752251465728 %}}
 
-{{< youtube "x3HYRYGZtH0" >}}
+{{% youtube x3HYRYGZtH0 %}}
 
-{{% vimeo "468393883" %}}
+{{% vimeo 468393883 %}}
 
-{{%  bandcamp-album vine another-light %}}
+{{% bandcamp-album vine another-light %}}

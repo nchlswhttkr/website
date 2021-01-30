@@ -108,7 +108,7 @@ As a final bit of polish, I made the solver find a rough measure of how long eac
 
 With all of this in place, I pointed my solver at Golf Peaks and watched the magic unfold.
 
-{{% vimeo "452492906" %}}
+{{% vimeo 452492906 %}}
 
 ## Where to from here?
 

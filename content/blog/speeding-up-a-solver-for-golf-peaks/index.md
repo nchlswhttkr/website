@@ -416,7 +416,7 @@ Combining the improved solver and its faster solutions with some tweaks to the d
 
 It's still definitely possible to go faster, but I'm very happy with the current result. There's rarely an idle moment in this run!
 
-{{% vimeo "455241666" %}}
+{{% vimeo 455241666 %}}
 
 ## Can we go even faster?
 
