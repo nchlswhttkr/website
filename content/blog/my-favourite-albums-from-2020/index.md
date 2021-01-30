@@ -90,7 +90,7 @@ One last thing that amuses me with these arrangements is that they successfully 
 
 ## Carry Me Home - KOKOROKO
 
-While technically only a _single_ and not an _album_, I am a big fan of KOROKOKO's afrobeat sound. They've only got a few songs to their name, but I eagerly await more releases!
+While technically only a _single_ and not an _album_, I am a big fan of KOROKOKO's afrobeat sound. They've only got a few songs to their name, but I eagerly await more releases! You can find all of their music on Bandcamp, so I'd encourage you to check them out.
 
 {{% bandcamp-album kokoroko carry-me-home %}}
 
