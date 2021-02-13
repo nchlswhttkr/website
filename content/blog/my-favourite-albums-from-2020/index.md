@@ -110,15 +110,15 @@ Shoutout to ImageMagick, I was able to make a pretty collage of all the album co
 #!/bin/bash
 rm covers.jpg
 magick -size 1120x560 xc:wheat -borderColor wheat \
-    \( strange-satisfaction.jpg -resize 240x240 -shave 4 -border 4  \) -geometry +0+0 -composite \
-    \( joy-of-music.jpg -resize 240x240 -shave 4 -border 4          \) -geometry +220+12 -composite \
-    \( dont-shy-away.jpg -resize 240x240 -shave 4 -border 4         \) -geometry +440+24 -composite \
-    \( realign.jpg -resize 240x240 -shave 4 -border 4               \) -geometry +660+36 -composite \
-    \( lost-for-a-while.png -resize 240x240 -shave 4 -border 4      \) -geometry +880+48 -composite \
-    \( a-short-hike.png -resize 240x240 -shave 4 -border 4          \) -geometry +0+272 -composite \
-    \( that-place.jpg -resize 240x240 -shave 4 -border 4            \) -geometry +220+284 -composite \
-    \( supergiant.jpg -resize 240x240 -shave 4 -border 4            \) -geometry +440+296 -composite \
-    \( kokoroko.jpg -resize 240x240 -shave 4 -border 4              \) -geometry +660+308 -composite \
+    \( satisfaction.jpg -resize 240x240 -shave 4 -border 4 \) -geometry +0+0 -composite \
+    \( joy.jpg -resize 240x240 -shave 4 -border 4          \) -geometry +220+12 -composite \
+    \( loma.jpg -resize 240x240 -shave 4 -border 4         \) -geometry +440+24 -composite \
+    \( realign.jpg -resize 240x240 -shave 4 -border 4      \) -geometry +660+36 -composite \
+    \( vox.png -resize 240x240 -shave 4 -border 4          \) -geometry +880+48 -composite \
+    \( hike.png -resize 240x240 -shave 4 -border 4         \) -geometry +0+272 -composite \
+    \( place.jpg -resize 240x240 -shave 4 -border 4        \) -geometry +220+284 -composite \
+    \( supergiant.jpg -resize 240x240 -shave 4 -border 4   \) -geometry +440+296 -composite \
+    \( kokoroko.jpg -resize 240x240 -shave 4 -border 4     \) -geometry +660+308 -composite \
     \( theo.jpg -resize 240x240 -set colorspace CYMK -colorspace sRGB -shave 4 -border 4 \) -geometry +880+320 -composite \
     -gravity center -background wheat -extent 1280x720 \
     covers.jpg
