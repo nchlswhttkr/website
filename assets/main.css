@@ -79,7 +79,7 @@ main img {
 .constrain-width {
     margin: 0 auto;
     min-width: 300px;
-    max-width: 800px;
+    max-width: 640px;
 }
 
 .footer-icons {

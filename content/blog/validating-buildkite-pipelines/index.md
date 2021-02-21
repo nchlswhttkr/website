@@ -18,7 +18,7 @@ So I've been using [Buildkite](https://buildkite.com) a bit lately and loving it
 >
 > I've added that as [an option on my service](https://github.com/nchlswhttkr/barhack#usage).
 
-{{< tweet 1208417061896015872 >}}
+{{% tweet 1208417061896015872 %}}
 
 It's similar to an offering from GitLab with their [CI lint](https://gitlab.com/ci/lint) tool, which can validate your `.gitlab-ci.yml` files, and I thought it would be a good challenge to implement.
 

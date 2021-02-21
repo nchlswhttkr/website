@@ -42,6 +42,10 @@
                 }
             }
         </style>
+        {{ if in .Content "class=\"bandcamp-mini-embed\"" }}
+            {{ $styles := readFile "dependencies/bandcamp-mini-embed/dist/bundle.css" | resources.FromString "bandcamp-mini-embed/bundle.css" }}
+            <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+        {{ end }}
     </head>
     <body>
         <nav>
@@ -118,6 +122,22 @@
             {{ readFile "dependencies/lozad/dist/lozad.min.js" | safeJS }};
             let observer = lozad();
             observer.observe();
+        </script>
+        {{ end }} {{ if in .Content "class=\"lazy-image-with-preview\"" }}
+        <script>
+            const elements = document.getElementsByClassName(
+                "lazy-image-with-preview"
+            );
+            for (let el of elements) {
+                // Image may load before this script runs (it's a race!)
+                if (el.complete) {
+                    el.style.backgroundImage = "none";
+                } else {
+                    el.addEventListener("load", function () {
+                        el.style.backgroundImage = "none";
+                    });
+                }
+            }
         </script>
         {{ end }}
     </body>

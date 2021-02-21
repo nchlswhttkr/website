@@ -10,7 +10,7 @@
 {{ end }}
 
 <meta name="description" content="{{ .Description }}" />
-<meta name="author" content="Nicholas Whittaker" />
+<meta name="author" content="{{ .Site.BaseURL }}#contact" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta property="og:url" content="{{ .Permalink }}" />
@@ -18,6 +18,10 @@
 <meta property="og:description" content="{{ .Description }}" />
 <meta property="og:image" content="{{ $coverImage }}" />
 <meta property="og:image:alt" content="{{ $coverImageAlt }}" />
+{{ if (isset .Params "cover") }}
+<meta name="twitter:card" content="summary_large_image" />
+{{ else }}
 <meta name="twitter:card" content="summary" />
+{{ end }}
 <meta name="twitter:site" content="@nchlswhttkr" />
 <meta name="twitter:creator" content="@nchlswhttkr" />

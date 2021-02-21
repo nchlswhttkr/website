@@ -80,7 +80,7 @@ I've also been a part of a few other ensembles this year, offering my help when 
 
 **Bentleigh Uniting Church Band** - Playing euphonium for their annual Christmas service.
 
-{{< tweet 1017705968233168897 >}}
+{{% tweet 1017705968233168897 %}}
 
 ## Lawn Bowls
 
@@ -144,7 +144,7 @@ I've begun to feel like hackathons aren't the type of event for me, but nonethel
 
 You can also read more about the Facebook Hack in my [reflection post](../facebook-hack-2018/).
 
-{{< tweet 1060468874083102720 >}}
+{{% tweet 1060468874083102720 %}}
 
 {{% image-caption %}}Shoutout to my team from GovHack!{{%/ image-caption %}}
 
@@ -168,7 +168,7 @@ This December, I've also been doing the [Advent of Code](https://adventofcode.co
 
 I bought a Switch, it was worth it. I've sunk at least 100 hours into Breath of the Wild since picking it up, and other games (Super Mario Odyssey, Owlboy) have been great fun as well.
 
-{{< tweet 1056357122282143744 >}}
+{{% tweet 1056357122282143744 %}}
 
 ### Comics
 
@@ -194,4 +194,4 @@ Next year I'm setting and hoping to keep a few resolutions.
 
 <span class="center-text"><strong>Here's to 2019!</strong></span>
 
-{{< youtube pMFDBA2rKTI >}}
+{{% youtube pMFDBA2rKTI %}}

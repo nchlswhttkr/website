@@ -40,8 +40,7 @@ The application runtime is usually abstracted away to the provider. Instead of w
 I think the ["How It Works"](https://developers.cloudflare.com/workers/about/how-it-works/) page does a great job of summarising, but for the sake of brevity there are few key points to focus on.
 
 -   The machines of Cloudlfare's network host an instance of the Workers runtime, which uses [Google's V8 engine](https://v8.dev).
--   Instead of using containers, a script executes in its own V8 _Isolate_, akin to sandboxed memory.
-    -   A single Workers runtime can have many isolates (up to thousands!) running at any time.
+-   Instead of using containers, a script executes in its own V8 _Isolate_, akin to sandboxed memory. Workers can hold many isolates at once.
 -   This architecture has benefits in terms of performance, but the stateless principles of serverless still apply.
 
 The script for a worker has some fairly light boilerplate, where an event listener is created to respond to incoming requests.

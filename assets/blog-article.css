@@ -5,11 +5,8 @@
     padding: 16px;
 }
 .blog-article > * {
-    margin: 0 0 18px;
+    margin: 0 0 16px;
     break-inside: avoid;
-}
-.blog-article > *:last-child {
-    margin-bottom: 0;
 }
 .blog-article > h2,
 .blog-article > h3 {
@@ -126,6 +123,12 @@ as wide as their container + padding, then centre with an offset and transform.
 .blog-article .youtube span,
 .blog-article .vimeo span {
     margin-bottom: 4px;
+}
+
+/* BANDCAMP */
+.blog-article > .bandcamp-mini-embed {
+    margin: 16px auto;
+    max-width: 400px;
 }
 
 /* ASIDE */

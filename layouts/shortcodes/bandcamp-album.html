@@ -1,0 +1,21 @@
+<!-- prettier-ignore -->
+{{ $secret := "" }}
+{{ if fileExists "secrets/embed-proxy-secret.txt" }}
+    {{ $secret = readFile "secrets/embed-proxy-secret.txt" }}
+{{ end }}
+{{ $json := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/bandcamp?" (querify "artist" (.Get 0) "album" (.Get 1) "secret" $secret) }}
+{{ $script := readFile "dependencies/bandcamp-mini-embed/dist/bundle.js" | resources.FromString "bandcamp-mini-embed/bundle.js" }}
+
+<noscript>
+    <a href="https://{{ .Get 0 }}.bandcamp.com/album/{{ .Get 1 }}">
+        View album on Bandcamp
+        <!-- TODO: Grab title from Bandcamp release, this requires ampersand decoding though -->
+    </a>
+</noscript>
+<div class="bandcamp-mini-embed" style="height: 336px"></div>
+<script
+    async
+    data-album-id="{{ $json.albumId }}"
+    data-proxy-root="https://nicholas.cloud/bandcamp-proxy/"
+    src="{{ $script.Permalink }}"
+></script>

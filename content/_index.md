@@ -17,7 +17,7 @@ I write about my experiences, interests and reflections on [my blog](/blog/). Yo
 I also curate a newsletter to share interesting pieces and content I love.
 
 -   Every issue is freely available to [read online](/newsletter/).
--   You can [subscribe for the latest issues](/newsletter/subscribe/), and I'll deliver them straight to your email inbox!
+-   You can [subscribe for the latest issues](/newsletter/subscribe/), and I'll email them straight to your inbox!
 
 ## Contact
 

@@ -87,7 +87,7 @@ While rsync wasn't modifying any _file contents_, it was modifying _file timesta
 
 This was the point where I thought to look back over exactly what that `-a` option was doing, to see if it was responsible for this mess. First point of call, the man page!
 
-```
+```txt
 -a, --archive       archive mode; equals -rlptgoD (no -H,-A,-X)
 ```
 
@@ -95,9 +95,9 @@ So `-a` implies several options, many related to file metadata: owner, group, pe
 
 I had my culprit.
 
-{{< lazy-video src="https://media.tenor.com/videos/ec4e9072f89d8d86c01e19906df7dcb1/mp4" poster="" width="640" height="370" >}}
+{{% lazy-video src="https://media.tenor.com/videos/ec4e9072f89d8d86c01e19906df7dcb1/mp4" poster="" width="640" height="370" %}}
 An animation of the dancing pallbearers meme.
-{{</ lazy-video >}}
+{{%/ lazy-video %}}
 
 With a further option, we can apply a workaround to skip updating timestamps.
 
