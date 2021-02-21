@@ -122,6 +122,12 @@ as wide as their container + padding, then centre with an offset and transform.
     margin: 16px auto !important;
 }
 
+/* YOUTUBE/VIMEO */
+.blog-article .youtube span,
+.blog-article .vimeo span {
+    margin-bottom: 4px;
+}
+
 /* ASIDE */
 .blog-article aside {
     color: var(--secondary-text-color);

@@ -1,0 +1,30 @@
+<!-- prettier-ignore -->
+{{ $secret := "" }}
+{{ if fileExists "secrets/embed-proxy-secret.txt" }}
+    {{ $secret = readFile "secrets/embed-proxy-secret.txt" }}
+{{ end }}
+{{ $json := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/vimeo?" (querify "id" (.Get 0) "secret" $secret) }}
+
+<p class="vimeo">
+    <span class="center-text">
+        <em>{{ $json.video_title }}</em>
+        by
+        <a
+            href="{{ $json.channel_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            {{ $json.channel_title}}
+        </a>
+    </span>
+    <a href="{{ $json.video_url }}" target="_blank" rel="noopener noreferrer">
+        <!-- prettier-ignore -->
+        <img
+            alt="Thumbnail for Vimeo video {{ $json.video_title }}"
+            width="{{ $json.thumbnail_width }}"
+            height="{{ $json.thumbnail_height }}"
+            src='{{ ((resources.Get "play-video.png").Fill (printf "%.0fx%.0f Center" $json.thumbnail_width $json.thumbnail_height)).Permalink }}'
+            style="background-image: url({{ $json.thumbnail_url }}); background-position: center; background-size: cover;"
+        />
+    </a>
+</p>
