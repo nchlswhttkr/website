@@ -20,7 +20,7 @@ Much like a book or a movie, I think a lot of albums have an inherent narrative 
 
 You can't listen to "Dollar Days" and "I Can't Give Everything Away" in isolation and take nearly as much as much away from them if they aren't bookending _Blackstar_. It's not the same if they aren't following on from the distorted effects and frantic saxaphone solos that came earlier. This is all before even contextualising the album with Bowie's battle against cancer and his passing.
 
-{{% youtube iZs2sVlkiQc %}}
+{{< youtube iZs2sVlkiQc >}}
 
 There's brief moments of joy you get when you listen to albums uninterrupted too, courtesy of a little musical device called a segue. I think it's captivating when one song flows into the next in an album. Take the closing tracks in Gorillaz's _Demon Days_, "Don't Get Lost In Heaven" and "Demon Days", as an example. Personally I consider them to be a single piece, given how they fade together.
 

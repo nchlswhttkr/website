@@ -57,8 +57,8 @@ As an extra step, you can share the link between the `aria-label` and its paragr
 
 You can see it in action here.
 
-{{% css-hidden-message-demo %}}
+{{< css-hidden-message-demo >}}
 
 ```html
-{{% css-hidden-message-demo %}}
+{{< css-hidden-message-demo >}}
 ```
