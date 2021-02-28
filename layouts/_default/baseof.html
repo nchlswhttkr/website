@@ -119,12 +119,14 @@
         </footer>
         {{ if in .Content "class=\"lozad\"" }}
         <script>
+            // Enhancement: Lazy load select videos with Lozad
             {{ readFile "dependencies/lozad/dist/lozad.min.js" | safeJS }};
             let observer = lozad();
             observer.observe();
         </script>
         {{ end }} {{ if in .Content "class=\"lazy-image-with-preview\"" }}
         <script>
+            // Enhancement: Remove preview background once lazy images load
             const elements = document.getElementsByClassName(
                 "lazy-image-with-preview"
             );
@@ -139,6 +141,28 @@
                 }
             }
         </script>
+        {{ end }} {{ if in .Content "class=\"twitter-timestamp\"" }}
+        <script>
+            // Enhancement: Format timestamps to browser's local time
+            const elements = document.getElementsByClassName(
+                "twitter-timestamp"
+            );
+            for (let el of elements) {
+                el.innerHTML = new Intl.DateTimeFormat("en-AU", {
+                    dateStyle: "medium",
+                    timeStyle: "short",
+                }).format(new Date(el.innerHTML));
+            }
+        </script>
         {{ end }}
+        <!-- <script>
+            setInterval(
+                () =>
+                console.log(
+                    Math.floor(document.body.getBoundingClientRect().height)
+                    ),
+                200
+            );
+        </script> -->
     </body>
 </html>

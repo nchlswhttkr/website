@@ -5,7 +5,7 @@
 {{ end }}
 {{ $json := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/vimeo?" (querify "id" (.Get 0) "secret" $secret) }}
 
-<p class="vimeo">
+<div class="vimeo">
     <span class="center-text">
         <em>{{ $json.video_title }}</em>
         by
@@ -14,7 +14,7 @@
             target="_blank"
             rel="noopener noreferrer"
         >
-            {{ $json.channel_title}}
+            {{ $json.channel_title }}
         </a>
     </span>
     <a href="{{ $json.video_url }}" target="_blank" rel="noopener noreferrer">
@@ -27,4 +27,4 @@
             style="background-image: url({{ $json.thumbnail_url }}); background-position: center; background-size: cover;"
         />
     </a>
-</p>
+</div>

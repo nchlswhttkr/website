@@ -7,7 +7,7 @@
             "",
             "${2:description}",
             "",
-            "{{% newsletter-link \"${3:$CLIPBOARD}\" %}}",
+            "{{< newsletter-link \"${3:$CLIPBOARD}\" >}}",
             "",
             "---",
             ""
@@ -24,16 +24,16 @@
         "prefix": "lazy-video",
         "scope": "markdown",
         "body": [
-          "{{% lazy-video src=\"${1:src}\" poster=\"${2:poster}\" width=\"${3:width}\" height=\"${4:height}\" %}}",
+          "{{< lazy-video src=\"${1:src}\" poster=\"${2:poster}\" width=\"${3:width}\" height=\"${4:height}\" >}}",
           "${5:fallback}",
-          "{{%/ lazy-video %}}"
+          "{{</ lazy-video >}}"
         ],
         "description": "lazy-video"
     },
     "bandcamp-album": {
         "prefix": "bandcamp-album",
         "scope": "markdown",
-        "body": ["{{% bandcamp-album $1 $2 %}}"],
+        "body": ["{{< bandcamp-album $1 $2 >}}"],
         "description": "bandcamp-album"
     },
 }

@@ -3,11 +3,17 @@ title: "Hello World"
 description: "Testing out markdown"
 date: 2017-01-01T12:00:00+1100
 color: "#cc2d79"
+series: "hello-world"
 ---
 
 I use this article to make sure any styling changes I make don't break.
 
 <!--more-->
+
+-   [Text and Images](#text-and-images)
+-   [Tables and lists](#tables-and-lists)
+-   [Code blocks and syntax highlighting](#code-blocks-and-syntax-highlighting)
+-   [Embedded content](#embedded-content)
 
 ## Text and images
 
@@ -58,7 +64,7 @@ This is a table.
 | A        | B        |
 | C        | D        |
 
-## Code block and syntax highlighting
+## Code blocks and syntax highlighting
 
 ```sh
 osascript -e 'display notification "Hello world!" sound name "frog"'
@@ -166,12 +172,20 @@ if let Some(value) = matches.value_of("database") {
 ```
 
 ```html
-{{< css-hidden-message-demo >}}
+{{% css-hidden-message-demo %}}
 ```
 
 ## Embedded content
 
 {{< tweet 902019752251465728 >}}
+
+{{< tweet 1302148018217521152 >}}
+
+{{< tweet 1056357122282143744 >}}
+
+{{< tweet 1324300896612704257 >}}
+
+{{< tweet 1334752350439763968 >}}
 
 {{< youtube x3HYRYGZtH0 >}}
 

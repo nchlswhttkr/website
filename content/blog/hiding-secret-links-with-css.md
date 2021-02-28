@@ -60,5 +60,5 @@ You can see it in action here.
 {{< css-hidden-message-demo >}}
 
 ```html
-{{< css-hidden-message-demo >}}
+{{% css-hidden-message-demo %}}
 ```
