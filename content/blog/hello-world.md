@@ -107,7 +107,7 @@ export default class CookieReader {
 on idle
 
     try
-        do shell script "rsync --delete --checksum --recursive --itemize-changes ~/public-files/ nicholas@nicholas.cloud:~/public-files/ > /tmp/sync.log"
+        do shell script "rsync --delete --checksum --recursive --itemize-changes ~/public-files/ nicholas@raspberry:~/public-files/ > /tmp/sync.log"
         display notification "Successfully synced" with title "Sync" sound name "purr"
     on error
         display alert "Could not sync files to remote server" as critical

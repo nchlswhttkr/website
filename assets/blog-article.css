@@ -173,7 +173,7 @@ as wide as their container + padding, then centre with an offset and transform.
 }
 
 .twitter-author img {
-    padding-right: 8px;
+    margin-right: 8px;
     border-radius: 50%;
 }
 
