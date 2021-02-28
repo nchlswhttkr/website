@@ -13,6 +13,6 @@ Teaming up with some fellow friends from Monash, we went in as **Angry React Nat
 
 Our final product, WaitLess, was a mobile app that simplified the dining experience. In the end, we managed to impress the judges, taking out the prize for best Industy IoT Hack, courtesy of Bosch. The prize itself was a heated jacket for each member, but our team has since been contacted by the Bosch representative from the event offered a tour of their Clayton HQ.
 
-{{% tweet 907806961676124161 %}}
+{{< tweet 907806961676124161 >}}
 
 You can find a copy of our project on [GitHub](https://github.com/scaredginger/angry-react-native/)!

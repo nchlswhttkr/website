@@ -28,7 +28,7 @@ The album itself is absolutely funky in my book, and it all just feels remarkabl
 
 An interesting discovery I stumbled upon with this album is that the digital download includes a hidden eight track! Whether that a little treat or a mistake in publishing I'm not sure, but I enjoy the bonus nonetheless.
 
-{{% bandcamp-album woodyandjeremy strange-satisfaction %}}
+{{< bandcamp-album woodyandjeremy strange-satisfaction >}}
 
 ## The Joy of Music, The Job of Real Estate - Vulfpeck
 
@@ -36,7 +36,7 @@ Vulfpeck also released an album as a band in 2020. Some songs in the release hav
 
 The final track for this album was auctioned off to the highest bidder on eBay, with the proceeds going to charity. I've seen fans divided over it, but I like the sellout song.
 
-{{% bandcamp-album vulfpeck the-joy-of-music-the-job-of-real-estate-2 %}}
+{{< bandcamp-album vulfpeck the-joy-of-music-the-job-of-real-estate-2 >}}
 
 ## Don't Shy Away - LOMA
 
@@ -44,7 +44,7 @@ Sometimes, I sit on Bandcamp's home page to watch the live feed of purchases go 
 
 I find it calming to put this on from time to time. I'm hoping to see more music from LOMA in coming years, but first I also need to try their earlier music. I'll get to it in due time!
 
-{{% bandcamp-album lomamusic dont-shy-away %}}
+{{< bandcamp-album lomamusic dont-shy-away >}}
 
 ## Realign - Red Vox
 
@@ -52,13 +52,13 @@ One of my completely new discoveries this year was the band Red Vox. Rock isn't 
 
 This is also the first album I've bought on vinyl, and I'm looking for working my way back through Red Vox's discography in the near future.
 
-{{% bandcamp-album vine realign %}}
+{{< bandcamp-album vine realign >}}
 
 ## Lost For A While - Red Vox
 
 _Realign_ also had a follow-up album incorporating a collection of songs that didn't make it onto the initial release. Seeing as this album also came out in 2020, it's fair game to include here!
 
-{{% bandcamp-album vine lost-for-a-while-ep %}}
+{{< bandcamp-album vine lost-for-a-while-ep >}}
 
 ## A Short Hike - Mark Sparling
 
@@ -68,7 +68,7 @@ This release includes both full-length and abridged versions of various pieces, 
 
 Now, _technically_ this album was released in 2019, but I'm keeping it in since additional tracks were added with an expansion that released a few months ago. Hooray for technicalities!
 
-{{% bandcamp-album marksparling a-short-hike-original-soundtrack %}}
+{{< bandcamp-album marksparling a-short-hike-original-soundtrack >}}
 
 ## That Place, Our Place - Callum Mintzis
 
@@ -76,7 +76,7 @@ Another quiet album I loved was this collection of pieces for keys and strings. 
 
 This is the only album I've mentioned here that's from an Australian artist. I'm endavouring to see more live music performances in Melbourne this year, so hopefully I'll have more local artists to show off next time!
 
-{{% bandcamp-album callummintzis that-place-our-place %}}
+{{< bandcamp-album callummintzis that-place-our-place >}}
 
 ## Songs of Supergiant Games - Darren Korb & Ashley Barrett
 
@@ -86,19 +86,19 @@ I'll freely admit that I still need to play several of their games – I'm yet t
 
 One last thing that amuses me with these arrangements is that they successfully balance a full trombone section (up to three) against only a couple of violins. This is hard to do with an acoustic ensemble, but modern recording/mastering makes it pleasant to my ear!
 
-{{% bandcamp-album supergiantgames songs-of-supergiant-games %}}
+{{< bandcamp-album supergiantgames songs-of-supergiant-games >}}
 
 ## Carry Me Home - KOKOROKO
 
 While technically only a _single_ and not an _album_, I am a big fan of KOROKOKO's afrobeat sound. They've only got a few songs to their name, but I eagerly await more releases! You can find all of their music on Bandcamp, so I'd encourage you to check them out.
 
-{{% bandcamp-album kokoroko carry-me-home %}}
+{{< bandcamp-album kokoroko carry-me-home >}}
 
 ## Modern Johnny Sings: Songs in the Age of Vibe - Theo Katzman
 
 My last album is from another Vulfpeck member, if that suggests a pattern. Theo has a golden voice, with the lyricism to match.
 
-{{% bandcamp-album theokatzman modern-johnny-sings-songs-in-the-age-of-vibe %}}
+{{< bandcamp-album theokatzman modern-johnny-sings-songs-in-the-age-of-vibe >}}
 
 So there you have it, that's my musical 2020 wrapped! I hope you find something that you're able to enjoy like I did!
 
