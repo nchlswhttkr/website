@@ -16,5 +16,11 @@ markup:
         # style: vs
         noClasses: false
 
+# https://gohugo.io/getting-started/configuration/#configure-file-caches
+caches:
+    getjson:
+        dir: :resourceDir/json
+        maxAge: -1
+
 params:
     color: "#9e3245"
