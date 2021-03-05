@@ -33,9 +33,12 @@
     <p>{{ safeHTML $json.text }}</p>
 
     {{ range $json.photos }}
+    <!-- prettier-ignore -->
     <img
         src="{{ .url }}?name=medium"
+        {{ if ne .alt nil }}
         alt="{{ .alt }}"
+        {{ end }}
         loading="lazy"
         width="{{ .width }}"
         height="{{ .height }}"
