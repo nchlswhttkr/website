@@ -21,9 +21,8 @@
     <!-- SVGs don't need lazy loading, we don't know dimesions anyway -->
     <img src="{{ $destination }}" alt="{{ $text }}" loading="eager" />
 {{ else }}
-    {{ $preview := ($image.Resize "64x Linear jpg").Filter (images.GaussianBlur 1.5) }}
     {{ $path := printf "content/%s%s" .Page.File.Dir $filename }}
     {{ with (imageConfig $path) }}
-    <img src="{{ $destination }}" alt="{{ $text }}" loading="lazy" width="{{ .Width }}" height="{{ .Height }}" style="background-image: url('data:image/jpeg;base64,{{ base64Encode $preview.Content }}'); background-size: cover; background-position: center;" class="lazy-image-with-preview" />
+    <img src="{{ $destination }}" alt="{{ $text }}" loading="lazy" width="{{ .Width }}" height="{{ .Height }}" />
     {{ end }}
 {{ end }}
