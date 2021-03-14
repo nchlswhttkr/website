@@ -5,14 +5,15 @@
 {{ end }}
 {{ $json := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/bandcamp?" (querify "artist" (.Get 0) "album" (.Get 1) "secret" $secret) }}
 {{ $script := readFile "dependencies/bandcamp-mini-embed/dist/bundle.js" | resources.FromString "bandcamp-mini-embed/bundle.js" }}
+{{ $styles := readFile "dependencies/bandcamp-mini-embed/dist/bundle.css" | resources.FromString "bandcamp-mini-embed/bundle.css" }}
 
 <noscript>
     <a href="https://{{ .Get 0 }}.bandcamp.com/album/{{ .Get 1 }}">
-        View album on Bandcamp
-        <!-- TODO: Grab title from Bandcamp release, this requires ampersand decoding though -->
+        Listen to {{ $json.title }} on Bandcamp
     </a>
 </noscript>
-<div class="bandcamp-mini-embed" style="height: 336px"></div>
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+<div class="bandcamp-mini-embed" style="height: 336px; overflow: hidden"></div>
 <script
     async
     data-album-id="{{ $json.albumId }}"

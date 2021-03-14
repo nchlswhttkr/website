@@ -1,3 +1,5 @@
+archetypes/blips.md
+archetypes/blog.md
 assets/highlight.css
 layouts/partials/bundle-css.html
 layouts/_default/_markup/render-image.html

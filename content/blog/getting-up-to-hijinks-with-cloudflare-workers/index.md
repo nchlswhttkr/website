@@ -3,7 +3,7 @@ title: "Getting Up to Hijinks With Cloudflare Workers"
 description: "Cloudflare has a serverless offering, let's explore!"
 date: 2020-03-02T12:00:00+1100
 tags:
-    - cloudflare-workers
+    - cloudflare
     - javascript
     - serverless
 series: "cloudflare-workers-hijinks"

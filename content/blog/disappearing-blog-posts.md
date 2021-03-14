@@ -1,8 +1,16 @@
 ---
-title: "This Post Will Disappear After Two Weeks"
+title: "Disappearing Blog Posts"
 date: 2020-09-25T12:00:00+1000
-expirydate: 2020-10-09T12:00:00+1000
+# expirydate: 2020-10-09T12:00:00+1000
+aliases:
+    - /blog/temporary/this-post-will-disappear-after-two-weeks/
+tags:
+    - hugo
 ---
+
+> **Update:**
+>
+> I've brought this disappearing post back from the abyss, enjoy!
 
 _That's right, there's self-destructing blog posts now_
 

@@ -52,6 +52,10 @@ nav > * {
     padding: 16px;
 }
 
+nav > * {
+    padding-bottom: 0;
+}
+
 nav li {
     padding-right: 16px;
     font-weight: 700;
@@ -83,10 +87,10 @@ main img {
 }
 
 .footer-icons {
-    margin: 8px 0;
+    margin: 0 0 16px;
 }
 
 .footer-icons a {
     text-decoration: none;
-    margin: 16px 16px 16px 0;
+    margin-right: 16px;
 }

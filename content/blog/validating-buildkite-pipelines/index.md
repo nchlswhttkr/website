@@ -12,7 +12,7 @@ So I've been using [Buildkite](https://buildkite.com) a bit lately and loving it
 
 <!--more-->
 
-> _**Forenote**_
+> **Forenote:**
 >
 > After wrapping up and doing further investigating, I found out that the Buildkite team have published a [JSON schema for pipeline files](https://github.com/buildkite/pipeline-schema) that can be used for validation.
 >

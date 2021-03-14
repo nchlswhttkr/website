@@ -75,5 +75,15 @@
             </svg>
         </a>
         <a class="twitter-timestamp" href="{{ $json.tweet_url }}">{{ $json.created_at }}</a>
+        <script>
+            {
+                // Enhancement: Format timestamps to browser's local time
+                const el = document.currentScript.previousElementSibling
+                el.innerHTML = new Intl.DateTimeFormat("en-AU", {
+                    dateStyle: "medium",
+                    timeStyle: "short",
+                }).format(new Date(el.innerHTML));
+            }
+        </script>
     </div>
 </div>

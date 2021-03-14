@@ -3,7 +3,7 @@ title: "Continuing Hijinks With Cloudflare Workers"
 description: "Once was not enough, so did more experimenting!"
 date: 2020-05-24T12:00:00+1000
 tags:
-    - cloudflare-workers
+    - cloudflare
     - golang
     - javascript
     - serverless
