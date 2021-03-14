@@ -3,7 +3,7 @@ title: "Site"
 description: "The inner workings of nicholas dot cloud"
 tags:
     - buildkite
-    - cloudflare-workers
+    - cloudflare
     - hugo
     - nginx
 ---

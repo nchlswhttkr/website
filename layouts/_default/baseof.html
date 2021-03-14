@@ -42,16 +42,13 @@
                 }
             }
         </style>
-        {{ if in .Content "class=\"bandcamp-mini-embed\"" }}
-            {{ $styles := readFile "dependencies/bandcamp-mini-embed/dist/bundle.css" | resources.FromString "bandcamp-mini-embed/bundle.css" }}
-            <link rel="stylesheet" href="{{ $styles.Permalink }}" />
-        {{ end }}
     </head>
     <body>
         <nav>
             <ul class="constrain-width">
                 <li><a href="/">Home</a></li>
                 <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blips/">Blips</a></li>
                 <li><a href="/newsletter/">Newsletter</a></li>
             </ul>
         </nav>
@@ -110,11 +107,11 @@
                         </svg>
                     </a>
                 </div>
-                <p>
+                <div class="footer-links">
                     <a href="/site/">About this website</a>
                     &bull;
                     <a href="/#contact">Contact me</a>
-                </p>
+                </div>
             </div>
         </footer>
         {{ if in .Content "class=\"lozad\"" }}
@@ -139,19 +136,6 @@
                         el.style.backgroundImage = "none";
                     });
                 }
-            }
-        </script>
-        {{ end }} {{ if in .Content "class=\"twitter-timestamp\"" }}
-        <script>
-            // Enhancement: Format timestamps to browser's local time
-            const elements = document.getElementsByClassName(
-                "twitter-timestamp"
-            );
-            for (let el of elements) {
-                el.innerHTML = new Intl.DateTimeFormat("en-AU", {
-                    dateStyle: "medium",
-                    timeStyle: "short",
-                }).format(new Date(el.innerHTML));
             }
         </script>
         {{ end }}

@@ -1,0 +1,32 @@
+{{ define "css" }}
+<!-- prettier-ignore -->
+{{ .Scratch.Add "css" "blog-list" }}
+{{ .Scratch.Add "css" "blog-article" }}
+{{ end }}
+
+{{ define "main" }}
+<div class="blog-list">
+    {{ .Content }} {{ range .Paginator.Pages }}
+    <h2>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    <p class="post-details">
+        {{ .Date.Format "2006-01-02" }}
+        <!--  -->
+        {{ if isset .Params "tags" }} // {{ end }}
+        <!--  -->
+        {{ range .Params.tags }}
+        <a href="/tags/{{ . }}/">#{{ . }}</a>
+        {{ end }}
+    </p>
+    <article class="blog-article">{{ .Content }}</article>
+    {{ end }}
+    <p style="text-align: center">
+        {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}">Newer posts</a>
+        {{ end }} &bull; {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}">Older posts</a>
+        {{ end }}
+    </p>
+</div>
+{{ end }}
