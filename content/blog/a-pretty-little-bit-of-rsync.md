@@ -95,10 +95,6 @@ So `-a` implies several options, many related to file metadata: owner, group, pe
 
 I had my culprit.
 
-{{< lazy-video src="https://media.tenor.com/videos/ec4e9072f89d8d86c01e19906df7dcb1/mp4" poster="" width="640" height="370" >}}
-An animation of the dancing pallbearers meme.
-{{</ lazy-video >}}
-
 With a further option, we can apply a workaround to skip updating timestamps.
 
 ```diff

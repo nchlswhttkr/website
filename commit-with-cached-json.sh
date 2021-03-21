@@ -10,7 +10,7 @@ git stash push --all --quiet resources/json/
 
 # Run new build and fill with responses from public cache
 mv secrets/embed-proxy-secret.txt secrets/embed-proxy-secret.txt.ignore
-hugo --quiet
+hugo --quiet --gc
 git add --force -- resources/json/
 git commit
 

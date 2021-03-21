@@ -4,6 +4,9 @@
     {{ $secret = readFile "secrets/embed-proxy-secret.txt" }}
 {{ end }}
 {{ $video := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/vimeo?" (querify "id" (.Get 0) "secret" $secret) }}
+{{ $get_thumbnail := getJSON "https://hugo-media-proxy.nchlswhttkr.workers.dev/base64?" (querify "url" $video.thumbnail_url) }}
+{{ $thumbnail := $get_thumbnail.media | base64Decode | resources.FromString (printf "vimeo_%d.jpg" (.Get 0)) }}
+{{ $overlay := (resources.Get "play-video.png").Fill (printf "%.0fx%.0f Center" $video.thumbnail_width $video.thumbnail_height) }}
 
 <div class="vimeo">
     <span class="center-text">
@@ -23,8 +26,7 @@
             alt="Thumbnail for Vimeo video {{ $video.video_title }}"
             width="{{ $video.thumbnail_width }}"
             height="{{ $video.thumbnail_height }}"
-            src='{{ ((resources.Get "play-video.png").Fill (printf "%.0fx%.0f Center" $video.thumbnail_width $video.thumbnail_height)).Permalink }}'
-            style="background-image: url({{ $video.thumbnail_url }}); background-position: center; background-size: cover;"
+            src='{{ ($thumbnail.Filter (images.Overlay $overlay 0 0)).Permalink }}'
         />
     </a>
 </div>

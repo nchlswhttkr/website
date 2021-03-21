@@ -23,7 +23,7 @@
     {{ range $tweet.photos }}
     <!-- prettier-ignore -->
     <img
-        src="{{ .url }}?name=medium"
+        src="{{ .url }}"
         {{ if ne .alt nil }}
         alt="{{ .alt }}"
         {{ end }}

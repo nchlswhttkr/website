@@ -408,8 +408,6 @@ done | xargs -P 8 -I "{}" /bin/bash -c "{}"
 
 In just over a second, Golf Peaks is beaten! Parallel work isn't always practical or applicable, but it's viable here!
 
-![omit-alt-text](https://i.redd.it/xmms2okp1p431.jpg)
-
 ## What does a run look like now?
 
 Combining the improved solver and its faster solutions with some tweaks to the delays between key presses, we've managed to shave _almost 2 minutes_ off a complete run of Golf Peaks!
