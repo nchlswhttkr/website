@@ -2,17 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nicholas.cloud</title>
-    <link>{{ .Site.BaseURL }}rss/</link>
+    <link>{{ .Site.BaseURL }}</link>
     <description>Posts from Nicholas Whittaker</description>
-    <creator>Nicholas Whittaker</creator>
     <generator>Hugo {{ hugo.Version }}</generator>
     {{ with .Site.LanguageCode }}<language>{{.}}</language>{{end}}
     {{ with .Site.Copyright }}<copyright>{{.}}</copyright>{{end}}
     {{ if not .Date.IsZero }}<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     <image>
         <url>{{ ((resources.Get "favicon.png").Resize (printf "128x png %s" .Site.Params.Color)).Permalink }}</url>
-        <title>A crescent moon partially obscured by a cloud, set on a red background</title>
-        <link>https://nicholas.cloud/</link>
+        <title>nicholas.cloud</title>
+        <link>{{ .Site.BaseURL }}</link>
         <width>128</width>
         <height>128</height>
     </image>

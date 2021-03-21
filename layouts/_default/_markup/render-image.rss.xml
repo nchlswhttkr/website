@@ -1,0 +1,28 @@
+{{ $filename := path.Base .Destination }}
+{{ $image := .Page.Resources.GetMatch $filename }}
+
+{{ $text := .Text }}
+{{ if eq $text "" }}
+    {{ warnf "Expected alt text for %s in ./content/%s" .Destination .Page.File.Path }}
+{{ else if eq $text "omit-alt-text" }}
+    {{ $text = "" }}
+{{ end }}
+
+<!-- Can't assume relative path for images in blips -->
+{{ $destination := .Destination }}
+{{ if hasPrefix .Destination "./" }}
+    {{ $destination = printf "%s%s" .Page.Permalink (strings.TrimPrefix "./" .Destination ) }}
+{{ end }}
+
+{{ if eq nil $image }}
+    <!-- Don't do anything for externally-hosted images -->
+    <img src="{{ $destination }}" alt="{{ $text }}" loading="eager" />
+{{ else if strings.HasSuffix $filename "svg" }}
+    <!-- SVGs don't need lazy loading, we don't know dimesions anyway -->
+    <img src="{{ $destination }}" alt="{{ $text }}" loading="eager" />
+{{ else }}
+    {{ $path := printf "content/%s%s" .Page.File.Dir $filename }}
+    {{ with (imageConfig $path) }}
+    <img src="{{ $destination }}" alt="{{ $text }}" loading="lazy" width="{{ .Width }}" height="{{ .Height }}" />
+    {{ end }}
+{{ end }}
