@@ -34,7 +34,7 @@ server {
 
         # Common aliases for RSS feeds
         location ~* ^/(rss|feed|atom)(/|\.xml)?$ {
-            try_files /blog/index.xml =404;
+            try_files /index.xml =404;
         }
     }
 
