@@ -20,7 +20,8 @@
 .blog-article > p,
 .blog-article > ol > li,
 .blog-article > ul > li,
-.blog-article > aside > p {
+.blog-article > aside > p,
+.blog-article > blockquote > p {
     line-height: 1.4rem;
 }
 .blog-article > p > code,
