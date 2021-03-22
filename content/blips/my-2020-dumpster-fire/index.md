@@ -9,8 +9,9 @@ So how does one encapsulate the feelings of 2020? I chose a lyrics from [_The Rh
 
 > _Our minds, our bodies, our feelings_ \
 > _They change, they alter, they leave us_ \
-> _Somehow, no matter what happens, I’m here_ \
-> <br> _2020 departs, 2021 arrives, and here I am throughout it all_
+> _Somehow, no matter what happens, I’m here_
+>
+> _2020 departs, 2021 arrives, and here I am throughout it all_
 
 Surprisingly sending the email itself took several attempts, as spam filters caught my personal email. I resorted to using my Google account to make sure it went through. A week later, I was greeted with a video of my email going up in flames.
 

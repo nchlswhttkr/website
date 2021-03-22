@@ -21,6 +21,7 @@
 .blog-article > ol > li,
 .blog-article > ul > li,
 .blog-article > aside > p,
+.blog-article > aside > ul > li,
 .blog-article > blockquote > p {
     line-height: 1.4rem;
 }
@@ -39,6 +40,7 @@
 .blog-article > aside > ul {
     padding-left: 32px;
 }
+.blog-article > aside > p + ul,
 .blog-article > p + ul,
 .blog-article > p + ol {
     margin-top: -8px; /* closer to leading paragraph */

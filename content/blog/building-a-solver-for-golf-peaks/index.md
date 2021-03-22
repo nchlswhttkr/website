@@ -55,8 +55,8 @@ I opted to scour through the game's files, trying to see if levels were stored i
 
 On a whim, I tried reaching out to the creators through email, sending a recording of my solver in action and asking if they had plain text versions of the level files. The next morning, I woke up to a lovely response from the team!
 
-> _Glad you enjoyed the game :)_ \
-> \
+> _Glad you enjoyed the game :)_
+>
 > _This project of yours looks pretty cool; in the attachment you'll find all of the level files from the game + a couple of unused extras._
 
 Success! With the level asset files in hand (YAML exports from Unity), I set about writing a parser to convert them into the format my solver expected. This turned up a few interesting discoveries:

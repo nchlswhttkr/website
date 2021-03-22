@@ -11,8 +11,10 @@ When a match is abandoned, points for the ladder are typically divided evenly be
 
 For matches suspended as the result of heavy rain, procedure points to section 50.3.2, for "Inclement weather other than heat" once "Play has commenced".
 
-> **50.3.2.1.** If after 1 hour of play being suspended the match cannot commence, the match will be abandoned. \
-> **50.3.2.2.** Every effort must be made to complete any ends in progress prior to leaving the green. \
+> **50.3.2.1.** If after 1 hour of play being suspended the match cannot commence, the match will be abandoned.
+>
+> **50.3.2.2.** Every effort must be made to complete any ends in progress prior to leaving the green.
+>
 > **50.3.2.3.** Midweek and Weekend Pennant matches that are interrupted, will be abandoned after five (5) hours from the scheduled start time.
 
 The interesting part of this rule is how it specifies that a suspended match can only be abandoned if play cannot resume after an hour. If play _does_ resume however, only to be later suspended again, both sides must wait a further hour after _the latest suspension_ before abandoning the match.
