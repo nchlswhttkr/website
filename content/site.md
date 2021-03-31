@@ -21,6 +21,8 @@ With that said, there's a number of tools and services this website depends on. 
 -   [Hugo](https://gohugo.io/) lets me quickly build and preview my website.
 -   [Buildkite](https://buildkite.com/) helps me automate deployments and other assorted jobs.
 -   [Cloudflare](https://cloudflare.com/) handles traffic and my caching needs.
+    <!-- Ansible -->
+    <!-- Terraform -->
 
 There's several also other libraries and resources that this site uses.
 
@@ -41,7 +43,9 @@ As I write and push changes to Github, [Buildkite](https://buildkite.com/) sched
 
 ## Serving incoming traffic
 
-I run everything off an aging Raspberry Pi (model 1B, plain Raspbian for now) on my home network. It's not the fastest arrangement, but it meets my needs and saves me paying for cloud compute/storage/bandwidth.
+I currently run everything off a DigitalOcean droplet. I configure and manage it with [Terraform](https://www.terraform.io/) and [Ansible](https://docs.ansible.com/ansible/latest/). You can find the relevant configuration in the root of the source code.
+
+<!-- I run everything off an aging Raspberry Pi (model 1B, plain Raspbian for now) on my home network. It's not the fastest arrangement, but it meets my needs and saves me paying for cloud compute/storage/bandwidth. -->
 
 A Buildkite agent continuously checks for new jobs and rebuilds my site as needed. It performs other scripted work as well, like [scheduling delivery of my newsletter](/blog/sending-out-my-newsletter/).
 

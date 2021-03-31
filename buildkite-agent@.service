@@ -1,0 +1,20 @@
+[Unit]
+Description=Buildkite Agent
+Documentation=https://buildkite.com/agent
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+Environment=HOME=/home/nicholas
+ExecStart=/home/nicholas/.buildkite-agent/bin/buildkite-agent start
+RestartSec=5
+Restart=on-failure
+RestartForceExitStatus=SIGPIPE
+TimeoutStartSec=10
+TimeoutStopSec=0
+KillMode=process
+
+[Install]
+WantedBy=default.target
+DefaultInstance=1

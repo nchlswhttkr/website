@@ -2,3 +2,6 @@ public/
 .DS_Store
 secrets/
 resources/json/
+.terraform/
+*.tfstate*
+hosts.ini
