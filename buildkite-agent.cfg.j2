@@ -1,5 +1,5 @@
 # https://github.com/buildkite/agent/blob/main/packaging/github/linux/buildkite-agent.cfg
-token=""
+token="{{ buildkite_agent_token }}"
 name="%hostname-%n"
 build-path="$HOME/.buildkite-agent/builds"
 hooks-path="$HOME/.buildkite-agent/hooks"

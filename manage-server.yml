@@ -115,36 +115,23 @@
       - name: Configure Buildkite
         register: configure_buildkite
         no_log: true
-        ansible.builtin.copy:
+        vars:
+            buildkite_agent_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-agent-token') }}"
+            mailgun_api_key: "{{ lookup('community.general.passwordstore', 'website/mailgun-api-key') }}"
+        ansible.builtin.template:
             src: "{{ item.src }}"
             dest: "{{ item.dest }}"
             mode: "{{ item.mode }}"
         with_items:
-            - src: buildkite-agent.cfg
-              dest: /home/nicholas/.buildkite-agent/buildkite-agent.cfg.template
+            - src: buildkite-agent.cfg.j2
+              dest: /home/nicholas/.buildkite-agent/buildkite-agent.cfg
               mode: "0600"
+            - src: buildkite-agent-environment-hook.j2
+              dest: /home/nicholas/.buildkite-agent/hooks/environment
+              mode: "0644"
             - src: buildkite-agent@.service
               dest: /home/nicholas/.config/systemd/user/
               mode: "0644"
-      - name: Set secrets in Buildkite agent config/hooks
-        when: configure_buildkite.changed
-        no_log: true
-        vars:
-            buildkite_agent_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-agent-token') }}"
-            mailgun_api_key: "{{ lookup('community.general.passwordstore', 'website/mailgun-api-key') }}"
-        ansible.builtin.shell: |
-            set -euo pipefail
-            sed s/^token=.*/token="{{ buildkite_agent_token }}"/ \
-                /home/nicholas/.buildkite-agent/buildkite-agent.cfg.template \
-                > /home/nicholas/.buildkite-agent/buildkite-agent.cfg
-            echo "
-                set -eu
-                if [[ \"\$BUILDKITE_PIPELINE_SLUG\" == \"website\" ]]; then
-                    export MAILGUN_API_KEY=\"{{ mailgun_api_key }}\"
-                fi
-            " > /home/nicholas/.buildkite-agent/hooks/environment
-        args:
-            executable: /bin/bash
       - name: Stop Buildkite agents
         when: manage_buildkite.changed or configure_buildkite.changed
         ansible.builtin.shell: |
