@@ -1,4 +1,11 @@
 ---
+- name: Ensure passwordstore is unlocked
+  hosts: localhost
+  gather_facts: false
+  tasks:
+      - name: Force GPG to prompt if not unlocked
+        ansible.builtin.shell: echo | gpg --clearsign > /dev/null
+
 - name: Create account for everyday use
   hosts: all
   gather_facts: false
@@ -42,9 +49,10 @@
             path: /etc/ansible/facts.d
             state: directory
       - name: Ensure facts files exist
-        ansible.builtin.file:
-            path: /etc/ansible/facts.d/{{ item }}.fact
-            state: touch
+        ansible.builtin.copy:
+            content: ""
+            dest: /etc/ansible/facts.d/{{ item }}.fact
+            force: false
         with_items:
             - golang
             - hugo
