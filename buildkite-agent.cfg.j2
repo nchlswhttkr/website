@@ -1,0 +1,8 @@
+# https://github.com/buildkite/agent/blob/main/packaging/github/linux/buildkite-agent.cfg
+token="{{ buildkite_agent_token }}"
+name="%hostname-%n"
+build-path="$HOME/.buildkite-agent/builds"
+hooks-path="$HOME/.buildkite-agent/hooks"
+plugins-path="$HOME/.buildkite-agent/plugins"
+tags="website=nicholas.cloud"
+spawn="1"

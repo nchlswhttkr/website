@@ -1,0 +1,228 @@
+---
+- name: Ensure passwordstore is unlocked
+  hosts: localhost
+  gather_facts: false
+  tasks:
+      - name: Force GPG to prompt if not unlocked
+        ansible.builtin.shell: echo | gpg --clearsign > /dev/null
+
+- name: Create account for everyday use
+  hosts: all
+  gather_facts: false
+  remote_user: root
+  tasks:
+      - name: Enable UFW
+        community.general.ufw:
+            rule: allow
+            port: "{{ item }}"
+            state: enabled
+        with_items:
+            - ssh
+            - http
+            - https
+      - name: Create local user
+        register: create_local_user
+        ansible.builtin.user:
+            name: nicholas
+            shell: /bin/bash
+      - name: Give local user passwordless sudo # I apologise for this sin
+        when: create_local_user.changed
+        ansible.builtin.copy:
+            dest: /etc/sudoers.d/nicholas
+            content: |
+                nicholas ALL=(ALL:ALL) NOPASSWD: ALL
+            validate: visudo -cf %s
+      - name: Set up SSH for local user
+        when: create_local_user.changed
+        ansible.builtin.copy:
+            src: /root/.ssh/authorized_keys
+            remote_src: true
+            dest: /home/nicholas/.ssh/
+            owner: nicholas
+            group: nicholas
+      - name: Enable linger for local user
+        when: create_local_user.changed
+        ansible.builtin.shell: loginctl enable-linger nicholas
+      - name: Create Ansible fact directory
+        when: create_local_user.changed
+        ansible.builtin.file:
+            path: /etc/ansible/facts.d
+            state: directory
+      - name: Ensure facts files exist
+        ansible.builtin.copy:
+            content: ""
+            dest: /etc/ansible/facts.d/{{ item }}.fact
+            force: false
+        with_items:
+            - golang
+            - hugo
+            - ddns
+            - buildkite
+
+- name: Manage dependencies
+  hosts: all
+  remote_user: nicholas
+  vars:
+      buildkite_version: "3.28.1"
+      ddns_version: "2.0.1"
+      golang_version: "1.16.2"
+      hugo_version: "0.82.0"
+  tasks:
+      # GENERAL
+      - name: Keep apt packages up to date
+        become: true
+        ansible.builtin.apt:
+            autoremove: true
+            update_cache: true
+            name: "*"
+            state: latest
+
+      # GOLANG
+      - name: Manage Golang installation
+        register: manage_golang
+        when: ansible_local.golang.golang_version|d != golang_version
+        ansible.builtin.shell: |
+            set -euo pipefail
+            curl --silent --fail --location "https://golang.org/dl/go{{ golang_version }}.linux-amd64.tar.gz" > /tmp/go.tar.gz
+            sudo rm -rf /usr/local/go
+            sudo tar -xf /tmp/go.tar.gz -C /usr/local
+            sudo ln -fs /usr/local/go/bin/go /usr/local/bin/go
+            go version
+            echo '{"golang_version":"{{ golang_version }}"}' | sudo tee /etc/ansible/facts.d/golang.fact
+        args:
+            executable: /bin/bash
+
+      # HUGO
+      - name: Manage Hugo installation
+        when: manage_golang.changed or ansible_local.hugo.hugo_version|d != hugo_version
+        ansible.builtin.shell: |
+            set -euo pipefail
+            rm -rf /tmp/hugo
+            git clone --branch "v{{ hugo_version }}" --depth 1 https://github.com/gohugoio/hugo.git /tmp/hugo
+            (cd /tmp/hugo && go build -o ~/hugo)
+            sudo mv ~/hugo /usr/local/bin/hugo
+            hugo version
+            echo '{"hugo_version":"{{ hugo_version }}"}' | sudo tee /etc/ansible/facts.d/hugo.fact
+        args:
+            executable: /bin/bash
+
+      # BUILDKITE
+      - name: Manage Buildkite installation
+        register: manage_buildkite
+        when: manage_golang.changed or ansible_local.buildkite.buildkite_version|d != buildkite_version
+        ansible.builtin.shell: |
+            set -euo pipefail
+            rm -rf /tmp/buildkite-agent
+            mkdir -p ~/.buildkite-agent/bin  ~/.buildkite-agent/hooks ~/.buildkite-agent/builds
+            git clone --branch "v{{ buildkite_version }}" --depth 1 https://github.com/buildkite/agent.git /tmp/buildkite-agent
+            (cd /tmp/buildkite-agent && go build -o ~/.buildkite-agent/bin/buildkite-agent)
+            ~/.buildkite-agent/bin/buildkite-agent --version
+            echo '{"buildkite_version":"{{ buildkite_version }}"}' | sudo tee /etc/ansible/facts.d/buildkite.fact
+        args:
+            executable: /bin/bash
+      - name: Configure Buildkite
+        register: configure_buildkite
+        no_log: true
+        vars:
+            buildkite_agent_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-agent-token') }}"
+            mailgun_api_key: "{{ lookup('community.general.passwordstore', 'website/mailgun-api-key') }}"
+        ansible.builtin.template:
+            src: "{{ item.src }}"
+            dest: "{{ item.dest }}"
+            mode: "{{ item.mode }}"
+        with_items:
+            - src: buildkite-agent.cfg.j2
+              dest: /home/nicholas/.buildkite-agent/buildkite-agent.cfg
+              mode: "0600"
+            - src: buildkite-agent-environment-hook.j2
+              dest: /home/nicholas/.buildkite-agent/hooks/environment
+              mode: "0644"
+            - src: buildkite-agent@.service
+              dest: /home/nicholas/.config/systemd/user/
+              mode: "0644"
+      - name: Stop Buildkite agents
+        when: manage_buildkite.changed or configure_buildkite.changed
+        ansible.builtin.shell: |
+            set -euo pipefail
+            systemctl --user stop buildkite-agent@*
+            systemctl --user daemon-reload
+        args:
+            executable: /bin/bash
+      - name: Start Buildkite agents
+        when: manage_buildkite.changed or configure_buildkite.changed
+        ansible.builtin.shell: systemctl --user start buildkite-agent@1
+
+      # WEBSITE
+      - name: Create website directory
+        register: website_directory
+        become: true
+        ansible.builtin.file:
+            path: /var/www/nicholas.cloud
+            state: directory
+            owner: nicholas
+            group: nicholas
+      - name: Sync public files
+        ansible.posix.synchronize:
+            src: ~/Google Drive/nicholas.cloud/public-files/
+            dest: /home/nicholas/public-files/
+            delete: true
+      - name: Wait on Buildkite
+        when: website_directory.changed
+        ansible.builtin.pause:
+            prompt: "Please run a build at https://buildkite.com/nchlswhttkr/website before continuing"
+
+      # NGINX
+      - name: Install/update Nginx
+        become: true
+        ansible.builtin.apt:
+            name: nginx
+      - name: Configure Nginx
+        register: configure_nginx
+        become: true
+        ansible.builtin.copy:
+            src: nicholas.cloud.nginx
+            dest: /etc/nginx/sites-enabled/nicholas.cloud
+            # can't validate here, do it later
+      - name: Install Nginx certificates
+        register: set_nginx_certificates
+        no_log: true
+        ansible.builtin.copy:
+            content: "{{ item.content }}"
+            dest: "{{ item.dest }}"
+            mode: "0600"
+        with_items:
+            - content: "{{ lookup('community.general.passwordstore', 'website/nicholas.cloud.certificate returnall=true') }}"
+              dest: /home/nicholas/nicholas.cloud.certificate
+            - content: "{{ lookup('community.general.passwordstore', 'website/nicholas.cloud.key returnall=true') }}"
+              dest: /home/nicholas/nicholas.cloud.key
+      - name: Restart Nginx
+        when: configure_nginx.changed or set_nginx_certificates.changed
+        ansible.builtin.shell: |
+            set -euo pipefail
+            sudo nginx -t
+            sudo systemctl restart nginx
+        args:
+            executable: /bin/bash
+
+      # DYNAMIC DNS
+      - name: Manage Dynamic DNS installation
+        when: manage_golang.changed or ansible_local.ddns.ddns_version|d != ddns_version
+        ansible.builtin.shell: |
+            set -euo pipefail
+            rm -rf /tmp/ddns
+            git clone --depth 1 https://github.com/hugomd/cloudflare-ddns.git /tmp/ddns
+            (cd /tmp/ddns && go build -o ~/ddns)
+            sudo mv ~/ddns /usr/local/bin/ddns
+            echo '{"ddns_version":"{{ ddns_version }}"}' | sudo tee /etc/ansible/facts.d/ddns.fact
+        args:
+            executable: /bin/bash
+      - name: Configure Dynamic DNS
+        register: configure_ddns
+        no_log: true
+        ansible.builtin.copy:
+            content: "{{ lookup('community.general.passwordstore', 'website/ddns.cfg returnall=true') }}"
+            dest: /home/nicholas/ddns.cfg
+            mode: "0600"
+      - name: Run Dynamic DNS
+        when: configure_ddns.changed or website_directory.changed
+        ansible.builtin.shell: ddns -config /home/nicholas/ddns.cfg
