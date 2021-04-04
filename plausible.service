@@ -1,0 +1,16 @@
+[Unit]
+Description=Plausible
+Documentation=https://github.com/plausible/hosting
+After=syslog.target
+After=network.target
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/nicholas/plausible-hosting
+ExecStart=/usr/bin/sudo /usr/local/bin/docker-compose up --detach
+ExecStop=/usr/bin/sudo /usr/local/bin/docker-compose down
+
+[Install]
+WantedBy=default.target
