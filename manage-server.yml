@@ -54,10 +54,12 @@
             dest: /etc/ansible/facts.d/{{ item }}.fact
             force: false
         with_items:
+            - buildkite
+            - ddns
+            - docker
             - golang
             - hugo
-            - ddns
-            - buildkite
+            - plausible
 
 - name: Manage dependencies
   hosts: all
@@ -67,6 +69,11 @@
       ddns_version: "2.0.1"
       golang_version: "1.16.2"
       hugo_version: "0.82.0"
+      docker_ubuntu_release: "focal"
+      docker_version_release: "20.10.5~3-0~ubuntu-focal"
+      containerd_version_release: "1.4.4-1"
+      docker_compose_version: "1.28.6"
+      plausible_ref: "3adc80359b5247ed06ede99a327579da6dd8999c"
   tasks:
       # GENERAL
       - name: Keep apt packages up to date
@@ -140,17 +147,16 @@
             - src: buildkite-agent@.service
               dest: /home/nicholas/.config/systemd/user/
               mode: "0644"
-      - name: Stop Buildkite agents
+      - name: Restart Buildkite agents
         when: manage_buildkite.changed or configure_buildkite.changed
         ansible.builtin.shell: |
             set -euo pipefail
             systemctl --user stop buildkite-agent@*
             systemctl --user daemon-reload
+            systemctl --user start buildkite-agent@1
+            systemctl --user enable buildkite-agent@1
         args:
             executable: /bin/bash
-      - name: Start Buildkite agents
-        when: manage_buildkite.changed or configure_buildkite.changed
-        ansible.builtin.shell: systemctl --user start buildkite-agent@1
 
       # WEBSITE
       - name: Create website directory
@@ -170,6 +176,78 @@
         when: website_directory.changed
         ansible.builtin.pause:
             prompt: "Please run a build at https://buildkite.com/nchlswhttkr/website before continuing"
+
+      - name: Manage Docker installation
+        register: manage_docker
+        when: ansible_local.docker.docker_version_release|d != docker_version_release or ansible_local.docker.containerd_version_release|d != containerd_version_release or ansible_local.docker.docker_compose_version|d != docker_compose_version
+        ansible.builtin.shell: |
+            set -euo pipefail
+            curl --fail --silent \
+                https://download.docker.com/linux/ubuntu/dists/{{ docker_ubuntu_release}}/pool/stable/amd64/containerd.io_{{ containerd_version_release }}_amd64.deb \
+                > /tmp/containerd.deb
+            curl --fail --silent \
+                https://download.docker.com/linux/ubuntu/dists/{{ docker_ubuntu_release}}/pool/stable/amd64/docker-ce-cli_{{ docker_version_release }}_amd64.deb \
+                > /tmp/docker-cli.deb
+            curl --fail --silent \
+                https://download.docker.com/linux/ubuntu/dists/{{ docker_ubuntu_release}}/pool/stable/amd64/docker-ce_{{ docker_version_release }}_amd64.deb \
+                > /tmp/docker.deb
+            sudo dpkg -i /tmp/containerd.deb
+            sudo dpkg -i /tmp/docker-cli.deb
+            sudo dpkg -i /tmp/docker.deb
+            sudo docker run hello-world
+            sudo curl -L "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+            sudo chmod +x /usr/local/bin/docker-compose
+            echo '{
+              "docker_version_release":"{{ docker_version_release }}",
+              "containerd_version_release":"{{ containerd_version_release }}",
+              "docker_compose_version":"{{ docker_compose_version }}"
+            }' | sudo tee /etc/ansible/facts.d/docker.fact
+        args:
+            executable: /bin/bash
+      - name: Manage Plausible installation
+        register: manage_plausible
+        when: manage_docker.changed or ansible_local.plausible.plausible_ref|d != plausible_ref
+        ansible.builtin.shell: |
+            rm -rf plausible-hosting
+            git clone https://github.com/plausible/hosting.git plausible-hosting
+            (cd plausible-hosting && sudo docker-compose pull)
+            echo '{"plausible_ref":"{{ plausible_ref }}"}' | sudo tee /etc/ansible/facts.d/plausible.fact
+        args:
+            executable: /bin/bash
+      - name: Configure Plausible
+        register: configure_plausible
+        no_log: true
+        vars:
+            plausible_admin_password: "{{ lookup('community.general.passwordstore', 'website/plausible-admin-password') }}"
+            plausible_secret_key: "{{ lookup('community.general.passwordstore', 'website/plausible-secret-key') }}"
+            mailgun_relay_password: "{{ lookup('community.general.passwordstore', 'website/mailgun-relay-password') }}"
+        ansible.builtin.template:
+            src: "{{ item.src }}"
+            dest: "{{ item.dest }}"
+            mode: "{{ item.mode }}"
+        with_items:
+            - src: plausible-conf.env.j2
+              dest: /home/nicholas/plausible-hosting/plausible-conf.env
+              mode: "0600"
+            - src: plausible-smtp-conf.env.j2
+              dest: /home/nicholas/plausible-hosting/plausible-smtp-conf.env
+              mode: "0600"
+            - src: plausible-docker-compose.yml
+              dest: /home/nicholas/plausible-hosting/docker-compose.yml
+              mode: "0644"
+            - src: plausible.service
+              dest: /home/nicholas/.config/systemd/user/
+              mode: "0644"
+      - name: Restart Plausible
+        when: manage_plausible.changed or configure_plausible.changed
+        ansible.builtin.shell: |
+            set -euo pipefail
+            systemctl --user stop plausible
+            systemctl --user daemon-reload
+            systemctl --user start plausible
+            systemctl --user enable plausible
+        args:
+            executable: /bin/bash
 
       # NGINX
       - name: Install/update Nginx
