@@ -2,6 +2,8 @@
 title: "Introducing Tags and a New Site Design!"
 date: 2020-10-19T19:00:00+1100
 # expirydate: 2020-11-01T19:00:00+1100
+tags:
+    - site
 aliases:
     - /blog/temporary/introducing-tags-and-a-new-site-design/
 ---

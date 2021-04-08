@@ -8,6 +8,7 @@
     
 {{ define "main" }}
 <article class="blog-article">
+    {{ if not .Date.IsZero }}
     <aside>
         <!-- prettier-ignore -->
         <p>
@@ -33,6 +34,7 @@
         </ul>
         {{ end }}
     </aside>
+    {{ end }}
     <!--  -->
     {{ .Content }}
 </article>
