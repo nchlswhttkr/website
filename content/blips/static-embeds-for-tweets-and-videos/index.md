@@ -1,6 +1,8 @@
 ---
 title: "Static embeds for tweets and videos"
 date: 2021-03-11T00:00:00+1100
+tags:
+    - site
 ---
 
 Tweets and videos embedded in this site are now static, displayed using my own custom HTML/CSS! Previously I used the templates provided by Hugo, but I had a few motivations for going with own approach.

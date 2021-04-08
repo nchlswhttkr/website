@@ -1,11 +1,6 @@
 ---
 title: "Site"
 description: "The inner workings of nicholas dot cloud"
-tags:
-    - buildkite
-    - cloudflare
-    - hugo
-    - nginx
 ---
 
 There's a few more moving parts to my website than there were when [I first made it years ago](/blog/simple-static-sites/), so I've put this page together to cover all the pieces!
