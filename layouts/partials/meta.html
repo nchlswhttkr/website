@@ -1,6 +1,7 @@
 <!-- prettier-ignore -->
-{{ $coverImage := (resources.Get "monty.jpg").Permalink }}
-{{ $coverImageAlt := "Avatar of Nicholas Whittaker" }}
+{{ $favicon := resources.Get "favicon.png" }}
+{{ $coverImage := ($favicon.Resize (printf "256x png %s" $.Site.Params.Color)).Permalink }}
+{{ $coverImageAlt := "Icon for Nicholas Whittaker" }}
 {{ if ( isset .Params "cover" ) }}
     {{ if not ( isset .Params "coveralt" ) }}
         {{ errorf "Expected an alt text for cover image for ./content/%s" .File.Path }}

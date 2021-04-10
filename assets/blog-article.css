@@ -194,11 +194,16 @@ as wide as their container + padding, then centre with an offset and transform.
     height: auto;
     border-radius: 8px;
     margin: 4px auto;
+    max-height: 400px;
 }
 
 .twitter > img {
-    max-height: 400px;
     width: auto;
+}
+
+.twitter > video {
+    width: 100%;
+    background-color: #000;
 }
 
 .twitter-actions {
