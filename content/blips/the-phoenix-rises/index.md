@@ -1,6 +1,8 @@
 ---
 title: "The phoenix rises"
 date: 2021-01-19T22:00:00+1100
+cover: "1.jpg"
+coveralt: "Screenshot from an Apple computer desktop with a music player, the background depicts a small white creature gazing across a decaying neon pink and blue cityscape at pink lizard atop a tall building"
 ---
 
 After recent issues with my laptop, I’ve had to take it in for repair. As an exercise in disaster recovery, I thought it would be good idea to treat the laptop as a write-off when handing it over.

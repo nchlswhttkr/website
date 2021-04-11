@@ -9,6 +9,10 @@
     {{ $coverImage = printf "%s%s" .Permalink .Params.Cover }}
     {{ $coverImageAlt = .Params.CoverAlt }}
 {{ end }}
+{{ $description := .Description }}
+{{ if eq .Description "" }}
+    {{ $description = .Summary | plainify | truncate 200 }}
+{{ end }}
 
 <link
     rel="alterantive"
@@ -17,13 +21,13 @@
     href="{{ .Site.BaseURL }}rss/"
 />
 <meta name="generator" content="Hugo {{ hugo.Version }}" />
-{{ with .Description }}<meta name="description" content="{{ . }}" />{{ end }}
+<meta name="description" content="{{ $description }}" />
 <meta name="author" content="{{ .Site.BaseURL }}#contact" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:title" content="{{ .Title }}" />
-<meta property="og:description" content="{{ .Description }}" />
+<meta property="og:description" content="{{ $description }}" />
 <meta property="og:image" content="{{ $coverImage }}" />
 <meta property="og:image:alt" content="{{ $coverImageAlt }}" />
 {{ if (isset .Params "cover") }}

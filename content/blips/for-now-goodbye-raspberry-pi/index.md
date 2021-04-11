@@ -1,6 +1,8 @@
 ---
 title: "For now, goodbye Raspberry Pi"
 date: 2021-04-01T21:00:00+1100
+cover: "1.jpg"
+coveralt: "A small computer in a plastic case sitting on a windowsill"
 tags:
     - site
 ---

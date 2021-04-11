@@ -1,6 +1,8 @@
 ---
 title: "My 2020 dumpster fire"
 date: 2021-01-08T14:00:00+1100
+cover: "1.jpg"
+coveralt: "A sheet of paper of is fed out of a printer onto a conveyor belt, which leads to a flaming garbage dumpster labelled 2020"
 ---
 
 As a wrap to 2020, the team at Basecamp ran a campaign called [Dumpster Fire](https://dumpsterfile.email/). The premise was simple: Send an email, and watch a contraption print it and feed it into a fire. It was open to anyone, so I joined in to farewell the year as it passed.
@@ -15,7 +17,7 @@ So how does one encapsulate the feelings of 2020? I chose a lyrics from [_The Rh
 
 Surprisingly sending the email itself took several attempts, as spam filters caught my personal email. I resorted to using my Google account to make sure it went through. A week later, I was greeted with a video of my email going up in flames.
 
-![A sheet of paper of is fed out of a printer onto a conveyor belt, which leads to a flaming garbage dumpster labelled "2020"](./1.jpg)
+![A sheet of paper of is fed out of a printer onto a conveyor belt, which leads to a flaming garbage dumpster labelled 2020](./1.jpg)
 
 Along with the livestream of my email burning, the team at Basecamp were kind enough to capture it in [a 30 second clip](https://hey.science/dumpster-fire/clip/?id=129107763). In a fitting turn of events, my printed email got stuck on the conveyor belt and avoided burning to a crisp.
 
