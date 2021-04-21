@@ -14,6 +14,8 @@ jobs:
         if: github.event.action != 'closed'
         steps:
             - uses: actions/checkout@v2
+              with:
+                  submodules: recursive
             - run: sed -i "s;http://example.org/;http://preview.nicholas.cloud/${{ github.event.pull_request.number }}/;" config.yml
             - uses: docker://registry.gitlab.com/pages/hugo:latest
             - run: aws s3 sync --size-only public/ s3://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
