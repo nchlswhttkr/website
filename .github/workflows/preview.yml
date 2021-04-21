@@ -1,0 +1,32 @@
+name: Manage site previews
+
+on:
+    pull_request:
+        types:
+            - closed
+            - opened
+            - reopened
+            - synchronize
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        if: github.event.action != 'closed'
+        steps:
+            - uses: actions/checkout@v2
+            - run: sed -i "s;http://example.org/;http://preview.nicholas.cloud/${{ github.event.pull_request.number }}/;" config.yml
+            - uses: docker://registry.gitlab.com/pages/hugo:latest
+            - run: aws s3 sync --size-only public/ s3://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
+              env:
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
+                  AWS_DEFAULT_REGION: ap-southeast-2
+    destroy:
+        runs-on: ubuntu-latest
+        if: github.event.action == 'closed'
+        steps:
+            - run: aws s3 rm --recursive s3://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
+              env:
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
+                  AWS_DEFAULT_REGION: ap-southeast-2

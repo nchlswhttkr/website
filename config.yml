@@ -4,6 +4,7 @@ title: "Nicholas Whittaker"
 enableEmoji: true
 enableRobotsTXT: true
 paginate: 5
+canonifyURLs: true
 
 taxonomies:
     tag: "tags"
