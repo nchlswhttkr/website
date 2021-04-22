@@ -33,3 +33,4 @@ terraform apply
 ansible-playbook manage-server.yml -i hosts.ini
 ```
 
+
