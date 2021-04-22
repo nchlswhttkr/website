@@ -9,26 +9,95 @@ on:
             - synchronize
 
 jobs:
-    deploy:
+    preview:
         runs-on: ubuntu-latest
-        if: github.event.action != 'closed'
         steps:
-            - uses: actions/checkout@v2
+            - name: Get latest deployment
+              uses: octokit/request-action@v2.x
+              id: get_latest_deployment
+              if: contains('closed synchronize', github.event.action)
+              with:
+                  route: GET /repos/{repo}/deployments
+                  repo: ${{ github.repository }}
+                  ref: ${{ github.event.pull_request.head.ref }}
+                  environment: preview
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Set latest deployment as inactive
+              uses: octokit/request-action@v2.x
+              if: contains('closed synchronize', github.event.action)
+              with:
+                  route: POST /repos/{repo}/deployments/{deployment}/statuses
+                  repo: ${{ github.repository }}
+                  deployment: ${{ fromJson(steps.get_latest_deployment.outputs.data)[0].id }}
+                  state: inactive
+                  headers: |
+                      Accept: application/vnd.github.ant-man-preview+json
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Clean up deployment artifacts
+              if: contains('closed', github.event.action) # leave untouched when commits are pushed
+              run: aws s3 rm --recursive s3://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
+              env:
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
+                  AWS_DEFAULT_REGION: ap-southeast-2
+
+            - name: Create new deployment
+              uses: octokit/request-action@v2.x
+              id: create_deployment
+              if: contains('opened reopened synchronize', github.event.action)
+              with:
+                  route: POST /repos/{repo}/deployments
+                  repo: ${{ github.repository }}
+                  ref: ${{ github.event.pull_request.head.ref }}
+                  environment: preview
+                  auto_merge: false
+                  required_contexts: "[]"
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Check out source code
+              uses: actions/checkout@v2
+              if: contains('opened reopened synchronize', github.event.action)
               with:
                   submodules: recursive
-            - run: sed -i "s;https://nicholas.cloud/;http://preview.nicholas.cloud/${{ github.event.pull_request.number }}/;" config.yml
-            - uses: docker://registry.gitlab.com/pages/hugo:latest
-            - run: aws s3 sync --size-only public/ s3://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
+            - name: Set site URL to deployment environment
+              run: sed -i "s;https://nicholas.cloud/;http://preview.nicholas.cloud/${{ github.event.pull_request.number }}/;" config.yml
+              if: contains('opened reopened synchronize', github.event.action)
+            - name: Build
+              uses: docker://registry.gitlab.com/pages/hugo:latest
+              if: contains('opened reopened synchronize', github.event.action)
+
+            - name: Deploy build artifacts
+              if: contains('opened reopened synchronize', github.event.action)
+              run: aws s3 sync --size-only public/ s3://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
               env:
                   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
                   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
                   AWS_DEFAULT_REGION: ap-southeast-2
-    destroy:
-        runs-on: ubuntu-latest
-        if: github.event.action == 'closed'
-        steps:
-            - run: aws s3 rm --recursive s3://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
+
+            - name: Mark new deployment as a success
+              uses: octokit/request-action@v2.x
+              if: contains('opened reopened synchronize', github.event.action)
+              with:
+                  route: POST /repos/{repo}/deployments/{deployment}/statuses
+                  repo: ${{ github.repository }}
+                  deployment: ${{ fromJson(steps.create_deployment.outputs.data).id }}
+                  state: success
+                  environment_url: http://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
               env:
-                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
-                  AWS_DEFAULT_REGION: ap-southeast-2
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Mark new deployment as failed
+              uses: octokit/request-action@v2.x
+              if: contains('opened reopened synchronize', github.event.action) && failure()
+              with:
+                  route: POST /repos/{repo}/deployments/{deployment}/statuses
+                  repo: ${{ github.repository }}
+                  deployment: ${{ fromJson(steps.create_deployment.outputs.data).id }}
+                  state: failure
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
