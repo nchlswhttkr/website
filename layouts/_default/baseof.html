@@ -42,10 +42,12 @@
                 }
             }
         </style>
-        <script async defer data-domain="nicholas.cloud" src="https://plausible.nicholas.cloud/js/plausible.js"></script>
-        {{ if eq .Page.Kind "404" }}
-        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-        <script>plausible("404",{ props: { path: document.location.pathname } });</script>
+        {{ if eq .Site.BaseURL "https://nicholas.cloud/" }}
+            <script async defer data-domain="nicholas.cloud" src="https://plausible.nicholas.cloud/js/plausible.js"></script>
+            {{ if eq .Page.Kind "404" }}
+            <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+            <script>plausible("404",{ props: { path: document.location.pathname } });</script>
+            {{ end }}
         {{ end }}
     </head>
     <body>
