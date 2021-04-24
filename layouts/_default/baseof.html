@@ -4,8 +4,6 @@
 {{ $title = printf "Posts tagged #%s" .Title }}
 {{ end }}
 <!-- prettier-ignore -->
-{{ .Scratch.Set "css" (slice "main") }}
-<!-- prettier-ignore -->
 {{ $favicon := resources.Get "favicon.png" }}
 {{ $color := .Site.Params.Color }}
 {{ if isset .Params "color" }}

@@ -1,8 +1,3 @@
-{{ define "css" }}
-<!-- prettier-ignore -->
-{{ .Scratch.Add "css" "blog-list" }}
-{{ end }}
-
 {{ define "main" }}
 <div class="blog-list">
     {{ .Content }} {{ range .Data.Pages }}

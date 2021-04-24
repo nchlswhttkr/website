@@ -18,6 +18,7 @@ server {
 
     # By default everything stays fresh on proxy for at most 5 mins
     add_header "Cache-Control" "public, max-age=0, s-maxage=300";
+    add_header "Permissions-Policy" "interest-cohort=()";
 
     error_page 404 /404.html;
 

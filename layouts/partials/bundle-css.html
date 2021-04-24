@@ -1,4 +1,4 @@
-{{ $css := .Scratch.Get "css" }}
+{{ $css := slice "blog-article" "blog-list" "highlight" "main" }}
 {{ if .Site.IsServer }}
     <!-- dev mode, serve separate files to aid debugging -->
     {{ range $css }}
@@ -6,11 +6,10 @@
     {{ end }}
 {{ else }}
     <!-- build mode, bundle files for fewer requests per page -->
-    {{ $name := printf "%s.css" (delimit $css "_") }}
     {{ $resources := slice }}
     {{ range $css }}
         {{ $resources = append (resources.Get (printf "%s.css" .) | resources.Minify ) $resources }}
     {{ end }}
-    {{ $file := resources.Concat $name $resources }}
+    {{ $file := resources.Concat "bundle.css" $resources }}
     <link rel="stylesheet" href="{{ $file.Permalink }}" />
 {{ end }}
