@@ -20,7 +20,6 @@ With that said, there's a number of tools and services this website depends on. 
 
 There's several also other libraries and resources that this site uses.
 
--   Lazy loaded video is made possible with [Lozad](https://github.com/ApoorvSaxena/lozad.js).
 -   Footer icons are provided by [Feather](https://feathericons.com/).
 -   The site favicon uses an icon from [Font Awesome](https://fontawesome.com/license/free/).
 -   Background pattern comes from [Hero Patterns](https://www.heropatterns.com/).

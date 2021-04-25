@@ -5,31 +5,39 @@
 {{ $width := .Get "width" }}
 {{ $height := .Get "height" }}
 
+<noscript>
 <video
-    class="lozad"
-    autoplay="true"
-    muted="true"
-    loop="true"
-    playsinline
-    width="{{ $width }}"
-    height="{{ $height }}"
-    data-poster="{{ $poster }}"
-    data-src="{{ $src }}"
+    {{ with (.Get "autoplay") }}autoplay{{ end }}
+    {{ with (.Get "muted") }}muted="{{ . }}"{{ end }}
+    {{ with (.Get "loop") }}loop="{{ . }}"{{ end }}
+    {{ with (.Get "playsinline") }}playsinline{{ end }}
+    width="{{ .Get "width" }}"
+    height="{{ .Get "height" }}"
+    data-poster="{{ .Get "poster" }}"
+    data-src="{{ .Get "src" }}"
 >
     {{ .Inner }}
 </video>
-
-<noscript>
-    <video
-        autoplay="true"
-        muted="true"
-        loop="true"
-        playsinline
-        width="{{ $width }}"
-        height="{{ $height }}"
-        poster="{{ $poster }}"
-        src="{{ $src }}"
-    >
-        {{ .Inner }}
-    </video>
 </noscript>
+<video
+    {{ with (.Get "autoplay") }}autoplay{{ end }}
+    {{ with (.Get "muted") }}muted="{{ . }}"{{ end }}
+    {{ with (.Get "loop") }}loop="{{ . }}"{{ end }}
+    {{ with (.Get "playsinline") }}playsinline{{ end }}
+    width="{{ .Get "width" }}"
+    height="{{ .Get "height" }}"
+    data-poster="{{ .Get "poster" }}"
+    data-src="{{ .Get "src" }}"
+>
+    {{ .Inner }}
+</video>
+<script>
+    const video = document.currentScript.previousElementSibling;
+    new IntersectionObserver(([entry], observer) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        video.setAttribute("src", video.getAttribute("data-src"));
+        video.setAttribute("poster", video.getAttribute("data-poster"));
+    }).observe(video)
+</script>
+

@@ -1,9 +1,6 @@
 ---
 title: "No FLoC for me please Google"
 date: 2021-04-23T22:00:00+1000
-date: 2021-04-23T22:00:00+1000
-date: 2021-04-23T22:00:00+1000
-date: 2021-04-23T22:00:00+1000
 ---
 
 [A new approach to online tracking being trialed by Google](https://www.eff.org/deeplinks/2021/04/fighting-floc-and-fighting-monopoly-are-fully-compatible) has been under scrutiny this week, from developers and privacy advocates alike.

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -e
 
 # Run a normal build to ensure remote content is ready
 hugo --quiet
@@ -12,9 +12,11 @@ git stash push --all --quiet resources/json/
 mv secrets/embed-proxy-secret.txt secrets/embed-proxy-secret.txt.ignore
 hugo --quiet --gc
 git add --force -- resources/json/
-git commit
 
 # Restore old working environment
 mv secrets/embed-proxy-secret.txt.ignore secrets/embed-proxy-secret.txt
 git stash pop --quiet
 git restore --staged .
+
+# Finish
+git commit
