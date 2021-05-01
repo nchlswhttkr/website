@@ -68,7 +68,7 @@
       buildkite_version: "3.28.1"
       ddns_version: "2.0.1"
       golang_version: "1.16.2"
-      hugo_version: "0.82.0"
+      hugo_version: "0.82.1"
       docker_ubuntu_release: "focal"
       docker_version_release: "20.10.5~3-0~ubuntu-focal"
       containerd_version_release: "1.4.4-1"
