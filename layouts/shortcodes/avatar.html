@@ -1,0 +1,14 @@
+<style>
+    #avatar {
+        float: right;
+        margin: 0 0 8px 8px;
+        width: 128px;
+    }
+</style>
+{{ $avatar := resources.Get "monty.jpg" }}
+<img
+    alt="Avatar of Nicholas Whittaker"
+    height="200"
+    width="200"
+    src="{{ $avatar.Permalink }}"
+/>

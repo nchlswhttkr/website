@@ -2,5 +2,4 @@ User-agent: *
 Disallow: /newsletter/subscribe/
 Disallow: /goto/
 Disallow: /files/
-Disallow: /blog/temporary/
 Sitemap: {{ .Site.BaseURL }}sitemap.xml
