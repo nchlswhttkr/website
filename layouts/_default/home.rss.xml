@@ -15,7 +15,7 @@
         <width>128</width>
         <height>128</height>
     </image>
-    {{ range first 25 (where .Site.RegularPages "Section" "in" "blog blips") }}
+    {{ range first 25 (where .Site.RegularPages "Section" "in" (slice "blips" "blog")) }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>

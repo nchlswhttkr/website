@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="blog-list">
-    {{ range .Pages }}
+    {{ range where .Site.RegularPages "Section" "in" (slice "blips" "blog") }}
     <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
     <p class="post-details">
         {{ .Date.Format "2006-01-02" }} //

@@ -5,7 +5,7 @@ description: "The inner workings of nicholas dot cloud"
 
 There's a few more moving parts to my website than there were when [I first made it years ago](/blog/simple-static-sites/), so I've put this page together to cover all the pieces!
 
-These are all the main parts that I can think of off the top of my head. If you've got questions, feel free to [contact me](/#contact)!
+These are all the main parts that I can think of off the top of my head. If you've got questions, feel free to [contact me](/about/#contact)!
 
 ## Acknowledgements
 
