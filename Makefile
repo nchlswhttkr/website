@@ -1,7 +1,10 @@
-.PHONY: dev droplet server
+.PHONY: cache dev droplet server
 
 site:
 	hugo
+
+cache:
+	./scripts/update-cache.sh
 
 dev:
 	hugo server
