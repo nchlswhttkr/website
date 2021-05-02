@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 DEV_CACHE_BACKUP=dev-cache.tar
 
