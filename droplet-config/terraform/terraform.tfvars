@@ -1,1 +1,1 @@
-droplet_name="gandra-dee"
+droplet_name = "gandra-dee"
