@@ -28,9 +28,5 @@ You'll need a few tools installed, and a couple of secrets from your password st
 pass list # verify secrets are available
 git clone https://github.com/nchlswhttkr/website.git
 cd website
-terraform init
-terraform apply
-ansible-playbook manage-server.yml -i hosts.ini
+make server
 ```
-
-
