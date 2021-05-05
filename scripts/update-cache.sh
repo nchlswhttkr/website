@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-DEV_CACHE_BACKUP=dev-cache.tar
+DEV_CACHE_BACKUP=$(mktemp)
 
 # Run a normal build to ensure remote content is ready
 hugo --quiet

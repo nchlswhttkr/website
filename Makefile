@@ -1,4 +1,4 @@
-.PHONY: cache dev droplet server
+.PHONY: cache dev droplet server ssh
 
 site:
 	hugo
@@ -16,3 +16,6 @@ droplet:
 
 server: droplet
 	ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook droplet-config/ansible/manage-server.yml -i droplet-config/ansible/hosts.ini
+
+ssh:
+	ssh nicholas@`cat droplet-config/ansible/hosts.ini | tr -d '"'`
