@@ -26,6 +26,7 @@
     line-height: 1.4rem;
 }
 .blog-article > p > code,
+.blog-article > p > a > code,
 .blog-article > ol > li > code,
 .blog-article > ul > li > code {
     border-radius: 4px;
