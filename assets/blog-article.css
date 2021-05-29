@@ -189,7 +189,7 @@ as wide as their container + padding, then centre with an offset and transform.
 }
 
 .twitter > video,
-.twitter > img {
+.twitter > a > img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -198,7 +198,7 @@ as wide as their container + padding, then centre with an offset and transform.
     max-height: 400px;
 }
 
-.twitter > img {
+.twitter > a > img {
     width: auto;
 }
 

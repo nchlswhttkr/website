@@ -18,7 +18,7 @@
             />
         </a>
         <div>
-            {{ $tweet.author_name }}
+            <b>{{ $tweet.author_name }}</b>
             <br />
             <a href="{{ $tweet.author_url }}">
                 <code>@{{ $tweet.author_username }}</code>
@@ -36,15 +36,17 @@
 
     {{ range $tweet.photos }}
     <!-- prettier-ignore -->
-    <img
-        src="https://nicholas.cloud/media-proxy/?url={{ .url }}"
-        {{ if ne .alt nil }}
-        alt="{{ .alt }}"
-        {{ end }}
-        loading="lazy"
-        width="{{ .width }}"
-        height="{{ .height }}"
-    />
+    <a href="https://nicholas.cloud/media-proxy/?url={{ .high_res_url }}">
+        <img
+            src="https://nicholas.cloud/media-proxy/?url={{ .url }}"
+            {{ if ne .alt nil }}
+            alt="{{ .alt }}"
+            {{ end }}
+            loading="lazy"
+            width="{{ .width }}"
+            height="{{ .height }}"
+        />
+    </a>
     {{ end }} {{ if not (eq $tweet.video nil) }}
     <video
         preload="metadata"
