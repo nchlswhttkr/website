@@ -4,7 +4,7 @@ set -eu
 
 git diff-tree --no-commit-id --name-status -r HEAD | grep "^[AM].content/newsletter/....-..\.md"  | cut -f 2 | sed -n "s;content/newsletter/\(....-..\)\.md;\1;p" > new-newsletters.txt
 
-while read NEWSLETTER; do
+while read -r NEWSLETTER; do
   echo "
     steps:
       - label: \":email: Preview\"

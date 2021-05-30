@@ -8,7 +8,7 @@ DEV_CACHE_BACKUP=$(mktemp)
 hugo --quiet
 
 # Save a copy of the development cache
-git clean -nx resources/json | cut -d ' ' -f 3 | tar -cf $DEV_CACHE_BACKUP --files-from -
+git clean -nx resources/json | cut -d ' ' -f 3 | tar -cf "$DEV_CACHE_BACKUP" --files-from -
 
 # Run new build and fill with responses from public cache
 mv secrets/embed-proxy-secret.txt secrets/embed-proxy-secret.txt.ignore
@@ -17,5 +17,5 @@ git add --force -- resources/json/
 
 # Restore old working environment
 mv secrets/embed-proxy-secret.txt.ignore secrets/embed-proxy-secret.txt
-tar -xf $DEV_CACHE_BACKUP
-rm $DEV_CACHE_BACKUP
+tar -xf "$DEV_CACHE_BACKUP"
+rm "$DEV_CACHE_BACKUP"
