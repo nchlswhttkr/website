@@ -23,8 +23,11 @@
       - name: Create local user
         register: create_local_user
         ansible.builtin.user:
-            name: nicholas
+            name: "{{ item }}"
             shell: /bin/bash
+        with_items:
+            - nicholas
+            - git
       - name: Give local user passwordless sudo # I apologise for this sin
         when: create_local_user.changed
         ansible.builtin.copy:
@@ -37,9 +40,12 @@
         ansible.builtin.copy:
             src: /root/.ssh/authorized_keys
             remote_src: true
-            dest: /home/nicholas/.ssh/
-            owner: nicholas
-            group: nicholas
+            dest: /home/{{ item }}/.ssh/
+            owner: "{{ item }}"
+            group: "{{ item }}"
+        with_items:
+            - nicholas
+            - git
       - name: Enable linger for local user
         when: create_local_user.changed
         ansible.builtin.shell: loginctl enable-linger nicholas
@@ -248,6 +254,40 @@
             systemctl --user enable plausible
         args:
             executable: /bin/bash
+
+      # GIT
+      - name: Install fcgiwrap, jq, shellcheck
+        become: true
+        ansible.builtin.apt:
+            name: "{{ item }}"
+        with_items:
+            - fcgiwrap
+            - jq
+            - shellcheck
+      - name: Ensure Git directory exists
+        become: true
+        ansible.builtin.file:
+            path: /var/www/git/
+            owner: nicholas
+            group: nicholas
+            state: directory
+      - name: Ensure Git projects exist
+        ansible.builtin.shell: |
+            set -euo pipefail
+            [[ -d /var/www/git/{{ item.repo }} ]] || exit 0
+            mkdir -p /var/www/git/{{ item.repo }}
+            sudo chown git:git /var/www/git/{{ item.repo }}
+            sudo su git -c "git init --bare /var/www/git/{{ item.repo }}"
+            cd /var/www/git/{{ item.repo }}
+            sudo su git -c "git symbolic-ref HEAD refs/heads/{{ item.default_branch }}"
+            sudo su git -c "touch git-daemon-export-ok"
+        args:
+            executable: /bin/bash
+        with_items:
+            - repo: mandarin-duck.git
+              default_branch: main
+            - repo: website.git
+              default_branch: main
 
       # NGINX
       - name: Install/update Nginx

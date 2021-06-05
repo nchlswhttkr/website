@@ -15,22 +15,24 @@ server {
 
     root /var/www/nicholas.cloud;
     autoindex on;
-
-    # By default everything stays fresh on proxy for at most 5 mins
-    add_header "Cache-Control" "public, max-age=0, s-maxage=300";
-    add_header "Permissions-Policy" "interest-cohort=()";
-
     error_page 404 /404.html;
 
+    # https://nicholas.cloud/blips/no-floc-for-me-please-google/
+    add_header "Permissions-Policy" "interest-cohort=()";
+
+    # WEBSITE
     location / {
+        # By default everything stays fresh on proxy for at most 5 mins
+        add_header "Cache-Control" "public, max-age=0, s-maxage=300";
+
         # Cache media on clients for a month
         location ~* \.(gif|jpg|jpeg|png|svg)$ {
             add_header "Cache-Control" "public, max-age=2592000, s-maxage=3600, immutable";
         }
 
-        # Cache styling/javascript on clients for one day
+        # Cache styling/javascript on clients for four hours
         location ~* \.(css|js)$ {
-            add_header "Cache-Control" "public, max-age=86400, s-maxage=3600";
+            add_header "Cache-Control" "public, max-age=14400, s-maxage=3600";
         }
 
         # Common aliases for RSS feeds
@@ -39,13 +41,19 @@ server {
         }
     }
 
+    # FILES
     location /files/ {
         alias /home/nicholas/public-files/;
         add_header "Cache-Control" "public, max-age=0, s-maxage=60";
     }
 
-    location ~* ^/resume(/|\.pdf)?$ {
-        return 301 https://nicholas.cloud/files/resume.pdf;
+    # GIT
+    location /git/ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME /usr/lib/git-core/git-http-backend;
+        fastcgi_param GIT_PROJECT_ROOT /var/www/; # TODO: Don't assume URI
+        fastcgi_param PATH_INFO $uri;
+        fastcgi_pass unix:/var/run/fcgiwrap.socket;
     }
 }
 

@@ -1,5 +1,5 @@
 ---
-title: "Live music has returned to melbourne"
+title: "Live music has returned to Melbourne"
 date: 2021-03-12T23:00:00+1100
 cover: "1.jpg"
 coveralt: "A large concert hall bathed in soft purple lights, a grand piano and a couple of small brass horns sit in the middle of the stage"
