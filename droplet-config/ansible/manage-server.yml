@@ -274,7 +274,7 @@
       - name: Ensure Git projects exist
         ansible.builtin.shell: |
             set -euo pipefail
-            [[ -d /var/www/git/{{ item.repo }} ]] || exit 0
+            [[ -d /var/www/git/{{ item.repo }} ]] && exit 0
             mkdir -p /var/www/git/{{ item.repo }}
             sudo chown git:git /var/www/git/{{ item.repo }}
             sudo su git -c "git init --bare /var/www/git/{{ item.repo }}"
