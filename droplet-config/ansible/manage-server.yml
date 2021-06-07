@@ -56,32 +56,47 @@
             state: directory
       - name: Ensure facts files exist
         ansible.builtin.copy:
-            content: ""
+            content: "{}"
             dest: /etc/ansible/facts.d/{{ item }}.fact
             force: false
         with_items:
             - buildkite
             - ddns
             - docker
-            - golang
+            - git
             - hugo
             - plausible
 
-- name: Manage dependencies
+- name: Install and configure dependencies
   hosts: all
   remote_user: nicholas
   vars:
-      buildkite_version: "3.28.1"
-      ddns_version: "2.0.1"
-      golang_version: "1.16.2"
-      hugo_version: "0.82.1"
+      buildkite_version: "3.30.0"
+      buildkite_organization_slug: nchlswhttkr
+      buildkite_pipeline_slug: website
+
+      ddns_version: "2.1.0"
+
+      hugo_version: "0.83.1"
+
       docker_ubuntu_release: "focal"
       docker_version_release: "20.10.5~3-0~ubuntu-focal"
       containerd_version_release: "1.4.4-1"
       docker_compose_version: "1.28.6"
       plausible_ref: "3adc80359b5247ed06ede99a327579da6dd8999c"
   tasks:
+      #
+      #
       # GENERAL
+      - name: Install apt packages
+        become: true
+        ansible.builtin.apt:
+            name:
+                - nginx
+                - fcgiwrap
+                - jq
+                - shellcheck
+            state: latest
       - name: Keep apt packages up to date
         become: true
         ansible.builtin.apt:
@@ -90,50 +105,37 @@
             name: "*"
             state: latest
 
-      # GOLANG
-      - name: Manage Golang installation
-        register: manage_golang
-        when: ansible_local.golang.golang_version|d != golang_version
-        ansible.builtin.shell: |
-            set -euo pipefail
-            curl --silent --fail --location "https://golang.org/dl/go{{ golang_version }}.linux-amd64.tar.gz" > /tmp/go.tar.gz
-            sudo rm -rf /usr/local/go
-            sudo tar -xf /tmp/go.tar.gz -C /usr/local
-            sudo ln -fs /usr/local/go/bin/go /usr/local/bin/go
-            go version
-            echo '{"golang_version":"{{ golang_version }}"}' | sudo tee /etc/ansible/facts.d/golang.fact
-        args:
-            executable: /bin/bash
-
+      #
+      #
       # HUGO
-      - name: Manage Hugo installation
-        when: manage_golang.changed or ansible_local.hugo.hugo_version|d != hugo_version
+      - name: Install Hugo
+        when: ansible_local.hugo.hugo_version|d != hugo_version
         ansible.builtin.shell: |
             set -euo pipefail
-            rm -rf /tmp/hugo
-            git clone --branch "v{{ hugo_version }}" --depth 1 https://github.com/gohugoio/hugo.git /tmp/hugo
-            (cd /tmp/hugo && go build -o ~/hugo)
+            curl -L https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_0.83.1_Linux-64bit.tar.gz \
+              | tar -zx -C ~/ hugo
             sudo mv ~/hugo /usr/local/bin/hugo
             hugo version
-            echo '{"hugo_version":"{{ hugo_version }}"}' | sudo tee /etc/ansible/facts.d/hugo.fact
+            jq --null-input '.hugo_version = "{{ hugo_version }}"' | sudo tee /etc/ansible/facts.d/hugo.fact
         args:
             executable: /bin/bash
 
+      #
+      #
       # BUILDKITE
-      - name: Manage Buildkite installation
-        register: manage_buildkite
-        when: manage_golang.changed or ansible_local.buildkite.buildkite_version|d != buildkite_version
+      - name: Install Buildkite agent
+        register: install_buildkite
+        when: ansible_local.buildkite.buildkite_version|d != buildkite_version
         ansible.builtin.shell: |
             set -euo pipefail
-            rm -rf /tmp/buildkite-agent
-            mkdir -p ~/.buildkite-agent/bin  ~/.buildkite-agent/hooks ~/.buildkite-agent/builds
-            git clone --branch "v{{ buildkite_version }}" --depth 1 https://github.com/buildkite/agent.git /tmp/buildkite-agent
-            (cd /tmp/buildkite-agent && go build -o ~/.buildkite-agent/bin/buildkite-agent)
-            ~/.buildkite-agent/bin/buildkite-agent --version
-            echo '{"buildkite_version":"{{ buildkite_version }}"}' | sudo tee /etc/ansible/facts.d/buildkite.fact
+            mkdir -p ~/.buildkite-agent/hooks
+            curl --silent --fail --location https://github.com/buildkite/agent/releases/download/v{{ buildkite_version }}/buildkite-agent-linux-amd64-{{ buildkite_version }}.tar.gz \
+              | tar -zx -C ~/.buildkite-agent "./buildkite-agent"
+            ~/.buildkite-agent/buildkite-agent --version
+            jq --null-input '.buildkite_version = "{{ buildkite_version }}"' | sudo tee /etc/ansible/facts.d/buildkite.fact
         args:
             executable: /bin/bash
-      - name: Configure Buildkite
+      - name: Configure Buildkite agent
         register: configure_buildkite
         no_log: true
         vars:
@@ -153,8 +155,8 @@
             - src: ../buildkite-agent/buildkite-agent@.service
               dest: /home/nicholas/.config/systemd/user/
               mode: "0644"
-      - name: Restart Buildkite agents
-        when: manage_buildkite.changed or configure_buildkite.changed
+      - name: Restart Buildkite agent service
+        when: install_buildkite.changed or configure_buildkite.changed
         ansible.builtin.shell: |
             set -euo pipefail
             systemctl --user stop buildkite-agent@*
@@ -164,6 +166,8 @@
         args:
             executable: /bin/bash
 
+      #
+      #
       # WEBSITE
       - name: Create website directory
         register: website_directory
@@ -178,13 +182,43 @@
             src: ~/Google Drive/nicholas.cloud/public-files/
             dest: /home/nicholas/public-files/
             delete: true
-      - name: Wait on Buildkite
+      - name: Trigger build of website on Buildkite
         when: website_directory.changed
-        ansible.builtin.pause:
-            prompt: "Please run a build at https://buildkite.com/nchlswhttkr/website before continuing"
+        vars:
+            buildkite_api_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-api-token') }}"
+        ansible.builtin.uri:
+            url: https://api.buildkite.com/v2/organizations/{{ buildkite_organization_slug }}/pipelines/{{ buildkite_pipeline_slug }}/builds
+            method: POST
+            headers:
+                Authorization: Bearer {{ buildkite_api_token }}
+            body_format: json
+            body:
+                commit: HEAD
+                branch: main
+            status_code: [201]
+      - name: Wait for website build in Buildkite to finish
+        when: website_directory.changed
+        register: buildkite_result
+        vars:
+            buildkite_api_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-api-token') }}"
+        ansible.builtin.uri:
+            url: https://api.buildkite.com/v2/organizations/{{ buildkite_organization_slug }}/pipelines/{{ buildkite_pipeline_slug }}/builds
+            headers:
+                Authorization: Bearer {{ buildkite_api_token }}
+            body_format: json
+            body:
+                per_page: 1
+                branch: main
+        until: buildkite_result.json[0].state in ["passed", "failed"]
+        failed_when: buildkite_result.json[0].state == "failed"
+        retries: 5
+        delay: 10
 
-      - name: Manage Docker installation
-        register: manage_docker
+      #
+      #
+      # PLAUSIBLE
+      - name: Install Docker
+        register: install_docker
         when: ansible_local.docker.docker_version_release|d != docker_version_release or ansible_local.docker.containerd_version_release|d != containerd_version_release or ansible_local.docker.docker_compose_version|d != docker_compose_version
         ansible.builtin.shell: |
             set -euo pipefail
@@ -203,21 +237,22 @@
             sudo docker run hello-world
             sudo curl -L "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
             sudo chmod +x /usr/local/bin/docker-compose
-            echo '{
-              "docker_version_release":"{{ docker_version_release }}",
-              "containerd_version_release":"{{ containerd_version_release }}",
-              "docker_compose_version":"{{ docker_compose_version }}"
-            }' | sudo tee /etc/ansible/facts.d/docker.fact
+            jq --null-input '
+              .docker_version_release = "{{ docker_version_release }}" |
+              .containerd_version_release = "{{ containerd_version_release }}" |
+              .docker_compose_version = "{{ docker_compose_version }}"
+            ' | sudo tee /etc/ansible/facts.d/docker.fact
         args:
             executable: /bin/bash
-      - name: Manage Plausible installation
-        register: manage_plausible
-        when: manage_docker.changed or ansible_local.plausible.plausible_ref|d != plausible_ref
+      - name: Install Plausible
+        register: install_plausible
+        when: install_docker.changed or ansible_local.plausible.plausible_ref|d != plausible_ref
         ansible.builtin.shell: |
+            set -euo pipefail
             rm -rf plausible-hosting
             git clone https://github.com/plausible/hosting.git plausible-hosting
             (cd plausible-hosting && sudo docker-compose pull)
-            echo '{"plausible_ref":"{{ plausible_ref }}"}' | sudo tee /etc/ansible/facts.d/plausible.fact
+            jq --null-input '.plausible_ref = "{{ plausible_ref }}"' | sudo tee /etc/ansible/facts.d/plausible.fact
         args:
             executable: /bin/bash
       - name: Configure Plausible
@@ -245,7 +280,7 @@
               dest: /home/nicholas/.config/systemd/user/
               mode: "0644"
       - name: Restart Plausible
-        when: manage_plausible.changed or configure_plausible.changed
+        when: install_plausible.changed or configure_plausible.changed
         ansible.builtin.shell: |
             set -euo pipefail
             systemctl --user stop plausible
@@ -255,15 +290,9 @@
         args:
             executable: /bin/bash
 
+      #
+      #
       # GIT
-      - name: Install fcgiwrap, jq, shellcheck
-        become: true
-        ansible.builtin.apt:
-            name: "{{ item }}"
-        with_items:
-            - fcgiwrap
-            - jq
-            - shellcheck
       - name: Ensure Git directory exists
         become: true
         ansible.builtin.file:
@@ -272,15 +301,16 @@
             group: nicholas
             state: directory
       - name: Ensure Git projects exist
+        when: ansible_local.git[item.repo]|d != true
         ansible.builtin.shell: |
             set -euo pipefail
-            [[ -d /var/www/git/{{ item.repo }} ]] && exit 0
             mkdir -p /var/www/git/{{ item.repo }}
             sudo chown git:git /var/www/git/{{ item.repo }}
             sudo su git -c "git init --bare /var/www/git/{{ item.repo }}"
             cd /var/www/git/{{ item.repo }}
             sudo su git -c "git symbolic-ref HEAD refs/heads/{{ item.default_branch }}"
             sudo su git -c "touch git-daemon-export-ok"
+            jq '."{{ item.repo }}" = true' <(cat /etc/ansible/facts.d/git.fact) | sudo tee /etc/ansible/facts.d/git.fact
         args:
             executable: /bin/bash
         with_items:
@@ -289,11 +319,9 @@
             - repo: website.git
               default_branch: main
 
+      #
+      #
       # NGINX
-      - name: Install/update Nginx
-        become: true
-        ansible.builtin.apt:
-            name: nginx
       - name: Configure Nginx
         register: configure_nginx
         become: true
@@ -322,19 +350,20 @@
         args:
             executable: /bin/bash
 
-      # DYNAMIC DNS
-      - name: Manage Dynamic DNS installation
-        when: manage_golang.changed or ansible_local.ddns.ddns_version|d != ddns_version
+      #
+      #
+      # DDNS
+      - name: Install DDNS
+        when: ansible_local.ddns.ddns_version|d != ddns_version
         ansible.builtin.shell: |
             set -euo pipefail
-            rm -rf /tmp/ddns
-            git clone --depth 1 https://github.com/hugomd/cloudflare-ddns.git /tmp/ddns
-            (cd /tmp/ddns && go build -o ~/ddns)
-            sudo mv ~/ddns /usr/local/bin/ddns
-            echo '{"ddns_version":"{{ ddns_version }}"}' | sudo tee /etc/ansible/facts.d/ddns.fact
+            curl --silent --fail --location https://github.com/hugomd/cloudflare-ddns/releases/download/{{ ddns_version }}/cloudflare-ddns_{{ ddns_version }}_linux_amd64.tar.gz \
+                | tar -zx -C ~/ "cloudflare-ddns"
+            sudo mv ~/cloudflare-ddns /usr/local/bin/ddns
+            jq --null-input '.ddns_version = "{{ ddns_version }}"' | sudo tee /etc/ansible/facts.d/ddns.fact
         args:
             executable: /bin/bash
-      - name: Configure Dynamic DNS
+      - name: Configure DDNS
         vars:
             cloudflare_zone_id: "{{ lookup('community.general.passwordstore', 'website/cloudflare-zone-id') }}"
             cloudflare_api_token: "{{ lookup('community.general.passwordstore', 'website/cloudflare-api-token') }}"
@@ -344,6 +373,6 @@
             src: ../ddns.cfg.j2
             dest: /home/nicholas/ddns.cfg
             mode: "0600"
-      - name: Run Dynamic DNS
+      - name: Run DDNS
         when: configure_ddns.changed or website_directory.changed
         ansible.builtin.shell: ddns -config /home/nicholas/ddns.cfg

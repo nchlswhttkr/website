@@ -7,7 +7,7 @@ After=network.target
 [Service]
 Type=simple
 Environment=HOME=/home/nicholas
-ExecStart=/home/nicholas/.buildkite-agent/bin/buildkite-agent start
+ExecStart=/home/nicholas/.buildkite-agent/buildkite-agent start
 RestartSec=5
 Restart=on-failure
 RestartForceExitStatus=SIGPIPE
