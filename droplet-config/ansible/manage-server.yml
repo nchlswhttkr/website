@@ -65,6 +65,7 @@
             - docker
             - git
             - hugo
+            - mandarin_duck
             - plausible
 
 - name: Install and configure dependencies
@@ -84,6 +85,8 @@
       containerd_version_release: "1.4.4-1"
       docker_compose_version: "1.28.6"
       plausible_ref: "3adc80359b5247ed06ede99a327579da6dd8999c"
+
+      mandarin_duck_version: "1.2"
   tasks:
       #
       #
@@ -310,7 +313,9 @@
             cd /var/www/git/{{ item.repo }}
             sudo su git -c "git symbolic-ref HEAD refs/heads/{{ item.default_branch }}"
             sudo su git -c "touch git-daemon-export-ok"
-            jq '."{{ item.repo }}" = true' <(cat /etc/ansible/facts.d/git.fact) | sudo tee /etc/ansible/facts.d/git.fact
+            TEMP=$(mktemp)
+            jq '."{{ item.repo }}" = true' /etc/ansible/facts.d/git.fact > $TEMP
+            sudo mv $TEMP /etc/ansible/facts.d/git.fact
         args:
             executable: /bin/bash
         with_items:
@@ -318,6 +323,50 @@
               default_branch: main
             - repo: website.git
               default_branch: main
+      - name: Install mandarin-duck
+        when: ansible_local.mandarin_duck.mandarin_duck_version|d != mandarin_duck_version
+        register: install_mandarin_duck
+        remote_user: git
+        vars:
+            buildkite_api_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-api-token') }}"
+        ansible.builtin.shell: |
+            set -euo pipefail
+            [[ ! -d ~/mandarin-duck ]] && git clone --branch main https://github.com/nchlswhttkr/mandarin-duck.git ~/mandarin-duck
+            cd ~/mandarin-duck
+            git fetch
+            git checkout v{{ mandarin_duck_version }}
+            ./install.sh
+            TEMP=$(mktemp)
+            jq '
+                .buildkite_organization_slug = "{{ buildkite_organization_slug }}" |
+                .buildkite_api_token = "{{ buildkite_api_token }}"
+            ' ~/.mandarin-duck/mandarin-duck.cfg > $TEMP
+            mv $TEMP ~/.mandarin-duck/mandarin-duck.cfg
+        args:
+            executable: /bin/bash
+      - name: Install mandarin-duck hooks
+        when: install_mandarin_duck.changed
+        remote_user: git
+        ansible.builtin.shell: |
+            set -euo pipefail
+            cd ~/mandarin-duck
+            ./install.sh /var/www/git/mandarin-duck.git
+            TEMP=$(mktemp)
+            jq '
+                .projects["/var/www/git/mandarin-duck.git"].buildkite_pipeline_slug = "mandarin-duck"
+            ' ~/.mandarin-duck/mandarin-duck.cfg > $TEMP
+            mv $TEMP ~/.mandarin-duck/mandarin-duck.cfg
+        args:
+            executable: /bin/bash
+      - name: Update mandarin-duck fact
+        when: install_mandarin_duck.changed
+        become: true
+        ansible.builtin.copy:
+            content: |
+                {
+                    "mandarin_duck_version": "{{ mandarin_duck_version }}"    
+                }
+            dest: /etc/ansible/facts.d/mandarin_duck.fact
 
       #
       #
