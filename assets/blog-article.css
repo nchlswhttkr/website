@@ -172,6 +172,13 @@ as wide as their container + padding, then centre with an offset and transform.
     padding: 12px;
 }
 
+@media (prefers-color-scheme: dark) {
+    .twitter {
+        background-color: var(--secondary-background-color);
+        border-color: 2px solid var(--text-color);
+    }
+}
+
 .twitter-author,
 .twitter-actions {
     display: flex;
@@ -186,6 +193,10 @@ as wide as their container + padding, then centre with an offset and transform.
 .twitter-author img {
     margin-right: 8px;
     border-radius: 50%;
+}
+
+.twitter-username {
+    font-family: monospace;
 }
 
 .twitter > video,

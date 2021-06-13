@@ -20,9 +20,9 @@
         <div>
             <b>{{ $tweet.author_name }}</b>
             <br />
-            <a href="{{ $tweet.author_url }}">
-                <code>@{{ $tweet.author_username }}</code>
-            </a>
+            <a class="twitter-username" href="{{ $tweet.author_url }}"
+                >@{{ $tweet.author_username }}</a
+            >
         </div>
         <!-- prettier-ignore -->
         <a href="{{ $tweet.tweet_url }}" aria-label="Read tweet from {{ $tweet.author_name }} on Twitter">
