@@ -5,3 +5,4 @@ resources/json/
 .terraform/
 *.tfstate*
 hosts.ini
+backups/

@@ -1,4 +1,4 @@
-.PHONY: cache dev droplet preview server ssh
+.PHONY: backup backup-restore cache dev droplet preview server ssh
 
 site:
 	hugo
@@ -22,3 +22,9 @@ server: droplet
 
 ssh: droplet
 	ssh nicholas@`cat droplet-config/ansible/hosts.ini`
+
+backup:
+	./scripts/backup-server.sh
+
+backup-restore:
+	ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook droplet-config/ansible/restore-backup.yml -i droplet-config/ansible/hosts.ini --extra-vars "date='$$(find backups -mindepth 1 -maxdepth 1 -type d | tail -n 1 | cut -d '/' -f 2)'"
