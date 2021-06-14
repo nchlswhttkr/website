@@ -37,12 +37,6 @@ footer a:visited {
     color: inherit;
 }
 
-p,
-li,
-code {
-    font-size: 1rem;
-}
-
 header > *,
 footer > *,
 nav > * {
