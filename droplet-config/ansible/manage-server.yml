@@ -49,11 +49,14 @@
       - name: Enable linger for local user
         when: create_local_user.changed
         ansible.builtin.shell: loginctl enable-linger nicholas
-      - name: Create Ansible fact directory
+      - name: Create Ansible fact directory and Plausible directory
         when: create_local_user.changed
         ansible.builtin.file:
-            path: /etc/ansible/facts.d
+            path: "{{ item }}"
             state: directory
+        with_items:
+            - /etc/ansible/facts.d
+            - /home/nicholas/plausible-hosting
       - name: Ensure facts files exist
         ansible.builtin.copy:
             content: "{}"
@@ -97,6 +100,7 @@
                 - nginx
                 - fcgiwrap
                 - jq
+                - musl
                 - shellcheck
             state: latest
       - name: Keep apt packages up to date
@@ -277,7 +281,7 @@
               dest: /home/nicholas/.config/systemd/user/
               mode: "0644"
       - name: Restart Plausible
-        when: configure_plausible.changed
+        when: install_docker.changed or configure_plausible.changed
         ansible.builtin.shell: |
             set -euo pipefail
             systemctl --user stop plausible
