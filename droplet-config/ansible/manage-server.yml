@@ -148,10 +148,10 @@
             dest: "{{ item.dest }}"
             mode: "{{ item.mode }}"
         with_items:
-            - src: ../buildkite-agent/buildkite-agent.cfg.j2
+            - src: ../buildkite-agent/buildkite-agent.j2.cfg
               dest: /home/nicholas/.buildkite-agent/buildkite-agent.cfg
               mode: "0600"
-            - src: ../buildkite-agent/environment.j2
+            - src: ../buildkite-agent/environment.j2.sh
               dest: /home/nicholas/.buildkite-agent/hooks/environment
               mode: "0644"
             - src: ../buildkite-agent/buildkite-agent@.service
@@ -258,14 +258,14 @@
             dest: "{{ item.dest }}"
             mode: "{{ item.mode }}"
         with_items:
-            - src: ../plausible/plausible-conf.env.j2
+            - src: ../plausible/plausible-conf.j2.env
               dest: /home/nicholas/plausible-hosting/plausible-conf.env
               mode: "0600"
-            - src: ../plausible/plausible-smtp-conf.env.j2
+            - src: ../plausible/plausible-smtp-conf.j2.env
               dest: /home/nicholas/plausible-hosting/plausible-smtp-conf.env
               mode: "0600"
-            - src: ../plausible/docker-compose.yml
-              dest: /home/nicholas/plausible-hosting/
+            - src: ../plausible/docker-compose.j2.yml
+              dest: /home/nicholas/plausible-hosting/docker-compose.yml
               mode: "0644"
             - src: ../plausible/clickhouse-config.xml
               dest: /home/nicholas/plausible-hosting/
@@ -414,7 +414,7 @@
         register: configure_ddns
         no_log: true
         ansible.builtin.template:
-            src: ../ddns.cfg.j2
+            src: ../ddns.j2.cfg
             dest: /home/nicholas/ddns.cfg
             mode: "0600"
       - name: Run DDNS
