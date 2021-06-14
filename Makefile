@@ -17,7 +17,7 @@ droplet:
 preview:
 	./scripts/preview-server.sh
 
-server: droplet
+server:
 	ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook droplet-config/ansible/manage-server.yml -i droplet-config/ansible/hosts.ini
 
 ssh: droplet

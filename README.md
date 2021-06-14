@@ -28,5 +28,7 @@ You'll need a few tools installed, and a couple of secrets from your password st
 pass list # verify secrets are available
 git clone https://github.com/nchlswhttkr/website.git
 cd website
+make droplet
 make server
+make backup-restore # if you have a backup
 ```
