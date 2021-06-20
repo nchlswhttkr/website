@@ -102,7 +102,7 @@
         when: ansible_local.hugo.hugo_version|d != hugo_version
         ansible.builtin.shell: |
             set -euo pipefail
-            curl -L https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_0.83.1_Linux-64bit.tar.gz \
+            curl -L https://github.com/gohugoio/hugo/releases/download/v{{ hugo_version }}/hugo_{{ hugo_version }}_Linux-64bit.tar.gz \
               | tar -zx -C ~/ hugo
             sudo mv ~/hugo /usr/local/bin/hugo
             hugo version
