@@ -4,19 +4,21 @@
     {{ $secret = readFile "secrets/embed-proxy-secret.txt" }}
 {{ end }}
 {{ $album := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/bandcamp?" (querify "artist" (.Get 0) "album" (.Get 1) "secret" $secret) }}
-{{ $script := readFile "dependencies/bandcamp-mini-embed/dist/bundle.js" | resources.FromString "bandcamp-mini-embed/bundle.js" }}
-{{ $styles := readFile "dependencies/bandcamp-mini-embed/dist/bundle.css" | resources.FromString "bandcamp-mini-embed/bundle.css" }}
 
 <noscript>
     <a href="https://{{ .Get 0 }}.bandcamp.com/album/{{ .Get 1 }}">
         Listen to {{ $album.title }} on Bandcamp
     </a>
 </noscript>
-<link rel="stylesheet" href="{{ $styles.Permalink }}" />
-<div class="bandcamp-mini-embed" style="height: 336px; overflow: hidden"></div>
+<link
+    rel="stylesheet"
+    href="https://bandcamp-mini-embed.nchlswhttkr.workers.dev/embed/bundle.css"
+/>
+<div class="bandcamp-mini-embed" style="height: 336px"></div>
 <script
     async
     data-album-id="{{ $album.albumId }}"
-    data-proxy-root="https://nicholas.cloud/bandcamp-proxy/"
-    src="{{ $script.Permalink }}"
+    data-fallback-text="Listen to {{ $album.title }} on Bandcamp"
+    data-fallback-url="https://{{ .Get 0 }}.bandcamp.com/album/{{ .Get 1 }}"
+    src="https://bandcamp-mini-embed.nchlswhttkr.workers.dev/embed/bundle.js"
 ></script>
