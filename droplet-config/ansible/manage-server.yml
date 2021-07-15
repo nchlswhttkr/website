@@ -69,6 +69,7 @@
             - git
             - hugo
             - mandarin_duck
+            - writefreely
 
 - name: Install and configure dependencies
   hosts: all
@@ -350,6 +351,56 @@
                     "mandarin_duck_version": "{{ mandarin_duck_version }}"    
                 }
             dest: /etc/ansible/facts.d/mandarin_duck.fact
+
+      #
+      #
+      # WRITEFREELY
+      - name: Install Writefreely
+        register: install_writefreely
+        when: ansible_local.writefreely.writefreely_version|d != writefreely_version
+        ansible.builtin.shell: |
+            set -euo pipefail
+            curl -L https://github.com/writefreely/writefreely/releases/download/v{{ writefreely_version }}/writefreely_{{ writefreely_version }}_linux_amd64.tar.gz \
+              | tar -zx -C ~/ writefreely/
+            jq --null-input '.writefreely_version = "{{ writefreely_version }}"' | sudo tee /etc/ansible/facts.d/writefreely.fact
+        args:
+            executable: /bin/bash
+      - name: Configure Writefreely instance
+        register: configure_writefreely
+        no_log: true
+        vars:
+        ansible.builtin.template:
+            src: "{{ item.src }}"
+            dest: "{{ item.dest }}"
+        with_items:
+            - src: ../writefreely/config.ini
+              dest: /home/nicholas/writefreely/
+            - src: ../writefreely/writefreely.service
+              dest: /home/nicholas/.config/systemd/user
+      - name: Set up Writefreely instance
+        when: install_writefreely.changed or configure_writefreely.changed
+        vars:
+            default_username: diary
+            default_password: diary
+        ansible.builtin.shell: |
+            set -euo pipefail
+            cd ~/writefreely
+            if [ -f writefreely.db ]; then exit 0; fi
+            ./writefreely db init
+            ./writefreely user create --admin {{ default_username }}:{{ default_password }}
+            ./writefreely keys generate
+        args:
+            executable: /bin/bash
+      - name: Restart Writefreely instance
+        when: install_writefreely.changed or configure_writefreely.changed
+        ansible.builtin.shell: |
+            set -euo pipefail
+            systemctl --user stop writefreely
+            systemctl --user daemon-reload
+            systemctl --user start writefreely
+            systemctl --user enable writefreely
+        args:
+            executable: /bin/bash
 
       #
       #

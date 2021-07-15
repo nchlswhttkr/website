@@ -1,0 +1,10 @@
+[Unit]
+Description=writefreely webserver
+After=network.target
+
+[Service]
+ExecStart=/home/nicholas/writefreely/writefreely
+WorkingDirectory=/home/nicholas/writefreely
+
+[Install]
+WantedBy=default.target

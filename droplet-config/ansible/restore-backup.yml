@@ -1,3 +1,4 @@
+# TODO type date of restore rather than RESTORE
 ---
 - name: Restore a backup from a local copy
   hosts: all
@@ -9,8 +10,11 @@
         ansible.builtin.pause:
             prompt: Type "RESTORE" to restore backup from {{ date }}
         failed_when: confirm.user_input != "RESTORE"
-      - name: Stop Plausible server
-        ansible.builtin.shell: systemctl --user stop plausible
+      - name: Stop servers
+        ansible.builtin.shell: systemctl --user stop {{ item }}
+        with_items:
+            - plausible
+            - writefreely
       - name: Delete existing Docker volumes
         become: true
         ansible.builtin.shell: docker volume rm --force {{ item }}
@@ -25,6 +29,7 @@
         with_items:
             - plausible-event-data.tar.gz
             - plausible-user-data.tar.gz
+            - writefreely-data.tar.gz
       - name: Overwrite volumes
         become: true
         ansible.builtin.shell: docker run --rm --mount "src={{ item.volume }},dst={{ item.path }}" -v /tmp:/backup ubuntu tar --extract --gzip -f /backup/{{ item.backup }} {{ item.path }}
@@ -35,5 +40,12 @@
             - backup: plausible-user-data.tar.gz
               volume: plausible-hosting_db-data
               path: /var/lib/postgresql/data
-      - name: Restart Plausible server
-        ansible.builtin.shell: systemctl --user start plausible
+      - name: Overwrite Writefreely data
+        ansible.builtin.shell: tar --overwrite -xf /tmp/writefreely-data.tar.gz
+        args:
+            warn: false # ansible.builtin.unarchive doesn't play nice with absolute paths
+      - name: Restart servers
+        ansible.builtin.shell: systemctl --user start {{ item }}
+        with_items:
+            - plausible
+            - writefreely

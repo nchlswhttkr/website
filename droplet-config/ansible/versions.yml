@@ -13,3 +13,5 @@ docker_compose_version: "1.29.2"
 plausible_version: "1.3.0"
 
 mandarin_duck_version: "1.2"
+
+writefreely_version: "0.13.1"

@@ -13,3 +13,10 @@ ssh "nicholas@$(cat droplet-config/ansible/hosts.ini)" "sudo docker run --rm --m
 echo Restarting Plausible containers
 ssh "nicholas@$(cat droplet-config/ansible/hosts.ini)" "systemctl --user start plausible"
 
+echo --- Backing up Writefreely data
+echo Stopping Writefreely
+ssh "nicholas@$(cat droplet-config/ansible/hosts.ini)" "systemctl --user stop writefreely"
+echo Creating a backup of data/keys
+ssh "nicholas@$(cat droplet-config/ansible/hosts.ini)" "tar --create --absolute-names --gzip /home/nicholas/writefreely/writefreely.db /home/nicholas/writefreely/keys 2>/dev/null" > "$DESTINATION/writefreely-data.tar.gz"
+echo Restarting Writefreely
+ssh "nicholas@$(cat droplet-config/ansible/hosts.ini)" "systemctl --user start writefreely"

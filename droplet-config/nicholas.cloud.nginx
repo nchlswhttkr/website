@@ -101,3 +101,54 @@ server {
     server_name plausible.nicholas.cloud;
     return 301 https://plausible.nicholas.cloud$request_uri;
 }
+
+# Writefreely - https://writefreely.org/start
+server {
+    listen 443 ssl;
+
+    server_name write.nicholas.cloud;
+
+    ssl_certificate /home/nicholas/nicholas.cloud.certificate;
+    ssl_certificate_key /home/nicholas/nicholas.cloud.key;
+    ssl_protocols TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+
+    # Cloudflare applies Brotli, this isn't necessary at the moment
+    # gzip on;
+    # gzip_types
+    #   application/javascript
+    #   application/x-javascript
+    #   application/json
+    #   application/rss+xml
+    #   application/xml
+    #   image/svg+xml
+    #   image/x-icon
+    #   application/vnd.ms-fontobject
+    #   application/font-sfnt
+    #   text/css
+    #   text/plain;
+    # gzip_min_length 256;
+    # gzip_comp_level 5;
+    # gzip_http_version 1.1;
+    # gzip_vary on;
+
+    location ~ ^/(css|img|js|fonts)/ {
+        root /home/nicholas/writefreely/static;
+        # Optionally cache these files in the browser:
+        # expires 12M;
+    }
+
+    location / {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_pass http://127.0.0.1:8080;
+        proxy_redirect off;
+    }
+}
+server {
+    listen 80;
+    server_name write.nicholas.cloud;
+    return 301 https://write.nicholas.cloud$request_uri;
+}
