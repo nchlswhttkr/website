@@ -38,7 +38,7 @@ resource "digitalocean_droplet" "website" {
   monitoring = true
 
   lifecycle {
-    ignore_changes = [ monitoring ]
+    ignore_changes = [monitoring]
   }
 }
 

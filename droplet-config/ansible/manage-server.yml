@@ -292,8 +292,8 @@
         become: true
         ansible.builtin.file:
             path: /var/www/git/
-            owner: nicholas
-            group: nicholas
+            owner: git
+            group: git
             state: directory
       - name: Ensure Git projects exist
         when: ansible_local.git[item.repo]|d != true
@@ -301,8 +301,7 @@
         ansible.builtin.shell: |
             set -euo pipefail
             cd /var/www/git/
-            git clone --bare https://github.com/nchlswhttkr/{{ item.repo }} {{ item.repo }}
-            sudo chown -R git:git /var/www/git/{{ item.repo }}
+            sudo su git -c "git clone --bare https://github.com/nchlswhttkr/{{ item.repo }} {{ item.repo }}"
             cd {{ item.repo }}
             sudo su git -c "git remote remove origin"
             sudo su git -c "touch git-daemon-export-ok"
@@ -321,6 +320,19 @@
               description: My personal website
             - repo: bandcamp-mini-embed.git
               description: A music player embed for Bandcamp albums
+      - name: Create post-receive hook for all local Git repos
+        remote_user: git
+        ansible.builtin.template:
+            src: ../git/post-receive.j2.sh
+            dest: /var/www/git/{{ item.repo }}/hooks/post-receive
+            mode: "0755"
+        with_items:
+            - repo: mandarin-duck.git
+              mandarin_duck_enabled: true
+            - repo: website.git
+              mandarin_duck_enabled: false
+            - repo: bandcamp-mini-embed.git
+              mandarin_duck_enabled: false
       - name: Install mandarin-duck
         when: ansible_local.mandarin_duck.mandarin_duck_version|d != mandarin_duck_version
         register: install_mandarin_duck
@@ -375,6 +387,7 @@
             times: false
       - name: Sync stagit icon
         register: sync_stagit_icon
+        remote_user: git
         ansible.builtin.copy:
             src: ../git/icon.png
             dest: /var/www/git/icon.png
@@ -387,11 +400,13 @@
             make
             sudo make install
             make clean
-            cp style.css /var/www/git/
+            sudo cp style.css /var/www/git/
+            sudo chown git:git /var/www/git/style.css
         args:
             executable: /bin/bash
       - name: Regenerate stagit index and projects
         when: install_stagit.changed or git_projects.changed
+        remote_user: git
         ansible.builtin.shell: |
             set -euo pipefail
             find /var/www/git -mindepth 1 -maxdepth 1 -name "*.git" | cut -d '/' -f 5 | while read REPO; do
