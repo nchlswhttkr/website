@@ -3,4 +3,5 @@ Disallow: /newsletter/subscribe/
 Disallow: /goto/
 Disallow: /files/
 Disallow: /media-proxy/
+Disallow: /git/
 Sitemap: {{ .Site.BaseURL }}sitemap.xml

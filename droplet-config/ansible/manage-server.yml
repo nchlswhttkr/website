@@ -87,6 +87,8 @@
                 - jq
                 - musl
                 - shellcheck
+                - build-essential
+                - libgit2-dev
             state: latest
       - name: Keep apt packages up to date
         become: true
@@ -280,7 +282,7 @@
       #
       #
       # GIT
-      - name: Ensure Git directory exists
+      - name: Ensure Git directory exists, owned by nicholas
         become: true
         ansible.builtin.file:
             path: /var/www/git/
@@ -289,14 +291,18 @@
             state: directory
       - name: Ensure Git projects exist
         when: ansible_local.git[item.repo]|d != true
+        register: git_projects
         ansible.builtin.shell: |
             set -euo pipefail
-            mkdir -p /var/www/git/{{ item.repo }}
-            sudo chown git:git /var/www/git/{{ item.repo }}
-            sudo su git -c "git init --bare /var/www/git/{{ item.repo }}"
-            cd /var/www/git/{{ item.repo }}
-            sudo su git -c "git symbolic-ref HEAD refs/heads/{{ item.default_branch }}"
+            cd /var/www/git/
+            git clone --bare {{ item.upstream }} {{ item.repo }}
+            sudo chown -R git:git /var/www/git/{{ item.repo }}
+            cd {{ item.repo }}
+            sudo su git -c "git remote remove origin"
             sudo su git -c "touch git-daemon-export-ok"
+            sudo su git -c "echo 'Nicholas Whittaker' > owner"
+            sudo su git -c "echo '{{ item.description }}' > description"
+            sudo su git -c "echo 'https://nicholas.cloud/git/{{ item.repo }}' > url"
             TEMP=$(mktemp)
             jq '."{{ item.repo }}" = true' /etc/ansible/facts.d/git.fact > $TEMP
             sudo mv $TEMP /etc/ansible/facts.d/git.fact
@@ -304,9 +310,11 @@
             executable: /bin/bash
         with_items:
             - repo: mandarin-duck.git
-              default_branch: main
+              description: Trigger Buildkite pipelines from a self-hosted Git repository
+              upstream: https://github.com/nchlswhttkr/mandarin-duck.git
             - repo: website.git
-              default_branch: main
+              description: My personal website
+              upstream: https://github.com/nchlswhttkr/website.git
       - name: Install mandarin-duck
         when: ansible_local.mandarin_duck.mandarin_duck_version|d != mandarin_duck_version
         register: install_mandarin_duck
@@ -351,6 +359,43 @@
                     "mandarin_duck_version": "{{ mandarin_duck_version }}"    
                 }
             dest: /etc/ansible/facts.d/mandarin_duck.fact
+      - name: Sync checkout of stagit
+        register: sync_stagit
+        ansible.posix.synchronize:
+            src: ../git/stagit/
+            dest: /home/nicholas/stagit/
+            delete: true
+            checksum: true
+            times: false
+      - name: Sync stagit icon
+        register: sync_stagit_icon
+        ansible.builtin.copy:
+            src: ../git/icon.png
+            dest: /var/www/git/icon.png
+      - name: Build and install stagit
+        when: sync_stagit.changed or sync_stagit_icon.changed
+        register: install_stagit
+        ansible.builtin.shell: |
+            set -euo pipefail
+            cd ~/stagit
+            make
+            sudo make install
+            make clean
+            cp style.css /var/www/git/
+        args:
+            executable: /bin/bash
+      - name: Regenerate stagit index and projects
+        when: install_stagit.changed or git_projects.changed
+        ansible.builtin.shell: |
+            set -euo pipefail
+            find /var/www/git -mindepth 1 -maxdepth 1 -name "*.git" | cut -d '/' -f 5 | while read REPO; do
+                mkdir -p "/var/www/git/${REPO%%.git}"
+                cd "/var/www/git/${REPO%%.git}"
+                stagit -u "https://nicholas.cloud/git/${REPO%%.git}/" "/var/www/git/$REPO"
+            done
+            stagit-index $(find /var/www/git -mindepth 1 -maxdepth 1 -name "*.git") > /var/www/git/index.html
+        args:
+            executable: /bin/bash
 
       #
       #

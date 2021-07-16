@@ -20,11 +20,11 @@ server {
     # https://nicholas.cloud/blips/no-floc-for-me-please-google/
     add_header "Permissions-Policy" "interest-cohort=()";
 
+    # By default everything stays cached for at most 2 mins
+    add_header "Cache-Control" "public, max-age=0, s-maxage=120";
+
     # WEBSITE
     location / {
-        # By default everything stays fresh on proxy for at most 5 mins
-        add_header "Cache-Control" "public, max-age=0, s-maxage=300";
-
         # Cache media on clients for a month
         location ~* \.(gif|jpg|jpeg|png|svg)$ {
             add_header "Cache-Control" "public, max-age=2592000, s-maxage=3600, immutable";
@@ -44,16 +44,26 @@ server {
     # FILES
     location /files/ {
         alias /home/nicholas/public-files/;
-        add_header "Cache-Control" "public, max-age=0, s-maxage=60";
     }
 
     # GIT
     location /git/ {
-        include /etc/nginx/fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME /usr/lib/git-core/git-http-backend;
-        fastcgi_param GIT_PROJECT_ROOT /var/www/; # TODO: Don't assume URI
-        fastcgi_param PATH_INFO $uri;
-        fastcgi_pass unix:/var/run/fcgiwrap.socket;
+        root /var/www/;
+
+        location ~* /style\.css$ {
+            try_files /git/style.css =404;
+        }
+        location ~* /(favicon|logo)\.png$ {
+            try_files /git/icon.png =404;
+        }
+
+        location ~* ^/git/[^/]+\.git {
+            include /etc/nginx/fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME /usr/lib/git-core/git-http-backend;
+            fastcgi_param GIT_PROJECT_ROOT /var/www/; # TODO: Don't assume URI
+            fastcgi_param PATH_INFO $uri;
+            fastcgi_pass unix:/var/run/fcgiwrap.socket;
+        }
     }
 }
 
