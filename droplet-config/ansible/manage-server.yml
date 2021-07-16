@@ -237,6 +237,12 @@
             ' | sudo tee /etc/ansible/facts.d/docker.fact
         args:
             executable: /bin/bash
+      - name: Ensure Plausible directory exists
+        ansible.builtin.file:
+            path: /home/nicholas/plausible-hosting
+            owner: nicholas
+            group: nicholas
+            state: directory
       - name: Configure Plausible
         register: configure_plausible
         no_log: true
@@ -282,7 +288,7 @@
       #
       #
       # GIT
-      - name: Ensure Git directory exists, owned by nicholas
+      - name: Ensure Git directory exists
         become: true
         ansible.builtin.file:
             path: /var/www/git/
@@ -295,7 +301,7 @@
         ansible.builtin.shell: |
             set -euo pipefail
             cd /var/www/git/
-            git clone --bare {{ item.upstream }} {{ item.repo }}
+            git clone --bare https://github.com/nchlswhttkr/{{ item.repo }} {{ item.repo }}
             sudo chown -R git:git /var/www/git/{{ item.repo }}
             cd {{ item.repo }}
             sudo su git -c "git remote remove origin"
@@ -311,10 +317,10 @@
         with_items:
             - repo: mandarin-duck.git
               description: Trigger Buildkite pipelines from a self-hosted Git repository
-              upstream: https://github.com/nchlswhttkr/mandarin-duck.git
             - repo: website.git
               description: My personal website
-              upstream: https://github.com/nchlswhttkr/website.git
+            - repo: bandcamp-mini-embed.git
+              description: A music player embed for Bandcamp albums
       - name: Install mandarin-duck
         when: ansible_local.mandarin_duck.mandarin_duck_version|d != mandarin_duck_version
         register: install_mandarin_duck
@@ -421,7 +427,7 @@
             - src: ../writefreely/config.ini
               dest: /home/nicholas/writefreely/
             - src: ../writefreely/writefreely.service
-              dest: /home/nicholas/.config/systemd/user
+              dest: /home/nicholas/.config/systemd/user/
       - name: Set up Writefreely instance
         when: install_writefreely.changed or configure_writefreely.changed
         vars:

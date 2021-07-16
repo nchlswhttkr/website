@@ -30,11 +30,16 @@ data "digitalocean_ssh_key" "default" {
 }
 
 resource "digitalocean_droplet" "website" {
-  image    = "ubuntu-20-04-x64"
-  name     = var.droplet_name
-  region   = "sgp1"
-  size     = "s-1vcpu-1gb"
-  ssh_keys = [data.digitalocean_ssh_key.default.fingerprint]
+  image      = "ubuntu-20-04-x64"
+  name       = var.droplet_name
+  region     = "sgp1"
+  size       = "s-1vcpu-1gb"
+  ssh_keys   = [data.digitalocean_ssh_key.default.fingerprint]
+  monitoring = true
+
+  lifecycle {
+    ignore_changes = [ monitoring ]
+  }
 }
 
 output "droplet_ipv4_address" {
