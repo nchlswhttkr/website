@@ -5,6 +5,7 @@
   tasks:
       - name: Force GPG to prompt if not unlocked
         ansible.builtin.shell: echo | gpg --clearsign > /dev/null
+        changed_when: false
 
 - name: Create account for everyday use
   hosts: all
@@ -66,9 +67,7 @@
             - buildkite
             - ddns
             - docker
-            - git
             - hugo
-            - mandarin_duck
             - writefreely
 
 - name: Install and configure dependencies
@@ -295,46 +294,54 @@
             owner: git
             group: git
             state: directory
+      - name: List existing Git projects
+        register: existing_git_projects
+        ansible.builtin.shell: find /var/www/git -mindepth 1 -maxdepth 1 -name "*.git" | sed 's;/var/www/git/\(.*\).git;\1;'
+        changed_when: false
+      - name: Fetch list of repos to mirror from GitHub
+        register: fetch_repos
+        ansible.builtin.uri:
+            url: https://api.github.com/search/repositories?q=user:nchlswhttkr+topic:nicholas-cloud
+            body_format: json
+            body:
+                q: user:nchlswhttkr+topic:nicholas-cloud
+            status_code: [200]
+        changed_when: false
+        failed_when: fetch_repos.failed or fetch_repos.json.incomplete_results # expects a complete search always
       - name: Ensure Git projects exist
-        when: ansible_local.git[item.repo]|d != true
-        register: git_projects
+        when: item.name not in existing_git_projects.stdout_lines
+        remote_user: git
+        no_log: true
+        register: create_git_projects
         ansible.builtin.shell: |
             set -euo pipefail
             cd /var/www/git/
-            sudo su git -c "git clone --bare https://github.com/nchlswhttkr/{{ item.repo }} {{ item.repo }}"
-            cd {{ item.repo }}
-            sudo su git -c "git remote remove origin"
-            sudo su git -c "touch git-daemon-export-ok"
-            sudo su git -c "echo 'Nicholas Whittaker' > owner"
-            sudo su git -c "echo '{{ item.description }}' > description"
-            sudo su git -c "echo 'https://nicholas.cloud/git/{{ item.repo }}' > url"
-            TEMP=$(mktemp)
-            jq '."{{ item.repo }}" = true' /etc/ansible/facts.d/git.fact > $TEMP
-            sudo mv $TEMP /etc/ansible/facts.d/git.fact
+            git clone --bare https://github.com/nchlswhttkr/{{ item.name }}.git {{ item.name }}.git
+            cd {{ item.name }}.git
+            git remote remove origin
+            touch git-daemon-export-ok
+            echo 'Nicholas Whittaker' > owner
+            echo '{{ item.description }}' > description
+            echo 'https://nicholas.cloud/git/{{ item.name }}.git' > url
         args:
             executable: /bin/bash
-        with_items:
-            - repo: mandarin-duck.git
-              description: Trigger Buildkite pipelines from a self-hosted Git repository
-            - repo: website.git
-              description: My personal website
-            - repo: bandcamp-mini-embed.git
-              description: A music player embed for Bandcamp albums
+        loop: "{{ fetch_repos.json['items'] }}"
       - name: Create post-receive hook for all local Git repos
         remote_user: git
+        no_log: true
         ansible.builtin.template:
             src: ../git/post-receive.j2.sh
-            dest: /var/www/git/{{ item.repo }}/hooks/post-receive
+            dest: /var/www/git/{{ item.name }}.git/hooks/post-receive
             mode: "0755"
-        with_items:
-            - repo: mandarin-duck.git
-              mandarin_duck_enabled: true
-            - repo: website.git
-              mandarin_duck_enabled: false
-            - repo: bandcamp-mini-embed.git
-              mandarin_duck_enabled: false
+        loop: "{{ fetch_repos.json['items'] }}"
+      - name: Check mandarin-duck version
+        remote_user: git
+        register: check_mandarin_duck_version
+        ansible.builtin.shell: jq --raw-output '.version' .mandarin-duck/mandarin-duck.cfg
+        ignore_errors: true
+        changed_when: false
       - name: Install mandarin-duck
-        when: ansible_local.mandarin_duck.mandarin_duck_version|d != mandarin_duck_version
+        when: check_mandarin_duck_version.stdout != mandarin_duck_version
         register: install_mandarin_duck
         remote_user: git
         vars:
@@ -345,38 +352,16 @@
             cd ~/mandarin-duck
             git fetch
             git checkout v{{ mandarin_duck_version }}
-            ./install.sh
-            TEMP=$(mktemp)
-            jq '
-                .buildkite_organization_slug = "{{ buildkite_organization_slug }}" |
-                .buildkite_api_token = "{{ buildkite_api_token }}"
-            ' ~/.mandarin-duck/mandarin-duck.cfg > $TEMP
-            mv $TEMP ~/.mandarin-duck/mandarin-duck.cfg
-        args:
-            executable: /bin/bash
-      - name: Install mandarin-duck hooks
-        when: install_mandarin_duck.changed
-        remote_user: git
-        ansible.builtin.shell: |
-            set -euo pipefail
-            cd ~/mandarin-duck
             ./install.sh /var/www/git/mandarin-duck.git
             TEMP=$(mktemp)
             jq '
+                .buildkite_organization_slug = "{{ buildkite_organization_slug }}" |
+                .buildkite_api_token = "{{ buildkite_api_token }}" |
                 .projects["/var/www/git/mandarin-duck.git"].buildkite_pipeline_slug = "mandarin-duck"
             ' ~/.mandarin-duck/mandarin-duck.cfg > $TEMP
             mv $TEMP ~/.mandarin-duck/mandarin-duck.cfg
         args:
             executable: /bin/bash
-      - name: Update mandarin-duck fact
-        when: install_mandarin_duck.changed
-        become: true
-        ansible.builtin.copy:
-            content: |
-                {
-                    "mandarin_duck_version": "{{ mandarin_duck_version }}"    
-                }
-            dest: /etc/ansible/facts.d/mandarin_duck.fact
       - name: Sync checkout of stagit
         register: sync_stagit
         ansible.posix.synchronize:
@@ -405,7 +390,7 @@
         args:
             executable: /bin/bash
       - name: Regenerate stagit index and projects
-        when: install_stagit.changed or git_projects.changed
+        when: install_stagit.changed or create_git_projects.changed
         remote_user: git
         ansible.builtin.shell: |
             set -euo pipefail
