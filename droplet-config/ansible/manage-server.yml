@@ -287,13 +287,16 @@
       #
       #
       # GIT
-      - name: Ensure Git directory exists
+      - name: Ensure Git-related directories exist
         become: true
         ansible.builtin.file:
-            path: /var/www/git/
+            path: "{{ item }}"
             owner: git
             group: git
             state: directory
+        with_items:
+            - /var/www/git/
+            - /home/git/.mandarin-duck/
       - name: List existing Git projects
         register: existing_git_projects
         ansible.builtin.shell: find /var/www/git -mindepth 1 -maxdepth 1 -name "*.git" | sed 's;/var/www/git/\(.*\).git;\1;'
@@ -338,28 +341,26 @@
         remote_user: git
         register: check_mandarin_duck_version
         ansible.builtin.shell: jq --raw-output '.version' .mandarin-duck/mandarin-duck.cfg
-        ignore_errors: true
+        ignore_errors: true # won't exist on initial install
         changed_when: false
+      - name: Sync mandarin-duck config
+        remote_user: git
+        vars:
+            buildkite_api_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-api-token') }}"
+        ansible.builtin.template:
+            src: ../mandarin-duck.j2.cfg
+            dest: /home/git/.mandarin-duck/mandarin-duck.cfg
       - name: Install mandarin-duck
         when: check_mandarin_duck_version.stdout != mandarin_duck_version
         register: install_mandarin_duck
         remote_user: git
-        vars:
-            buildkite_api_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-api-token') }}"
         ansible.builtin.shell: |
             set -euo pipefail
             [[ ! -d ~/mandarin-duck ]] && git clone --branch main https://github.com/nchlswhttkr/mandarin-duck.git ~/mandarin-duck
             cd ~/mandarin-duck
             git fetch
             git checkout v{{ mandarin_duck_version }}
-            ./install.sh /var/www/git/mandarin-duck.git
-            TEMP=$(mktemp)
-            jq '
-                .buildkite_organization_slug = "{{ buildkite_organization_slug }}" |
-                .buildkite_api_token = "{{ buildkite_api_token }}" |
-                .projects["/var/www/git/mandarin-duck.git"].buildkite_pipeline_slug = "mandarin-duck"
-            ' ~/.mandarin-duck/mandarin-duck.cfg > $TEMP
-            mv $TEMP ~/.mandarin-duck/mandarin-duck.cfg
+            ./install.sh
         args:
             executable: /bin/bash
       - name: Sync checkout of stagit
