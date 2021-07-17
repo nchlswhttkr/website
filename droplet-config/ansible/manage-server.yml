@@ -398,6 +398,18 @@
             stagit-index $(find /var/www/git -mindepth 1 -maxdepth 1 -name "*.git") > /var/www/git/index.html
         args:
             executable: /bin/bash
+      - name: Sync mirroring client SSH public key
+        remote_user: git
+        register: sync_mirror_ssh_key
+        vars:
+            ssh_key: "{{ lookup('community.general.passwordstore', 'website/git-mirror-ssh-public-key') }}"
+        ansible.builtin.copy:
+            content: "{{ ssh_key }}"
+            dest: /home/git/.ssh/id_ed25519.pub
+      - name: Update authorized_keys for Git user
+        remote_user: git
+        when: sync_mirror_ssh_key.changed
+        ansible.builtin.shell: cat ~nicholas/.ssh/authorized_keys ./.ssh/id_ed25519.pub > ./.ssh/authorized_keys
 
       #
       #
