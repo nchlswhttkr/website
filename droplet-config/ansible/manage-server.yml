@@ -318,9 +318,9 @@
             cd {{ item.name }}.git
             git remote remove origin
             touch git-daemon-export-ok
-            echo 'Nicholas Whittaker' > owner
-            echo '{{ item.description }}' > description
-            echo 'https://nicholas.cloud/git/{{ item.name }}.git' > url
+            echo "Nicholas Whittaker" > owner
+            echo "{{ item.description }}" > description
+            echo "https://nicholas.cloud/git/{{ item.name }}.git" > url
         args:
             executable: /bin/bash
         loop: "{{ fetch_repos.json['items'] }}"
