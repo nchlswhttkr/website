@@ -1,0 +1,20 @@
+- name: Perform general set up tasks
+  hosts: all
+  remote_user: nicholas
+  gather_facts: false
+  tasks:
+      - name: Install general tools/libraries
+        become: true
+        ansible.builtin.apt:
+            name:
+                - jq
+                - shellcheck
+                - build-essential
+            state: latest
+      - name: Keep apt packages up to date
+        become: true
+        ansible.builtin.apt:
+            autoremove: true
+            update_cache: true
+            name: "*"
+            state: latest

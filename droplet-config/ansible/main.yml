@@ -1,0 +1,72 @@
+---
+- name: Ensure passwordstore is unlocked
+  hosts: localhost
+  gather_facts: false
+  tasks:
+      - name: Force GPG to prompt if not unlocked
+        ansible.builtin.shell: echo | gpg --clearsign > /dev/null
+        changed_when: false
+
+- name: Create account for everyday use
+  hosts: all
+  gather_facts: false
+  remote_user: root
+  tasks:
+      - name: Enable UFW
+        community.general.ufw:
+            rule: allow
+            port: "{{ item }}"
+            state: enabled
+        with_items:
+            - ssh
+            - http
+            - https
+      - name: Create local user
+        register: create_local_user
+        ansible.builtin.user:
+            name: nicholas
+            shell: /bin/bash
+      - name: Give local user passwordless sudo # I apologise for this sin
+        when: create_local_user.changed
+        ansible.builtin.copy:
+            dest: /etc/sudoers.d/nicholas
+            content: |
+                nicholas ALL=(ALL:ALL) NOPASSWD: ALL
+            validate: visudo -cf %s
+      - name: Set up SSH for local user
+        when: create_local_user.changed
+        ansible.builtin.copy:
+            src: /root/.ssh/authorized_keys
+            remote_src: true
+            dest: /home/nicholas/.ssh/
+            owner: nicholas
+            group: nicholas
+      - name: Enable linger for local user
+        when: create_local_user.changed
+        ansible.builtin.shell: loginctl enable-linger nicholas
+      - name: Create Ansible fact directory
+        when: create_local_user.changed
+        ansible.builtin.file:
+            path: /etc/ansible/facts.d
+            state: directory
+      - name: Ensure facts files exist
+        ansible.builtin.copy:
+            content: "{}"
+            dest: /etc/ansible/facts.d/{{ item }}.fact
+            force: false
+        with_items:
+            - buildkite
+            - ddns
+            - docker
+            - hugo
+            - writefreely
+
+- import_playbook: manage-general.yml
+- import_playbook: manage-hugo.yml
+- import_playbook: manage-buildkite.yml
+- import_playbook: manage-website.yml
+- import_playbook: manage-plausible.yml
+- import_playbook: manage-git.yml
+- import_playbook: manage-writefreely.yml
+- import_playbook: manage-nginx.yml
+- import_playbook: manage-ddns.yml

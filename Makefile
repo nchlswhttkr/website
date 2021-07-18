@@ -18,7 +18,7 @@ preview:
 	./scripts/preview-server.sh
 
 server:
-	ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook droplet-config/ansible/manage-server.yml --inventory droplet-config/ansible/hosts.ini --extra-vars @droplet-config/ansible/versions.yml
+	ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook droplet-config/ansible/main.yml --inventory droplet-config/ansible/hosts.ini --extra-vars @droplet-config/ansible/versions.yml
 
 ssh:
 	ssh nicholas@`cat droplet-config/ansible/hosts.ini`

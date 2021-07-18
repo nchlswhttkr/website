@@ -1,0 +1,46 @@
+- name: Set up Buildkite
+  hosts: all
+  remote_user: nicholas
+  tasks:
+      - name: Download Buildkite agent
+        register: install_buildkite
+        when: ansible_local.buildkite.buildkite_version|d != buildkite_version
+        ansible.builtin.shell: |
+            set -euo pipefail
+            mkdir -p ~/.buildkite-agent/hooks
+            curl --silent --fail --location https://github.com/buildkite/agent/releases/download/v{{ buildkite_version }}/buildkite-agent-linux-amd64-{{ buildkite_version }}.tar.gz \
+              | tar -zx -C ~/.buildkite-agent "./buildkite-agent"
+            ~/.buildkite-agent/buildkite-agent --version
+            jq --null-input '.buildkite_version = "{{ buildkite_version }}"' | sudo tee /etc/ansible/facts.d/buildkite.fact
+        args:
+            executable: /bin/bash
+      - name: Configure Buildkite agent
+        register: configure_buildkite
+        no_log: true
+        vars:
+            buildkite_agent_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-agent-token') }}"
+            mailgun_api_key: "{{ lookup('community.general.passwordstore', 'website/mailgun-api-key') }}"
+        ansible.builtin.template:
+            src: "{{ item.src }}"
+            dest: "{{ item.dest }}"
+            mode: "{{ item.mode }}"
+        with_items:
+            - src: ../buildkite-agent/buildkite-agent.j2.cfg
+              dest: /home/nicholas/.buildkite-agent/buildkite-agent.cfg
+              mode: "0600"
+            - src: ../buildkite-agent/environment.j2.sh
+              dest: /home/nicholas/.buildkite-agent/hooks/environment
+              mode: "0644"
+            - src: ../buildkite-agent/buildkite-agent@.service
+              dest: /home/nicholas/.config/systemd/user/
+              mode: "0644"
+      - name: Restart Buildkite agent service
+        when: install_buildkite.changed or configure_buildkite.changed
+        ansible.builtin.shell: |
+            set -euo pipefail
+            systemctl --user stop buildkite-agent@*
+            systemctl --user daemon-reload
+            systemctl --user start buildkite-agent@1
+            systemctl --user enable buildkite-agent@1
+        args:
+            executable: /bin/bash

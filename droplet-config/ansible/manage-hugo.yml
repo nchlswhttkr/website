@@ -1,0 +1,15 @@
+- name: Set up Hugo
+  hosts: all
+  remote_user: nicholas
+  tasks:
+      - name: Install Hugo binary
+        when: ansible_local.hugo.hugo_version|d != hugo_version
+        ansible.builtin.shell: |
+            set -euo pipefail
+            curl -L https://github.com/gohugoio/hugo/releases/download/v{{ hugo_version }}/hugo_{{ hugo_version }}_Linux-64bit.tar.gz \
+              | tar -zx -C ~/ hugo
+            sudo mv ~/hugo /usr/local/bin/hugo
+            hugo version
+            jq --null-input '.hugo_version = "{{ hugo_version }}"' | sudo tee /etc/ansible/facts.d/hugo.fact
+        args:
+            executable: /bin/bash
