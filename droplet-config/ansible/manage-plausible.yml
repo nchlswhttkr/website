@@ -19,7 +19,7 @@
             sudo dpkg -i /tmp/containerd.deb
             sudo dpkg -i /tmp/docker-cli.deb
             sudo dpkg -i /tmp/docker.deb
-            sudo docker run hello-world
+            sudo usermod -aG docker nicholas
             sudo curl -L "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
             sudo chmod +x /usr/local/bin/docker-compose
             jq --null-input '
@@ -32,8 +32,6 @@
       - name: Ensure Plausible directory exists
         ansible.builtin.file:
             path: /home/nicholas/plausible-hosting
-            owner: nicholas
-            group: nicholas
             state: directory
       - name: Configure Plausible
         register: configure_plausible

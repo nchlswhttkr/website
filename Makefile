@@ -27,7 +27,7 @@ ssh:
 	ssh nicholas@`cat droplet-config/ansible/hosts.ini`
 
 backup:
-	./scripts/backup-server.sh
+	ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook droplet-config/ansible/create-backup.yml --inventory droplet-config/ansible/hosts.ini --extra-vars "date='$$(date -u "+%Y-%m-%d %H:%M:%S")'"
 
 backup-restore:
-	ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook droplet-config/ansible/restore-backup.yml --inventory droplet-config/ansible/hosts.ini --extra-vars "date='$$(find backups -mindepth 1 -maxdepth 1 -type d | sort | tail -n 1 | cut -d '/' -f 2)'"
+	ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook droplet-config/ansible/restore-backup.yml --inventory droplet-config/ansible/hosts.ini

@@ -1,51 +1,37 @@
 # TODO type date of restore rather than RESTORE
 ---
-- name: Restore a backup from a local copy
+- name: Restore a backup
   hosts: all
   gather_facts: false
   remote_user: nicholas
   tasks:
-      - name: Get confirmation before continuing
+      - name: Query date of most recent backup
+        register: get_date
+        ansible.builtin.shell: find /mnt/backups/nicholas/ -mindepth 1 -maxdepth 1 -type d | sort | tail -n 1 | cut -d '/' -f 5
+      - name: Set backup date and destination to restore from
+        ansible.builtin.set_fact:
+            date: "{{ get_date.stdout }}"
+            backup_destination: "/mnt/backups/nicholas/{{ get_date.stdout }}"
+      - name: Request confirmation before continuing
         register: confirm
         ansible.builtin.pause:
             prompt: Type "RESTORE" to restore backup from {{ date }}
         failed_when: confirm.user_input != "RESTORE"
-      - name: Stop servers
-        ansible.builtin.shell: systemctl --user stop {{ item }}
-        with_items:
-            - plausible
-            - writefreely
-      - name: Delete existing Docker volumes
-        become: true
-        ansible.builtin.shell: docker volume rm --force {{ item }}
-        with_items:
-            - plausible-hosting_event-data
-            - plausible-hosting_db-data
-      - name: Sync backup files across
-        ansible.builtin.copy:
-            src: ../../backups/{{ date }}/{{ item }}
-            dest: /tmp/{{ item }}
-            mode: "0600"
-        with_items:
-            - plausible-event-data.tar.gz
-            - plausible-user-data.tar.gz
-            - writefreely-data.tar.gz
-      - name: Overwrite volumes
-        become: true
-        ansible.builtin.shell: docker run --rm --mount "src={{ item.volume }},dst={{ item.path }}" -v /tmp:/backup ubuntu tar --extract --gzip -f /backup/{{ item.backup }} {{ item.path }}
-        with_items:
-            - backup: plausible-event-data.tar.gz
-              volume: plausible-hosting_event-data
-              path: /var/lib/clickhouse
-            - backup: plausible-user-data.tar.gz
-              volume: plausible-hosting_db-data
-              path: /var/lib/postgresql/data
+      - name: Stop Plausible
+        ansible.builtin.shell: systemctl --user stop plausible
+      - name: Delete existing Plausible volumes
+        ansible.builtin.shell: docker volume rm --force plausible-hosting_db-data plausible-hosting_event-data
+      - name: Restore Plausible user data from backup file
+        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_db-data,destination=/var/lib/postgresql/data" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar -xf /backup/plausible-user-data.tar.gz /var/lib/postgresql/data
+      - name: Create backup file of Plausible event data
+        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_event-data,destination=/var/lib/clickhouse" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar -xf /backup/plausible-event-data.tar.gz /var/lib/clickhouse
+      - name: Restart Plausible
+        ansible.builtin.shell: systemctl --user start plausible
+      - name: Stop Writefreely
+        ansible.builtin.shell: systemctl --user stop writefreely
       - name: Overwrite Writefreely data
-        ansible.builtin.shell: tar --overwrite -xf /tmp/writefreely-data.tar.gz
+        ansible.builtin.shell: tar --overwrite -xf "{{ backup_destination }}/writefreely-data.tar.gz"
         args:
             warn: false # ansible.builtin.unarchive doesn't play nice with absolute paths
-      - name: Restart servers
-        ansible.builtin.shell: systemctl --user start {{ item }}
-        with_items:
-            - plausible
-            - writefreely
+      - name: Restart Writefreely
+        ansible.builtin.shell: systemctl --user start writefreely

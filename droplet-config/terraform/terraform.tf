@@ -29,16 +29,32 @@ data "digitalocean_ssh_key" "default" {
   name = "nchlswhttkr@Eupho on 2020-04-07"
 }
 
+locals {
+  digitalocean_region = "sgp1"
+}
+
 resource "digitalocean_droplet" "website" {
   image      = "ubuntu-20-04-x64"
   name       = var.droplet_name
-  region     = "sgp1"
+  region     = local.digitalocean_region
   size       = "s-1vcpu-1gb"
   ssh_keys   = [data.digitalocean_ssh_key.default.fingerprint]
   monitoring = true
+  volume_ids = [digitalocean_volume.backups.id]
 
   lifecycle {
     ignore_changes = [monitoring]
+  }
+}
+
+resource "digitalocean_volume" "backups" {
+  region                  = local.digitalocean_region
+  name                    = "backups"
+  size                    = 1
+  initial_filesystem_type = "ext4"
+
+  lifecycle {
+    prevent_destroy = true
   }
 }
 
