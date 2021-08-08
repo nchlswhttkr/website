@@ -16,7 +16,7 @@ hugo serve
 
 ### Deploy
 
-This is only intended for my use, as it expects a number of hardcoded paths for files/secrets.
+This is only intended for my use, as it expects a number of hardcoded filepaths/secrets/names.
 
 You'll need a few tools installed, and a couple of secrets from your password store.
 
@@ -28,7 +28,7 @@ You'll need a few tools installed, and a couple of secrets from your password st
 pass list # verify secrets are available
 git clone https://github.com/nchlswhttkr/website.git
 cd website
-make droplet
+make infra
 make server
-make backup-restore # if you have a backup
+make backup-restore # if backup exists
 ```

@@ -21,10 +21,6 @@ data "external" "do_secret_token" {
   program = ["bash", "-c", "echo \"{\\\"token\\\":\\\"$(pass show website/digitalocean-api-token)\\\"}\""]
 }
 
-variable "droplet_name" {
-  type = string
-}
-
 data "digitalocean_ssh_key" "default" {
   name = "nchlswhttkr@Eupho on 2020-04-07"
 }
@@ -33,14 +29,13 @@ locals {
   digitalocean_region = "sgp1"
 }
 
-resource "digitalocean_droplet" "website" {
+resource "digitalocean_droplet" "server" {
   image      = "ubuntu-20-04-x64"
-  name       = var.droplet_name
+  name       = "gandra-dee"
   region     = local.digitalocean_region
   size       = "s-1vcpu-1gb"
   ssh_keys   = [data.digitalocean_ssh_key.default.fingerprint]
   monitoring = true
-  volume_ids = [digitalocean_volume.backups.id]
 
   lifecycle {
     ignore_changes = [monitoring]
@@ -58,7 +53,12 @@ resource "digitalocean_volume" "backups" {
   }
 }
 
+resource "digitalocean_volume_attachment" "server_backups" {
+  droplet_id = digitalocean_droplet.server.id
+  volume_id  = digitalocean_volume.backups.id
+}
+
 output "droplet_ipv4_address" {
-  value = digitalocean_droplet.website.ipv4_address
+  value = digitalocean_droplet.server.ipv4_address
 }
 
