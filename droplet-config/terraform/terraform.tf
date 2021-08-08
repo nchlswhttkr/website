@@ -2,11 +2,11 @@ terraform {
   required_providers {
     digitalocean = {
       source  = "digitalocean/digitalocean"
-      version = "2.9.0"
+      version = "2.10.1"
     }
   }
 
-  required_version = ">= 0.15"
+  required_version = ">= 1.0"
 
   backend "local" {
     path = "/Users/nchlswhttkr/Google Drive/nicholas.cloud/terraform.tfstate"
