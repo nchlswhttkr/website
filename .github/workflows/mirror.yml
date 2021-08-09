@@ -1,0 +1,37 @@
+name: Mirror my GitHub repositories
+
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: 0 21 * * * # Morning AEST
+
+jobs:
+    list:
+        runs-on: ubuntu-latest
+        outputs:
+            repos: ${{ steps.list-repos.outputs.repos }}
+        steps:
+            - name: List repositories to mirror
+              id: list-repos
+              run: cat <(echo -n '::set-output name=repos::') <(jq --compact-output '' ./droplet-config/git/repos-to-mirror.json)
+    mirror:
+        runs-on: ubuntu-latest
+        needs: list
+        strategy:
+            max-parallel: 4
+            matrix:
+                repo: ${{ fromJson(needs.list.outputs.repos) }}
+        steps:
+            - name: Mirror nchlswhttkr/${{ matrix.repo }}
+              run: |
+                  eval $(ssh-agent -s)
+                  mkdir -p ~/.ssh
+                  ssh-keyscan "$HOST_IP" >> ~/.ssh/known_hosts # not ideal, not worth maintaining across new machines
+                  echo "$SSH_PRIVATE_KEY" | ssh-add - > /dev/null
+
+                  git clone https://github.com/nchlswhttkr/${{ matrix.repo }}.git
+                  cd ${{ matrix.repo }}
+                  git push git@$HOST_IP:/var/www/git/${{ matrix.repo }}.git
+              env:
+                  HOST_IP: ${{ secrets.HOST_IP }}
+                  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
