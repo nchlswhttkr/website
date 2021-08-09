@@ -10,7 +10,7 @@
       - name: Give local user and GitHub Actions mirror job SSH access
         changed_when: false
         vars:
-            ssh_key: "{{ lookup('community.general.passwordstore', 'website/git-mirror-ssh-public-key') }}"
+            ssh_key: "{{ lookup('file', '../git/mirror.pub') }}"
         ansible.builtin.shell: |
             set -euo pipefail
             mkdir -p ~git/.ssh
@@ -43,39 +43,30 @@
         register: existing_git_projects
         ansible.builtin.shell: find /var/www/git -mindepth 1 -maxdepth 1 -name "*.git" | sed 's;/var/www/git/\(.*\).git;\1;'
         changed_when: false
-      - name: Fetch list of repos to mirror from GitHub
-        register: fetch_repos
-        ansible.builtin.uri:
-            url: https://api.github.com/search/repositories?q=user:nchlswhttkr+topic:nicholas-cloud
-            body_format: json
-            status_code: [200]
-        failed_when: fetch_repos.failed or fetch_repos.json.incomplete_results # expects a complete search always
       - name: Ensure Git projects exist
-        when: item.name not in existing_git_projects.stdout_lines
+        when: item not in existing_git_projects.stdout_lines
         remote_user: git
-        no_log: true # very verbose
         register: create_git_projects
         ansible.builtin.shell: |
             set -euo pipefail
             cd /var/www/git/
-            git clone --bare https://github.com/nchlswhttkr/{{ item.name }}.git {{ item.name }}.git
+            git clone --bare https://github.com/nchlswhttkr/{{ item }}.git {{ item }}.git
             cd {{ item.name }}.git
             git remote remove origin
             touch git-daemon-export-ok
             echo "Nicholas Whittaker" > owner
-            echo "{{ item.description }}" > description
-            echo "https://nicholas.cloud/git/{{ item.name }}.git" > url
+            echo "https://nicholas.cloud/git/{{ item }}.git" > url
         args:
             executable: /bin/bash
-        loop: "{{ fetch_repos.json['items'] }}"
+        loop: "{{ lookup('file', '../git/repos-to-mirror.json') }}"
       - name: Create post-receive hook for all local Git repos
         remote_user: git
         no_log: true
         ansible.builtin.template:
             src: ../git/post-receive.j2.sh
-            dest: /var/www/git/{{ item.name }}.git/hooks/post-receive
+            dest: /var/www/git/{{ item }}.git/hooks/post-receive
             mode: "0755"
-        loop: "{{ fetch_repos.json['items'] }}"
+        loop: "{{ lookup('file', '../git/repos-to-mirror.json') }}"
       - name: Check mandarin-duck version
         remote_user: git
         register: check_mandarin_duck_version

@@ -4,6 +4,11 @@ terraform {
       source  = "digitalocean/digitalocean"
       version = "2.10.1"
     }
+
+    github = {
+      source  = "integrations/github"
+      version = "4.13.0"
+    }
   }
 
   required_version = ">= 1.0"
@@ -19,6 +24,15 @@ provider "digitalocean" {
 
 data "external" "do_secret_token" {
   program = ["bash", "-c", "echo \"{\\\"token\\\":\\\"$(pass show website/digitalocean-api-token)\\\"}\""]
+}
+
+provider "github" {
+  token = data.external.github_secret_token.result.token
+
+}
+
+data "external" "github_secret_token" {
+  program = ["bash", "-c", "echo \"{\\\"token\\\":\\\"$(pass show website/github-access-token)\\\"}\""]
 }
 
 data "digitalocean_ssh_key" "default" {
@@ -56,6 +70,12 @@ resource "digitalocean_volume" "backups" {
 resource "digitalocean_volume_attachment" "server_backups" {
   droplet_id = digitalocean_droplet.server.id
   volume_id  = digitalocean_volume.backups.id
+}
+
+resource "github_actions_secret" "host_ip" {
+  repository      = "website"
+  secret_name     = "HOST_IP"
+  plaintext_value = digitalocean_droplet.server.ipv4_address
 }
 
 output "droplet_ipv4_address" {
