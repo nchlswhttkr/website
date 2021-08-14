@@ -69,7 +69,7 @@
             set -euo pipefail
             systemctl --user stop plausible
             systemctl --user daemon-reload
-            (cd plausible-hosting && sudo docker-compose pull)
+            (cd plausible-hosting && docker-compose pull)
             systemctl --user start plausible
             systemctl --user enable plausible
         args:

@@ -22,9 +22,9 @@
       - name: Delete existing Plausible volumes
         ansible.builtin.shell: docker volume rm --force plausible-hosting_db-data plausible-hosting_event-data
       - name: Restore Plausible user data from backup file
-        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_db-data,destination=/var/lib/postgresql/data" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar -xf /backup/plausible-user-data.tar.gz /var/lib/postgresql/data
+        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_db-data,destination=/var/lib/postgresql/data" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar -xf /backup/plausible-user-data.tar.gz
       - name: Restore Plausible event data from backup file
-        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_event-data,destination=/var/lib/clickhouse" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar -xf /backup/plausible-event-data.tar.gz /var/lib/clickhouse
+        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_event-data,destination=/var/lib/clickhouse" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar -xf /backup/plausible-event-data.tar.gz
       - name: Restart Plausible
         ansible.builtin.shell: systemctl --user start plausible
       - name: Stop Writefreely
