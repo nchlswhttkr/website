@@ -22,16 +22,17 @@
       - name: Delete existing Plausible volumes
         ansible.builtin.shell: docker volume rm --force plausible-hosting_db-data plausible-hosting_event-data
       - name: Restore Plausible user data from backup file
-        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_db-data,destination=/var/lib/postgresql/data" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar -xf /backup/plausible-user-data.tar.gz
+        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_db-data,destination=/var/lib/postgresql/data" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar --extract --file /backup/plausible-user-data.tar.gz --directory /var/lib/postgresql/data/
       - name: Restore Plausible event data from backup file
-        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_event-data,destination=/var/lib/clickhouse" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar -xf /backup/plausible-event-data.tar.gz
+        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_event-data,destination=/var/lib/clickhouse" --mount "type=bind,source={{ backup_destination }},destination=/backup,readonly" ubuntu tar --extract --file /backup/plausible-event-data.tar.gz --directory /var/lib/clickhouse/
       - name: Restart Plausible
         ansible.builtin.shell: systemctl --user start plausible
       - name: Stop Writefreely
         ansible.builtin.shell: systemctl --user stop writefreely
       - name: Overwrite Writefreely data
-        ansible.builtin.shell: tar --overwrite -xf "{{ backup_destination }}/writefreely-data.tar.gz"
-        args:
-            warn: false # ansible.builtin.unarchive doesn't play nice with absolute paths
+        ansible.builtin.unarchive:
+            src: "{{ backup_destination }}/writefreely-data.tar.gz"
+            remote_src: true
+            dest: /home/nicholas/writefreely/
       - name: Restart Writefreely
         ansible.builtin.shell: systemctl --user start writefreely

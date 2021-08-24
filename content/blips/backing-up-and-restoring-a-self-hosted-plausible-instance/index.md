@@ -31,13 +31,13 @@ docker run --rm \
     --mount "source=hosting_db-data,destination=/var/lib/postgresql/data,readonly" \
     --mount "type=bind,source=$HOME/backups,destination=/backups" \
     ubuntu \
-    tar --absolute-names --gzip -cf /backups/plausible-user-data.tar.gz /var/lib/postgresql/data
+    tar --gzip --create --file /backups/plausible-user-data.tar.gz --directory /var/lib/postgresql/data/ .
 
 docker run --rm \
     --mount "source=hosting_event-data,destination=/var/lib/clickhouse,readonly" \
     --mount "type=bind,source=$HOME/backups,destination=/backups" \
     ubuntu \
-    tar --absolute-names --gzip -cf /backups/plausible-event-data.tar.gz /var/lib/clickhouse
+    tar --gzip --create --file /backups/plausible-event-data.tar.gz --directory /var/lib/clickhouse/ .
 ```
 
 To restore a backup, you can remove the old volumes and extract your tarballs into new volumes.
@@ -49,13 +49,13 @@ docker run --rm \
     --mount "source=hosting_db-data,destination=/var/lib/postgresql/data" \
     --mount "type=bind,source=$HOME/backups,destination=/backups,readonly" \
     ubuntu \
-    tar -xf /backups/plausible-user-data.tar.gz
+    tar --extract --file /backups/plausible-user-data.tar.gz --directory /var/lib/postgresql/data/
 
 docker run --rm \
     --mount "source=hosting_event-data,destination=/var/lib/clickhouse" \
     --mount "type=bind,source=$HOME/backups,destination=/backups,readonly" \
     ubuntu \
-    tar -xf /backups/plausible-event-data.tar.gz
+    tar --extract --file /backups/plausible-event-data.tar.gz --directory /var/lib/clickhouse/
 ```
 
 All that's left after this is to restart the Plausible containers. You may also want to pull changes from Plausible's hosting repo and the latest Docker images.
