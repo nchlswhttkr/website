@@ -20,7 +20,7 @@ if [[ ! -d "content/blips/$NAME" ]]; then
     mkdir "content/blips/$NAME"
     mv "content/blips/$NAME.md" "content/blips/$NAME/index.md"
     sed -i '' "s/$NAME/$TITLE/" "content/blips/$NAME/index.md"
-    code --wait "content/blips/$NAME/index.md"
+    code --new-window --wait "content/blips/$NAME/index.md"
 else
     echo -e "\033[33mFound existing blip $NAME, skipping...\033[0m"
 fi
