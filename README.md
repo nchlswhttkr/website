@@ -6,7 +6,7 @@ See the [main site](https://nicholas.cloud/site/#acknowledgements) for acknowled
 
 ### Build
 
-To build and test this website, you'll only need to have [Hugo](https://gohugo.io/) installed.
+To make changes and preview this website locally, you only need to have [Hugo](https://gohugo.io/) installed.
 
 ```sh
 git clone https://github.com/nchlswhttkr/website.git
