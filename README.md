@@ -25,10 +25,12 @@ You'll need a few tools installed, and a couple of secrets from your password st
 -   [Pass](https://www.passwordstore.org/) (with accompanying secrets)
 
 ```sh
-pass list # verify secrets are available
+pass list website # verify secrets are available
 git clone https://github.com/nchlswhttkr/website.git
 cd website
 make infra
+make write-local-secrets
 make server
+./scripts/mount-digitalocean-backups-volume.sh # if new droplet created
 make backup-restore # if backup exists
 ```

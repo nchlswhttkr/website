@@ -10,7 +10,7 @@
       - name: Give local user and GitHub Actions mirror job SSH access
         changed_when: false
         vars:
-            ssh_key: "{{ lookup('file', '../git/mirror.pub') }}"
+            ssh_key: "{{ lookup('file', '../git/github-actions.pub') }}"
         ansible.builtin.shell: |
             set -euo pipefail
             mkdir -p ~git/.ssh
@@ -51,7 +51,7 @@
             set -euo pipefail
             cd /var/www/git/
             git clone --bare https://github.com/nchlswhttkr/{{ item }}.git {{ item }}.git
-            cd {{ item.name }}.git
+            cd {{ item }}.git
             git remote remove origin
             touch git-daemon-export-ok
             echo "Nicholas Whittaker" > owner

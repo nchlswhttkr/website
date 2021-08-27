@@ -23,7 +23,7 @@ provider "digitalocean" {
 }
 
 data "external" "do_secret_token" {
-  program = ["bash", "-c", "echo \"{\\\"token\\\":\\\"$(pass show website/digitalocean-api-token)\\\"}\""]
+  program = ["bash", "-c", "jq --null-input \".token = \\\"$(pass show website/digitalocean-api-token)\\\"\""]
 }
 
 provider "github" {
@@ -32,11 +32,12 @@ provider "github" {
 }
 
 data "external" "github_secret_token" {
-  program = ["bash", "-c", "echo \"{\\\"token\\\":\\\"$(pass show website/github-access-token)\\\"}\""]
+  program = ["bash", "-c", "jq --null-input \".token = \\\"$(pass show website/github-access-token)\\\"\""]
 }
 
-data "digitalocean_ssh_key" "default" {
-  name = "nchlswhttkr@Eupho on 2020-04-07"
+resource "digitalocean_ssh_key" "remote_user" {
+  name       = "Remote access for machines hosting nicholas.cloud"
+  public_key = file("./remote-user.pub")
 }
 
 locals {
@@ -48,7 +49,7 @@ resource "digitalocean_droplet" "server" {
   name       = "gandra-dee"
   region     = local.digitalocean_region
   size       = "s-1vcpu-1gb"
-  ssh_keys   = [data.digitalocean_ssh_key.default.fingerprint]
+  ssh_keys   = [digitalocean_ssh_key.remote_user.fingerprint]
   monitoring = true
 
   lifecycle {
@@ -72,6 +73,16 @@ resource "digitalocean_volume_attachment" "server_backups" {
   volume_id  = digitalocean_volume.backups.id
 }
 
+resource "github_actions_secret" "ssh_private_key" {
+  repository = "website"
+  secret_name = "SSH_PRIVATE_KEY"
+  plaintext_value = data.external.github_actions_ssh_private_key.result.token
+}
+
+data "external" "github_actions_ssh_private_key" {
+  program = ["bash", "-c", "jq --null-input \".token = \\\"$(pass show website/github-actions.pem)\\\"\""]
+}
+
 resource "github_actions_secret" "host_ip" {
   repository      = "website"
   secret_name     = "HOST_IP"
@@ -81,4 +92,3 @@ resource "github_actions_secret" "host_ip" {
 output "droplet_ipv4_address" {
   value = digitalocean_droplet.server.ipv4_address
 }
-
