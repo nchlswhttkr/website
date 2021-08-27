@@ -55,6 +55,7 @@
             git remote remove origin
             touch git-daemon-export-ok
             echo "Nicholas Whittaker" > owner
+            curl --silent --fail https://api.github.com/repos/nchlswhttkr/{{ item }} | jq --raw-output '.description' > description
             echo "https://nicholas.cloud/git/{{ item }}.git" > url
         args:
             executable: /bin/bash
