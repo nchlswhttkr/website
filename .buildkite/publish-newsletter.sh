@@ -2,10 +2,10 @@
 
 set -eu
 
-curl --fail "https://nicholas.cloud/newsletter/$NEWSLETTER_ISSUE/" > email.html
-curl --fail "https://templates.mailchimp.com/services/html-to-text/" --data-urlencode html@email.html > email.text
+curl --silent --fail "https://nicholas.cloud/newsletter/$NEWSLETTER_ISSUE/" > email.html
+curl --silent --fail "https://templates.mailchimp.com/services/html-to-text/" --data-urlencode html@email.html > email.text
 
-curl --fail "https://api.eu.mailgun.net/v3/mailgun.nicholas.cloud/messages" \
+curl --silent --fail "https://api.eu.mailgun.net/v3/mailgun.nicholas.cloud/messages" \
     --user "api:$MAILGUN_API_KEY" \
     --data-urlencode "to=$MAILING_LIST_ADDRESS" \
     --data-urlencode "from=Nicholas Whittaker <noreply@mailgun.nicholas.cloud>" \
