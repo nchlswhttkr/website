@@ -23,14 +23,31 @@ terraform {
   }
 }
 
+locals {
+  aws_tags = {
+    Project = "preview.nicholas.cloud"
+  }
+}
+
 provider "aws" {
   region     = "ap-southeast-2"
   access_key = data.external.aws_access_key_id.result.token
   secret_key = data.external.aws_access_key_secret.result.token
   default_tags {
-    tags = {
-      Project = "preview.nicholas.cloud"
-    }
+    tags = local.aws_tags
+  }
+}
+
+provider "aws" {
+  # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-and-https-requirements.html#https-requirements-certificate-issuer
+  # To use an ACM certificate with CloudFront, make sure you request (or import) the certificate in the US East (N. Virginia) Region (us-east-1).
+
+  alias = "us_tirefire_1" # https://twitter.com/grepory/status/759204528382210049
+  region = "us-east-1"
+  access_key = data.external.aws_access_key_id.result.token
+  secret_key = data.external.aws_access_key_secret.result.token
+  default_tags {
+    tags = local.aws_tags
   }
 }
 

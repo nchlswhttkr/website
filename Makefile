@@ -8,6 +8,7 @@ cache:
 
 .PHONY: infra
 infra:
+	@echo "" | gpg --clearsign > /dev/null
 	@terraform -chdir=droplet-config/terraform init -upgrade
 	@terraform -chdir=droplet-config/terraform apply
 	@terraform -chdir=droplet-config/terraform output --raw droplet_ipv4_address > droplet-config/ansible/hosts.ini
