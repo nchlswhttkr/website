@@ -65,7 +65,7 @@ jobs:
               with:
                   submodules: recursive
             - name: Set site URL to deployment environment
-              run: sed -i "s;https://nicholas.cloud/;http://preview.nicholas.cloud/${{ github.event.pull_request.number }}/;" config.yml
+              run: sed -i "s;https://nicholas.cloud/;https://preview.nicholas.cloud/${{ github.event.pull_request.number }}/;" config.yml
               if: contains('opened reopened synchronize', github.event.action)
             - name: Build
               uses: docker://registry.gitlab.com/pages/hugo:latest
@@ -87,7 +87,7 @@ jobs:
                   repo: ${{ github.repository }}
                   deployment: ${{ fromJson(steps.create_deployment.outputs.data).id }}
                   state: success
-                  environment_url: http://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
+                  environment_url: https://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
