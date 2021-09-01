@@ -1,6 +1,15 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
+provider "nicholas.cloud/nchlswhttkr/pass" {
+  version     = "0.1.0"
+  constraints = ">= 0.1.0"
+  hashes = [
+    "h1:gR0JZjFARLhG2vQv5jHUYdgLKKOSBrH3CxCDjhyvIKQ=",
+    "zh:0b3b3cc7d240082dc72cb71988eb31dbcac62539258ad4616119542500164f54",
+  ]
+}
+
 provider "registry.terraform.io/digitalocean/digitalocean" {
   version     = "2.10.1"
   constraints = "2.10.1"

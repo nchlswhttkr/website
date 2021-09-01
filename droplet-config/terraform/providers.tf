@@ -14,6 +14,11 @@ terraform {
       source  = "integrations/github"
       version = "4.13.0"
     }
+
+    pass = {
+        source = "nicholas.cloud/nchlswhttkr/pass"
+        version = ">= 0.1"
+    }
   }
 
   required_version = ">= 1.0"
@@ -31,8 +36,8 @@ locals {
 
 provider "aws" {
   region     = "ap-southeast-2"
-  access_key = data.external.aws_access_key_id.result.token
-  secret_key = data.external.aws_access_key_secret.result.token
+  access_key = data.pass_password.aws_access_key_id.password
+  secret_key = data.pass_password.aws_access_key_secret.password
   default_tags {
     tags = local.aws_tags
   }
@@ -44,33 +49,35 @@ provider "aws" {
 
   alias = "us_tirefire_1" # https://twitter.com/grepory/status/759204528382210049
   region = "us-east-1"
-  access_key = data.external.aws_access_key_id.result.token
-  secret_key = data.external.aws_access_key_secret.result.token
+  access_key = data.pass_password.aws_access_key_id.password
+  secret_key = data.pass_password.aws_access_key_secret.password
   default_tags {
     tags = local.aws_tags
   }
 }
 
-data "external" "aws_access_key_id" {
-  program = ["bash", "-c", "jq --null-input \".token = \\\"$(pass show website/aws-access-key-id)\\\"\""]
+data "pass_password" "aws_access_key_id" {
+  name = "website/aws-access-key-id"
 }
 
-data "external" "aws_access_key_secret" {
-  program = ["bash", "-c", "jq --null-input \".token = \\\"$(pass show website/aws-access-key-secret)\\\"\""]
+data "pass_password" "aws_access_key_secret" {
+  name = "website/aws-access-key-secret"
 }
 
 provider "digitalocean" {
-  token = data.external.do_secret_token.result.token
+  token = data.pass_password.do_secret_token.password
 }
 
-data "external" "do_secret_token" {
-  program = ["bash", "-c", "jq --null-input \".token = \\\"$(pass show website/digitalocean-api-token)\\\"\""]
+data "pass_password" "do_secret_token" {
+  name = "website/digitalocean-api-token"
 }
 
 provider "github" {
-  token = data.external.github_secret_token.result.token
+  token = data.pass_password.github_secret_token.password
 }
 
-data "external" "github_secret_token" {
-  program = ["bash", "-c", "jq --null-input \".token = \\\"$(pass show website/github-access-token)\\\"\""]
+data "pass_password" "github_secret_token" {
+  name = "website/github-access-token"
 }
+
+provider "pass" {}
