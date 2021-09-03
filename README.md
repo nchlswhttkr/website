@@ -18,18 +18,23 @@ hugo serve
 
 This is only intended for my use, as it expects a number of hardcoded filepaths/secrets/names.
 
-You'll need a few tools installed, and a couple of secrets from your password store.
+You'll need a few tools installed and set up beforehand.
 
--   [Terraform](https://www.terraform.io/downloads.html) (with Google Drive installed to serve as a backend)
+-   Google Drive for credentials, Terraform state and backups of assorted files
+-   [Terraform](https://www.terraform.io/downloads.html)
 -   [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html)
--   [Pass](https://www.passwordstore.org/) (with accompanying secrets)
+-   [Pass](https://www.passwordstore.org/)
 
 ```sh
-pass list website # verify secrets are available
 git clone https://github.com/nchlswhttkr/website.git
 cd website
 make infra
 make server
-./scripts/mount-digitalocean-backups-volume.sh # if new droplet created
-make backup-restore # if backup exists
+```
+
+If a new droplet is created, you can restore the most recent backup.
+
+```sh
+./scripts/mount-digitalocean-backups-volume.sh
+make backup-restore
 ```

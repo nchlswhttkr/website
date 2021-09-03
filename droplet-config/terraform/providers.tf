@@ -80,4 +80,6 @@ data "pass_password" "github_secret_token" {
   name = "website/github-access-token"
 }
 
-provider "pass" {}
+provider "pass" {
+  store = "/Users/nchlswhttkr/Google Drive/.password-store"
+}

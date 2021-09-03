@@ -2,11 +2,11 @@
 # Manual edits may be lost in future updates.
 
 provider "nicholas.cloud/nchlswhttkr/pass" {
-  version     = "0.1.0"
+  version     = "0.2.0"
   constraints = ">= 0.1.0"
   hashes = [
-    "h1:gR0JZjFARLhG2vQv5jHUYdgLKKOSBrH3CxCDjhyvIKQ=",
-    "zh:0b3b3cc7d240082dc72cb71988eb31dbcac62539258ad4616119542500164f54",
+    "h1:i1ghM0JrldmzWqcSnoPk3rqPbFFOKQnSw7nwxYLBOFM=",
+    "zh:ea2946e747ed9b11a47a4d64b932d506f7c6e20dc73e35e22bde9e8755d8a255",
   ]
 }
 
