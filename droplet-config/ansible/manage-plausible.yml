@@ -29,6 +29,10 @@
             ' | sudo tee /etc/ansible/facts.d/docker.fact
         args:
             executable: /bin/bash
+      - name: Reboot machine to ensure Docker socket is picked up
+        become: true
+        when: install_docker.changed
+        ansible.builtin.reboot:
       - name: Ensure Plausible directory exists
         ansible.builtin.file:
             path: /home/nicholas/plausible-hosting
