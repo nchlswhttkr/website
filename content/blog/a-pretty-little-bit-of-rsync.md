@@ -124,7 +124,7 @@ Apr 13 07:34
 
 While I prefer this updated rsync command, it's worth noting that there a lot of moving partss to consider.
 
--   The delta-transfer algorithm rsync employs greatly reduces the amount of data transferred when two files are largely similar/identical
+-   The delta-transfer algorithm rsync employs can greatly reduce the amount of data transferred when two files are largely similar/identical
 -   Generating/comparing checksums may actually be slower than relying on timestamps and the false positives they entail
 -   Nginx also employs the `ETag` header in addition to the `Last-Modified` header for certain resources
 

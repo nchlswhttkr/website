@@ -24,8 +24,8 @@ Content for my newsletter is managed through [Hugo](https://gohugo.io) like the 
 There are a few caveats that come with sending emails as opposed to hosting web pages though.
 
 -   CSS must be embedded within `<style/>` elements or inlined, as clients can ignore `<link/>` elements.
--   Emails must be entirely static (no JavaScript), though this isn't a concern here.
--   Absolute URLs must be used, as links with only a path (like `/blog/hello-world`) end up broken.
+-   Emails must be entirely static (no JavaScript), though this isn't a problem in my case.
+-   URLs must include a hostname, as links with only a path (like `/blog/hello-world`) end up broken.
 
 With the help of [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), I can write content for my newsletter while leaving styling/layout to the templating system.
 
