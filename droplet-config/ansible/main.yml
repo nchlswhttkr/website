@@ -70,3 +70,4 @@
 - import_playbook: manage-writefreely.yml
 - import_playbook: manage-nginx.yml
 - import_playbook: manage-ddns.yml
+- import_playbook: manage-octopus.yml

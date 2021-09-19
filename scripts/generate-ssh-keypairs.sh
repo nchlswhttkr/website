@@ -4,7 +4,7 @@ set -euo pipefail
 
 # Perhaps I should have not have written this script, but oh well!
 
-read -rp "Roll key for which user? (remote-user/github-actions) > " USER
+read -rp "Roll key for which user? (remote-user/github-actions/octopus) > " USER
 
 case $USER in
     remote-user)
@@ -14,6 +14,10 @@ case $USER in
     github-actions)
         COMMENT="Allow GitHub Actions for https://github.com/nchlswhttkr/website to mirror repos"
         PUBLIC_KEY_DESTINATION="droplet-config/git/github-actions.pub"
+    ;;
+    octopus)
+        COMMENT="Allow Octopus Deploy to access machines"
+        PUBLIC_KEY_DESTINATION="droplet-config/ansible/octopus.pub"
     ;;
     *)
         echo -e "\033[31mInvalid user\033[0m"

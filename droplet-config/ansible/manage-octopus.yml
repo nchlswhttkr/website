@@ -1,0 +1,23 @@
+- name: Give Octopus SSH access and install runtime dependencies for Calamari
+  hosts: all
+  gather_facts: false
+  remote_user: root
+  tasks:
+      - name: Give Octopus Deploy SSH access as nicholas
+        ansible.posix.authorized_key:
+            key: "{{ lookup('file', './octopus.pub') }}"
+            user: nicholas
+      # https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu
+      - name: Install .NET SDK
+        changed_when: false
+        ansible.builtin.shell: |
+            set -euo pipefail
+            wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+            sudo dpkg -i packages-microsoft-prod.deb
+            rm packages-microsoft-prod.deb
+            sudo apt-get update; \
+                sudo apt-get install -y apt-transport-https && \
+                sudo apt-get update && \
+                sudo apt-get install -y dotnet-sdk-5.0
+        args:
+            executable: /bin/bash
