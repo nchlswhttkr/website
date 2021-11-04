@@ -25,4 +25,4 @@ caches:
         maxAge: -1
 
 params:
-    color: "#9e3245"
+    color: "#b00b69"

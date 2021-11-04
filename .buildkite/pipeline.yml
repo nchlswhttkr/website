@@ -16,7 +16,7 @@ steps:
 
   - block: Purge Cloudflare cache for nicholas.cloud?
     key: purge-cloudflare-cache
-  - label: ":cloudflare:"
+  - label: ":cloudflare: Purge Cloudflare cache"
     depends_on: purge-cloudflare-cache
     agents:
       website: nicholas.cloud
