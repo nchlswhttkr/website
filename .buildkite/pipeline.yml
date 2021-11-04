@@ -1,13 +1,23 @@
 # prettier-ignore
 steps:
-  - label: ':shipit:'
+  - label: ':shipit: Build and deploy site changes'
     if: 'build.branch == "main"'
     agents:
       website: nicholas.cloud
     command: .buildkite/build.sh
+
   - wait
-  - label: ':rolled_up_newspaper:'
+
+  - label: ':mag: Scan for newsletters'
     if: 'build.branch == "main" && build.source != "schedule"'
     agents:
       website: nicholas.cloud
     command: .buildkite/trigger-newsletter-if-new-issue.sh
+
+  - block: Purge Cloudflare cache for nicholas.cloud?
+    key: purge-cloudflare-cache
+  - label: ":cloudflare:"
+    depends_on: purge-cloudflare-cache
+    agents:
+      website: nicholas.cloud
+    command: .buildkite/purge-cloudflare-cache.sh

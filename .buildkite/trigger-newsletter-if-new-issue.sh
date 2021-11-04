@@ -7,7 +7,7 @@ git diff-tree --no-commit-id --name-status -r HEAD | grep "^[AM].content/newslet
 while read -r NEWSLETTER; do
   echo "
     steps:
-      - label: \":email: Preview\"
+      - label: \":email: Preview newsletter #$NEWSLETTER\"
         key: preview-newsletter-$NEWSLETTER
         command: .buildkite/publish-newsletter.sh
         agents:
@@ -18,7 +18,7 @@ while read -r NEWSLETTER; do
       - block: \"Publish newsletter #$NEWSLETTER?\"
         key: approve-newsletter-$NEWSLETTER
         depends_on: preview-newsletter-$NEWSLETTER
-      - label: \":email: Publish\"
+      - label: \":email: Publish newsletter #$NEWSLETTER\"
         depends_on: approve-newsletter-$NEWSLETTER
         command: .buildkite/publish-newsletter.sh
         agents:

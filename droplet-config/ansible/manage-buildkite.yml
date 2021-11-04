@@ -19,6 +19,8 @@
         no_log: true
         vars:
             buildkite_agent_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-agent-token') }}"
+            cloudflare_api_token: "{{ lookup('community.general.passwordstore', 'website/cloudflare-api-token') }}"
+            cloudflare_zone_id: "{{ lookup('community.general.passwordstore', 'website/cloudflare-zone-id') }}"
             mailgun_api_key: "{{ lookup('community.general.passwordstore', 'website/mailgun-api-key') }}"
         ansible.builtin.template:
             src: "{{ item.src }}"
