@@ -1,11 +1,11 @@
 resource "github_actions_secret" "ssh_private_key" {
   repository      = "website"
   secret_name     = "SSH_PRIVATE_KEY"
-  plaintext_value = data.external.github_actions_ssh_private_key.result.token
+  plaintext_value = data.pass_password.github_actions_ssh_private_key.password
 }
 
-data "external" "github_actions_ssh_private_key" {
-  program = ["bash", "-c", "jq --null-input \".token = \\\"$(pass show website/github-actions.pem)\\\"\""]
+data "pass_password" "github_actions_ssh_private_key" {
+  name = "website/github-actions.pem"
 }
 
 resource "github_actions_secret" "host_ip" {
