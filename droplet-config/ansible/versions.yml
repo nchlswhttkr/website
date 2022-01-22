@@ -1,16 +1,17 @@
-buildkite_version: "3.32.3"
+buildkite_version: "3.33.3"
 buildkite_organization_slug: nchlswhttkr
 buildkite_pipeline_slug: website
 
 ddns_version: "2.1.0"
 
-hugo_version: "0.89.0"
+hugo_version: "0.92.0"
 
+# https://download.docker.com/linux/ubuntu/dists
 docker_ubuntu_release: "focal"
-docker_version_release: "20.10.7~3-0~ubuntu-focal"
-containerd_version_release: "1.4.6-1"
+docker_version_release: "20.10.12~3-0~ubuntu-focal"
+containerd_version_release: "1.4.9-1"
 docker_compose_version: "1.29.2"
-plausible_version: "1.4.0"
+plausible_version: "1.4.3"
 
 mandarin_duck_version: "1.2"
 
