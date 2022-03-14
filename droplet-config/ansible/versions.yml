@@ -11,7 +11,7 @@ docker_ubuntu_release: "focal"
 docker_version_release: "20.10.12~3-0~ubuntu-focal"
 containerd_version_release: "1.4.9-1"
 docker_compose_version: "1.29.2"
-plausible_version: "1.4.3"
+plausible_version: "1.4.4"
 
 mandarin_duck_version: "1.2"
 

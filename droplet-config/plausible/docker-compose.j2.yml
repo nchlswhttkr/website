@@ -1,11 +1,5 @@
 version: "3.3"
 services:
-    mail:
-        image: bytemark/smtp
-        restart: always
-        env_file:
-            - plausible-smtp-conf.env
-
     plausible_db:
         image: postgres:12
         volumes:
@@ -30,7 +24,6 @@ services:
         depends_on:
             - plausible_db
             - plausible_events_db
-            - mail
         ports:
             - 8000:8000
         env_file:

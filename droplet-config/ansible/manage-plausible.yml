@@ -52,9 +52,6 @@
             - src: ../plausible/plausible-conf.j2.env
               dest: /home/nicholas/plausible-hosting/plausible-conf.env
               mode: "0600"
-            - src: ../plausible/plausible-smtp-conf.j2.env
-              dest: /home/nicholas/plausible-hosting/plausible-smtp-conf.env
-              mode: "0600"
             - src: ../plausible/docker-compose.j2.yml
               dest: /home/nicholas/plausible-hosting/docker-compose.yml
               mode: "0644"
