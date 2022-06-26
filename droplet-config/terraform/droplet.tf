@@ -7,6 +7,17 @@ locals {
   digitalocean_region = "sgp1"
 }
 
+resource "digitalocean_project" "nicholas_dot_cloud" {
+  name        = "nicholas.cloud"
+  description = "Resources hosting nicholas.cloud"
+  environment = "Production"
+}
+
+resource "digitalocean_project_resources" "nicholas_dot_cloud" {
+  project   = digitalocean_project.nicholas_dot_cloud.id
+  resources = [digitalocean_droplet.server.urn]
+}
+
 resource "digitalocean_droplet" "server" {
   image      = "ubuntu-20-04-x64"
   name       = "gandra-dee"
