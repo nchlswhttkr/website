@@ -2,6 +2,10 @@
 site:
 	@hugo
 
+.PHONY: dev
+dev:
+	@hugo server --navigateToChanged
+
 .PHONY: cache
 cache:
 	@./scripts/update-cache.sh
