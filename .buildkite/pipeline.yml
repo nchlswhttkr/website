@@ -2,20 +2,21 @@
 steps:
   - label: ':shipit: Build and deploy site changes'
     if: 'build.branch == "main"'
+    key: deploy
     agents:
       website: nicholas.cloud
     command: .buildkite/build.sh
 
-  - wait
-
   - label: ':mag: Scan for newsletters'
     if: 'build.branch == "main" && build.source != "schedule"'
+    depends_on: deploy
     agents:
       website: nicholas.cloud
     command: .buildkite/trigger-newsletter-if-new-issue.sh
 
   - block: Purge Cloudflare cache for nicholas.cloud?
     key: purge-cloudflare-cache
+    depends_on: deploy
   - label: ":cloudflare: Purge Cloudflare cache"
     depends_on: purge-cloudflare-cache
     agents:
