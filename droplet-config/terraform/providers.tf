@@ -16,8 +16,8 @@ terraform {
     }
 
     pass = {
-        source = "nicholas.cloud/nchlswhttkr/pass"
-        version = ">= 0.1"
+      source  = "nicholas.cloud/nchlswhttkr/pass"
+      version = ">= 0.1"
     }
   }
 
@@ -47,8 +47,8 @@ provider "aws" {
   # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-and-https-requirements.html#https-requirements-certificate-issuer
   # To use an ACM certificate with CloudFront, make sure you request (or import) the certificate in the US East (N. Virginia) Region (us-east-1).
 
-  alias = "us_tirefire_1" # https://twitter.com/grepory/status/759204528382210049
-  region = "us-east-1"
+  alias      = "us_tirefire_1" # https://twitter.com/grepory/status/759204528382210049
+  region     = "us-east-1"
   access_key = data.pass_password.aws_access_key_id.password
   secret_key = data.pass_password.aws_access_key_secret.password
   default_tags {

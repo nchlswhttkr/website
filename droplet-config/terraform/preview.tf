@@ -9,11 +9,11 @@ resource "aws_s3_bucket" "preview" {
 
 resource "aws_s3_bucket_object" "bucket_documents" {
   for_each = toset(["index.html", "robots.txt"])
-  
+
   bucket = aws_s3_bucket.preview.bucket
-  key = each.key
+  key    = each.key
   source = "./preview-bucket-files/${each.key}"
-  etag = filemd5("./preview-bucket-files/${each.key}")
+  etag   = filemd5("./preview-bucket-files/${each.key}")
 }
 
 resource "aws_s3_bucket_public_access_block" "public_access_block" {
@@ -23,7 +23,7 @@ resource "aws_s3_bucket_public_access_block" "public_access_block" {
 data "aws_iam_policy_document" "public_bucket_access" {
   version = "2012-10-17"
   statement {
-    actions = ["s3:GetObject"]
+    actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.preview.arn}/*"]
     principals {
       type        = "*"
@@ -76,7 +76,7 @@ resource "aws_iam_user_policy_attachment" "manage_preview_objects" {
 resource "aws_acm_certificate" "preview_certificate" {
   provider = aws.us_tirefire_1
 
-  domain_name = "preview.nicholas.cloud"
+  domain_name       = "preview.nicholas.cloud"
   validation_method = "DNS"
 }
 
@@ -95,10 +95,10 @@ resource "aws_cloudfront_distribution" "preview_distribution" {
     domain_name = aws_s3_bucket.preview.website_endpoint
     origin_id   = local.preview_bucket_origin_id
     custom_origin_config {
-      http_port = 80
-      https_port = 443
+      http_port              = 80
+      https_port             = 443
       origin_protocol_policy = "http-only"
-      origin_ssl_protocols = ["TLSv1.2"]
+      origin_ssl_protocols   = ["TLSv1.2"]
     }
   }
 
