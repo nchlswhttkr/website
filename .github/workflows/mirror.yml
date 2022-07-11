@@ -3,7 +3,7 @@ name: Mirror my GitHub repositories
 on:
     workflow_dispatch:
     schedule:
-        - cron: 0 20 * * FRI,SAT # Weekend mornings in AU
+        - cron: 0 20 * * FRI # Saturday morning in AU
 
 jobs:
     list:
