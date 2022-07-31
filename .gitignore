@@ -4,3 +4,7 @@ secrets/
 resources/json/
 .terraform/
 hosts.ini
+
+# Python3 toolchain
+.venv/bin
+.venv/lib
