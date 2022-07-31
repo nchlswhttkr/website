@@ -1,13 +1,19 @@
 resource "aws_s3_bucket" "preview" {
   bucket = "preview.nicholas.cloud"
 
-  website {
-    index_document = "index.html"
-    error_document = "index.html"
+}
+
+resource "aws_s3_bucket_website_configuration" "preview" {
+  bucket = aws_s3_bucket.preview.bucket
+  index_document {
+    suffix = "index.html"
+  }
+  error_document {
+    key = "index.html"
   }
 }
 
-resource "aws_s3_bucket_object" "bucket_documents" {
+resource "aws_s3_object" "bucket_documents" {
   for_each = toset(["index.html", "robots.txt"])
 
   bucket = aws_s3_bucket.preview.bucket
