@@ -4,7 +4,7 @@ Source code for [my website](https://nicholas.cloud/). I also run [several worke
 
 See the [main site](https://nicholas.cloud/site/#acknowledgements) for acknowledgements and attributions.
 
-### Build
+### Development
 
 To make changes and preview this website locally, you only need to have [Hugo](https://gohugo.io/) installed.
 

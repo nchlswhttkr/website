@@ -46,7 +46,3 @@ resource "digitalocean_volume_attachment" "server_backups" {
   droplet_id = digitalocean_droplet.server.id
   volume_id  = digitalocean_volume.backups.id
 }
-
-output "droplet_ipv4_address" {
-  value = digitalocean_droplet.server.ipv4_address
-}
