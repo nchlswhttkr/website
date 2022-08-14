@@ -11,14 +11,6 @@ case $USER in
         COMMENT="Remote access for machines hosting nicholas.cloud"
         PUBLIC_KEY_DESTINATION="droplet-config/terraform/remote-user.pub"
     ;;
-    github-actions)
-        COMMENT="Allow GitHub Actions for https://github.com/nchlswhttkr/website to mirror repos"
-        PUBLIC_KEY_DESTINATION="droplet-config/git/github-actions.pub"
-    ;;
-    octopus)
-        COMMENT="Allow Octopus Deploy to access machines"
-        PUBLIC_KEY_DESTINATION="droplet-config/ansible/octopus.pub"
-    ;;
     *)
         echo -e "\033[31mInvalid user\033[0m"
         exit 1

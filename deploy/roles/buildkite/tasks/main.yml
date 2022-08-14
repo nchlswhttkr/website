@@ -1,0 +1,71 @@
+- name: Download Hugo binary
+  when: ansible_local.buildkite.versions.hugo_version|d != hugo_version
+  register: download_hugo
+  ansible.builtin.script:
+      cmd: ../files/download-hugo.sh "{{ hugo_version }}"
+
+- name: Install Hugo binary
+  when: download_hugo.changed
+  become: true
+  ansible.builtin.copy:
+      src: /home/{{ ansible_user }}/hugo
+      remote_src: true
+      dest: /usr/local/bin/hugo
+      owner: root
+      group: root
+      mode: "0755"
+
+- name: Set Hugo version
+  when: ansible_local.buildkite.versions.hugo_version|d != hugo_version
+  become: true
+  community.general.ini_file:
+      path: /etc/ansible/facts.d/buildkite.fact
+      section: versions
+      option: hugo_version
+      value: "{{ hugo_version }}"
+
+- name: Download and install Buildkite agent
+  when: ansible_local.buildkite.versions.buildkite_agent_version|d != buildkite_agent_version
+  register: install_buildkite_agent
+  ansible.builtin.script:
+      cmd: ../files/install-buildkite-agent.sh "{{ buildkite_agent_version }}"
+
+- name: Configure Buildkite agent
+  register: configure_buildkite_agent
+  no_log: true
+  vars:
+      buildkite_agent_token: "{{ lookup('community.general.passwordstore', 'website/buildkite-agent-token') }}"
+      cloudflare_api_token: "{{ lookup('community.general.passwordstore', 'website/cloudflare-api-token') }}"
+      cloudflare_zone_id: "{{ lookup('community.general.passwordstore', 'website/cloudflare-zone-id') }}"
+      mailgun_api_key: "{{ lookup('community.general.passwordstore', 'website/mailgun-api-key') }}"
+  ansible.builtin.template:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+      mode: "{{ item.mode }}"
+  with_items:
+      - src: ../templates/buildkite-agent.j2.cfg
+        dest: /home/{{ ansible_user }}/.buildkite-agent/buildkite-agent.cfg
+        mode: "0600"
+      - src: ../templates/environment.j2.sh
+        dest: /home/{{ ansible_user }}/.buildkite-agent/hooks/environment
+        mode: "0644"
+      - src: ../templates/buildkite-agent.j2.service
+        dest: /home/{{ ansible_user }}/.config/systemd/user/
+        mode: "0644"
+
+- name: Restart Buildkite agent service
+  when: install_buildkite_agent.changed or configure_buildkite_agent.changed
+  ansible.builtin.systemd:
+      name: buildkite-agent
+      scope: user
+      state: restarted
+      daemon_reload: true
+
+- name: Set Buildkite agent version
+  when: ansible_local.buildkite.versions.buildkite_agent_version|d != buildkite_agent_version
+  become: true
+  community.general.ini_file:
+      path: /etc/ansible/facts.d/buildkite.fact
+      section: versions
+      option: buildkite_agent_version
+      value: "{{ buildkite_agent_version }}"

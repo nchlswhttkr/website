@@ -1,9 +1,13 @@
-public/
 .DS_Store
+
+# Hugu cache/output/secrets
+public/
 secrets/
 resources/json/
+
+# Infrastructure dependencies and secrets
 .terraform/
-hosts.ini
+deploy/hosts.yml
 
 # Python3 toolchain
 .venv/bin

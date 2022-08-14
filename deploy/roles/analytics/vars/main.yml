@@ -1,0 +1,7 @@
+# https://download.docker.com/linux/ubuntu/dists
+docker_ubuntu_release: "jammy"
+docker_version: "20.10.17"
+containerd_version: "1.6.7"
+docker_compose_version: "2.9.0"
+
+plausible_version: "1.4.4"

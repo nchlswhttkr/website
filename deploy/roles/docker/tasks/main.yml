@@ -1,0 +1,52 @@
+- name: Install Containerd
+  register: install_containerd
+  when: ansible_local.docker.versions.containerd_version|d != containerd_version
+  become: true
+  ansible.builtin.script: ../files/install-containerd.sh "{{ docker_ubuntu_release }}" "{{ containerd_version }}"
+
+- name: Install Docker CLI
+  register: install_docker_cli
+  when: ansible_local.docker.versions.docker_version|d != docker_version
+  become: true
+  ansible.builtin.script: ../files/install-docker-cli.sh "{{ docker_ubuntu_release }}" "{{ docker_version }}"
+
+- name: Install Docker
+  register: install_docker
+  when: ansible_local.docker.versions.docker_version|d != docker_version
+  become: true
+  ansible.builtin.script: ../files/install-docker.sh "{{ docker_ubuntu_release }}" "{{ docker_version }}"
+
+- name: Install Docker Compose
+  register: install_docker_compose
+  become: true
+  when: ansible_local.docker.versions.docker_compose_version|d != docker_compose_version
+  ansible.builtin.script: ../files/install-docker-compose.sh "{{ docker_compose_version }}"
+
+- name: Add service user to docker group
+  become: true
+  ansible.builtin.user:
+      name: "{{ ansible_user }}"
+      groups:
+          - docker
+      append: true
+
+- name: Reboot machine to ensure Docker socket is picked up
+  become: true
+  when: install_containerd.changed or install_docker_cli.changed or install_docker.changed
+  ansible.builtin.reboot:
+
+- name: Store Docker-related versions
+  when: ansible_local.docker.versions[item.option]|d != item.value
+  become: true
+  community.general.ini_file:
+      path: /etc/ansible/facts.d/docker.fact
+      section: versions
+      option: "{{ item.option }}"
+      value: "{{ item.value }}"
+  with_items:
+      - option: containerd_version
+        value: "{{ containerd_version }}"
+      - option: docker_version
+        value: "{{ docker_version }}"
+      - option: docker_compose_version
+        value: "{{ docker_compose_version }}"

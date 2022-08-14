@@ -1,0 +1,29 @@
+---
+- name: Create a backup
+  hosts: web # TODO: Change to analytics group after setting up a dedicated host
+  gather_facts: false
+  vars:
+      ansible_become_password: "{{ lookup('community.general.passwordstore', 'website/host-passwords/' + inventory_hostname) }}"
+  tasks:
+      - name: Ensure backup root directory exists, owned by the service user
+        become: true
+        ansible.builtin.file:
+            path: /mnt/backups/analytics
+            owner: "{{ ansible_user }}"
+            group: "{{ ansible_user }}"
+            state: directory
+      - name: Set backup destination
+        ansible.builtin.set_fact:
+            backup_destination: /mnt/backups/analytics/{{ date }}
+      - name: Ensure backup path exists
+        ansible.builtin.file:
+            path: "{{ backup_destination }}"
+            state: directory
+      - name: Stop Plausible
+        ansible.builtin.shell: systemctl --user stop plausible
+      - name: Create backup file of Plausible user data
+        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_db-data,destination=/var/lib/postgresql/data,readonly" --mount "type=bind,source={{ backup_destination }},destination=/backup" ubuntu tar --gzip --create --file /backup/plausible-user-data.tar.gz --directory /var/lib/postgresql/data/ .
+      - name: Create backup file of Plausible event data
+        ansible.builtin.shell: docker run --rm --mount "source=plausible-hosting_event-data,destination=/var/lib/clickhouse,readonly" --mount "type=bind,source={{ backup_destination }},destination=/backup" ubuntu tar --gzip --create --file /backup/plausible-event-data.tar.gz --directory /var/lib/clickhouse/ .
+      - name: Restart Plausible
+        ansible.builtin.shell: systemctl --user start plausible

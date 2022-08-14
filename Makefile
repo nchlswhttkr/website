@@ -10,31 +10,34 @@ dev:
 cache:
 	@./scripts/update-cache.sh
 
-.PHONY: infra
-infra:
-	@terraform -chdir=droplet-config/terraform init
-	@terraform -chdir=droplet-config/terraform apply
-
 .PHONY: preview
 preview:
 	@./scripts/preview-server.sh
 
-.PHONY: server
-server:
-	@ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook --inventory droplet-config/ansible/hosts.ini --private-key ./secrets/remote-user.pem droplet-config/ansible/main.yml --extra-vars @droplet-config/ansible/versions.yml
+.PHONY: infra
+infra:
+	@terraform -chdir=infrastructure init
+	@terraform -chdir=infrastructure apply
 
-.PHONY: server-%
-server-%:
-	@ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook --inventory droplet-config/ansible/hosts.ini --private-key ./secrets/remote-user.pem droplet-config/ansible/manage-$*.yml --extra-vars @droplet-config/ansible/versions.yml
-
-.PHONY: ssh-%
-ssh-%:
-	@ssh -i ./secrets/remote-user.pem $*@`cat droplet-config/ansible/hosts.ini`
+.PHONY: deploy
+deploy:
+	@echo "" | gpg --clearsign > /dev/null
+	@pip3 install --quiet --requirement .venv/requirements.txt
+	@ansible-galaxy collection install --requirement .venv/ansible-requirements.yml
+	@cd deploy && ansible-playbook --inventory hosts.yml deploy.yml --private-key ../secrets/remote-user.pem
 
 .PHONY: backup
 backup:
-	@ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook --inventory droplet-config/ansible/hosts.ini --private-key ./secrets/remote-user.pem droplet-config/ansible/create-backup.yml --extra-vars "date='$$(date -u "+%Y-%m-%d %H:%M:%S")'"
+	@echo "" | gpg --clearsign > /dev/null
+	@cd deploy && ansible-playbook --inventory hosts.yml backup.yml --private-key ../secrets/remote-user.pem --extra-vars "date='$$(date -u "+%Y-%m-%d %H:%M:%S")'"
 
-.PHONY: backup-restore
-backup-restore:
-	@ANSIBLE_CONFIG=droplet-config/ansible/ansible.cfg ansible-playbook --inventory droplet-config/ansible/hosts.ini --private-key ./secrets/remote-user.pem droplet-config/ansible/restore-backup.yml
+.PHONY: restore
+restore:
+	@echo "" | gpg --clearsign > /dev/null
+	@cd deploy && ansible-playbook --inventory hosts.yml restore.yml --private-key ../secrets/remote-user.pem
+
+.PHONY: ssh
+ssh:
+	@ssh -i secrets/remote-user.pem nicholas@$(shell terraform -chdir=infrastructure output -raw web_server_ipv4_address)
+
+# TODO: Assert virtual environment is active for Ansible-related targets

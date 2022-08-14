@@ -1,3 +1,0 @@
-[submodule "droplet-config/git/stagit"]
-	path = droplet-config/git/stagit
-	url = git://git.codemadness.org/stagit

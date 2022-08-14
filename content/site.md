@@ -39,7 +39,7 @@ As I write and push changes to Github, [Buildkite](https://buildkite.com/) sched
 
 ## Serving incoming traffic
 
-I currently run everything off a single DigitalOcean droplet. I configure and manage it with [Terraform](https://www.terraform.io/) and [Ansible](https://docs.ansible.com/ansible/latest/). It's included with [my website's source code](https://github.com/nchlswhttkr/website/tree/main/droplet-config/).
+I currently run everything off a single DigitalOcean droplet. I configure and manage it with [Terraform](https://www.terraform.io/) and [Ansible](https://docs.ansible.com/ansible/latest/). It's included with my website's source code.
 
 I previously ran everything off an old Raspberry Pi model 1B on my home network, but [I've retired it for now](/blips/for-now-goodbye-raspberry-pi/).
 

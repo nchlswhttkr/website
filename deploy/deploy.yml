@@ -1,0 +1,88 @@
+---
+- name: Create user for everyday use
+  hosts: all
+  gather_facts: false
+  vars:
+      ansible_user: root
+  tasks:
+      - name: Enable UFW and allow inbound SSH connections
+        community.general.ufw:
+            rule: allow
+            port: ssh
+            state: enabled
+      - name: Create service user
+        register: create_user
+        vars:
+            password: "{{ lookup('community.general.passwordstore', 'website/host-passwords/' + inventory_hostname) }}"
+            salt: "{{ lookup('community.general.passwordstore', 'website/host-passwords/' + inventory_hostname + '.salt') }}"
+        ansible.builtin.user:
+            name: nicholas
+            shell: /bin/bash
+            password: "{{ password | password_hash('sha512', salt ) }}"
+            groups:
+                - sudo
+            append: true
+      - name: Set up SSH for service user
+        when: create_user.changed
+        ansible.builtin.copy:
+            src: /root/.ssh/authorized_keys
+            remote_src: true
+            dest: /home/nicholas/.ssh/
+            owner: nicholas
+            group: nicholas
+      # TODO: Disable SSH for root
+      - name: Enable linger for service user
+        when: create_user.changed
+        ansible.builtin.shell: loginctl enable-linger nicholas
+
+- name: Perform general set up tasks
+  hosts: all
+  gather_facts: false
+  vars:
+      ansible_become_password: "{{ lookup('community.general.passwordstore', 'website/host-passwords/' + inventory_hostname) }}"
+  tasks:
+      - name: Install general tools/libraries
+        become: true
+        ansible.builtin.apt:
+            name:
+                - jq
+                - shellcheck
+                - build-essential
+            state: latest
+      - name: Keep apt packages up to date
+        become: true
+        ansible.builtin.apt:
+            autoremove: true
+            update_cache: true
+            name: "*"
+            state: latest
+
+- name: Deploy web server
+  hosts: web
+  gather_facts: false
+  vars:
+      ansible_become_password: "{{ lookup('community.general.passwordstore', 'website/host-passwords/' + inventory_hostname) }}"
+  pre_tasks:
+      - name: Gather local facts
+        ansible.builtin.setup:
+            gather_subset: local
+  roles:
+      - website
+      - role: nginx
+        vars:
+            nginx_hostname: nicholas.cloud
+
+- name: Deploy analytics server
+  hosts: web # TODO: Change to analytics group after setting up a dedicated host
+  gather_facts: false
+  vars:
+      ansible_become_password: "{{ lookup('community.general.passwordstore', 'website/host-passwords/' + inventory_hostname) }}"
+  pre_tasks:
+      - name: Gather local facts
+        ansible.builtin.setup:
+            gather_subset: local
+  roles:
+      - analytics
+      - role: nginx
+        vars:
+            nginx_hostname: plausible.nicholas.cloud

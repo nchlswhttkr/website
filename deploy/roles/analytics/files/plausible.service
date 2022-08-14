@@ -1,0 +1,15 @@
+[Unit]
+Description=Plausible
+Documentation=https://github.com/plausible/hosting
+After=syslog.target
+After=network.target
+After=docker.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+WorkingDirectory=/home/nicholas/plausible-hosting
+ExecStart=/usr/local/bin/docker-compose up --remove-orphans
+
+[Install]
+WantedBy=default.target

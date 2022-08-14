@@ -22,19 +22,19 @@ You'll need a few tools installed and set up beforehand.
 
 -   Google Drive for credentials, Terraform state and backups of assorted files
 -   [Terraform](https://www.terraform.io/downloads.html)
--   [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html)
 -   [Pass](https://www.passwordstore.org/)
 
 ```sh
 git clone https://github.com/nchlswhttkr/website.git
 cd website
 make infra
-make server
+python3.10 -m venv .venv
+source .venv/bin/activate
+make deploy
 ```
 
 If a new droplet is created, you can restore the most recent backup.
 
 ```sh
-./scripts/mount-digitalocean-backups-volume.sh
-make backup-restore
+make restore
 ```
