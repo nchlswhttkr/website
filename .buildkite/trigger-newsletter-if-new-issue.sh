@@ -2,9 +2,12 @@
 
 set -euo pipefail
 
-git diff-tree --no-commit-id --name-status -r HEAD | grep "^[AM].content/newsletter/....-..\.md"  | cut -f 2 | sed -n "s;content/newsletter/\(....-..\)\.md;\1;p" > new-newsletters.txt
+git diff-tree --no-commit-id --name-status -r HEAD content/newsletter/ \
+    | cut -f 2 \
+    | sed -n "s;content/newsletter/\(....-..\)\.md;\1;p" \
+    > new-newsletters.txt
 
-while read -r NEWSLETTER; do
+while read -r NEWSLETTER < new-newsletters.txt; do
   echo "
     steps:
       - label: \":email: Preview newsletter #$NEWSLETTER\"
@@ -27,4 +30,4 @@ while read -r NEWSLETTER; do
           NEWSLETTER_ISSUE: $NEWSLETTER
           MAILING_LIST_ADDRESS: newsletter@mailgun.nicholas.cloud
   " | buildkite-agent pipeline upload
-done < new-newsletters.txt
+done
