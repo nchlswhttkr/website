@@ -26,7 +26,7 @@ caches:
 # Cheers Ruben for the neat trick to preserve permalinks while grouping content!
 # https://gitlab.com/rubenerd/rubenerd.com/-/blob/bdd34af9/config.yaml#L150
 permalinks:
-    blog: /blog/:title/
+    blog: /blog/:filename/
 
 params:
     color: "#8c356a"

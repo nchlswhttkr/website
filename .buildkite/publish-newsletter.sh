@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -euo pipefail
 
 curl --silent --fail "https://nicholas.cloud/newsletter/$NEWSLETTER_ISSUE/" > email.html
 curl --silent --fail "https://templates.mailchimp.com/services/html-to-text/" --data-urlencode html@email.html > email.text

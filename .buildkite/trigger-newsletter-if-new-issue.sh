@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -euo pipefail
 
 git diff-tree --no-commit-id --name-status -r HEAD | grep "^[AM].content/newsletter/....-..\.md"  | cut -f 2 | sed -n "s;content/newsletter/\(....-..\)\.md;\1;p" > new-newsletters.txt
 
