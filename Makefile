@@ -20,24 +20,27 @@ infra:
 	@terraform -chdir=infrastructure apply
 
 .PHONY: deploy
-deploy:
-	@echo "" | gpg --clearsign > /dev/null
+deploy: pass venv
 	@pip3 install --quiet --requirement .venv/requirements.txt
 	@ansible-galaxy collection install --requirement .venv/ansible-requirements.yml
 	@cd deploy && ansible-playbook --inventory hosts.yml deploy.yml --private-key ../secrets/remote-user.pem
 
 .PHONY: backup
-backup:
-	@echo "" | gpg --clearsign > /dev/null
+backup: pass venv
 	@cd deploy && ansible-playbook --inventory hosts.yml backup.yml --private-key ../secrets/remote-user.pem --extra-vars "date='$$(date -u "+%Y-%m-%d %H:%M:%S")'"
 
 .PHONY: restore
-restore:
-	@echo "" | gpg --clearsign > /dev/null
+restore: pass venv
 	@cd deploy && ansible-playbook --inventory hosts.yml restore.yml --private-key ../secrets/remote-user.pem
 
 .PHONY: ssh
 ssh:
 	@ssh -i secrets/remote-user.pem nicholas@$(shell terraform -chdir=infrastructure output -raw web_server_ipv4_address)
 
-# TODO: Assert virtual environment is active for Ansible-related targets
+.PHONY: venv
+venv:
+	@./scripts/assert-venv-active.sh
+
+.PHONY: pass
+pass:
+	@echo "" | gpg --clearsign >/dev/null
