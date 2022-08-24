@@ -1,5 +1,11 @@
 # prettier-ignore
 steps:
+  - label: ':hugo: Test build'
+    if: 'build.branch != "main"'
+    agents:
+      website: nicholas.cloud
+    command: hugo
+
   - label: ':shipit: Build and deploy site changes'
     if: 'build.branch == "main"'
     key: deploy
