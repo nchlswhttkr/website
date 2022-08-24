@@ -81,6 +81,7 @@ nav li {
     margin: 4px 8px;
 }
 main {
+    width: 100%;
     max-width: 640px;
     margin: 0 auto;
 }
