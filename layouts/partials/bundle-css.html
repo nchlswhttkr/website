@@ -10,6 +10,6 @@
     {{ range $css }}
         {{ $resources = append (resources.Get (printf "%s.css" .) | resources.Minify ) $resources }}
     {{ end }}
-    {{ $file := resources.Concat (printf "%v.bundle.css" now.Unix) $resources }}
+    {{ $file := resources.Concat "bundle.css" $resources }}
     <link rel="stylesheet" href="{{ $file.Permalink }}" />
 {{ end }}
