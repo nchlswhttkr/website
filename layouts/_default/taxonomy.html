@@ -1,9 +1,12 @@
 {{ define "main" }}
-<div class="blog-list">
-    <p class="post-details">
+<article class="blog-article">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <p>
         {{ range .Data.Terms.Alphabetical }}
-        <a href="/tags/{{ .Name }}/">#{{ .Name }}</a><br />
+        <a href="/tags/{{ .Name }}/"><code>#{{ .Name }}</code></a>
+        ({{ .Count }} posts)
+        <br />
         {{ end }}
     </p>
-</div>
+</article>
 {{ end }}

@@ -15,13 +15,13 @@ I've put this document together to be open about how I operate and the steps I t
 
 I use a number services to operate my website.
 
-#### Plausible Analytics
+### Plausible Analytics
 
 I've started self-hosting a [Plausible Analytics](https://plausible.io/) recently because I'm interested in finding out more about my website's visitors. Their [data policy](https://plausible.io/data-policy) describes the data this self-hosted instance collects and how it's used.
 
 While they have a strong stance on end user privacy, you can opt out of these analytics by adding the domain `plausible.nicholas.cloud` to your adblocker, or disabling JavaScript while you browse my site.
 
-#### Cloudflare
+### Cloudflare
 
 All traffic to my website travels through [Cloudflare](https://cloudflare.com/). You can find more about how they operate and the data they collect in their [privacy policy](https://www.cloudflare.com/en-au/privacypolicy/), particularly around data collected about "End Users".
 
@@ -31,7 +31,7 @@ All traffic to my website travels through [Cloudflare](https://cloudflare.com/).
 
 I send out a semi-regular newsletter to readers who opt in to receive it. Every newsletter includes a link to unsubscribe.
 
-#### Mailgun
+### Mailgun
 
 I use [Mailgun](https://mailgun.com) to send these newsletters, and manage the list of subscribed readers. You can read their [privacy policy](https://www.mailgun.com/privacy-policy/) to understand how they manage data stored on their platform.
 

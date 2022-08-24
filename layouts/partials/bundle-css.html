@@ -1,4 +1,4 @@
-{{ $css := slice "blog-article" "blog-list" "highlight" "main" }}
+{{ $css := slice "main" "article" "highlight" }}
 {{ if .Site.IsServer }}
     <!-- dev mode, serve separate files to aid debugging -->
     {{ range $css }}
@@ -10,6 +10,6 @@
     {{ range $css }}
         {{ $resources = append (resources.Get (printf "%s.css" .) | resources.Minify ) $resources }}
     {{ end }}
-    {{ $file := resources.Concat "bundle.css" $resources }}
+    {{ $file := resources.Concat (printf "%v.bundle.css" now.Unix) $resources }}
     <link rel="stylesheet" href="{{ $file.Permalink }}" />
 {{ end }}

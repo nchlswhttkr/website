@@ -17,28 +17,30 @@ server {
     autoindex on;
     error_page 404 /404.html;
 
-    # https://nicholas.cloud/blips/no-floc-for-me-please-google/
+    # https://nicholas.cloud/blog/no-floc-for-me-please-google/
     add_header "Permissions-Policy" "interest-cohort=()";
 
     # By default everything stays cached for at most 2 mins
     add_header "Cache-Control" "public, max-age=0, s-maxage=120";
 
-    # WEBSITE
-    location / {
-        # Cache media on clients for a month
-        location ~* \.(gif|jpg|jpeg|png|svg)$ {
-            add_header "Cache-Control" "public, max-age=2592000, s-maxage=3600, immutable";
-        }
+    # Cache media on clients for a month
+    location ~* \.(gif|jpg|jpeg|png|svg)$ {
+        add_header "Cache-Control" "public, max-age=2592000, s-maxage=3600, immutable";
+    }
 
-        # Cache styling/javascript on clients for four hours
-        location ~* \.(css|js)$ {
-            add_header "Cache-Control" "public, max-age=14400, s-maxage=3600";
-        }
+    # Cache styling/javascript on clients for four hours
+    location ~* \.(css|js)$ {
+        add_header "Cache-Control" "public, max-age=14400, s-maxage=3600";
+    }
 
-        # Common aliases for RSS feeds
-        location ~* ^/(rss|feed|atom)(/|\.xml)?$ {
-            try_files /index.xml =404;
-        }
+    # Common aliases for RSS feeds
+    location ~* ^/(rss|feed|atom)(/|\.xml)?$ {
+        try_files /index.xml =404;
+    }
+
+    # Redirect blips to blog
+    location /blips/ {
+        rewrite ^/blips/(.*) /blog/$1 permanent;
     }
 }
 
