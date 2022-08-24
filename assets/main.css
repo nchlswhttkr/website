@@ -9,8 +9,8 @@
     :root {
         --text-color: #eee; /* just a little softer than #fff */
         --background-color: #333;
-        --soft-background-color: #444;
-        --link-color: #eee;
+        --soft-background-color: #222;
+        --link-color: var(--secondary-theme-color);
     }
 }
 
@@ -76,6 +76,7 @@ nav ul {
     flex-wrap: wrap;
 }
 nav li {
+    font-weight: 700;
     list-style-type: none;
     margin: 4px 8px;
 }
