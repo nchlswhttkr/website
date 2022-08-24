@@ -1,18 +1,15 @@
 :root {
-    --theme-text-color: #fff;
     --text-color: #333;
-    --secondary-text-color: #555;
     --background-color: #fff;
-    --secondary-background-color: #eee;
+    --soft-background-color: #eee;
     --link-color: var(--theme-color);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --text-color: #eee; /* just a little softer than #fff */
-        --secondary-text-color: #ccc;
         --background-color: #333;
-        --secondary-background-color: #555;
+        --soft-background-color: #444;
         --link-color: #eee;
     }
 }
@@ -28,62 +25,86 @@ a {
     color: var(--link-color);
 }
 
-nav a,
+.constrain-width {
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 820px;
+}
+
 header a,
 footer a,
-nav a:visited,
 header a:visited,
 footer a:visited {
     color: inherit;
 }
 
 header > *,
-footer > *,
-nav > * {
+footer > * {
     color: var(--theme-text-color);
     background-color: var(--theme-color);
     box-sizing: border-box;
-    padding: 16px;
+    padding: 16px 24px;
 }
 
-nav > * {
-    padding-bottom: 0;
+header > div {
+    display: flex;
+    padding-bottom: 8px;
+    justify-content: space-between;
 }
-
-nav li {
-    padding-right: 16px;
-    font-weight: 700;
-    list-style-type: none;
-    display: inline-block;
-}
-
 header h1 {
+    font-size: 24px;
     margin: 0;
 }
-header h2 {
-    margin: 16px 0 0;
-    line-height: 1.2em;
+header a {
+    text-decoration: none;
+}
+header img {
+    height: 24px;
 }
 
-main > div {
-    background-color: var(--background-color);
+.content > .constrain-width {
+    max-width: 772px; // simulate padding
 }
-
-/* images with transparent backgrounds */
-main img {
-    background-color: #fff;
+nav {
+    margin: 24px 0;
 }
-
-.constrain-width {
-    margin: 0 auto;
-    min-width: 300px;
+nav ul {
+    margin: 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav li {
+    list-style-type: none;
+    margin: 4px 8px;
+}
+main {
     max-width: 640px;
+    margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+    .content > .constrain-width {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    nav ul {
+        display: block;
+        padding: 0;
+    }
+    nav li {
+        margin: 0 0 8px;
+    }
+    main {
+        margin: 0;
+    }
 }
 
 .footer-icons {
     margin: 0 0 16px;
 }
-
 .footer-icons a {
     text-decoration: none;
     margin-right: 16px;

@@ -1,9 +1,8 @@
 baseURL: "https://nicholas.cloud/"
 languageCode: "en-us"
-title: "Nicholas Whittaker"
+title: "nicholas.cloud"
 enableEmoji: true
 enableRobotsTXT: true
-paginate: 5
 canonifyURLs: true
 
 taxonomies:
@@ -24,5 +23,10 @@ caches:
         dir: :resourceDir/json
         maxAge: -1
 
+# Cheers Ruben for the neat trick to preserve permalinks while grouping content!
+# https://gitlab.com/rubenerd/rubenerd.com/-/blob/bdd34af9/config.yaml#L150
+permalinks:
+    blog: /blog/:title/
+
 params:
-    color: "#b00b69"
+    color: "#8c356a"

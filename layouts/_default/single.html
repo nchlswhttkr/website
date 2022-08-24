@@ -1,31 +1,19 @@
 {{ define "main" }}
 <article class="blog-article">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ with .Description }}
+    <p class="description">{{ . }}</p>
+    {{ end }}
+    <!--  -->
     {{ if not .Date.IsZero }}
-    <aside>
-        <!-- prettier-ignore -->
-        <p>
-            Posted <a href="{{ .Permalink }}">{{ .Date.Format "January 02, 2006" }}</a>
-            {{ if isset .Params "tags" }}with tags{{ end }}
-            {{ range .Params.tags }}
-            <a href="/tags/{{ . }}/">#{{ . }}</a>
-            {{ end }}
-        </p>
-        <!--  -->
-        {{ if isset .Params "series" }}
-        <p>This post is part of a series!</p>
-        <ul>
-            <!-- prettier-ignore -->
-            {{ range where .Site.RegularPages.ByDate "Params.series" .Params.series }}
-            <li>
-                {{ if eq .Permalink $.Permalink }} {{ .Title }} (You are here)
-                {{ else }}
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-                {{ end }}
-            </li>
-            {{ end }}
-        </ul>
+    <!-- prettier-ignore -->
+    <p class="post-details">
+        Posted <a href="{{ .Permalink }}">{{ .Date.Format "January 02, 2006" }}</a>
+        {{ if isset .Params "tags" }}with tags{{ end }} 
+        {{ range .Params.tags }}
+        <a href="/tags/{{ . }}/">#{{ . }}</a>
         {{ end }}
-    </aside>
+    </p>
     {{ end }}
     <!--  -->
     {{ .Content }}

@@ -1,0 +1,22 @@
+<article class="blog-article">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ with .Description }}
+    <p class="description">{{ . }}</p>
+    {{ end }}
+    <!--  -->
+    <p class="post-details">
+        {{ .Date.Format "2006-01-02" }} //
+        <!--  -->
+        {{ math.Ceil (div .WordCount 150.0) }} min read
+        <!--  -->
+        {{ if isset .Params "tags" }} // {{ end }}
+        <!--  -->
+        {{ range .Params.tags }}
+        <a href="/tags/{{ . }}/">#{{ . }}</a>
+        {{ end }}
+    </p>
+    {{ .Summary }}
+    <p style="text-align: center; font-weight: 700">
+        <a href="{{ .Permalink }}">Read more >></a>
+    </p>
+</article>

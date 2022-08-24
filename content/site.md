@@ -17,7 +17,6 @@ With that said, there's a number of tools and services this website depends on. 
 -   I use [Buildkite](https://buildkite.com/) to automate deployments and other assorted jobs.
 -   All of my web traffic needs are handled by [Cloudflare](https://cloudflare.com/).
 -   I manage this website's infra with [Terraform](https://terraform.io/) and [Ansible](https://docs.ansible.com/ansible/latest/).
--   Some of my Git repositories are mirrored here, with [Stagit](https://git.codemadness.org/stagit/file/README.html) generating web views for them.
 -   A self-hosted [Plausible Analytics](https://plausible.io/) instance gives me a little insight on my website's visitors.
 <!-- TODO: Add better explanations later and mention Terraform/Ansible/Plausible -->
 
@@ -25,7 +24,8 @@ There's also several other resources that this site uses.
 
 -   Footer icons are provided by [Feather](https://feathericons.com/).
 -   The site favicon uses an icon from [Font Awesome](https://fontawesome.com/license/free/).
--   Background pattern comes from [Hero Patterns](https://www.heropatterns.com/).
+
+My thanks also go to [Ruben Schade](https://rubenerd.com/) for his lovely blog design, which my own design is based on.
 
 ## Writing and publishing content
 
@@ -41,15 +41,11 @@ As I write and push changes to Github, [Buildkite](https://buildkite.com/) sched
 
 I currently run everything off a single DigitalOcean droplet. I configure and manage it with [Terraform](https://www.terraform.io/) and [Ansible](https://docs.ansible.com/ansible/latest/). It's included with my website's source code.
 
-I previously ran everything off an old Raspberry Pi model 1B on my home network, but [I've retired it for now](/blips/for-now-goodbye-raspberry-pi/).
-
-There's a couple of other services hosted on this droplet too.
-
--   Git's FastCGI client with [Stagit](https://git.codemadness.org/stagit/file/README.html) for my self-hosted repositories
--   A self-hosted [Plausible Analytics](https://plausible.io/) instance
--   A self-hosted [https://writefreely.org/] instance, but only for personal use
+I previously ran everything off an old Raspberry Pi model 1B on my home network, but [I've retired it for now](/blog/for-now-goodbye-raspberry-pi/).
 
 Web traffic is handled by [Nginx](https://nginx.org/en/). It makes serving static content a breeze, while still giving me a great deal of fliexibility. For example, my RSS feed is aliased to common paths (like `/feed` for Wordpress sites) to make it easier to find.
+
+I have also have a self-hosted [Plausible Analytics](https://plausible.io/) running on the instance too.
 
 ## Domain management
 

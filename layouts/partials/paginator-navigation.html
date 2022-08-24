@@ -1,0 +1,9 @@
+{{ if gt .TotalPages 1}}
+<p style="text-align: center; font-weight: 700">
+    {{ if .HasPrev }}
+    <a href="{{ .Prev.URL }}">Newer posts</a>
+    {{ end }} &bull; {{ if .HasNext }}
+    <a href="{{ .Next.URL }}">Older posts</a>
+    {{ end }}
+</p>
+{{ end }}

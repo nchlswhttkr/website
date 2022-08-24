@@ -1,18 +1,7 @@
 {{ define "main" }}
-<div class="blog-list">
-    {{ range .Pages }}
-    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-    <p class="post-details">
-        {{ .Date.Format "2006-01-02" }} //
-        <!--  -->
-        {{ math.Ceil (div .WordCount 150.0) }} min read
-        <!--  -->
-        {{ if isset .Params "tags" }} // {{ end }}
-        <!--  -->
-        {{ range .Params.tags }}
-        <a href="/tags/{{ . }}/">#{{ . }}</a>
-        {{ end }}
-    </p>
-    {{ end }}
-</div>
+<!--  -->
+{{ range .Paginator.Pages }} {{ partial "article-preview.html" . }} {{ end }}
+<!--  -->
+{{ partial "paginator-navigation.html" .Paginator }}
+<!--  -->
 {{ end }}

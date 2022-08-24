@@ -25,21 +25,7 @@
         <link rel="icon" sizes="32x32" href="{{ ($favicon.Resize (printf "32x png %s" $color)).Permalink }}" />
         {{ block "css" . }} {{ end }}
         {{ partial "bundle-css.html" . }}
-        <style>
-            :root {
-                --theme-color: {{ $color }};
-            }
-
-            body {
-                background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='{{ replace $color "#" "%23" }}' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            }
-
-            @media (prefers-color-scheme: dark) {
-                body {
-                    background-image: none
-                }
-            }
-        </style>
+        <style>:root {--theme-color: {{ $color }};--theme-text-color: #fff;}</style>
         {{ if eq .Site.BaseURL "https://nicholas.cloud/" }}
             <script async defer data-domain="nicholas.cloud" src="https://plausible.nicholas.cloud/js/plausible.js"></script>
             {{ if eq .Page.Kind "404" }}
@@ -49,31 +35,33 @@
         {{ end }}
     </head>
     <body>
-        <nav>
-            <ul class="constrain-width">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/rss/">RSS</a></li>
-                <!-- <li><a href="/newsletter/">Newsletter</a></li> -->
-                {{ if .Site.IsServer }}
-                <li><a href="/404.html">404</a></li>
-                <li><a href="/blog/hello-world/">Test</a></li>
-                {{ end }}
-            </ul>
-        </nav>
-
         <header>
             <div class="constrain-width">
-                <h1>{{ $title }}</h1>
-                {{ if .Description }}
-                <h2>{{ .Description }}</h2>
-                {{ end }}
+                <h1><a href="/">{{ .Site.Title }}</a></h1>
+                <a href="/">
+                    <!-- prettier-ignore -->
+                    <img src="{{ ($favicon.Resize (printf "48x png %s" $color)).Permalink }}">
+                </a>
             </div>
         </header>
 
-        <main>
-            <div class="constrain-width">{{ block "main" . }} {{ end }}</div>
-        </main>
+        <div class="content">
+            <div class="constrain-width">
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/rss/">RSS</a></li>
+                        <!-- <li><a href="/newsletter/">Newsletter</a></li> -->
+                        {{ if .Site.IsServer }}
+                        <li><a href="/404.html">404</a></li>
+                        <li><a href="/blog/hello-world/">Test</a></li>
+                        {{ end }}
+                    </ul>
+                </nav>
+                <main>{{ block "main" . }} {{ end }}</main>
+            </div>
+        </div>
 
         <!-- prettier-ignore -->
         <footer>
@@ -120,8 +108,6 @@
                     <a href="/site/">About this website</a>
                     &bull;
                     <a href="/privacy/">Privacy</a>
-                    &bull;
-                    <a href="/archive/">Post archive</a>
                     &bull;
                     <a href="/about/#contact">Contact me</a>
                 </div>

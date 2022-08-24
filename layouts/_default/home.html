@@ -1,36 +1,7 @@
 {{ define "main" }}
 <!-- prettier-ignore -->
-{{ $paginator := .Paginate (where .Site.RegularPages "Section" "in" (slice "blips" "blog")) }}
-<div class="blog-list">
-    {{ range $paginator.Pages }}
-    <h2>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2>
-    <p class="post-details">
-        {{ .Date.Format "2006-01-02" }}
-        <!--  -->
-        {{ if isset .Params "tags" }} // {{ end }}
-        <!--  -->
-        {{ range .Params.tags }}
-        <a href="/tags/{{ . }}/">#{{ . }}</a>
-        {{ end }}
-    </p>
-    <!-- prettier-ignore -->
-    <article class="blog-article">
-        {{ if eq .Section "blips" }}
-            {{ .Content }}
-        {{ else if eq .Section "blog" }}
-            {{ .Summary }}
-            <p>You can read this full post <a href="{{ .Permalink }}">online on my blog</a>. <em>({{ math.Ceil (div .WordCount 150.0) }} min read)</em></p>
-        {{ end }}
-    </article>
-    {{ end }}
-    <p style="text-align: center">
-        {{ if $paginator.HasPrev }}
-        <a href="{{ $paginator.Prev.URL }}">Newer posts</a>
-        {{ end }} &bull; {{ if $paginator.HasNext }}
-        <a href="{{ $paginator.Next.URL }}">Older posts</a>
-        {{ end }}
-    </p>
-</div>
-{{ end }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "blog") 5 }}
+<!--  -->
+{{ range $paginator.Pages }} {{ partial "article-preview.html" . }} {{ end }}
+<!--  -->
+{{ partial "paginator-navigation.html" $paginator }} {{ end }}
