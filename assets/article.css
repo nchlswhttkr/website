@@ -22,7 +22,8 @@
 }
 .blog-article > h3 {
     font-size: 1.35rem;
-    margin-top: 32px;
+    margin-top: 16px;
+    padding-top: 16px; /* buffer for anchor links */
 }
 .blog-article > h4 {
     font-size: 1.1rem;
@@ -113,7 +114,7 @@ as wide as their container + padding, then centre with an offset and transform.
 
 /* CODE BLOCKS */
 .blog-article .highlight {
-    width: calc(100% + 32px); /* Force blocks to occupy page width */
+    width: calc(100% + 48px); /* Force blocks to occupy page width */
 }
 .blog-article .highlight pre {
     padding: 16px;
@@ -176,14 +177,14 @@ as wide as their container + padding, then centre with an offset and transform.
     margin: 0 auto 16px;
     max-width: 428px;
     box-sizing: border-box;
-    border: 2px solid var(--soft-background-colour);
+    border: 2px solid var(--soft-background-color);
     border-radius: 8px;
     padding: 12px;
 }
 
 @media (prefers-color-scheme: dark) {
     .twitter {
-        border-color: 2px solid var(--text-color);
+        border-color: var(--soft-background-color);
     }
 }
 
