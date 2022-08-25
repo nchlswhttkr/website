@@ -97,7 +97,7 @@ I originally used MobX for state management, but ended up switching back to Redu
 Lastly, to give an explicit mention to the other cool things behind Mellophone:
 
 -   [React Testing Library](https://github.com/testing-library/react-testing-library) and the testing patterns espoused by [Kent C Dodds](https://kentcdodds.com)
--   [Rsync](https://rsync.samba.org/), a tool so great I've already [written about it](../a-pretty-little-bit-of-rsync/)!
+-   [Rsync](https://rsync.samba.org/), a tool so great I've already [written about it](/blog/a-pretty-little-bit-of-rsync/)!
 -   [Nginx](https://nginx.org/en/) for making it easy for me to serve static files and reverse proxy requests to my Django server
 -   Just plain Git, making it possible for me to working on multiple features simultaneously
 

@@ -13,7 +13,7 @@ Over the past few weeks, I've been building a solver for the [puzzle game Golf P
 
 <!--more-->
 
-The key issue remaining with the solver is that it still treats every card in the player's hand as _unique_. In levels with many duplicate cards, the solver needlessly tries each of them hoping to find a better solution. I landed on [two different approaches](../speeding-up-a-solver-for-golf-peaks/#can-we-go-even-faster) to resolve this.
+The key issue remaining with the solver is that it still treats every card in the player's hand as _unique_. In levels with many duplicate cards, the solver needlessly tries each of them hoping to find a better solution. I landed on [two different approaches](/blog/speeding-up-a-solver-for-golf-peaks/#can-we-go-even-faster) to resolve this.
 
 It should be noted that in fixing this, our algorithm loses sight of how cards are ordered in the player's hand. In turn, this affects how we generate AppleScript instructions to solve a level. We'll need to scan the player's hand after each move to find where the next card is. As we'll see though, this tradeoff is worth the improvement in solving time.
 

@@ -8,7 +8,7 @@ tags:
     - ios-shortcuts
 ---
 
-For a while now, I've been automatically [sending out my newsletter](../sending-out-my-newsletter/) as a part of the deployment process for my website. It's a great convenience that means I can focus on writing and publishing new content, instead of worrying about generating and delivering actual emails.
+For a while now, I've been automatically [sending out my newsletter](/blog/sending-out-my-newsletter/) as a part of the deployment process for my website. It's a great convenience that means I can focus on writing and publishing new content, instead of worrying about generating and delivering actual emails.
 
 In my current setup, I'm able to preview newsletters from my inbox before they're delivered to my readers. If I think one is good to go, I can hit the big red button to send it out!
 

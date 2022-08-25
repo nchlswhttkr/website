@@ -54,7 +54,7 @@ Since I use Buildkite, it makes sense to leverage their CRON-style [scheduled bu
 
 Done, right? We've got builds running each week, so can we call it a day? Not quite.
 
-In my case, builds don't just deploy changes to my site. They also [send out my newsletter](../../sending-out-my-newsletter/) if the build's HEAD commit includes a new or updated newsletter. If a scheduled build runs on one of these commits, my newsletter will be sent out multiple times!
+In my case, builds don't just deploy changes to my site. They also [send out my newsletter](/blog/sending-out-my-newsletter/) if the build's HEAD commit includes a new or updated newsletter. If a scheduled build runs on one of these commits, my newsletter will be sent out multiple times!
 
 While it won't reach my readers' inboxes (that requires my manual approval), newsletters will still be sent to me. I try to keep a clean inbox, so I'd like to avoid this scenario if possible.
 

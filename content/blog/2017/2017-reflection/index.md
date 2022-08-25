@@ -26,7 +26,7 @@ A particular highlight for the year was the research project I was able to compl
 
 Coming into my first year at Monash, I also took the opportunity to join up with WIRED, the IT student society. I had great fun at their events, in particular the tech talks they ran and their self-hosted hackathon Unihack Mini. At the AGM, I was elected to the role of Marketing Officer, so I look forward to helping run WIRED for 2018 and continuing to make the IT student experience at Monash great!
 
-Outside of continuing a strong academic performance, I also took part in several 'hackathons' with my peers, even managing to take out a prize at UniHack 2017 with the Bosch IoT Award at Unihack Mini. (Read more [here](../unihack-2017/)).
+Outside of continuing a strong academic performance, I also took part in several 'hackathons' with my peers, even managing to take out a prize at UniHack 2017 with the Bosch IoT Award at Unihack Mini. (Read more [here](/blog/unihack-2017/)).
 
 As the year neared a close, my friend Eric suggested I apply for a position on the team at [MonPlan](https://monplan.github.io/), as a frontend developer. As a part of this, I started learning React/Redux for building web applications. In the end, I was offered a position on the team, so with the new year I can look forward to working in a proper software developer role for the university!
 

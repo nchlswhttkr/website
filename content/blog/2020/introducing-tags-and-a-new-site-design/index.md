@@ -20,7 +20,7 @@ I've gone through most of my old posts and added tags to them, so now you can fi
 
 Some blog posts belong to a series, and these posts now have a little list at the top of their respective pages for easy navigation. Previously, I included links within each post's content. This was workable, but relied on me updating and managing all the links between posts.
 
-If you want to see an example of all this is action, start with my posts about [building a Golf Peaks solver](../../building-a-solver-for-golf-peaks/)!
+If you want to see an example of all this is action, start with my posts about [building a Golf Peaks solver](/blog/building-a-solver-for-golf-peaks/)!
 
 ### Better caching behaviour
 

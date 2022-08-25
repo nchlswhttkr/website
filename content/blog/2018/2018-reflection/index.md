@@ -142,7 +142,7 @@ I took the time this year to attend a few developer-focused events when I had th
 
 I've begun to feel like hackathons aren't the type of event for me, but nonetheless I endavoured to attend a few throughout the year. This started off with the Facebook Regional Hack in May, [Unihack](https://unihack.net/) in July and [GovHack](https://www.govhack.org/) in September. I was also involved with running Unihack Mini as a part of WIRED, though I didn't participate myself.
 
-You can also read more about the Facebook Hack in my [reflection post](../facebook-hack-2018/).
+You can also read more about the Facebook Hack in my [reflection post](/blog/facebook-hack-2018/).
 
 {{< tweet 1060468874083102720 >}}
 

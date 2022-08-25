@@ -8,7 +8,7 @@ tags:
     - webdev
 ---
 
-A while back, I wrote about the [inner workings of a neat CSS trick](../hiding-secret-links-with-css/) I spotted in use on a website. The world of software development is rife with these kinds of tricks, so why not look at more of them in another blog post?
+A while back, I wrote about the [inner workings of a neat CSS trick](/blog/hiding-secret-links-with-css/) I spotted in use on a website. The world of software development is rife with these kinds of tricks, so why not look at more of them in another blog post?
 
 I've gathered a few interesting fixes here to problems I've either encountered myself in web development, or seen others grapple with. So without further ado, let's jump into it!
 
