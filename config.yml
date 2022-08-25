@@ -4,6 +4,7 @@ title: "nicholas.cloud"
 enableEmoji: true
 enableRobotsTXT: true
 canonifyURLs: true
+enableInlineShortcodes: true
 
 taxonomies:
     tag: "tags"
