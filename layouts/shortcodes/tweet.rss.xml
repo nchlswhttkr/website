@@ -1,9 +1,5 @@
 <!-- prettier-ignore -->
-{{ $secret := "" }}
-{{ if fileExists "secrets/embed-proxy-secret.txt" }}
-    {{ $secret = readFile "secrets/embed-proxy-secret.txt" }}
-{{ end }}
-{{ $tweet := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/twitter?" (querify "id" (.Get 0) "secret" $secret) }}
+{{ $tweet := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/twitter?" (querify "id" (.Get 0)) }}
 
 <blockquote>
     <div>
@@ -11,7 +7,7 @@
             <img
                 width="48"
                 height="48"
-                src="{{ $tweet.author_avatar_url }}"
+                src="https://nicholas.cloud/media-proxy/?url={{ $tweet.author_avatar_url }}"
                 alt="Avatar of {{ $tweet.author_name }}"
             />
         </a>
@@ -23,7 +19,7 @@
     {{ range $tweet.photos }}
     <!-- prettier-ignore -->
     <img
-        src="{{ .url }}"
+        src="https://nicholas.cloud/media-proxy/?url={{ .high_res_url }}"
         {{ if ne .alt nil }}
         alt="{{ .alt }}"
         {{ end }}
@@ -36,7 +32,7 @@
         preload="metadata"
         loop="true"
         controls="true"
-        src="{{ $tweet.video.src }}"
+        src="https://nicholas.cloud/media-proxy/?url={{ $tweet.video.src }}"
         width="{{ $tweet.video.width }}"
         height="{{ $tweet.video.height }}"
         type="{{ $tweet.video.type }}"

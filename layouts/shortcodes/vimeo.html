@@ -1,11 +1,6 @@
 <!-- prettier-ignore -->
-{{ $secret := "" }}
-{{ if fileExists "secrets/embed-proxy-secret.txt" }}
-    {{ $secret = readFile "secrets/embed-proxy-secret.txt" }}
-{{ end }}
-{{ $video := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/vimeo?" (querify "id" (.Get 0) "secret" $secret) }}
-{{ $get_thumbnail := getJSON "https://nicholas.cloud/media-proxy/?" (querify "url" $video.thumbnail_url "base64" "true") }}
-{{ $thumbnail := $get_thumbnail.media | base64Decode | resources.FromString (printf "vimeo_%d.jpg" (.Get 0)) }}
+{{ $video := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/vimeo?" (querify "id" (.Get 0)) }}
+{{ $thumbnail := printf "https://nicholas.cloud/media-proxy/?%s" (querify "url" $video.thumbnail_url) | resources.GetRemote }}
 {{ $overlay := (resources.Get "play-video.png").Fill (printf "%.0fx%.0f Center" $video.thumbnail_width $video.thumbnail_height) }}
 
 <div class="vimeo">

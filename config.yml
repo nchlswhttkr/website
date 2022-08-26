@@ -21,8 +21,11 @@ markup:
 # https://gohugo.io/getting-started/configuration/#configure-file-caches
 caches:
     getjson:
-        dir: :resourceDir/json
-        maxAge: -1
+        dir: :resourceDir/_get
+        maxAge: 2h
+    getresource:
+        dir: :resourceDir/_get
+        maxAge: 2h
 
 # Cheers Ruben for the neat trick to preserve permalinks while grouping content!
 # https://gitlab.com/rubenerd/rubenerd.com/-/blob/bdd34af9/config.yaml#L150

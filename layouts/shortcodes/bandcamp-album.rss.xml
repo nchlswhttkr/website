@@ -1,9 +1,5 @@
 <!-- prettier-ignore -->
-{{ $secret := "" }}
-{{ if fileExists "secrets/embed-proxy-secret.txt" }}
-    {{ $secret = readFile "secrets/embed-proxy-secret.txt" }}
-{{ end }}
-{{ $album := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/bandcamp?" (querify "artist" (.Get 0) "album" (.Get 1) "secret" $secret) }}
+{{ $album := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/bandcamp?" (querify "artist" (.Get 0) "album" (.Get 1)) }}
 
 <a href="https://{{ .Get 0 }}.bandcamp.com/album/{{ .Get 1 }}">
     Listen to {{ $album.title }} on Bandcamp

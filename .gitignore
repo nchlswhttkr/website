@@ -3,7 +3,7 @@
 # Hugu cache/output/secrets
 public/
 secrets/
-resources/json/
+resources/
 
 # Infrastructure dependencies and secrets
 .terraform/

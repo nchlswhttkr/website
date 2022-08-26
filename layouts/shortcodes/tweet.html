@@ -1,9 +1,5 @@
 <!-- prettier-ignore -->
-{{ $secret := "" }}
-{{ if fileExists "secrets/embed-proxy-secret.txt" }}
-    {{ $secret = readFile "secrets/embed-proxy-secret.txt" }}
-{{ end }}
-{{ $tweet := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/twitter?" (querify "id" (.Get 0) "secret" $secret) }}
+{{ $tweet := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/twitter?" (querify "id" (.Get 0)) }}
 
 <div class="twitter">
     <div class="twitter-author">
