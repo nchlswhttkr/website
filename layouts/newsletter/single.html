@@ -64,27 +64,17 @@
                                         <h1>{{ .Title }}</h1>
                                         {{ .Content }}
                                     </article>
-                                    <p style="display: flex; margin-top: 32px;">
-                                        {{ if ne .PrevInSection nil }}
-                                        <a style="color: inherit;" href="{{ .PrevInSection.Permalink }}"><< Previous</a>
-                                        {{ end }}
-                                        <span style="flex: 1;"></span>
-                                        {{ if ne .NextInSection nil }}
-                                        <a style="color: inherit;" href="{{ .NextInSection.Permalink }}">Next >></a>
-                                        {{ end }}
-                                    </p>
-                                    <br/>
-                                    <p>
+                                    <p style="text-align: center;">
                                         Published
                                         <a href="{{ .Permalink }}">{{ .Date.Format "02 Jan 2006" }}</a>
                                         by
-                                        <a href="{{ .Site.BaseURL }}">Nicholas</a>
+                                        <a href="{{ .Site.BaseURL }}">Nicholas Whittaker</a>
                                     </p>
-                                    <p>
+                                    <p style="text-align: center;">
                                         <a href="{{ .Site.BaseURL }}newsletter/subscribe/">Subscribe</a>
                                         to be notified when I publish a new newsletter issue!
                                     </p>
-                                    <p>
+                                    <p style="text-align: center;">
                                         If you no longer want to receive emails, you can
                                         <a href="%mailing_list_unsubscribe_url%">unsubscribe</a>.
                                     </p>

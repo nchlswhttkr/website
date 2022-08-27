@@ -1,0 +1,33 @@
+{{ define "main" }}
+<article class="blog-article">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ with .Description }}
+    <p class="description">{{ . }}</p>
+    {{ end }}
+    <!--  -->
+    {{ if not .Date.IsZero }}
+    <!-- prettier-ignore -->
+    <p class="post-details">
+        Posted <a href="{{ .Permalink }}">{{ .Date.Format "January 02, 2006" }}</a>
+        {{ if isset .Params "tags" }}with tags{{ end }} 
+        {{ range .Params.tags }}
+        <a href="/tags/{{ . }}/">#{{ . }}</a>
+        {{ end }}
+    </p>
+    {{ end }}
+    <!--  -->
+    {{ .Content }}
+</article>
+<div class="blog-article">
+    <hr />
+    {{ with .NextInSection }}
+    <p style="font-weight: 700">
+        <a href="{{ .Permalink }}">&#8592; {{ .Title }}</a>
+    </p>
+    {{ end }} {{ with .PrevInSection }}
+    <p style="font-weight: 700; text-align: end">
+        <a href="{{ .Permalink }}">{{ .Title }} &#8594;</a>
+    </p>
+    {{ end }}
+</div>
+{{ end }}

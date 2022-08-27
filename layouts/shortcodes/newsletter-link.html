@@ -3,5 +3,7 @@
 {{ $domain := index (findRE "([a-z0-9-]+\\.)+[a-z]+" $url) 0 }}
 
 <p class="link">
-    <a href="{{ $url }}" target="_blank" rel="noreferrer">{{ $domain }} >></a>
+    <a href="{{ $url }}" target="_blank" rel="noreferrer">
+        {{ $domain }} &#8594;
+    </a>
 </p>

@@ -10,14 +10,14 @@ In my spare time, I rehearse and play with brass bands and orchestras around my 
 
 You might also find me playing the odd game of lawn bowls.
 
-## Contact
+### Contact
 
 Here's a couple of ways you can reach me. You can find all my accounts in the site footer.
 
 -   [Email](mailto:nicholas@nicholas.cloud)
 -   [Twitter](https://twitter.com/nchlswhttkr/)
 
-## About
+### About
 
 I studied Computer Science at Monash University and helped launch [MonPlan](https://monplan.apps.monash.edu/), a course planning service built for students by students.
 

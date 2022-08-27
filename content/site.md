@@ -7,7 +7,7 @@ There's a few more moving parts to my website than there were when [I first made
 
 These are all the main parts that I can think of off the top of my head. If you've got questions, feel free to [contact me](/about/#contact)!
 
-## Acknowledgements
+### Acknowledgements
 
 All content on this website is my own unless otherwise credited.
 
@@ -27,7 +27,7 @@ There's also several other resources that this site uses.
 
 My thanks also go to [Ruben Schade](https://rubenerd.com/) for his lovely blog design, which my own design is based on.
 
-## Writing and publishing content
+### Writing and publishing content
 
 Almost all content and code sits in a [single Github repo](https://github.com/nchlswhttkr/website/).
 
@@ -37,7 +37,7 @@ I like being able to write my posts locally in markdown. It's easy to read and w
 
 As I write and push changes to Github, [Buildkite](https://buildkite.com/) schedules builds to be run. Good thing they have a free tier for community/open source projects! It performs other scripted work as well, like [scheduling delivery of my newsletter](/blog/sending-out-my-newsletter/).
 
-## Serving incoming traffic
+### Serving incoming traffic
 
 I currently run everything off a single DigitalOcean droplet. I configure and manage it with [Terraform](https://www.terraform.io/) and [Ansible](https://docs.ansible.com/ansible/latest/). It's included with my website's source code.
 
@@ -47,7 +47,7 @@ Web traffic is handled by [Nginx](https://nginx.org/en/). It makes serving stati
 
 I have also have a self-hosted [Plausible Analytics](https://plausible.io/) running on the instance too.
 
-## Domain management
+### Domain management
 
 I originally called `nchlswhttkr.com` my home, but later moved. While "Nicholas Whittaker with no vowels" sounds good in my head, it becomes problematic when someone else had to type it out. I use a [Cloudflare Worker](https://github.com/nchlswhttkr/workers/tree/main/workers/nchlswhttkr-dot-com/) to redirect to my new website, because I try to avoid link rot.
 
