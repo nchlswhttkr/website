@@ -50,7 +50,7 @@
         dest: /home/{{ ansible_user }}/.buildkite-agent/hooks/environment
         mode: "0644"
       - src: ../templates/buildkite-agent.j2.service
-        dest: /home/{{ ansible_user }}/.config/systemd/user/
+        dest: /home/{{ ansible_user }}/.config/systemd/user/buildkite-agent.service
         mode: "0644"
 
 - name: Restart Buildkite agent service
@@ -59,6 +59,7 @@
       name: buildkite-agent
       scope: user
       state: restarted
+      enabled: true
       daemon_reload: true
 
 - name: Set Buildkite agent version
