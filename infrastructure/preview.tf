@@ -18,8 +18,8 @@ resource "aws_s3_object" "bucket_documents" {
 
   bucket = aws_s3_bucket.preview.bucket
   key    = each.key
-  source = "./preview-bucket-files/${each.key}"
-  etag   = filemd5("./preview-bucket-files/${each.key}")
+  source = "./preview-${each.key}"
+  etag   = filemd5("./preview-${each.key}")
 }
 
 resource "aws_s3_bucket_public_access_block" "public_access_block" {
