@@ -2,17 +2,17 @@
 
 # https://docs.digitalocean.com/products/volumes/how-to/mount/
 # $1 - The volume name
-# $2 - The droplet's IPv4 address
+# $2 - The droplet's name
 
 set -euo pipefail
 
 VOLUME_NAME="$1"
-DROPLET_IP="$2"
+DROPLET_NAME="$2"
 
-echo "Ensuring volume $VOLUME_NAME is mounted/persistent for host $DROPLET_IP"
+echo "Ensuring volume $VOLUME_NAME is mounted/persistent for host $DROPLET_NAME"
 
 # shellcheck disable=SC2087
-ssh -o "StrictHostKeyChecking=no" -T -i ../secrets/remote-user.pem "root@$DROPLET_IP" << EOF
+ssh -T "root@$DROPLET_NAME" <<EOF
     # Create a mount point for your volume:
     mkdir -p /mnt/$VOLUME_NAME
 

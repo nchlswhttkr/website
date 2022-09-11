@@ -5,11 +5,6 @@
   vars:
       ansible_user: root
   tasks:
-      - name: Enable UFW and allow inbound SSH connections
-        community.general.ufw:
-            rule: allow
-            port: ssh
-            state: enabled
       - name: Create service user
         register: create_user
         vars:
@@ -31,6 +26,13 @@
             owner: nicholas
             group: nicholas
       # TODO: Disable SSH for root
+      - name: Create directory for user units
+        when: create_user.changed
+        ansible.builtin.file:
+            path: /home/nicholas/.config/systemd/user
+            owner: "nicholas"
+            group: "nicholas"
+            state: directory
       - name: Enable linger for service user
         when: create_user.changed
         ansible.builtin.shell: loginctl enable-linger nicholas

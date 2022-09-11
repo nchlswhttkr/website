@@ -2,7 +2,6 @@
 
 # Hugu cache/output/secrets
 public/
-secrets/
 resources/
 
 # Infrastructure dependencies and secrets

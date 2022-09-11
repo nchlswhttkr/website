@@ -4,7 +4,8 @@ resource "digitalocean_ssh_key" "remote_user" {
 }
 
 locals {
-  digitalocean_region = "sgp1"
+  digitalocean_region         = "sgp1"
+  digitalocean_web_server_tag = "nicholas-dot-cloud-web-servers"
 }
 
 resource "digitalocean_project" "nicholas_dot_cloud" {
@@ -25,6 +26,12 @@ resource "digitalocean_droplet" "web" {
   size       = "s-1vcpu-1gb"
   ssh_keys   = [digitalocean_ssh_key.remote_user.fingerprint]
   monitoring = true
+  vpc_uuid   = digitalocean_vpc.main.id
+  tags       = [local.digitalocean_web_server_tag]
+
+  provisioner "local-exec" {
+    command = "./set-up-tailscale-on-droplet.sh '${self.id}'"
+  }
 }
 
 resource "digitalocean_volume" "backups" {
@@ -42,13 +49,67 @@ resource "digitalocean_volume_attachment" "backups" {
   droplet_id = digitalocean_droplet.web.id
   volume_id  = digitalocean_volume.backups.id
 
-  depends_on = [
-    local_sensitive_file.remote_user_key # needed for SSH access
-  ]
-
   provisioner "local-exec" {
-    command = "./mount-digitalocean-volume-to-droplet.sh '${digitalocean_volume.backups.name}' '${digitalocean_droplet.web.ipv4_address}'"
+    command = "./mount-digitalocean-volume-to-droplet.sh '${digitalocean_volume.backups.name}' '${digitalocean_droplet.web.name}'"
   }
 
   # TODO: Create a destroy-time provisioner to shut down the droplet to prevent corruption
+}
+
+resource "digitalocean_vpc" "main" {
+  name   = "nicholas-dot-cloud"
+  region = local.digitalocean_region
+}
+
+resource "digitalocean_firewall" "web" {
+  name = "web-server-with-tailscale"
+  tags = [local.digitalocean_web_server_tag]
+
+  # Allow inbound SSH connections from within the project's VPC
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "22"
+    source_addresses = [digitalocean_vpc.main.ip_range]
+  }
+
+  # Allow inbound HTTPS requests
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "443"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  # Allow outbound DNS requests (UDP)
+  outbound_rule {
+    protocol              = "udp"
+    port_range            = "53"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  # Allow outbound DNS requests (TCP)
+  outbound_rule {
+    protocol              = "tcp"
+    port_range            = "53"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  # Allow outbound HTTP requests
+  outbound_rule {
+    protocol              = "tcp"
+    port_range            = "80"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  # Allow outbound HTTPS requests
+  outbound_rule {
+    protocol              = "tcp"
+    port_range            = "443"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  # Allow ICMP communication
+  outbound_rule {
+    protocol              = "icmp"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
 }
