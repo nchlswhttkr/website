@@ -1,11 +1,13 @@
 # prettier-ignore
 steps:
-  - label: ':shipit: Build and deploy site changes'
-    if: 'build.branch == "main"'
-    key: deploy
-    agents:
-      website: nicholas.cloud
+  - label: ':shipit: Build website and run checks'
+    key: build
     command: .buildkite/build.sh
+    plugins:
+      - docker#3.13.0:
+          image: "registry.gitlab.com/pages/hugo:0.101.0"
+
+  # TODO: Deploy step
 
   - label: ':mag: Scan for newsletters'
     if: 'build.branch == "main" && build.source != "schedule"'
