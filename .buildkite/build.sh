@@ -10,7 +10,7 @@ DUPLICATE_BLOG_POSTS=$(
         | sed "s;^;\t;"
 )
 if [[ "$DUPLICATE_BLOG_POSTS" != "" ]]; then
-    echo -e "\033[31mFound duplicate blog posts:\n$DDD\033[0m"
+    echo -e "\033[31mFound duplicate blog posts:\n$DUPLICATE_BLOG_POSTS\033[0m"
     exit 1;
 fi
 

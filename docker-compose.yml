@@ -1,0 +1,10 @@
+version: '3'
+services:
+    dev:
+        working_dir: /workdir
+        volumes:
+            - .:/workdir
+        build:
+            context: .
+            args:
+                HUGO_VERSION: "0.101.0"
