@@ -25,7 +25,7 @@
         <link rel="icon" sizes="32x32" href="{{ ($favicon.Resize (printf "32x png %s" $color)).Permalink }}" />
         {{ block "css" . }} {{ end }}
         {{ partial "bundle-css.html" . }}
-        <style>:root {--theme-color: {{ $color }};--secondary-theme-color: {{ .Site.Params.Secondary }};--theme-text-color: #fff;}</style>
+        <style>:root {--theme-color: {{ $color }};--theme-text-color: #fff;}</style>
         {{ if eq .Site.BaseURL "https://nicholas.cloud/" }}
             <script async defer data-domain="nicholas.cloud" src="https://plausible.nicholas.cloud/js/plausible.js"></script>
             {{ if eq .Page.Kind "404" }}
@@ -52,8 +52,8 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="/rss/">RSS</a></li>
-                        <!-- <li><a href="/newsletter/">Newsletter</a></li> -->
                         {{ if .Site.IsServer }}
+                        <li><a href="/newsletter/">Newsletter</a></li>
                         <li><a href="/404.html">404</a></li>
                         <li><a href="/blog/hello-world/">Test</a></li>
                         {{ end }}

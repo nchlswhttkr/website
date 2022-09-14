@@ -1,7 +1,7 @@
 :root {
     --text-color: #333;
     --background-color: #fff;
-    --soft-background-color: #eee;
+    --soft-background-color: #ddd;
     --link-color: var(--theme-color);
 }
 
@@ -9,8 +9,8 @@
     :root {
         --text-color: #eee; /* just a little softer than #fff */
         --background-color: #333;
-        --soft-background-color: #222;
-        --link-color: var(--secondary-theme-color);
+        --soft-background-color: #555;
+        --link-color: #eee;
     }
 }
 

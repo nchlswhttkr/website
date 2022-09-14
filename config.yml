@@ -34,4 +34,3 @@ permalinks:
 
 params:
     color: "#8c356a"
-    secondary: "#bd92b0" # dark mode links
