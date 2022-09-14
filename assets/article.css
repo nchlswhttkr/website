@@ -54,7 +54,7 @@
 .blog-article > ul > li > code {
     border-radius: 4px;
     padding: 0 4px;
-    background-color: var(--soft-background-color);
+    border: 2px solid var(--soft-background-color);
     overflow-wrap: anywhere;
 }
 
@@ -106,10 +106,6 @@ as wide as their container + padding, then centre with an offset and transform.
 .blog-article td {
     padding: 8px;
     border: 1px solid var(--text-color);
-}
-.blog-article thead,
-.blog-article tr:nth-child(2n) {
-    background-color: var(--soft-background-color);
 }
 
 /* CODE BLOCKS */

@@ -21,12 +21,12 @@ steps:
     if: 'build.branch == "main" && build.source != "schedule"'
     depends_on: deploy
     agents:
-      website: nicholas.cloud
+      queue: nicholas.cloud
     command: .buildkite/trigger-newsletter-if-new-issue.sh
 
   - label: ":cloudflare: Purge Cloudflare cache"
     if: 'build.branch == "main"'
     depends_on: deploy
     agents:
-      website: nicholas.cloud
+      queue: nicholas.cloud
     command: .buildkite/purge-cloudflare-cache.sh
