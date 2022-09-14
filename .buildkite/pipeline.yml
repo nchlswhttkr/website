@@ -7,7 +7,7 @@ steps:
       - "public/**/*"
     plugins:
       - docker-compose#v3.10.0:
-          run: dev
+          run: ci
 
   # TODO: Deploy step
 
