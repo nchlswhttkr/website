@@ -1,15 +1,21 @@
 # prettier-ignore
 steps:
-  - label: ':shipit: Build website and run checks'
+  - label: ':hugo: Build website and run checks'
     key: build
     command: .buildkite/build.sh
     artifact_paths:
-      - "public.tar.gz"
+      - "website.tar.gz"
     plugins:
       - docker-compose#v3.10.0:
           run: ci
 
-  # TODO: Deploy step
+  - label: ':shipit: Deploy website'
+    if: 'build.branch == "main"'
+    key: deploy
+    depends_on: build
+    agents:
+      queue: nicholas.cloud
+    command: .buildkite/deploy.sh
 
   - label: ':mag: Scan for newsletters'
     if: 'build.branch == "main" && build.source != "schedule"'
