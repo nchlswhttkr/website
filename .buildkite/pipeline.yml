@@ -4,7 +4,7 @@ steps:
     key: build
     command: .buildkite/build.sh
     artifact_paths:
-      - "public/**/*"
+      - "public.tar.gz"
     plugins:
       - docker-compose#v3.10.0:
           run: ci

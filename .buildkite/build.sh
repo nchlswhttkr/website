@@ -16,6 +16,6 @@ if [[ "$DUPLICATE_BLOG_POSTS" != "" ]]; then
 fi
 
 echo --- Running Hugo build
-# Remove empty CSS rules
-sed -i 's/[a-z.* ]*{ *}//g' assets/highlight.css
+sed -i 's/[a-z.* ]*{ *}//g' assets/highlight.css # Remove empty CSS rules
 hugo --minify
+tar -cz -f public.tar.gz public/
