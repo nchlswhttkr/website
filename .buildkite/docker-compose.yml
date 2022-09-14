@@ -3,7 +3,7 @@ services:
     ci:
         working_dir: /workdir
         volumes:
-            - .:/workdir
+            - ..:/workdir
         build:
             context: .
             args:
