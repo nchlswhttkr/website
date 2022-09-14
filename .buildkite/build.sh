@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+echo "Running pre-build checks"
 DUPLICATE_BLOG_POSTS=$(
     find content/blog -mindepth 2 -maxdepth 2 -type d \
         | cut -d / -f 4 \
@@ -14,8 +15,7 @@ if [[ "$DUPLICATE_BLOG_POSTS" != "" ]]; then
     exit 1;
 fi
 
+echo --- Running Hugo build
 # Remove empty CSS rules
 sed -i 's/[a-z.* ]*{ *}//g' assets/highlight.css
-
-echo --- Running Hugo build
 hugo --minify

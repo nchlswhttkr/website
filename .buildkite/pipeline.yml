@@ -3,6 +3,8 @@ steps:
   - label: ':shipit: Build website and run checks'
     key: build
     command: .buildkite/build.sh
+    artifact_paths:
+      - "public/**/*"
     plugins:
       - docker-compose#v3.10.0:
           run: dev
