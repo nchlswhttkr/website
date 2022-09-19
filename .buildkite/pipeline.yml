@@ -4,7 +4,7 @@ steps:
     key: build
     command: .buildkite/build.sh
     artifact_paths:
-      - "website.tar.gz"
+      - website.tar.gz
     plugins:
       - docker-compose#v3.10.0:
           run: ci
@@ -21,13 +21,10 @@ steps:
   - label: ':mag: Scan for newsletters'
     if: 'build.branch == "main" && build.source != "schedule"'
     depends_on: deploy
-    agents:
-      queue: nicholas.cloud
     command: .buildkite/trigger-newsletter-if-new-issue.sh
 
   - label: ":cloudflare: Purge Cloudflare cache"
     if: 'build.branch == "main"'
+    key: purge-cloudflare-cache
     depends_on: deploy
-    agents:
-      queue: nicholas.cloud
     command: .buildkite/purge-cloudflare-cache.sh
