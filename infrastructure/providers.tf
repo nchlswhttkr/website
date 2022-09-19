@@ -2,26 +2,26 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 3.56.0"
+      version = "~> 4.0"
     }
 
     digitalocean = {
       source  = "digitalocean/digitalocean"
-      version = ">= 2.10.1"
+      version = "~> 2.10"
     }
 
     github = {
       source  = "integrations/github"
-      version = ">= 4.13.0"
+      version = "~> 4.13"
     }
 
     pass = {
       source  = "nicholas.cloud/nchlswhttkr/pass"
-      version = ">= 0.1"
+      version = "~> 0.1"
     }
   }
 
-  required_version = ">= 1.1.3"
+  required_version = "~> 1.2"
 
   backend "local" {
     path = "/Users/nchlswhttkr/Google Drive/nicholas.cloud/terraform.tfstate"
@@ -30,7 +30,7 @@ terraform {
 
 locals {
   aws_tags = {
-    Project = "preview.nicholas.cloud"
+    Project = "Website Previews"
   }
 }
 
