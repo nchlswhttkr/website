@@ -79,6 +79,13 @@ resource "digitalocean_firewall" "web" {
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
 
+  # Allow outbound SSH requests
+  outbound_rule {
+    protocol              = "tcp"
+    port_range            = "22"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
   # Allow outbound DNS requests (UDP)
   outbound_rule {
     protocol              = "udp"

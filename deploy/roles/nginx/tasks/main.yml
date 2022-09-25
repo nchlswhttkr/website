@@ -1,4 +1,4 @@
-- name: Allow HTTPS ingress
+- name: Allow SSH egress
   become: true
   community.general.ufw:
       rule: allow

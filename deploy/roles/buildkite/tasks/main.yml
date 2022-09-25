@@ -1,3 +1,9 @@
+- name: Allow SSH egress
+  become: true
+  community.general.ufw:
+      rule: allow
+      port: ssh
+      direction: out
 - name: Download and install Buildkite agent
   when: ansible_local.buildkite.versions.buildkite_agent_version|d != buildkite_agent_version
   register: install_buildkite_agent
@@ -26,6 +32,9 @@
       - src: ../templates/buildkite-agent.j2.service
         dest: /home/{{ ansible_user }}/.config/systemd/user/buildkite-agent.service
         mode: "0644"
+      - src: ../../../id_ed25519_website
+        dest: /home/{{ ansible_user }}/.ssh/
+        mode: "0600"
 
 - name: Restart Buildkite agent service
   when: install_buildkite_agent.changed or configure_buildkite_agent.changed

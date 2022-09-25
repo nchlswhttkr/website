@@ -19,6 +19,11 @@ terraform {
       source  = "nicholas.cloud/nchlswhttkr/pass"
       version = "~> 0.1"
     }
+
+    tls = {
+      source  = "hashicorp/tls"
+      version = "~> 4.0"
+    }
   }
 
   required_version = "~> 1.2"
