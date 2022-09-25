@@ -79,6 +79,13 @@ resource "digitalocean_firewall" "web" {
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
 
+  # Allow inbound Tailscale requests
+  inbound_rule {
+    protocol         = "udp"
+    port_range       = "41641"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
   # Allow outbound SSH requests
   outbound_rule {
     protocol              = "tcp"
@@ -111,6 +118,13 @@ resource "digitalocean_firewall" "web" {
   outbound_rule {
     protocol              = "tcp"
     port_range            = "443"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  # Allow outbound Tailscale requests
+  outbound_rule {
+    protocol              = "udp"
+    port_range            = "41641"
     destination_addresses = ["0.0.0.0/0", "::/0"]
   }
 
