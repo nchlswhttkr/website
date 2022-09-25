@@ -113,7 +113,7 @@ as wide as their container + padding, then centre with an offset and transform.
     width: calc(100% + 48px); /* Force blocks to occupy page width */
 }
 .blog-article .highlight pre {
-    padding: 16px;
+    padding: 16px 24px;
     overflow-x: scroll;
 }
 @media print {
