@@ -7,7 +7,6 @@ resources/
 # Infrastructure dependencies and secrets
 .terraform/
 deploy/hosts.yml
-deploy/id_ed25519_website
 
 # Python3 toolchain
 .venv/bin
