@@ -2,6 +2,13 @@
 <!-- prettier-ignore -->
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "blog") 5 }}
 <!--  -->
+<div class="blog-article">
+    <h2>Hi there, I'm Nicholas!</h2>
+    {{ markdownify .Site.Params.Bio }}
+</div>
+<!--  -->
+<hr style="margin: 0 16px" />
+<!--  -->
 {{ range $paginator.Pages }} {{ partial "article-preview.html" . }} {{ end }}
 <!--  -->
 {{ partial "paginator-navigation.html" $paginator }} {{ end }}

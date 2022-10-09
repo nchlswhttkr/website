@@ -4,4 +4,6 @@ Disallow: /goto/
 Disallow: /files/
 Disallow: /media-proxy/
 Disallow: /git/
+Disallow: /niko.png
+Disallow: /niko/
 Sitemap: {{ .Site.BaseURL }}sitemap.xml

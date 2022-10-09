@@ -33,4 +33,12 @@ permalinks:
     blog: /blog/:filename/
 
 params:
-    color: "#8c356a"
+    color: "#2442ba"
+    bio: |
+        <img style="float: right; margin: 0 0 16px 16px" loading="lazy" height="96" width="96" alt="Niko from the video game OneShot" src="https://nicholas.cloud/niko.png" />
+
+        I'm a developer with a passion for web development and automation!
+
+        I use this blog to write about my interests. They're usually tech-related, but there's also the odd music and gaming piece too.
+
+        If you're wondering, this is Niko from the game OneShot. You should play OneShot.

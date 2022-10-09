@@ -8,7 +8,7 @@
   become: true
   ansible.builtin.apt:
       name:
-          - nginx
+          - nginx-extras
       state: latest
 - name: Configure Nginx
   register: configure_nginx

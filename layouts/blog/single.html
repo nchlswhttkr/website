@@ -19,6 +19,8 @@
     {{ .Content }}
 </article>
 <div class="blog-article">
+    <p><b>Thanks for reading!</b></p>
+    {{ markdownify .Site.Params.Bio }}
     <hr />
     {{ with .NextInSection }}
     <p style="font-weight: 700">

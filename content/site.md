@@ -33,9 +33,9 @@ Almost all content and code sits in a [single Github repo](https://github.com/nc
 
 I use the static site generator [Hugo](https://gohugo.io/) with a custom theme to build my website. It's fast and meets my needs for templating/content management.
 
-I like being able to write my posts locally in markdown. It's easy to read and write, and whenever I need something more complex I can easily drop in custom HTML snippets with Hugo.
+I like being able to write my posts locally in markdown. It's easy to read and write, and whenever I need something more complex I can easily drop in custom HTML snippets.
 
-As I write and push changes to Github, [Buildkite](https://buildkite.com/) schedules builds to be run. Good thing they have a free tier for community/open source projects! It performs other scripted work as well, like [scheduling delivery of my newsletter](/blog/sending-out-my-newsletter/).
+As changes are pushed to Github, [Buildkite](https://buildkite.com/) schedules builds to be run. Good thing they have a free tier for community/open source projects! It performs other scripted work as well, like [scheduling delivery of my newsletter](/blog/sending-out-my-newsletter/).
 
 ### Serving incoming traffic
 
@@ -55,4 +55,4 @@ Both this old domain and my current domain, `nicholas.cloud`, are registered wit
 
 The nameservers for both domains are with Cloudflare, because it's easier to manage DNS records when my traffic is proxied through their network. The added benefit of caching is nice too, though I get a negligible amount of traffic.
 
-My main reason for using Cloudflare is [Cloudflare Workers](https://workers.dev), which are great when I need little more than what a purely static website offers. If you'd like to see a few more things that are possible with Cloudflare Workers, I've [written a couple of blog posts](/blog/getting-up-to-hijinks-with-cloudflare-workers) about uses I've found for them. Hooray for serverless!
+My main reason for using Cloudflare is [Cloudflare Workers](https://workers.dev), which are great when I need a little more than what a purely static website offers. If you'd like to see a few more things that are possible with Cloudflare Workers, I've [written a couple of blog posts](/blog/getting-up-to-hijinks-with-cloudflare-workers) about uses I've found for them. Hooray for serverless!
