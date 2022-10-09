@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
     ci:
         working_dir: /workdir
@@ -7,4 +7,4 @@ services:
         build:
             context: .
             args:
-                HUGO_VERSION: "0.101.0"
+                HUGO_VERSION: "0.104.3"
