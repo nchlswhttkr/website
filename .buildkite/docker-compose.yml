@@ -8,3 +8,8 @@ services:
             context: .
             args:
                 HUGO_VERSION: "0.104.3"
+    backup:
+        working_dir: /workdir
+        volumes:
+            - ..:/workdir
+        image: "python:3.10"

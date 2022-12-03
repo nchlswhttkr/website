@@ -1,0 +1,8 @@
+# prettier-ignore
+steps:
+  - label: ':ansible: Back up Plausible server'
+    command: .buildkite/backup.sh
+    plugins:
+      - docker-compose#v3.10.0:
+          run: backup
+          config: .buildkite/docker-compose.yml
