@@ -6,7 +6,6 @@ resources/
 
 # Infrastructure dependencies and secrets
 .terraform/
-deploy/hosts.yml
 
 # Python3 toolchain
 .venv/bin
