@@ -14,8 +14,6 @@ steps:
     if: 'build.branch == "main"'
     key: deploy
     depends_on: build
-    agents:
-      queue: nicholas.cloud
     command: .buildkite/deploy.sh
 
   - label: ':mag: Scan for newsletters'
