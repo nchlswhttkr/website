@@ -80,7 +80,6 @@ A lovely little hack to make images/code blocks fill the page width. Make them
 as wide as their container + padding, then centre with an offset and transform.
 */
 .blog-article > p > img,
-.blog-article > video,
 .blog-article > .highlight {
     display: block;
     background-color: #fff; /* images with transparent backgrounds */
