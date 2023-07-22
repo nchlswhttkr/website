@@ -10,5 +10,5 @@ done
 git add "$1"
 git add --interactive
 
-TITLE=$(grep --max-count 1 "title" "$1/index.md" | sed "s/.*\"\(.\)\".*/\1/")
-git commit --edit -m "Publish \"$TITLE\""
+TITLE="$(grep --max-count 1 "title" "$1/index.md" | cut -d " " -f 2-)"
+git commit --edit -m "Publish $TITLE"
