@@ -16,7 +16,6 @@ With that said, there's a number of tools and services this website depends on. 
 -   [Hugo](https://gohugo.io/) lets me quickly build and preview my website content.
 -   I use [Buildkite](https://buildkite.com/) to automate deployments and other assorted jobs.
 -   All of my web traffic needs are handled by [Cloudflare](https://cloudflare.com/).
--   I manage this website's infra with [Terraform](https://terraform.io/) and [Ansible](https://docs.ansible.com/ansible/latest/).
 -   A self-hosted [Plausible Analytics](https://plausible.io/) instance gives me a little insight on my website's visitors.
 <!-- TODO: Add better explanations later and mention Terraform/Ansible/Plausible -->
 
@@ -39,7 +38,7 @@ As changes are pushed to Github, [Buildkite](https://buildkite.com/) schedules b
 
 ### Serving incoming traffic
 
-I currently run everything off a single DigitalOcean droplet. I configure and manage it with [Terraform](https://www.terraform.io/) and [Ansible](https://docs.ansible.com/ansible/latest/). It's included with my website's source code.
+I currently run everything off a small DigitalOcean droplet. I configure and manage it with [Terraform](https://www.terraform.io/) and [Ansible](https://docs.ansible.com/ansible/latest/). The code and playbooks for that live in a [dedicated repository](https://github.com/nchlswhttkr/hosting/)
 
 I previously ran everything off an old Raspberry Pi model 1B on my home network, but [I've retired it for now](/blog/for-now-goodbye-raspberry-pi/).
 
