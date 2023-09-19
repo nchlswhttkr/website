@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-MAILGUN_API_KEY="$(vault kv get -mount=kv -field mailgun_api_token buildkite/website)"
+MAILGUN_API_KEY="$(vault kv get -field mailgun_api_token kv/buildkite/website)"
 
 curl --silent --fail "https://nicholas.cloud/newsletter/$NEWSLETTER_ISSUE/" > email.html
 curl --silent --fail "https://templates.mailchimp.com/services/html-to-text/" --data-urlencode html@email.html > email.text

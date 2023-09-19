@@ -20,13 +20,9 @@ steps:
     if: 'build.branch == "main" && build.source != "schedule"'
     depends_on: deploy
     command: .buildkite/trigger-newsletter-if-new-issue.sh
-    env:
-      VAULT_ROLE_ID: 703f9e62-1225-507b-ab21-9b762f8db482
 
   - label: ":cloudflare: Purge Cloudflare cache"
     if: 'build.branch == "main"'
     key: purge-cloudflare-cache
     depends_on: deploy
     command: .buildkite/purge-cloudflare-cache.sh
-    env:
-      VAULT_ROLE_ID: 703f9e62-1225-507b-ab21-9b762f8db482
