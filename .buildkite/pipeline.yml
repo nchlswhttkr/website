@@ -15,6 +15,10 @@ steps:
     key: deploy
     depends_on: build
     command: .buildkite/deploy.sh
+    plugins:
+      - docker-compose#v3.10.0:
+          run: ci
+          config: .buildkite/docker-compose.yml
 
   - label: ':mag: Scan for newsletters'
     if: 'build.branch == "main" && build.source != "schedule"'
