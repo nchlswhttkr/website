@@ -7,4 +7,4 @@ services:
         build:
             context: .
             args:
-                HUGO_VERSION: "0.104.3"
+                HUGO_VERSION: "0.125.5"
