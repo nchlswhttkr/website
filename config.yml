@@ -40,3 +40,14 @@ params:
         I'm a developer with a passion for cloud platforms, web development and automation!
 
         I use this blog to write about my interests. They're usually tech-related, but there's also the odd music and gaming piece too.
+
+mediaTypes:
+    text/x-opml:
+        suffixes:
+            - opml
+
+outputFormats:
+    opml:
+        mediaType: text/x-opml
+        ugly: true
+        notAlternative: true

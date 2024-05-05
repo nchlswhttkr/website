@@ -1,0 +1,13 @@
+<opml version="2.0">
+<head>
+    <title>Nicholas Whittaker's Blogroll</title>
+    <ownerName>Nicholas Whittaker</ownerName>
+    <ownerId>https://nicholas.cloud/</ownerId>
+    <docs>https://opml.org/spec2.opml</docs>
+</head>
+<body>
+    {{ range sort .Params.feeds "name" }}
+    <outline type="rss" text="{{ .name }}" xmlUrl="{{ .url }}"/>
+    {{ end }}
+</body>
+</opml>
