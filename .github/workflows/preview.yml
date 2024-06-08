@@ -8,6 +8,9 @@ on:
             - reopened
             - synchronize
 
+concurrency:
+    group: ${{ github.workflow }}
+
 jobs:
     preview:
         runs-on: ubuntu-latest
