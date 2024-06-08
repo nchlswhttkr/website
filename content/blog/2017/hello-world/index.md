@@ -39,7 +39,7 @@ This text includes a [link](/).
 
 This text includes an `inline code block`. There's also a `reallyreallyreallyreallyreallyreallyreallyreally` long code block.
 
-![Alt text for this generic image](/media/nicholas.png)
+![Alt text for this generic image](/niko.png)
 
 {{% image-caption %}}A caption for the above image{{%/ image-caption %}}
 
