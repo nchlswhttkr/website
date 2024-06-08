@@ -11,5 +11,5 @@ To make changes and preview this website locally, you only need to have [Hugo](h
 ```sh
 git clone https://github.com/nchlswhttkr/website.git
 cd website
-hugo serve
+make dev
 ```
