@@ -8,14 +8,11 @@ on:
             - reopened
             - synchronize
 
-concurrency:
-    group: ${{ github.workflow }}
-
 jobs:
     preview:
         runs-on: ubuntu-latest
         steps:
-            - name: Get branch's latest deployment
+            - name: Get latest deployment
               uses: octokit/request-action@v2.x
               id: get_latest_deployment
               if: contains('closed synchronize', github.event.action)
@@ -27,7 +24,7 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Mark branch's latest deployment as inactive
+            - name: Set latest deployment as inactive
               uses: octokit/request-action@v2.x
               if: contains('closed synchronize', github.event.action)
               with:
@@ -58,6 +55,7 @@ jobs:
                   ref: ${{ github.event.pull_request.head.ref }}
                   environment: preview
                   auto_merge: false
+                  required_contexts: "[]"
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -66,10 +64,11 @@ jobs:
               if: contains('opened reopened synchronize', github.event.action)
               with:
                   submodules: recursive
+            - name: Set site URL to deployment environment
+              run: sed -i "s;https://nicholas.cloud/;https://preview.nicholas.cloud/${{ github.event.pull_request.number }}/;" config.yml
+              if: contains('opened reopened synchronize', github.event.action)
             - name: Build
               uses: docker://registry.gitlab.com/pages/hugo:latest
-              with:
-                  args: --baseURL https://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
               if: contains('opened reopened synchronize', github.event.action)
 
             - name: Deploy build artifacts
