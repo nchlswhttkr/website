@@ -47,9 +47,7 @@ jobs:
                   repo: ${{ github.repository }}
                   deployment: ${{ fromJson(steps.get_deployments.outputs.data)[0].id }}
                   state: inactive
-                  log_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-                  headers: |
-                      Accept: application/vnd.github.ant-man-preview+json
+                  auto_inactive: false
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
