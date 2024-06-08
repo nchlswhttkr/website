@@ -67,7 +67,7 @@ jobs:
             - name: Build
               uses: docker://registry.gitlab.com/pages/hugo:latest
               with:
-                  args: --baseURL https://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
+                  args: hugo --baseURL https://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
               if: contains('opened reopened synchronize', github.event.action)
 
             - name: Deploy build artifacts
