@@ -91,6 +91,7 @@ jobs:
                   state: success
                   environment_url: https://preview.nicholas.cloud/${{ github.event.pull_request.number }}/
                   log_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+                  auto_inactive: false
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -103,5 +104,6 @@ jobs:
                   deployment: ${{ fromJson(steps.get_deployments.outputs.data)[0].id }}
                   state: error
                   log_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+                  auto_inactive: false
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
