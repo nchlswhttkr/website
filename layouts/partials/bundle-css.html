@@ -1,5 +1,5 @@
 {{ $css := slice "main" "article" "highlight" }}
-{{ if .Site.IsServer }}
+{{ if hugo.IsServer }}
     <!-- dev mode, serve separate files to aid debugging -->
     {{ range $css }}
     <link rel="stylesheet" href="{{ (resources.Get (printf "%s.css" .)).Permalink }}" />

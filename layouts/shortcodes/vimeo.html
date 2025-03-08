@@ -1,6 +1,18 @@
 <!-- prettier-ignore -->
-{{ $video := getJSON "https://hugo-proxy.nchlswhttkr.workers.dev/vimeo?" (querify "id" (.Get 0)) }}
-{{ $thumbnail := printf "https://nicholas.cloud/media-proxy/?%s" (querify "url" $video.thumbnail_url) | resources.GetRemote }}
+{{ $video := dict }}
+{{ $url := printf "https://hugo-proxy.nchlswhttkr.workers.dev/vimeo?%s" (collections.Querify "id" (.Get 0)) }}
+
+{{ with try (resources.GetRemote $url) }}
+    {{ with .Err }}
+        {{ errorf "%s" . }}
+    {{ else with .Value }}
+        {{ $video = . | transform.Unmarshal }}
+    {{ else }}
+        {{ errorf "Unable to get remote resource %q" $url }}
+    {{ end }}
+{{ end }}
+
+{{ $thumbnail := printf "https://nicholas.cloud/media-proxy/?%s" (collections.Querify "url" $video.thumbnail_url) | resources.GetRemote }}
 {{ $overlay := (resources.Get "play-video.png").Fill (printf "%.0fx%.0f Center" $video.thumbnail_width $video.thumbnail_height) }}
 
 <div class="vimeo">
