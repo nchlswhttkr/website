@@ -9,7 +9,6 @@ title: "Nice to meet you, I'm Nicholas!"
 Here's a couple of ways you can reach me. You can find all my accounts in the site footer.
 
 -   [Email](mailto:nicholas@nicholas.cloud)
--   [Twitter](https://twitter.com/nchlswhttkr/)
 
 ### About
 
