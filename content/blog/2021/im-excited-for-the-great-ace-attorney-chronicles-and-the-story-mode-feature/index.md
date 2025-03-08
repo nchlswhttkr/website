@@ -12,9 +12,7 @@ While a new game isn't confirmed, Capcom will be releasing [a localised bundle o
 
 <!--more-->
 
-A feature being introduced in the game is Story Mode, where the game will automatically play itself on the player's behalf. Some internet shadows are criticising the _optional_ feature, saying it removes the logic puzzles and problem solving the series is founded upon.
-
-{{< tweet 1397598597152190466 >}}
+A feature being introduced in the game is [Story Mode](https://twitter.com/aceattorneygame/status/1397598597152190466), where the game will automatically play itself on the player's behalf. Some internet shadows are criticising the _optional_ feature, saying it removes the logic puzzles and problem solving the series is founded upon.
 
 A reply to the critics captures the motivation behind this feature simply and succinctly. Every player should have the opportunity to experience these games, without the needless trial-and-error that the games can sometimes be guilty (_ha!_) of.
 

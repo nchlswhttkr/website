@@ -139,13 +139,6 @@ as wide as their container + padding, then centre with an offset and transform.
     text-align: center;
 }
 
-/* TWITTER */
-.blog-article .twitter-tweet {
-    /* Isolated hack to override inline styling, sorry */
-    width: unset !important;
-    margin: 16px auto !important;
-}
-
 /* YOUTUBE/VIMEO */
 .blog-article .youtube span,
 .blog-article .vimeo span {
@@ -165,73 +158,4 @@ as wide as their container + padding, then centre with an offset and transform.
 .blog-article > .bandcamp-mini-embed {
     margin: 16px auto;
     max-width: 400px;
-}
-
-/* TWITTER */
-.twitter {
-    margin: 0 auto 16px;
-    max-width: 428px;
-    box-sizing: border-box;
-    border: 2px solid var(--soft-background-color);
-    border-radius: 8px;
-    padding: 12px;
-}
-
-@media (prefers-color-scheme: dark) {
-    .twitter {
-        border-color: var(--soft-background-color);
-    }
-}
-
-.twitter-author,
-.twitter-actions {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.twitter-author > div {
-    flex-grow: 1;
-}
-
-.twitter-author img {
-    margin-right: 8px;
-    border-radius: 50%;
-}
-
-.twitter-username {
-    font-family: monospace;
-}
-
-.twitter > video,
-.twitter > a > img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 4px auto;
-    max-height: 400px;
-}
-
-.twitter > a > img {
-    width: auto;
-}
-
-.twitter > video {
-    width: 100%;
-    background-color: #000;
-}
-
-.twitter-actions {
-    margin-top: 16px;
-}
-
-.twitter-actions > a {
-    margin-right: 12px;
-}
-
-.twitter-actions > a:last-of-type {
-    margin-right: 0;
-    flex-grow: 1;
-    text-align: right;
 }

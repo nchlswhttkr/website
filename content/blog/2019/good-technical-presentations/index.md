@@ -13,8 +13,6 @@ I've had the pleasure of attending several tech talks and workshops in the past 
 
 These are just my opinions on presentations, so it's fine to have a differing view to what I'm saying. If you've got suggestions for how I could amend this, you can always [open up an issue or PR for discussion](https://source.nchlswhttkr.com)!
 
-{{< tweet 1113368040555417600 >}}
-
 ### Following the leader
 
 As someone giving a presentation or leading a workshop, it's important for your audience to be able to follow what you're covering. At a basic level, this usually means speaking at a measured pace with clear diction and avoiding jargon (depending on the nature of a presentation) so that your audience can have an easy time focusing in the messages you're trying to deliver.

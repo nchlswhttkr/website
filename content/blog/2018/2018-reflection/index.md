@@ -72,15 +72,13 @@ I've also been a part of a few other ensembles this year, offering my help when 
 
 **Monash Jazz Orchestra** - 3rd trombone for the "Beyond The Sea" Summer concert.
 
-**Footscray-Yarraville City Band** - Marching for the ANZAC Day Parade and in the opening of an AFL game.
+**Footscray-Yarraville City Band** - Marching for the ANZAC Day Parade and in [the opening of an AFL game](https://twitter.com/stkildafc/status/1017705968233168897).
 
 **Hyde Street Youth Band** - Marching for the AFL Grand Final Day Parade.
 
 **Grainger Wind Symphony** - Filling on euphonium for their "Story of Cao Xueqin" concert.
 
 **Bentleigh Uniting Church Band** - Playing euphonium for their annual Christmas service.
-
-{{< tweet 1017705968233168897 >}}
 
 ### Lawn Bowls
 
@@ -144,9 +142,7 @@ I've begun to feel like hackathons aren't the type of event for me, but nonethel
 
 You can also read more about the Facebook Hack in my [reflection post](/blog/facebook-hack-2018/).
 
-{{< tweet 1060468874083102720 >}}
-
-{{% image-caption %}}Shoutout to my team from GovHack!{{%/ image-caption %}}
+Shoutout to [my team from GovHack](https://twitter.com/frostickle/status/1060468874083102720)!
 
 These events were fun, though I feel that I'm usually going moreso to enjoy the weekend hanging out with friends rather than to seriously compete. I'm still deciding how involved I want to be next year, but if I'm going to commit to a hackathon going forward, it would serve me better to dedicate my time and effort to only one or two events. At events this year, all productivity/useful output from me usually ceased in the evening of the first night, and I would end up heading home or lounging about, contributing very little for my team. I want to curb this going forward.
 
@@ -166,9 +162,7 @@ This December, I've also been doing the [Advent of Code](https://adventofcode.co
 
 #### Gaming
 
-I bought a Switch, it was worth it. I've sunk at least 100 hours into Breath of the Wild since picking it up, and other games (Super Mario Odyssey, Owlboy) have been great fun as well.
-
-{{< tweet 1056357122282143744 >}}
+I bought a Switch, it was worth it. I've sunk [at least 100 hours into Breath of the Wild](https://twitter.com/nchlswhttkr/status/1056357122282143744) since picking it up, and other games (Super Mario Odyssey, Owlboy) have been great fun as well.
 
 #### Comics
 
