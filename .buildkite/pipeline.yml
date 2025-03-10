@@ -6,7 +6,7 @@ steps:
     artifact_paths:
       - website.tar.gz
     plugins:
-      - docker-compose#v3.10.0:
+      - docker-compose#v5.6.0:
           run: ci
           config: .buildkite/docker-compose.yml
 
@@ -15,6 +15,11 @@ steps:
     key: deploy
     depends_on: build
     command: .buildkite/deploy.sh
+    plugins:
+      - docker-compose#v5.6.0:
+          run: ci
+          config: .buildkite/docker-compose.yml
+          mount-buildkite-agent: true
 
   - label: ':mag: Scan for newsletters'
     if: 'build.branch == "main" && build.source != "schedule"'
