@@ -3,26 +3,47 @@ title: "Blogroll"
 outputs: [opml]
 params:
     feeds:
-        - name: Nicholas Whittaker
-          url: https://nicholas.cloud/rss/
         - name: Lachlan Jacob
-          url: https://blog.etopiei.com/feed.php
+          xml: https://blog.etopiei.com/feed.php
+          html: https://blog.etopiei.com/
         - name: Robert Koch
-          url: https://blog.kochie.io/feed/rss.xml
+          xml: https://blog.kochie.io/feed/rss.xml
+          html: https://blog.kochie.io/
         - name: Nik Skoufis
-          url: https://blog.skouf.com/index.xml
+          xml: https://blog.skouf.com/index.xml
+          html: https://blog.skouf.com/
         - name: fasterthanlime
-          url: https://fasterthanli.me/index.xml
+          xml: https://fasterthanli.me/index.xml
+          html: https://fasterthanli.me/
         - name: rachelbythebay
-          url: https://rachelbythebay.com/w/atom.xml
+          xml: https://rachelbythebay.com/w/atom.xml
+          html: https://rachelbythebay.com/w/
         - name: Ruben Schade
-          url: https://rubenerd.com/feed/
+          xml: https://rubenerd.com/feed/
+          html: https://rubenerd.com/
         - name: Soatok
-          url: https://soatok.blog/feed
+          xml: https://soatok.blog/feed
+          html: https://soatok.blog/
         - name: Tyler Hall
-          url: https://tyler.io/feed
+          xml: https://tyler.io/feed
+          html: https://tyler.io/
         - name: Xe Iaso
-          url: https://xeiaso.net/blog.rss
+          xml: https://xeiaso.net/blog.rss
+          html: https://xeiaso.net/
         - name: xssfox
-          url: https://sprocketfox.io/xssfox/index.xml
+          xml: https://sprocketfox.io/xssfox/index.xml
+          html: https://sprocketfox.io/xssfox/
+        - name: Robert Postill
+          xml: https://www.grinning-cat.com/index.xml
+          html: https://www.grinning-cat.com/
 ---
+
+Welcome to my blogroll!
+
+<!--more-->
+
+This collects an assortment of blogs and feeds I like to follow, I hope you enjoy them. :relaxed:
+
+I was inspired by the blogroll that [Ruben Schade](https://rubenerd.com/blogroll.opml) put together, so I made one of my own.
+
+You can also <a href="" download="blogroll.opml">download this page</a> and import it into your reader of choice.

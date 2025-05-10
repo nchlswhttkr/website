@@ -41,13 +41,15 @@ params:
 
         I use this blog to write about my interests. They're usually tech-related, but there's also the odd music and gaming piece too.
 
+# Serve OPML files as XML to force in-browser viewing
 mediaTypes:
-    text/x-opml:
+    application/xml:
         suffixes:
             - opml
 
 outputFormats:
     opml:
-        mediaType: text/x-opml
+        mediaType: application/xml
         ugly: true
         notAlternative: true
+        isPlainText: true

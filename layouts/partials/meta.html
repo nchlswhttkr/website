@@ -1,19 +1,34 @@
 <!-- prettier-ignore -->
+{{ $title := .Title }}
+{{ if and (eq .Kind "term") (eq .Data.Plural "tags") }}
+    {{ $title = printf "Posts tagged #%s" .Title }}
+{{ end }}
+
+<!-- prettier-ignore -->
 {{ $favicon := resources.Get "favicon.png" }}
-{{ $coverImage := ($favicon.Resize (printf "256x png %s" $.Site.Params.Color)).Permalink }}
+{{ $color := .Site.Params.Color }}
+{{ if isset .Params "color" }}
+    {{ $color = .Params.Color }}
+{{ end }}
+
+<!-- prettier-ignore -->
+{{ $coverImage := ($favicon.Resize (printf "256x png %s" $color)).Permalink }}
 {{ $coverImageAlt := "Icon for Nicholas Whittaker" }}
-{{ if ( isset .Params "cover" ) }}
+{{ if (isset .Params "cover") }}
     {{ if not ( isset .Params "coveralt" ) }}
         {{ errorf "Expected an alt text for cover image for ./content/%s" .File.Path }}
     {{ end }}
     {{ $coverImage = printf "%s%s" .Permalink .Params.Cover }}
     {{ $coverImageAlt = .Params.CoverAlt }}
 {{ end }}
+
+<!-- prettier-ignore -->
 {{ $description := .Description }}
 {{ if eq .Description "" }}
     {{ $description = .Summary | plainify | truncate 200 }}
 {{ end }}
 
+<title>{{ $title }}</title>
 <link
     rel="alterantive"
     type="application/rss+xml"
@@ -37,3 +52,12 @@
 {{ end }}
 <meta name="twitter:site" content="@nchlswhttkr" />
 <meta name="twitter:creator" content="@nchlswhttkr" />
+
+<!-- prettier-ignore -->
+<link rel="apple-touch-icon" sizes="120x120" href="{{ ($favicon.Resize (printf "120x png %s" $color)).Permalink }}" />
+<link rel="apple-touch-icon" sizes="152x152" href="{{ ($favicon.Resize (printf "152x png %s" $color)).Permalink }}" />
+<link rel="apple-touch-icon" sizes="167x167" href="{{ ($favicon.Resize (printf "167x png %s" $color)).Permalink }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ ($favicon.Resize (printf "180x png %s" $color)).Permalink }}" />
+<link rel="icon" sizes="96x96" href="{{ ($favicon.Resize (printf "96x png %s" $color)).Permalink }}" />
+<link rel="icon" sizes="16x16" href="{{ ($favicon.Resize (printf "16x png %s" $color)).Permalink }}" />
+<link rel="icon" sizes="32x32" href="{{ ($favicon.Resize (printf "32x png %s" $color)).Permalink }}" />

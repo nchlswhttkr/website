@@ -1,4 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#blogroll"?>
 <opml version="2.0">
+
 <head>
     <title>Nicholas Whittaker's Blogroll</title>
     <ownerName>Nicholas Whittaker</ownerName>
@@ -7,7 +10,60 @@
 </head>
 <body>
     {{ range sort .Params.feeds "name" }}
-    <outline type="rss" text="{{ .name }}" xmlUrl="{{ .url }}"/>
+    <outline type="rss" text="{{ .name }}" xmlUrl="{{ .xml }}" htmlUrl="{{ .html }}"/>
     {{ end }}
 </body>
+
+<xsl:stylesheet id="blogroll" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="opml">
+        <html lang="en">
+            <head>
+                {{ partial "meta.html" . }}
+                {{ block "css" . }} {{ end }}
+                {{ partial "bundle-css.html" . }}
+                <style>:root {--theme-color: {{ .Site.Params.Color }};--theme-text-color: #fff;}</style>
+            </head>
+            <body>
+                <header>
+                    <div class="constrain-width">
+                        <h1><a href="/">{{ .Site.Title }}</a></h1>
+                        <a href="/">
+                            <!-- prettier-ignore -->
+                            <img src="{{ ((resources.Get "favicon.png").Resize (printf "48x png %s" .Site.Params.Color)).Permalink }}"/>
+                        </a>
+                    </div>
+                </header>
+
+                <div class="content">
+                    <div class="constrain-width">
+                        {{ partial "nav.html" . }}
+                        <main>
+                            <div class="blog-article">
+                                <h2>{{ .Title }}</h2>
+                                {{ .Content }}
+                                <hr/>
+                                <ul>
+                                    <xsl:apply-templates select="body/outline" />
+                                </ul>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+
+                <footer>
+                    <div class="constrain-width">
+                        {{ partial "footer-icons.html" . }}
+                    </div>
+                </footer>
+            </body>
+        </html>
+    </xsl:template>
+    <xsl:template match="outline" xmlns="http://www.w3.org/1999/xhtml">
+        <li xml:space="preserve">
+            <a href="{@htmlUrl}"><xsl:value-of select="@text" /></a>
+            (<a href="{@xmlUrl}">RSS feed</a>)
+        </li>
+    </xsl:template>
+</xsl:stylesheet>
+
 </opml>
