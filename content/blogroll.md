@@ -46,4 +46,4 @@ This collects an assortment of blogs and feeds I like to follow, I hope you enjo
 
 I was inspired by the blogroll that [Ruben Schade](https://rubenerd.com/blogroll.opml) put together, so I made one of my own.
 
-You can also <a href="" download="blogroll.opml">download this page</a> and import it into your reader of choice.
+You can also <a href="" download="blogroll.opml">download this page</a> and import it into your RSS reader of choice.
