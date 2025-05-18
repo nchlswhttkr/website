@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="#blogroll"?>
+
+<!-- Explicitly declare id attributes as an ID type -->
+<!DOCTYPE OPML [<!ATTLIST xsl:stylesheet id ID #REQUIRED>]>
+
 <opml version="2.0">
 
 <head>
@@ -14,8 +18,9 @@
     {{ end }}
 </body>
 
-<xsl:stylesheet id="blogroll" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="opml">
+<xsl:stylesheet id="blogroll" version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="xsl:stylesheet" />
+    <xsl:template match="/opml">
         <html lang="en">
             <head>
                 {{ partial "meta.html" . }}
@@ -43,7 +48,7 @@
                                 {{ .Content }}
                                 <hr/>
                                 <ul>
-                                    <xsl:apply-templates select="body/outline" />
+                                    <xsl:apply-templates select="/opml/body/outline" />
                                 </ul>
                             </div>
                         </main>
