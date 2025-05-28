@@ -1,8 +1,9 @@
 <!-- prettier-ignore -->
 {{ $video := dict }}
-{{ $url := printf "https://hugo-proxy.nchlswhttkr.workers.dev/vimeo?%s" (collections.Querify "id" (.Get 0)) }}
+{{ $url := printf "https://api.vimeo.com/videos/%d" (.Get 0) }}
+{{ $headers := dict "Authorization" (printf "Bearer %s" (getenv "HUGO_VIMEO_API_KEY")) }}
 
-{{ with try (resources.GetRemote $url) }}
+{{ with try (resources.GetRemote $url (dict "headers" $headers)) }}
     {{ with .Err }}
         {{ errorf "%s" . }}
     {{ else with .Value }}
@@ -12,32 +13,34 @@
     {{ end }}
 {{ end }}
 
-{{ $thumbnail := printf "https://nicholas.cloud/media-proxy/?%s" (collections.Querify "url" $video.thumbnail_url) | resources.GetRemote }}
-{{ $overlay := (resources.Get "play-video.png").Fill (printf "%.0fx%.0f Center" $video.thumbnail_width $video.thumbnail_height) }}
+{{ $width := 480 | int }}
+{{ $height :=  div $width $video.width | mul $video.height | math.Ceil | int }}
+{{ $thumbnail := (resources.GetRemote $video.pictures.base_link).Resize "480x" }}
+{{ $overlay := (resources.Get "play-video.png").Fill (printf "%dx%d Center" $width $height) }}
 
 <div class="vimeo">
     <span class="center-text">
-        <em>{{ $video.video_title }}</em>
+        <em>{{ $video.user.name }}</em>
         by
         <a
-            href="{{ $video.channel_url }}?autoplay=true"
+            href="{{ $video.user.link }}"
             target="_blank"
             rel="noopener noreferrer"
         >
-            {{ $video.channel_title }}
+            {{ $video.name }}
         </a>
     </span>
     <a
-        href="{{ $video.video_url }}?autoplay=true"
+        href="{{ $video.link }}?autoplay=true"
         target="_blank"
         rel="noopener noreferrer"
     >
         <!-- prettier-ignore -->
         <img
             loading="lazy"
-            alt="Thumbnail for Vimeo video {{ $video.video_title }}"
-            width="{{ $video.thumbnail_width }}"
-            height="{{ $video.thumbnail_height }}"
+            alt="Thumbnail for {{ $video.name }} on Vimeo"
+            width="{{ $width }}"
+            height="{{ $height }}"
             src='{{ ($thumbnail.Filter (images.Overlay $overlay 0 0)).Permalink }}'
         />
     </a>

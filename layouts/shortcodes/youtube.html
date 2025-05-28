@@ -1,37 +1,43 @@
 <!-- prettier-ignore -->
 {{ $video := dict }}
-{{ $url := printf "https://hugo-proxy.nchlswhttkr.workers.dev/youtube?%s" (collections.Querify "id" (.Get 0)) }}
+{{ $url := printf "https://www.googleapis.com/youtube/v3/videos?id=%s&key=%s&part=snippet" (.Get 0) (getenv "HUGO_YOUTUBE_API_KEY") }}
 
 {{ with try (resources.GetRemote $url) }}
     {{ with .Err }}
         {{ errorf "%s" . }}
     {{ else with .Value }}
-        {{ $video = . | transform.Unmarshal }}
+        {{ $video = index (. | transform.Unmarshal).items 0 }}
     {{ else }}
         {{ errorf "Unable to get remote resource %q" $url }}
     {{ end }}
 {{ end }}
 
-{{ $thumbnail := (printf "https://nicholas.cloud/media-proxy/?%s" (collections.Querify "url" $video.thumbnail_url) | resources.GetRemote).Fill "480x270 Center" }}
-{{ $overlay := (resources.Get "play-video.png").Fill "480x270 Center" }}
+{{ $width := 480 | int }}
+{{ $height :=  270 | int }}
+{{ $thumbnail := (resources.GetRemote $video.snippet.thumbnails.high.url).Fill "480x270 Center" }}
+{{ $overlay := (resources.Get "play-video.png").Fill (printf "%dx%d Center" $width $height) }}
 
 <div class="youtube">
     <span class="center-text">
-        <em>{{ $video.video_title }}</em>
+        <em>{{ $video.snippet.title }}</em>
         by
         <a
-            href="{{ $video.channel_url }}"
+            href="https://youtube.com/channel/{{ $video.snippet.channelId }}"
             target="_blank"
             rel="noopener noreferrer"
         >
-            {{ $video.channel_title }}
+            {{ $video.snippet.channelTitle }}
         </a>
     </span>
-    <a href="{{ $video.video_url }}" target="_blank" rel="noopener noreferrer">
+    <a
+        href="https://youtube.com/watch?v={{ $video.id }}"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
         <!-- prettier-ignore -->
         <img
             loading="lazy"
-            alt="Thumbnail for YouTube video {{ $video.video_title }}"
+            alt="Thumbnail for YouTube video {{ $video.snippet.title }}"
             width="480"
             height="270"
             src='{{ ($thumbnail.Filter (images.Overlay $overlay 0 0)).Permalink }}'

@@ -1,17 +1,18 @@
 <!-- prettier-ignore -->
-{{ $album := dict }}
-{{ $url := printf "https://hugo-proxy.nchlswhttkr.workers.dev/bandcamp?%s" (collections.Querify "artist" (.Get 0) "album" (.Get 1)) }}
+{{ $title := dict }}
+{{ $url := printf "https://%s.bandcamp.com/album/%s" (.Get 0) (.Get 1) }}
 
+<!-- prettier-ignore -->
 {{ with try (resources.GetRemote $url) }}
     {{ with .Err }}
         {{ errorf "%s" . }}
     {{ else with .Value }}
-        {{ $album = . | transform.Unmarshal }}
+        {{ $title = index (findRESubmatch `name="title" content="(.*)"` .Content) 0 1 }}
     {{ else }}
         {{ errorf "Unable to get remote resource %q" $url }}
     {{ end }}
 {{ end }}
 
 <a href="https://{{ .Get 0 }}.bandcamp.com/album/{{ .Get 1 }}">
-    Listen to {{ $album.title }} on Bandcamp
+    Listen to {{ $title }} on Bandcamp
 </a>

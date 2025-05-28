@@ -18,15 +18,6 @@ markup:
         # style: vs
         noClasses: false
 
-# https://gohugo.io/getting-started/configuration/#configure-file-caches
-caches:
-    getjson:
-        dir: :resourceDir/_get
-        maxAge: 2h
-    getresource:
-        dir: :resourceDir/_get
-        maxAge: 2h
-
 # Cheers Ruben for the neat trick to preserve permalinks while grouping content!
 # https://gitlab.com/rubenerd/rubenerd.com/-/blob/bdd34af9/config.yaml#L150
 permalinks:
@@ -46,6 +37,9 @@ mediaTypes:
     application/xml:
         suffixes:
             - opml
+    application/vnd.vimeo.video+json:
+        suffixes:
+            - json
 
 outputFormats:
     opml:
@@ -53,3 +47,9 @@ outputFormats:
         ugly: true
         notAlternative: true
         isPlainText: true
+
+# https://gohugo.io/functions/resources/getremote/#security
+security:
+    http:
+        mediaTypes:
+            - ^application/vnd\.vimeo\.video\+json$

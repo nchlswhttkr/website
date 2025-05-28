@@ -1,12 +1,15 @@
 <!-- prettier-ignore -->
-{{ $album := dict }}
-{{ $url := printf "https://hugo-proxy.nchlswhttkr.workers.dev/bandcamp?%s" (collections.Querify "artist" (.Get 0) "album" (.Get 1)) }}
+{{ $id := dict }}
+{{ $title := dict }}
+{{ $url := printf "https://%s.bandcamp.com/album/%s" (.Get 0) (.Get 1) }}
 
+<!-- prettier-ignore -->
 {{ with try (resources.GetRemote $url) }}
     {{ with .Err }}
         {{ errorf "%s" . }}
     {{ else with .Value }}
-        {{ $album = . | transform.Unmarshal }}
+        {{ $id = index (findRESubmatch `album id ([0-9]*)` .Content) 0 1 }}
+        {{ $title = index (findRESubmatch `name="title" content="(.*)"` .Content) 0 1 }}
     {{ else }}
         {{ errorf "Unable to get remote resource %q" $url }}
     {{ end }}
@@ -14,7 +17,7 @@
 
 <noscript>
     <a href="https://{{ .Get 0 }}.bandcamp.com/album/{{ .Get 1 }}">
-        Listen to {{ $album.title }} on Bandcamp
+        Listen to {{ $title }} on Bandcamp
     </a>
 </noscript>
 <link
@@ -24,8 +27,8 @@
 <div class="bandcamp-mini-embed" style="min-height: 210px"></div>
 <script
     async
-    data-album-id="{{ $album.albumId }}"
-    data-fallback-text="Listen to {{ $album.title }} on Bandcamp"
+    data-album-id="{{ $id }}"
+    data-fallback-text="Listen to {{ $title }} on Bandcamp"
     data-fallback-url="https://{{ .Get 0 }}.bandcamp.com/album/{{ .Get 1 }}"
     src="https://bandcamp-mini-embed.nchlswhttkr.workers.dev/embed/bundle.js"
 ></script>

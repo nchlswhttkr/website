@@ -17,5 +17,5 @@ fi
 
 echo --- Running Hugo build
 sed -i 's/[a-z.* ]*{ *}//g' assets/highlight.css # Remove empty CSS rules
-hugo --minify
+make
 tar -cz -f website.tar.gz public/
