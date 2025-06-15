@@ -5,7 +5,7 @@ export HUGO_VIMEO_API_KEY := $(shell VAULT_TOKEN='$(VAULT_TOKEN)' vault kv get -
 export HUGO_YOUTUBE_API_KEY := $(shell VAULT_TOKEN='$(VAULT_TOKEN)' vault kv get -field youtube_api_key buildkite/website)
 
 site:
-	@hugo --minify
+	@hugo --cleanDestinationDir --gc --minify
 
 dev:
 	@hugo server --navigateToChanged
