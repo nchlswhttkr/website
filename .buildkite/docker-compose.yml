@@ -3,7 +3,11 @@ services:
         working_dir: /workdir
         volumes:
             - ..:/workdir
+            - /usr/local/bin/vault:/usr/local/bin/vault
         build:
             context: .
             args:
                 HUGO_VERSION: "0.145.0"
+        environment:
+            - VAULT_HOST
+            - VAULT_TOKEN
