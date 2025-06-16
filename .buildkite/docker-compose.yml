@@ -8,5 +8,5 @@ services:
             args:
                 HUGO_VERSION: "0.145.0"
         environment:
-            - VAULT_HOST
+            - VAULT_ADDR
             - VAULT_TOKEN
