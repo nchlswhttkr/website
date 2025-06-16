@@ -3,7 +3,6 @@ services:
         working_dir: /workdir
         volumes:
             - ..:/workdir
-            - /usr/local/bin/vault:/usr/local/bin/vault
         build:
             context: .
             args:
