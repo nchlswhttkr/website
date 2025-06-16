@@ -187,5 +187,3 @@ Next year I'm setting and hoping to keep a few resolutions.
 -   **Ensuring I don't miss breakfast**, because this year I've had too many mornings where I've dashed out the door without a proper meal.
 
 <span class="center-text"><strong>Here's to 2019!</strong></span>
-
-{{< youtube pMFDBA2rKTI >}}
