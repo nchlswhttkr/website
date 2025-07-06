@@ -3,7 +3,7 @@ services:
         working_dir: /website
         volumes:
             - ..:/website
-            # - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
+            - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
         build:
             context: .
             args:
