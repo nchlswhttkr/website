@@ -1,8 +1,9 @@
 services:
     ci:
-        working_dir: /workdir
+        working_dir: /website
         volumes:
-            - ..:/workdir
+            - ..:/website
+            - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
         build:
             context: .
             args:

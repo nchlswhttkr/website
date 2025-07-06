@@ -15,6 +15,8 @@ steps:
     key: deploy
     depends_on: build
     command: .buildkite/deploy.sh
+    concurrency_group: $BUILDKITE_PIPELINE_SLUG/deploy
+    concurrency: 1
     plugins:
       - docker-compose#v5.6.0:
           run: ci
