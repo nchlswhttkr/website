@@ -4,6 +4,8 @@ services:
         volumes:
             - ..:/website
             - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
+        cap_add:
+            - IPC_LOCK
         build:
             context: .
             args:
