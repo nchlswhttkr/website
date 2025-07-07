@@ -19,3 +19,7 @@ echo --- Running Hugo build
 sed -i 's/[a-z.* ]*{ *}//g' assets/highlight.css # Remove empty CSS rules
 make
 tar -cz -f website.tar.gz public/
+
+echo --- Testing Tailscale queries
+tailscale status --json
+tailscale status --json | jq --raw-output '.Peer.[] | select(.Tags // [] | any(. == "tag:project-blog")) | .DNSName'
