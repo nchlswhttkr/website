@@ -2,14 +2,12 @@
 
 Source code for [my website](https://nicholas.cloud/). I host it on [my own infrastructure](https://github.com/nchlswhttkr/hosting/) also run [several workers](https://github.com/nchlswhttkr/workers/).
 
-See the [main site](https://nicholas.cloud/site/#acknowledgements) for acknowledgements and attributions.
+See the [main site](https://nicholas.cloud/site/#acknowledgements) for further acknowledgements and attributions.
 
 ### Development
 
-To make changes and preview this website locally, you only need to have [Hugo](https://gohugo.io/) installed.
+You'll need to [Hugo](https://gohugo.io/) along with the [Vault CLI](https://developer.hashicorp.com/vault/docs/get-vault) and access to my Vault instance.
 
 ```sh
-git clone https://github.com/nchlswhttkr/website.git
-cd website
 make dev
 ```
