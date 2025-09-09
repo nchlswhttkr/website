@@ -28,7 +28,7 @@ I use the static site generator [Hugo](https://gohugo.io/) with a custom theme t
 
 I like being able to write my posts locally in markdown. It's easy to read and write, and whenever I need something more complex I can easily drop in custom HTML snippets.
 
-As changes are pushed to Github, [Buildkite](https://buildkite.com/) schedules builds to be run. Good thing they have a free tier! It performs other scripted work as well, like [scheduling delivery of my newsletter](/blog/sending-out-my-newsletter/).
+As changes are pushed to Github, [Buildkite](https://buildkite.com/) schedules builds to be run. Good thing they have a free tier!
 
 ### Serving incoming traffic
 

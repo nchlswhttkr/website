@@ -23,11 +23,6 @@ steps:
           config: .buildkite/docker-compose.yml
           mount-buildkite-agent: true
 
-  - label: ':mag: Scan for newsletters'
-    if: 'build.branch == "main" && build.source != "schedule"'
-    depends_on: deploy
-    command: .buildkite/trigger-newsletter-if-new-issue.sh
-
   - label: ":cloudflare: Purge Cloudflare cache"
     if: 'build.branch == "main"'
     key: purge-cloudflare-cache

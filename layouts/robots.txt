@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /newsletter/subscribe/
 Disallow: /goto/
 Disallow: /files/
 Disallow: /niko.png
