@@ -9,7 +9,7 @@ tags:
 
 There's an oft-quoted phrase in the cloud/DevOps space.
 
-> _Infrastructure should be treated as livestock, not pets._
+> _Treat infrastructure as cattle, not pets._
 
 To me, the advice is broad and emblematic for a lot of modern practices. Prefer disposable containers over long-lived hosts. Build infrastructure that scales horizontally to accomodate demand. Design architectures where components can be swapped out on the fly.
 
