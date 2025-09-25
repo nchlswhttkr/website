@@ -1,4 +1,4 @@
-FROM ubuntu:noble
+FROM public.ecr.aws/ubuntu/ubuntu:noble
 
 RUN apt-get -y update && apt-get -y install build-essential curl git jq rsync
 RUN curl --fail --location --show-error --silent https://pkgs.tailscale.com/stable/ubuntu/noble.noarmor.gpg | tee /usr/share/keyrings/tailscale-archive-keyring.gpg
