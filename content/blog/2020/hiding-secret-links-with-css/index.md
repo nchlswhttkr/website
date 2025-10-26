@@ -57,8 +57,56 @@ As an extra step, you can share the link between the `aria-label` and its paragr
 
 You can see it in action here.
 
-{{< css-hidden-message-demo >}}
+<button onclick="toggleClass()">Toggle message</button>
+
+<p aria-label="Your special message appears here" id="target">
+    Click the above button to show the message!
+</p>
+
+<style>
+    .show-text::after {
+        content: attr(aria-label);
+        color: var(--theme-color);
+        background-color: var(--theme-text-color);
+        font-weight: 700;
+    }
+</style>
+
+<script>
+    function toggleClass() {
+        const target = document.getElementById("target");
+        if (target.className) {
+            target.className = "";
+        } else {
+            target.className = "show-text";
+        }
+    }
+</script>
 
 ```html
-{{% css-hidden-message-demo %}}
+<button onclick="toggleClass()">Toggle message</button>
+
+<p aria-label="Your special message appears here" id="target">
+    Click the above button to show the message!
+</p>
+
+<style>
+    .show-text::after {
+        content: attr(aria-label);
+        color: var(--theme-color);
+        background-color: var(--theme-text-color);
+        font-weight: 700;
+    }
+</style>
+
+<script>
+    function toggleClass() {
+        const target = document.getElementById("target");
+        if (target.className) {
+            target.className = "";
+        } else {
+            target.className = "show-text";
+        }
+    }
+</script>
 ```
