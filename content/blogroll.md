@@ -22,11 +22,8 @@ params:
           xml: https://rubenerd.com/feed/
           html: https://rubenerd.com/
         - name: Soatok
-          xml: https://soatok.blog/feed
+          xml: https://soatok.blog/feed/
           html: https://soatok.blog/
-        - name: Tyler Hall
-          xml: https://tyler.io/feed
-          html: https://tyler.io/
         - name: Xe Iaso
           xml: https://xeiaso.net/blog.rss
           html: https://xeiaso.net/
@@ -36,6 +33,9 @@ params:
         - name: Robert Postill
           xml: https://www.grinning-cat.com/index.xml
           html: https://www.grinning-cat.com/
+        - name: Hugo MD
+          xml: https://hugo.md/index.xml
+          html: https://hugo.md/
 ---
 
 Welcome to my blogroll!
