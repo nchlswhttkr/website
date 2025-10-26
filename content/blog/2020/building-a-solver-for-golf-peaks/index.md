@@ -19,13 +19,13 @@ If you're interested at glancing through the code for this project, you can find
 
 ![A video game puzzle where the player uses various moves to get a golf ball into the hole](./cover.png)
 
-### A primer on Golf Peaks
+## A primer on Golf Peaks
 
 Puzzles in Golf Peaks are presented as levels, where the player must move the golf ball to the hole to win. The available moves are presented as cards, which affect how the ball will travel. They might roll the ball along the ground, chip it into the air, or do a combination of the two. By playing their cards in the right order and hitting the ball in the right direction, the player can clear a variety of challenge to complete a level.
 
 As the levels advance, new elements are introduced. The first world introduces slopes, which can redirect a ball. Later worlds introduce further challenges such as water hazards, sand traps and portals. As the levels grow more complex, the player is challenged to carefully consider how they play their cards.
 
-### Proof of concept
+## Proof of concept
 
 The most important step for me in this project was playing and completing the game itself. This helped me get a grasp of the fundamental rules of the game, and how different terrains would affect the ball's movement.
 
@@ -39,7 +39,7 @@ I opted to build my solver in Rust, as I had a feeling Rust's pattern matching s
 
 After a bit of trial and error, success! The solver was able to burn through the first few levels, all consisting of flat ground. After adding logic to make the ball bounce off walls and navigate slopes, the first world was complete!
 
-### Getting faster feedback
+## Getting faster feedback
 
 Being able to list out the instructions to solve a level was nice, but it also meant I needed to spend time manually verifying each level's solution. This was when I decided to leverage AppleScript, a scripting language for macOS. I extended my solver to print out the necessary key presses/delays for a level, and piping this into the AppleScript interpreter allowed my system to do all the work, completing levels for me.
 
@@ -47,7 +47,7 @@ Being able to list out the instructions to solve a level was nice, but it also m
 
 After adding in the logic for airborne moves and corners for the ball to bounce off of, I was able to sit back and watch my solver complete the second world!
 
-### Growing pains
+## Growing pains
 
 So far, I'd been writing out each level by hand into a form my solver could understand. This became quite labourious by the third world, and with upcoming levels consisting of dozens of different tiles it was only going to keep taking me longer and longer to transcribe levels.
 
@@ -70,7 +70,7 @@ With this attitude, I was able to add the logic for sand traps, springs, quicksa
 
 ![Parsing the source level file, using it to solve and complete a level in Golf Peaks](./06-07.png)
 
-### Pausing to review
+## Pausing to review
 
 After getting this far, the code was starting to become a bit too messy to deal with. The `try_move()` function find where a move would land a ball had ballooned out monstruously, and featured a tangled sprawl of nested conditions at its heart. I'd worked with the existing code enough to know where it needed improvement, so I decided some rewriting was finally in order.
 
@@ -84,7 +84,7 @@ I was also able to make Rust-specific improvements to the solver in the rewrite.
 
 With my changes made, tests passing, and the new code successfully recompleting the first six worlds, it was time to finish the last four worlds of Golf Peaks.
 
-### Home stretch
+## Home stretch
 
 Fresh off this refactor, it didn't take long to implement the conveyor belts and ice tiles introduced in the last worlds. With the last special tiles out of the way, all that was left was to test my solver against the remaining levels!
 
@@ -110,7 +110,7 @@ With all of this in place, I pointed my solver at Golf Peaks and watched the mag
 
 {{< vimeo 452492906 >}}
 
-### Where to from here?
+## Where to from here?
 
 I'm really happy with where this solver's arrived at, but I can still pick out a few areas for improvement worth considering on a revisit. Maybe another blog post will be here in the near future?
 

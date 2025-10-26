@@ -26,7 +26,7 @@ It was initially called Soprano, but someone took `soprano.app` before me.
 
 So without further ado, let's dive into what made up Mellophone!
 
-### A consistent and reproducible development environment
+## A consistent and reproducible development environment
 
 One of the main pain points with development across devices is the dreaded "works on my machine" situation. I set out from the start with the intent to avoid this as best I could.
 
@@ -40,7 +40,7 @@ When it came to frontend development, it was a blessing that [Create React App](
 
 My only addition for frontend development was to proxy network requests to the locally running backend server. Given the containers could be brought up with only a few commands, it was a better to work with them rather than maintain mock responses.
 
-### Staged CI with GitLab
+## Staged CI with GitLab
 
 I went with [GitLab](https://gitlab.com) to automate testing and deployment for Mellophone, as they made it easy to split a build into many separate jobs.
 
@@ -60,7 +60,7 @@ Having single-purpose jobs made it easier to identify _what_ was breaking a buil
 
 As a word of warning, be careful when using caching to speed up your builds! I had a [fun evening debugging](https://github.com/nchlswhttkr/mellophone/commit/68df093cf96fcc0f5560db3729656f03bd747923) when a hidden dependency lurking in cache caused jobs to start failing when the cache was cleared!
 
-### Managing a Linux server, running updates and migrating
+## Managing a Linux server, running updates and migrating
 
 Setting up my project on a hosted server was a lot of fun, especially with the help of [DigitalOcean's tutorials](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04). It's an interesting experience to work with a remote host that you only have SSH access too.
 
@@ -70,7 +70,7 @@ At one point, I started up a new DigitalOcean droplet and moved Mellophone over 
 
 An important lesson here is that if the setup for your project is significant enough, it should probably be captured under version control. That might be a Dockerfile or a CloudFormation template, but even a [rough set of commands](https://github.com/nchlswhttkr/mellophone/blob/master/scripts/set-up-mellophone.sh) is still helpful.
 
-### Different forms of testing
+## Different forms of testing
 
 Testing is something I've grown to love, and watching a test suite run and finish successfully is always satisfying.
 
@@ -84,7 +84,7 @@ A particularly interesting element of the frontend tests was the `TestRenderer` 
 
 In general, a key lesson from writing all of these tests was that the more you can do to make a test easy to debug, the better. This can be as simple as adding [warnings for common issues](https://github.com/nchlswhttkr/mellophone/blob/master/mellophone/frontend/src/setupTests.js#L4), to including [additional output during tests](https://github.com/nchlswhttkr/mellophone/blob/master/mellophone/e2e.py#L40) to help diagnose the cause of a problem in future.
 
-### Pretty snippets and cool things
+## Pretty snippets and cool things
 
 There were a few times during this project where I looked at a piece of code and thought that it was particularly nice or interesting.
 
@@ -101,7 +101,7 @@ Lastly, to give an explicit mention to the other cool things behind Mellophone:
 -   [Nginx](https://nginx.org/en/) for making it easy for me to serve static files and reverse proxy requests to my Django server
 -   Just plain Git, making it possible for me to working on multiple features simultaneously
 
-### The chopping block
+## The chopping block
 
 Some features never made it to production, but they're still worth mentioning!
 
@@ -109,7 +109,7 @@ Some features never made it to production, but they're still worth mentioning!
 
 **Automatic PDFs of meetings** would have been very convenient, especially when many organisations keep versioned documents. While the database might hold a _current_ representation of a meeting, _past snapshots_ could exist as static PDF files. I actually made a [small script](https://gist.github.com/nchlswhttkr/f0cec08eedb4d8482ef92829a9a5c1b9) that accomplishes something similar to this, taking a folder of images and assembling it into a PDF for me to read on an scan of a comic.
 
-### Farewell Mellophone
+## Farewell Mellophone
 
 So that's about it. I had good run with Mellophone, but now it's time to say goodbye.
 

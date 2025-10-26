@@ -25,7 +25,7 @@ I will warn that this blog post is _long_. If you'd like to read across a few si
 -   [Can we go even faster?](#can-we-go-even-faster)
 -   [Congratulations, you made it to the end!](#congratulations-you-made-it-to-the-end)
 
-### A foreword before continuing
+## A foreword before continuing
 
 Before we jump in to the nitty-gritty, there's a few things to cover.
 
@@ -55,7 +55,7 @@ Finally, these measurements _aren't exact_. Long-running commands end up with a 
 
 With that out of the way, let's go and make this solver fast!
 
-### The current project state
+## The current project state
 
 From the outset, we know the solver can absolutely be faster. It takes a noticeable few seconds to solve some late-game levels. The main culprit is level `10-01`, referred to as `ten_4.asset` in the game's files. This level has many long paths the solver wastes time exhausting.
 
@@ -102,7 +102,7 @@ Solving a level takes two components, each their own program.
 
 It's best to evaluate these programs individually.
 
-### Speeding up the level parser
+## Speeding up the level parser
 
 Let's start with the parser. It's reads in the YAML asset file for a level and converts it into the format expected by the solver. How long does it take to parse a level? How long does it take to process all levels?
 
@@ -229,7 +229,7 @@ cut -d ',' -f 1 levels.txt | while read LEVEL; do
 done
 ```
 
-### Speeding up the solver
+## Speeding up the solver
 
 Time to jump into the solver itself! As a first check like we did with the parser, how long does it take to solve all 120 levels?
 
@@ -349,7 +349,7 @@ We can make a slight improvment by [making the set of available moves for a path
 
 A nice little boost from this final change!
 
-### The end result
+## The end result
 
 With both the parser and the solver improved, how quickly can we solve every level now?
 
@@ -408,7 +408,7 @@ done | xargs -P 8 -I "{}" /bin/bash -c "{}"
 
 In just over a second, Golf Peaks is beaten! Parallel work isn't always practical or applicable, but it's viable here!
 
-### What does a run look like now?
+## What does a run look like now?
 
 Combining the improved solver and its faster solutions with some tweaks to the delays between key presses, we've managed to shave _almost 2 minutes_ off a complete run of Golf Peaks!
 
@@ -416,7 +416,7 @@ It's still definitely possible to go faster, but I'm very happy with the current
 
 {{< vimeo 455241666 >}}
 
-### Can we go even faster?
+## Can we go even faster?
 
 Of course we can! Our analysis earlier showed that we have about five levels which take notably longer to solve than the rest. If there's some unifying element between them, it might hint at where improvements are needed. Let's take a look at the worst offender.
 
@@ -442,7 +442,7 @@ In the end, the fastest solver probably won't employ a "one size fits all" algor
 
 Figuring whether this kind of change is beneficial is once again a matter of analysis and benchmarking. There may well be a third part in the series on making this Golf Peaks solver "blazing fast" in the future!
 
-### Congratulations, you made it to the end!
+## Congratulations, you made it to the end!
 
 Good job making it here! I hope you've picked up something new while reading this. I've really enjoyed experimenting with this solver and measuring the improvements as they've been made over time.
 

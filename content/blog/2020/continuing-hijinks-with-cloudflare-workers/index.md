@@ -16,7 +16,7 @@ A while back I wrote about a few things I'd been trying with [Cloudflare Workers
 
 Once again, you can find the code for these workers on my [GitHub repo](https://github.com/nchlswhttkr/)!
 
-### Running Go on a worker
+## Running Go on a worker
 
 At the moment, the documentation around running WebAssembly on a worker only covers Rust, C and C++. It seems reasonable that we'd be able to run anything that compiles to WASM though, so how about Go?
 
@@ -108,7 +108,7 @@ curl 'https://experimental-golang-worker.nchlswhttkr.workers.dev/?a=23&b=4'
 
 If Go, Rust, C or C++ aren't quite your flavour though, you'll be glad to know that [COBOL](https://blog.cloudflare.com/cloudflare-workers-now-support-cobol/) is always an option.
 
-### A markdown reader that loads a little bit faster
+## A markdown reader that loads a little bit faster
 
 Consider a service that fetches a markdown file from the internet, parses it, and displays it in a pretty response. Something like that is simple enough to implement in a worker.
 
@@ -168,9 +168,7 @@ async function streamMarkdownFromUrl(writable, url) {
     try {
         const markdown = await fetch(url).then((r) => r.text());
         const body = marked(markdown);
-        await writer.write(
-            encoder.encode(HTML_BODY_BEFORE + body + HTML_BODY_AFTER)
-        );
+        await writer.write(encoder.encode(HTML_BODY_BEFORE + body + HTML_BODY_AFTER));
     } catch (error) {
         await writer.write(
             encoder.encode(

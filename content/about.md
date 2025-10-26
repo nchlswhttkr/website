@@ -4,13 +4,13 @@ title: "Nice to meet you, I'm Nicholas!"
 
 {{< bio >}}
 
-### Contact
+## Contact
 
 Here's a couple of ways you can reach me. You can find all my accounts in the site footer.
 
 -   [Email](mailto:nicholas@nicholas.cloud)
 
-### About
+## About
 
 I studied Computer Science at Monash University and helped launch [MonPlan](https://monplan.apps.monash.edu/), a course planning service built for students by students.
 

@@ -17,7 +17,7 @@ So if general RSS feeds for Patreon aren't available, why not make my own?
 
 <!--more-->
 
-### Scoping out a design
+## Scoping out a design
 
 First things first, I need data! Time for some light reverse-engineering.
 
@@ -29,7 +29,7 @@ Even though the responses in the public API aren't as rich as the ones authentic
 
 Another option I investigated was Patreon's developer API, but as far as I could tell it didn't support listing posts from the current user's pledges. This approach also still has the same risks as using authenticated endpoints on the main API does, so I'd rather take the simpler route of using the public API.
 
-### Generating RSS feeds
+## Generating RSS feeds
 
 So, I'm making a service to sit between Patreon and RSS readers. In terms of behaviour, I'm looking for something similar to the home page feed I see on Patreon. I want to be able to fetch the latest posts from all of my pledged creators, and collect them all together.
 
@@ -61,7 +61,7 @@ curl https://patreon-rss.nicholas.cloud/api/feeds/90486
 
 Since patron-exclusive content isn't visible in the public API, all I can do is show a placeholder and redirect users to the Patreon web client. Given posts can only be viewed in their entirety in the web client though (emails are often trimmed), this is acceptable.
 
-### Onboarding new readers
+## Onboarding new readers
 
 At the moment, getting a creator's feed requires knowing their ID. Most creators are known by a vanity name though, like `ai_and_games` or `falseknees`, and their ID isn't easily found. It's also inconvenient to add feeds one by one for anyone looking to use this service.
 
@@ -73,7 +73,7 @@ With this list of creators (and their IDs), I can create an OPML file with all o
 
 As an extra step, we can grab the _tiers_ of a user's pledges to include in the RSS feed URL. This extra parameter lets me filter the responses from the Patreon API to only include posts the user is eligible to see. For users pledged to lower tier on a creator, this eliminates a lot of pointless noise from posts they don't have permission to view.
 
-### Hosting
+## Hosting
 
 The last piece in this puzzle is to host this service on the web somewhere. In my eyes, a serverless approach is a great fit in this situation!
 
@@ -93,7 +93,7 @@ git ls-tree -r main | cut -f 2 | grep "api/"
 
 From here, deployments are just a matter of configuring environment variables and running `vc --prod`.
 
-### In closing, an aside
+## In closing, an aside
 
 Before I call it a day, there's one last thing worth mentioning: While building projects like this is useful for me in a number of ways, it's definitely toeing a line by scraping the Patreon API.
 

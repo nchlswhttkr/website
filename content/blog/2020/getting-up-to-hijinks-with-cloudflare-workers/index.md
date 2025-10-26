@@ -25,7 +25,7 @@ This arrangement also puts them in the prime position to offer serverless execut
 
 {{% image-caption %}}Image credit to [Cloudflare](https://www.cloudflare.com/en-au/learning/serverless/serverless-javascript/){{%/ image-caption %}}
 
-### What does serverless mean?
+## What does serverless mean?
 
 Explaining the ins-and-outs of the [serverless model](https://en.wikipedia.org/wiki/Serverless_computing) is a post in an of itself, but I'll try to cover the important bits here.
 
@@ -35,7 +35,7 @@ Serverless architectures usually assume a stateless web layer. Memory may not pe
 
 The application runtime is usually abstracted away to the provider. Instead of worrying about sysadmin work, you can focus on shipping code. In return, you sacrifice control over the runtime though. Typically, your deployment is only a blob of code that accepts a request and returns a response, along with any accompanying configuration.
 
-### How do Workers operate?
+## How do Workers operate?
 
 I think the ["How It Works"](https://developers.cloudflare.com/workers/about/how-it-works/) page does a great job of summarising, but for the sake of brevity there are few key points to focus on.
 
@@ -65,7 +65,7 @@ Without further ado, let's jump into some examples of Cloudflare Workers can do!
 
 Presented in order of increasing insanity!
 
-### Middleware
+## Middleware
 
 In Cloudflare's architecture, workers sit at the frontline to handle requests (aside from certain WAF-related page rules). This puts them in the ideal position to act as middleware for requests.
 
@@ -116,7 +116,7 @@ With my worker set up for all requests to `/blog/...` routes, and there's a few 
 
 Seeing as Cloudflare already sits between your origin servers and your users, it seems fitting to host your middleware with them.
 
-### Echoing requests to Slack
+## Echoing requests to Slack
 
 I've been doing a bit of work involving webhooks lately, so I though it would be useful to have a quick URL I can chuck in for debugging purposes.
 
@@ -193,7 +193,7 @@ _Aside: Since I've started writing this post, Cloudflare have added the ability 
 
 With this configured as a part of the build step, my secrets were hidden from the public but visible to me!
 
-### Getting cheeky with isolate persistence
+## Getting cheeky with isolate persistence
 
 Further reading on [the architecture behind Workers](https://developers.cloudflare.com/workers/about/how-it-works/) gleans these interesting snippets about the Isolate-based approach.
 
@@ -228,7 +228,7 @@ So long as you hit the same edge node/isolate on each request and the isolate is
 
 A more practical use for this could be to store responses from the web in memory, saving further roundtrips. However, the benefit in response time comes at the risk of a stale read — caution is required. It's worth noting that caching is available through [Cloudflare's CDN and Cache API](https://developers.cloudflare.com/workers/about/using-cache/).
 
-### A verdict
+## A verdict
 
 I like Cloudflare Workers.
 

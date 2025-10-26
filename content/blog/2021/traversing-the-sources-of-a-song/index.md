@@ -1,7 +1,6 @@
 ---
 title: "Traversing the sources of a song"
 date: 2021-04-16T23:00:00+1000
-date: 2021-04-16T23:00:00+1000
 ---
 
 I stumbled across an old animation from a few years ago yesterday, set to a rather funky beat. Not the most fascinating thing on its own. Interesting though, how my perspective has changed a bit after looking into the music a little bit more.

@@ -14,7 +14,7 @@ I don't usually write about this stuff, but I thought it might be interesting to
 
 <!--more-->
 
-### Finding posts by tags and series
+## Finding posts by tags and series
 
 I've gone through most of my old posts and added tags to them, so now you can find posts on certain topics more easily! You can find all the tags listed on the [tags page](/tags/).
 
@@ -22,7 +22,7 @@ Some blog posts belong to a series, and these posts now have a little list at th
 
 If you want to see an example of all this is action, start with my posts about [building a Golf Peaks solver](/blog/building-a-solver-for-golf-peaks/)!
 
-### Better caching behaviour
+## Better caching behaviour
 
 As part of Cloudflare's free plan, I'm able to cache content on their network. Since origin calls are slow in [my current arrangement](/site/#serving-incoming-traffic), caching as much as possible on Cloudflare helps to keep page loads fast for end users. Not all content types are cached by default though. HTML in particular is not cached, so Cloudflare needs to make an origin call for on page load. This impacts every page on this website.
 
@@ -30,11 +30,11 @@ I've updated the domain settings in Cloudflare to cache all content, and rewritt
 
 There's more to dig into with these changes, but the key takeaway is that now you'll only see slow page loads when you visit "cold" pages that aren't in Cloudflare's cache. If any page gets hit by a "hug of death", I (hopefully!) shouldn't need to worry about it.
 
-### Site background
+## Site background
 
 If you're on a tablet or desktop, you might notice the new background image. It's just a little nature photography, but I think it's a nice addition.
 
-### Fewer requests, faster page loads
+## Fewer requests, faster page loads
 
 When you previously visited most pages on this site, you'd usually be making at least ten requests. Now, that number is down to four! This involved a number of changes.
 
@@ -44,7 +44,7 @@ Second, I've implemented my own primitive CSS bundling. Most pages on this site 
 
 Lastly, every page is also weighed down by the newly-added background image. Background images require CSS to be fetched and parsed before they can be loaded, so they're traditionally slow to load. I've mitigated this with a [`preload` hint](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) for supporting browsers, and by deferring to an inline thumbnail of the background during page load. This inline placeholder adds about 2KB to each page, but I'm alright with this tradeoff for smoother background loading.
 
-### Nice things in development land
+## Nice things in development land
 
 The nice additions haven't just been in userland either! For local development, I've been enjoying a few new things.
 
@@ -54,7 +54,7 @@ I've started leveraging [base templates in Hugo](https://gohugo.io/templates/bas
 
 To give one last mention as well, the background image and theme color can be customised for individual pages. I can't show it off quite yet, but it's going to look awesome in a future blog post!
 
-### On the horizon
+## On the horizon
 
 For a while now, I've been considering adding privacy-friendly, lightweight analytics to this site. I'm trying to justify the cost of [Plausible](https://plausible.io/) at the moment, as they have a [strong stance on user privacy](https://plausible.io/data-policy). I've also been looking at other options like [Umami](https://umami.is/), which I could feasibly self-host once I get an SQLite fork working.
 

@@ -17,7 +17,7 @@ The key issue remaining with the solver is that it still treats every card in th
 
 It should be noted that in fixing this, our algorithm loses sight of how cards are ordered in the player's hand. In turn, this affects how we generate AppleScript instructions to solve a level. We'll need to scan the player's hand after each move to find where the next card is. As we'll see though, this tradeoff is worth the improvement in solving time.
 
-### Counting cards
+## Counting cards
 
 Instead of accepting a set of cards, our algorithm can just as easily work on a set of _unique_ cards with counters for type of card. It will only need to try one of each available card type at each recurse, decrementing the appropriate counter as it "uses" a card.
 
@@ -45,7 +45,7 @@ To me, nothing in these levels stands out as particularly problematic. They're j
 
 The fact that we're now faster than we've ever been is great, but there's still one approach to try!
 
-### Pathfinding through a graph
+## Pathfinding through a graph
 
 From the beginning, I've been toying with the idea of rewriting the solver to employ a graph-based algorithm. However, Golf Peaks has a catch in that pathfinding is multi-faceted. While we need to find the fastest solutions (fewest steps), we're constrained by the cards in the player's hand too.
 
@@ -87,7 +87,7 @@ It's worth noting that this graph-based approach does excel in other areas, even
 
 Although this alternative pathfinding method didn't work out, it's still been good to try it. We're still faster than we were before regardless.
 
-### Is this the end?
+## Is this the end?
 
 Yes it is, I think I'm finally ready to shelve this work. I'm happy to have taken the benchmark from 10 seconds down to only a handful of seconds, and without any drastic changes along the way!
 
@@ -110,7 +110,7 @@ done | xargs -P 8 -I "{}" /bin/bash -c "{}"
 
 Blink for a second and you'll miss it! That's all folks!
 
-### Considerations
+## Considerations
 
 As I wrap up, there's a few last things I'd like to mention, both about this project and more generally about software development.
 

@@ -18,7 +18,7 @@ You can find out the full rundown on the event at the [workshop site](https://nc
 
 ![The Hacktoberfest 2019 logo and sponsors](./cover.jpg)
 
-### Thanks and Support
+## Thanks and Support
 
 First of all it can't go without mention that this event would not have been possible without the support of [MonSec](https://monsec.io) in organising a room and managing logistics, and the support of [WIRED Monash](https://wired.org.au) in covering food costs on the night.
 
@@ -26,7 +26,7 @@ With the help from the Melbourne tech community, we ended up with literal kilogr
 
 A last shoutout also goes to the Draga and April for promoting the workshop in the IT Faculty and DiversIT newsletters respectively.
 
-### Preparation
+## Preparation
 
 I'd been considering running a Hacktoberfest event at Monash since around the start of the semester. However in between the flood of work in a university semester and several other major events in July/August (Tutoring at Monash's programming bootcamp, the VBL State Championships, the Bit by Bit Hackathon with WIRED and DDD Melbourne), the idea got lost in the currents for a while.
 
@@ -46,7 +46,7 @@ My goal was to create a project where contributions were easy to make, and had s
 
 I was similarly satisfied with the presentation slides. They covered the basics of open source and Hacktoberfest, showed how to go about contributing to a project, and had a security-flavoured twist that I hope captured the interest of MonSec members.
 
-### Execution
+## Execution
 
 There were a few technical and non-technical difficulties when it came presenting on the day.
 
@@ -68,7 +68,7 @@ That's just about a wrap on everything I wanted to talk about. I hope you've bee
 
 ---
 
-### Debugging deployments to GitHub Pages
+## Debugging deployments to GitHub Pages
 
 _A little offhand thing I learned as well..._
 

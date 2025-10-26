@@ -16,7 +16,7 @@
     <body>
         <header>
             <div class="constrain-width">
-                <h1><a href="/">{{ .Site.Title }}</a></h1>
+                <h2><a href="/">{{ .Site.Title }}</a></h2>
                 <a href="/">
                     <!-- prettier-ignore -->
                     <img src="{{ ((resources.Get "favicon.png").Resize (printf "48x png %s" $color)).Permalink }}"/>

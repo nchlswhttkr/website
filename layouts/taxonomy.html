@@ -1,6 +1,7 @@
 {{ define "main" }}
 <article class="blog-article">
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <p>You can find all the tags I've used on my posts below.</p>
     <p>
         {{ range .Data.Terms.Alphabetical }}
         <a href="/tags/{{ .Name }}/"><code>#{{ .Name }}</code></a>

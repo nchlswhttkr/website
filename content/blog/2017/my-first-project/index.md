@@ -11,13 +11,13 @@ Often, the first steps in developing any project are the most critical. _"What e
 
 <!--more-->
 
-### On the importance of the planning stage...
+## On the importance of the planning stage...
 
 I'm going to cover the mistakes I made when starting off on a little project of mine, scraping DotA2 sub-patches. The premise was simple, learn to do basic scraping to read patch notes direct from the DotA2 blog, then translate it into HTML document reminiscient of official patch pages. I could download hero and icon images from the official site or a wiki if needed.
 
 **Oh, how I was wrong...**
 
-### There's an API for that!
+## There's an API for that!
 
 Let's skip a couple of weeks ahead. I've been working to improve the way in which hero and item icons are obtained. At that point in time, I would retrieve them from separate sites, but I was unable to resolve to the fact that some items and hero have old or outdated names.
 
@@ -42,7 +42,7 @@ Success! I could now use this name ID to find an icon's URL and request it from 
 
 The end result: I was able to replace a whole section of scraping with a simple API requests. All I needed to have done at the start was google 'DotA2/Steam/Valve API'.
 
-### Investigate your options
+## Investigate your options
 
 I was going to need a library to scrape patch notes. Luckily for a common language like Python, finding a community written and supported one was a quick search away. I jumped right in and chose the first result.
 

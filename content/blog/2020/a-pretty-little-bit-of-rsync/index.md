@@ -14,7 +14,7 @@ I hit a bit of a snag though recently when improving an rsync command in the scr
 
 For context, I use [Hugo](https://gohugo.io) to build my website. Output comes as a collection of static files, and rsync is perfect for copying these files to a web-facing location. In my case, this is a directory served by [Nginx](https://nginx.org/en/).
 
-### Using rsync
+## Using rsync
 
 With rsync, it's easy to copy a local file to a remote computer.
 
@@ -38,7 +38,7 @@ The last point was of concern because when [Nginx serves static files for my web
 
 It was in my interests to help rsync avoid making unnecessary updates while deploying.
 
-### Improving my script
+## Improving my script
 
 Let's take a look at how the command started out in my deployment script.
 
@@ -120,7 +120,7 @@ Apr 13 06:32
 Apr 13 07:34
 ```
 
-### Is this better/optimal?
+## Is this better/optimal?
 
 While I prefer this updated rsync command, it's worth noting that there a lot of moving partss to consider.
 

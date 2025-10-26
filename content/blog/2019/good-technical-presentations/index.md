@@ -13,7 +13,7 @@ I've had the pleasure of attending several tech talks and workshops in the past 
 
 These are just my opinions on presentations, so it's fine to have a differing view to what I'm saying. If you've got suggestions for how I could amend this, you can always [open up an issue or PR for discussion](https://source.nchlswhttkr.com)!
 
-### Following the leader
+## Following the leader
 
 As someone giving a presentation or leading a workshop, it's important for your audience to be able to follow what you're covering. At a basic level, this usually means speaking at a measured pace with clear diction and avoiding jargon (depending on the nature of a presentation) so that your audience can have an easy time focusing in the messages you're trying to deliver.
 
@@ -21,7 +21,7 @@ If you can take steps to map out/signpost, you'll give a stronger sense of "dire
 
 Approaches I've seen for this involve providing a brief blurb for your audience to read beforehand, or putting subheaders/contents in your slides as landmarks. Your goal is to be able to give a fast answer to the question "what are they talking about right now?".
 
-### Backing up your words
+## Backing up your words
 
 Another ingredient to successful presentations is the actual content that a presenter delivers.
 
@@ -31,7 +31,7 @@ If you're doing anything involving code, whether it's showing screenshots of cod
 -   Find a color/presentation/editor theme that **suits television screens and projectors**, which usually means something with simple, accessible colors and a high contrast ratio
 -   **Keep them brief**, because this isn't a code review and people should be spending their time listening to you rather than comprehending lines of code
 
-### Opinions left undone
+## Opinions left undone
 
 I've still got a few thoughts going around in my head, so in closed I'll just leave them here with my reasoning behind them.
 

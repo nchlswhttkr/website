@@ -1,7 +1,6 @@
 ---
 title: "Pretty commits"
 date: 2021-05-25T22:00:00+1000
-date: 2021-05-25T22:00:00+1000
 ---
 
 In a chance glance through the Git history of one of my projects last week, I found commit [`53331294`](https://github.com/nchlswhttkr/mandarin-duck/commit/53331294bf7e8460b1d05a87a96aa2968687cc9e). A hash with eight leading numbers! A sequence like this isn't particularly rare, but it's also not an everyday occurence.

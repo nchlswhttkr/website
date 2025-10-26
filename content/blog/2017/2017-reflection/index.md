@@ -10,7 +10,7 @@ Ah 2017, what a year. As the year closes with the festive season, there is no be
 
 <!--more-->
 
-### Music
+## Music
 
 The year started off with a trip up to Bright in the far North of Victoria, where I spent a week at the Bright Tuba and Euphonium Festival. I found this to be a fantastic learning opportunity, and I continue to put into practice what I learned from tubists Tim Buzbee and Roland Szentpali over my time there. While the festival will not be running next year, I will be still heading up to Bright for a different camp, the Bright Brass and Percussion Summer Intensive (quite the mouthful!), hosted by the wonderful Phillipa Edwards and Jamie Lawson of the Footscray Yarraville City Band.
 
@@ -18,7 +18,7 @@ Leading on from that, I joined Western Brass and starting playing lead euphonium
 
 Some other highlights over the year included [marching in the Grand Final Parade](http://hsyb.org.au/grand-final-parade-2017/) to help the Hyde Street Youth Band, and the Winter Showcase that I played with the Glen Eira Youth Orchestra. Playing with the City of Glen Eira Brass Band continues to be a pleasure, as a non-competing community band where I can play for purely for enjoyment.
 
-### University
+## University
 
 I also managed to survive my first year of university, meeting many new friends along the way. Studying Computer Science at Monash has so far been a great enjoyment for me, as I've set off on the path of becoming a ~~software developer~~ ~~programmer~~ ~~computer engineer~~ cool computer-y guy (_who knows what the proper job title is anymore_).
 
@@ -30,7 +30,7 @@ Outside of continuing a strong academic performance, I also took part in several
 
 As the year neared a close, my friend Eric suggested I apply for a position on the team at [MonPlan](https://monplan.github.io/), as a frontend developer. As a part of this, I started learning React/Redux for building web applications. In the end, I was offered a position on the team, so with the new year I can look forward to working in a proper software developer role for the university!
 
-### Moving Forward
+## Moving Forward
 
 As 2018 nears, I look forward to continuing to maintain a standard of excellence. With my new job at monPlan, the nearing Australian National Band Championships over the Easter weekend, and a whole year of university coming up, 2018 looks to be big, busy and exciting as always!
 

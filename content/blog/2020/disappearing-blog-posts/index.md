@@ -34,7 +34,7 @@ This meets my needs, although it comes with a few concessions.
 -   Expired posts don't disappear immediately, the only guarantee is that they will _eventually_ disappear.
 -   Posts can still be easily found (web archivers, Git history), but if that was a concern I wouldn't be touching the public web!
 
-### Setting content to expire
+## Setting content to expire
 
 New content on my site starts from base templates Hugo refers to as _archetypes_. I can make a new archetype for temporary posts, with a default expiry date defaulting to two weeks after the post's creation.
 
@@ -48,7 +48,7 @@ Since this post sits inside the blog folder, it's visible alongside my other pos
 
 With that, it's time to make sure the site is deploying on a recurring basis to clean up these temporary posts.
 
-### Scheduled builds to ensure cleanup
+## Scheduled builds to ensure cleanup
 
 Since I use Buildkite, it makes sense to leverage their CRON-style [scheduled builds](https://buildkite.com/docs/pipelines/scheduled-builds#main). I could use the `@weekly` interval, but for my own convenience I'll set it to 8pm local time each Sunday (`0 20 * * SUN Australia/Melbourne`).
 

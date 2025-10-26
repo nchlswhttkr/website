@@ -14,7 +14,7 @@ But at the same time, metadata can also be a cause for concern.
 
 <!--more-->
 
-### Unintentional exposure via image files
+## Unintentional exposure via image files
 
 Last week I was reading an online blog where the author had uploaded several photos. While that's all well and good, the metadata on the photos gave away _the exact location of their home_. Whenever they took a photo, their phone stored their location in the JPEG file.
 
@@ -32,7 +32,7 @@ Hello Cape Arago!
 
 This is great if you're a photographer looking to share nature photos, but not so great if you're taking selfies with your phone at a private residence.
 
-### Disabling this behaviour
+## Disabling this behaviour
 
 I won't deny that functionality like this has benefits for us as end users. With location-tagged photos, you can easily do things like mapping out your holiday travels with daily photos. In other situations though, sharing this data isn't desirable.
 

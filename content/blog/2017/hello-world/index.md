@@ -15,11 +15,11 @@ I use this article to make sure any styling changes I make don't break.
 -   [Code blocks and syntax highlighting](#code-blocks-and-syntax-highlighting)
 -   [Embedded content](#embedded-content)
 
-### Text and images
+## Text and images
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis diam id ante euismod condimentum. Curabitur pharetra eget arcu sed euismod. Nunc sed elementum enim, vel lobortis tortor. Donec pretium eros sed ante commodo hendrerit. Phasellus luctus egestas cursus. Vestibulum condimentum nunc eget erat pellentesque eleifend.
 
-#### Subheading
+### Subheading
 
 Aliquam lobortis a quam ut vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius, dui in vehicula ullamcorper, augue nisi elementum sapien, at euismod tellus turpis a ligula. Phasellus nec urna velit. Nam vel tempor erat.
 
@@ -43,7 +43,7 @@ This text includes an `inline code block`. There's also a `reallyreallyreallyrea
 
 {{% image-caption %}}A caption for the above image{{%/ image-caption %}}
 
-### Tables and lists
+## Tables and lists
 
 This is an unordered list.
 
@@ -64,7 +64,7 @@ This is a table.
 | A        | B        |
 | C        | D        |
 
-### Code blocks and syntax highlighting
+## Code blocks and syntax highlighting
 
 ```sh
 osascript -e 'display notification "Hello world!" sound name "frog"'
@@ -90,9 +90,7 @@ export default class CookieReader {
      * Django), and falls back to an empty string when one is not found.
      */
     static getCsrfToken(): string {
-        const match = document.cookie.match(
-            /csrftoken="?([\u0021\u0023-\u002B\u002D-\u003A\u003C-\u005B\u005D-\u007E]*)"?/
-        );
+        const match = document.cookie.match(/csrftoken="?([\u0021\u0023-\u002B\u002D-\u003A\u003C-\u005B\u005D-\u007E]*)"?/);
         return match ? match[1] : "";
     }
 }
@@ -175,7 +173,7 @@ if let Some(value) = matches.value_of("database") {
 {{% css-hidden-message-demo %}}
 ```
 
-### Embedded content
+## Embedded content
 
 <!-- tweet 902019752251465728 -->
 

@@ -12,11 +12,11 @@ As another year passes by, I think it's time to reflect on the experiences I've 
 
 <!--more-->
 
-### Music
+## Music
 
 Music continues to be a strong driving force for me, and the times I spend playing with a band/orchestra are usually the times where I'm enjoying myself most.
 
-#### Brass in Bright
+### Brass in Bright
 
 Starting off the year, I headed up to Bright for the week-long Bright Brass and Percussion Summer Intensive.
 
@@ -24,7 +24,7 @@ I like being able to drop all of my other commitments for a week solely focus on
 
 I'll be back again at the beginning of 2019 for the camp's second year as well. I'm hoping to focus more on building my stamina as a soloist, and trying to keep consistent intonation when playing across varying dynamic levels and ranges.
 
-#### Glen Eira Band
+### Glen Eira Band
 
 The Glen Eira Band has certainly been my favourite to play with this year. We've been joined by Bayside Brass at our rehearsals for quite a while now, since the two bands are both currently experiencing lower memberships. This has allowed us to rehearse with something closer to a full band, and we have regularly manage to have two rows of cornets and a strong bass section at rehearsals.
 
@@ -34,7 +34,7 @@ A new member joined us on trombone this year as well, and this has meant I've be
 
 {{% image-caption %}}Most Improved Player 2018, Glen Eira Band{{%/ image-caption %}}
 
-#### Western Brass
+### Western Brass
 
 With Western Brass, I continued to play euphonium. We managed to place 3rd in our grade at the National Band Championships, and once again competed at states, although this time we placed in the middle of the pack. Not to say I'm disappointed with the result though. I think the band has the ability to win the competition if they can find the dedication to do it.
 
@@ -46,13 +46,13 @@ On the lighter side though, I've convinced a friend to join me at rehearsals on 
 
 {{% image-caption %}}3rd of 12 in our grade!{{%/ image-caption %}}
 
-#### Monash Philharmonic Orchestra
+### Monash Philharmonic Orchestra
 
 The Monash Philharmonic Orchestra has been fun to play with as well, although my attendance has been lower than I would have liked, the consequence of conflicting schedules. For the first half of this year I was largely absent from rehearsals, due to university classes running into the evening (_Monash has decided that having 3 hour labs until 9pm is acceptable, though I don't agree with this decision_). Between these classes and other work, I was only available for the few weeks immediately prior to the Autumn concert in the first half of the year.
 
 The concert this year that I enjoyed playing most with the MPO was the concerto concert in the middle of the year, despite only playing in a single piece for the concert myself. This was because I had the opportunity to watch my friend perform his own solo (A violin concerto from Winter, of Vivaldi's Four Seasons).
 
-#### Glen Eira Youth Orchestra
+### Glen Eira Youth Orchestra
 
 I feel like this has been a particularly good year for the Glen Eira Youth Orchestra, as we've managed to run our concerts successfully, with our recurring "Winter Showcase" at the Glen Eira Town Hall once again being a hit, and our December concert closing out the year with a ~30 piece orchestra.
 
@@ -64,7 +64,7 @@ I'm also very happy to be playing 2<sup>nd</sup> trombone as opposed to 1<sup>st
 
 {{% image-caption %}}Glen Eira Youth Orchestra - "Music for Theatre and Film" Concert{{%/ image-caption %}}
 
-#### Misc Ensembles
+### Misc Ensembles
 
 I've also been a part of a few other ensembles this year, offering my help when asked. No particular order here.
 
@@ -80,9 +80,9 @@ I've also been a part of a few other ensembles this year, offering my help when 
 
 **Bentleigh Uniting Church Band** - Playing euphonium for their annual Christmas service.
 
-### Lawn Bowls
+## Lawn Bowls
 
-#### Team/Singles Competitions
+### Team/Singles Competitions
 
 I had a good year of lawn bowls. Playing club pennant games on a Saturday afternoon was enjoyable and a good way to step back from the stresses of other commitments. I also had another go at competing in the club minor championships (open to members who have not yet won any club trophies) and managed to win the trophy!
 
@@ -92,7 +92,7 @@ Following on from this, I also signed up for the men's singles championships. Al
 
 {{% image-caption %}}Accepting a prize at the "Charcoal Challenge", a charity bowls day{{%/ image-caption %}}
 
-#### Social Bowls
+### Social Bowls
 
 Bowls has proven to be a good opportunity to connect with my friends, as the sport is very accessible. I attended a few charity days for Coatesville Bowling Club, including one where I brought along university friends, and this was a very enjoyable experience. After exams in the second semester, I also brought a host of friends from university down for social bowls. I really enjoyed doing this, because it gave me a much needed social opportunity and reprieve from work and university.
 
@@ -104,15 +104,15 @@ I plan to have more days like this in future. Social charity days, such as tripl
 
 I also now do a few bar shifts for the club now, I find it rather therapeutic.
 
-### Work
+## Work
 
 For the past year I've had the pleasure of working at [Monash University eSolutions](https://www.monash.edu/esolutions), delivering [MonPlan](https://monplan.apps.monash.edu), a course planning application, for students at Monash University.
 
 With the arrival of 2019, I'll be returning to eSolutions under the industry placement program for IT students at Monash University. I hope to use this as an opportunity to take on greater responsibilty within my projects, and to apply what I've learned in the past 12 months.
 
-### University
+## University
 
-#### Studies
+### Studies
 
 Starting my second year at university, I certainly found the level 2 subjects more interesting. These assumed prior knowledge, and were able to cover content in greater depth than the introductory level 1 units I'd previously taken. The units I enjoyed or found particularly interesting were _Operating Systems_, _Theory of Computation_, _Algorithms and Data Structures_, and _Introduction to Databases_.
 
@@ -120,7 +120,7 @@ However, with work running at the same time, I definitely feel like I struggled 
 
 As I [mentioned above](#work), I'll be on a placement at eSolutions for the first half of 2019. Having an educational placement under my current employer should prove interesting. Where possible I'm hoping to shift the focus off the fact that I'm a student, and instead try to be seen as an important asset to the teams I'll be working with.
 
-#### WIRED
+### WIRED
 
 I served as the marketing officer for [WIRED](https://wired.org.au) this past year, which primarily involving managing social media and sending weekly newsletters. Working with the committee was enjoyable, but I feel like I did not put sufficient effort into fulfilling my role, and that could have had greater input at meetings.
 
@@ -130,13 +130,13 @@ I served as the marketing officer for [WIRED](https://wired.org.au) this past ye
 
 I wasn't elected back to the committee for the coming year, but with a placement running for the first half of the year, it's probably for the better. Since I'll still be heading into Clayton everyday, I can still offer volunteer help. With my involvement being voluntary now, I think that will also help my reduce my heavy workload.
 
-### Dev
+## Dev
 
-#### Juniordev / LevelsConf
+### Juniordev / LevelsConf
 
 I took the time this year to attend a few developer-focused events when I had the time free. This included some meetups for [Juniordev](https://juniordev.io), and the tech conference they later ran, [LevelsConf](https://twitter.com/levelsconf). These were both fun as well as a good learning experience, and I enjoyed the company of friends and free food where it was available. Unfortunately, I'm not usually able to attend these events because of my music rehearsal commitments. If I'm able to find the time, I'll consider attending more in the coming year.
 
-#### Hackathons
+### Hackathons
 
 I've begun to feel like hackathons aren't the type of event for me, but nonetheless I endavoured to attend a few throughout the year. This started off with the Facebook Regional Hack in May, [Unihack](https://unihack.net/) in July and [GovHack](https://www.govhack.org/) in September. I was also involved with running Unihack Mini as a part of WIRED, though I didn't participate myself.
 
@@ -146,11 +146,11 @@ Shoutout to [my team from GovHack](https://twitter.com/frostickle/status/1060468
 
 These events were fun, though I feel that I'm usually going moreso to enjoy the weekend hanging out with friends rather than to seriously compete. I'm still deciding how involved I want to be next year, but if I'm going to commit to a hackathon going forward, it would serve me better to dedicate my time and effort to only one or two events. At events this year, all productivity/useful output from me usually ceased in the evening of the first night, and I would end up heading home or lounging about, contributing very little for my team. I want to curb this going forward.
 
-#### Personal Projects
+### Personal Projects
 
 I never really found the time to work on a personal project this year, or at least anything substantial. I've certainly been learning, whether it be in terms of development knowledge or professional skills.. Hopefully I'll be able to make something come to fruition in the coming months to showcase what I've picked up.
 
-#### Seasonal Events
+### Seasonal Events
 
 I did [Hacktoberfest](https://hacktoberfest.digitalocean.com) again this year, getting involved in open source development. Most of my contributions are usually trivial, but I endavour to make at least one beneficial contribution each time.
 
@@ -158,13 +158,13 @@ Last year, I added a [blacklist to filter unimportant item usage stats](https://
 
 This December, I've also been doing the [Advent of Code](https://adventofcode.com) challenge, though with work, university and music still running, I'm a little bit behind. I'll see where I end up at the end of the year.
 
-### Misc
+## Misc
 
-#### Gaming
+### Gaming
 
 I bought a Switch, it was worth it. I've sunk [at least 100 hours into Breath of the Wild](https://twitter.com/nchlswhttkr/status/1056357122282143744) since picking it up, and other games (Super Mario Odyssey, Owlboy) have been great fun as well.
 
-#### Comics
+### Comics
 
 I first developed an interest in comics back on a music tour to America with my high school jazz band in 2013, and I've been reading ever since.
 
@@ -176,7 +176,7 @@ The series I've been following this year have Mister Miracle and Wayward, both o
 
 {{% image-caption %}}Wayward and Mister Miracle, from my collection of comics{{%/ image-caption %}}
 
-### Looking Forward
+## Looking Forward
 
 Next year I'm setting and hoping to keep a few resolutions.
 

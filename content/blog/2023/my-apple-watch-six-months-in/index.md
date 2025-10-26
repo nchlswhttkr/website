@@ -13,7 +13,7 @@ With the watch in hand and the sunk cost as a motivation to be active, I've been
 
 Recording activities has also meant I can use Strava to share my activities with my friends, which in turns drives me to keep up my habits. I've paid for an annual membership, which has been useful for setting myself weekly goals and identifying how hard I've been pushing myself.
 
-### Riding
+## Riding
 
 Late last year I started riding my bike again, looking for more intense activity than just a brisk walk. I'm fortunate to live close to the bay trail along Melbourne's east coast, so I worked myself up travelling further and further along the coast until I could reach the CBD or go down to Mordialloc. Weekends have also been a good opportunity to go on longer rides!
 
@@ -31,7 +31,7 @@ Riding at higher speeds and as part of a group is still quite daunting, but the 
 
 ![Statistics from a Strava ride overlaid on a large group of cyclists waving, 44.9km in 1 hour 46 minutes](./2023-07-15.jpg)
 
-### Running
+## Running
 
 Back in May, I went on a holiday to Phillip Island to compete in a lawn bowls tournament. I had hoped to borrow a bike in Cowes, but with the winter weather and no gear I was content wandering the town. The day after arriving though I had some slack time before dinner, so I decided to go for a run along the beach to close my rings for the day.
 

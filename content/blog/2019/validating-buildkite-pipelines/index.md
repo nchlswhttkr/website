@@ -22,7 +22,7 @@ It's similar to an offering from GitLab with their [CI lint](https://gitlab.com/
 
 So I started [cobbling a little something together](https://github.com/nchlswhttkr/barhack) while I was on my bar shift for my bowls club. Being the Sunday evening after the end-of-season party the crowd was quite light on, affording me the time to dabble around and to get building.
 
-### To start, some terminology
+## To start, some terminology
 
 Buildkite can be used to set up all kinds of automated processes, usually in relation to the code you develop at work or on a hobby project.
 
@@ -54,7 +54,7 @@ As an example, here's the pipeline for [my website](https://source.nchlswhttkr.c
 
 There are further features to Buildkite, like requiring specific conditions for a job to run, but that's not what I'll be focusing on with this piece.
 
-### Coming up with a rough design
+## Coming up with a rough design
 
 The first step was deciding how to examine a provided pipeline file to determine whether it was valid.
 
@@ -64,7 +64,7 @@ Another option was to upload the pipeline file within a running build. This woul
 
 I decided to go with the latter, since getting feedback about a pipeline's validity from Buildkite itself seemed the smarter choice.
 
-### Proof of concept
+## Proof of concept
 
 To start, I set up a job in my pipeline that would try to upload a `pipeline-to-lint.yml`.
 
@@ -80,7 +80,7 @@ To persist this information beyond the lifetime of a build, I ended up writing t
 
 {{% image-caption %}}Validation in this pipeline fails, and no further jobs are run.{{%/ image-caption %}}
 
-### Doing a bit better!
+## Doing a bit better!
 
 At that moment, I needed to run two jobs before knowing whether the target pipeline file was valid. This was something to improve upon.
 
@@ -92,7 +92,7 @@ By including the validation script as an initial step for the pipeline, rather t
 
 This also fixed a subtle bug that came from running more than one job. After the first pipeline uploading job had finished, the `post-command` hook would run and mark the status as `FAILED`. Shortly after, the validation job would run and correct this if the `pipeline-to-lint.yml` was actually valid, but for a brief moment a passing file would have a failed status.
 
-### Making it more flexible
+## Making it more flexible
 
 Our validation job also expected that the `pipeline-to-lint.yml` be checked in with the rest of source code. Needing to make a commit each time to run validation was a bit wasteful. So I started using the Buildkite API to trigger builds, instead of just pushing to GitHub.
 
@@ -114,7 +114,7 @@ curl -H "Authorization: Bearer $BUILDKITE_TOKEN" \
 
 At this point it's worth noting that since jobs can be executed concurrently across agents on different servers, you can't always be certain that the same agent will always run your build. I resolved this by using [agent targeting](https://buildkite.com/docs/agent/v3/cli-start#agent-targeting) to ensure that builds would always run on my chosen agent.
 
-### Exposing it to the web
+## Exposing it to the web
 
 Now that I could validate a provided file and save the result, it was time to make an application over the top. This would be for end users to upload their file and to view the result, as well as something to prepare and kick off a build. I had a pretty good idea of the process I wanted now, having already built the functionality I needed.
 
@@ -143,7 +143,7 @@ So there you have it, a service that validates your Buildkite pipeline files!
 
 You can find all the code this little project on [GitHub](https://github.com/nchlswhttkr/barhack)!
 
-### Further steps?
+## Further steps?
 
 A thought I also had was to try uploading the pipeline steps to Buildkite directly with an [API call](https://buildkite.com/docs/apis/rest-api/pipelines#update-a-pipeline). I didn't end up going with this because it would involve parsing the `pipeline.yml` file, which I think negates the purpose of this exercise.
 

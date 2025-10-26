@@ -17,7 +17,7 @@ Going down the more challenging path that I always follow, I decided to roll my 
 
 I took inspiration for my newsletter's design from the [Microsoft.Source](https://azure.microsoft.com/en-us/resources/join-the-azure-developer-community/) newsletter from the Microsoft Azure team.
 
-### Making a newsletter
+## Making a newsletter
 
 Content for my newsletter is managed through [Hugo](https://gohugo.io) like the rest of my site. Hugo also provides nice utilities like `.Next` and `.Previous` links to aid readers navigating between newsletter issues.
 
@@ -33,7 +33,7 @@ With the help of [Hugo shortcodes](https://gohugo.io/content-management/shortcod
 
 Not the prettiest design, but it gets the job done now and I can improve it later!
 
-### Sending emails with Mailgun
+## Sending emails with Mailgun
 
 With a newsletter ready to send, I needed a mechanism to deliver emails.
 
@@ -58,7 +58,7 @@ To improve the delivery of emails, it's important to include a plaintext counter
 
 Once the messages have been accepted by Mailgun, I can sit back and wait for them to be delivered! Mailgun manages the sending here, and even adds an unsubscribe link for me through their templating system!
 
-### Automating releases with Buildkite
+## Automating releases with Buildkite
 
 With an existing pipeline in [Buildkite](https://buildkite.com) for my website, adding a publishing step for a newsletter seemed reasonable.
 
@@ -70,7 +70,7 @@ Buildkite supports dynamic pipelines, so adding these steps while the build is a
 
 With the aid of a block step I can send a preview email to myself first, and only send it on to my subscribers once I've unblocked it in Buildkite!
 
-### Managing subscribers
+## Managing subscribers
 
 Lastly, while I might have a pipeline to send my newsletters out, I'm still without subscribers to send to! A little bit more than a plain form to grab emails is needed here though.
 
@@ -82,7 +82,7 @@ My solution was to send pending subscribers a confirmation link that included a 
 
 With the processes in place to publish and deliver newsletters, all my subscribers need to do is to sign up and wait to hear from me!
 
-### Wrapping up
+## Wrapping up
 
 I hope you've enjoyed reading about how I set up my newsletter mailing list!
 

@@ -7,36 +7,49 @@
     background-color: var(--background-color);
     box-shadow: 0 0 4px 2px var(--soft-background-color);
 }
+
 .blog-article > * {
     margin: 0 0 16px;
     break-inside: avoid;
 }
+
 .blog-article > *:last-child {
     margin-bottom: 0;
 }
 
 /* TITLE AND DETAILS */
-.blog-article > h2 {
-    font-size: 1.5rem;
+.blog-article > h1 {
+    font-size: 1.34em;
     margin-bottom: 8px;
 }
-.blog-article > h3 {
+
+.blog-article > h2 {
     font-size: 1.35rem;
-    margin-top: 16px;
+    margin-bottom: 8px;
     padding-top: 16px; /* buffer for anchor links */
 }
-.blog-article > h4 {
-    font-size: 1.1rem;
+
+.blog-article > h2:first-child {
+    padding-top: 0; /* no needed buffer for list/term views */
 }
+
+.blog-article > h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    padding-top: 16px; /* buffer for anchor links */
+}
+
 .blog-article > .description {
     margin-bottom: 8px;
     font-style: italic;
 }
+
 .blog-article > .post-details {
     margin-bottom: 20px;
     font-family: monospace;
     font-style: italic;
 }
+
 .blog-article > .post-details > a {
     color: inherit;
 }
@@ -48,6 +61,7 @@
 .blog-article > blockquote > p {
     line-height: 1.4rem;
 }
+
 .blog-article > p > code,
 .blog-article > p > a > code,
 .blog-article > ol > li > code,
@@ -63,14 +77,17 @@
 .blog-article > ol {
     padding-left: 32px;
 }
+
 .blog-article > p + ul,
 .blog-article > p + ol {
     margin-top: -8px; /* closer to leading paragraph */
 }
+
 .blog-article > ol > li,
 .blog-article > ul > li {
     padding: 4px 0;
 }
+
 .blog-article > ul > li {
     list-style-type: square;
 }
@@ -92,7 +109,7 @@ as wide as their container + padding, then centre with an offset and transform.
 }
 
 /* TABLES */
-/* TODO use child selectors for this */
+/* TODO: use child selectors for this */
 .blog-article table {
     display: block;
     overflow-x: auto;
@@ -101,6 +118,7 @@ as wide as their container + padding, then centre with an offset and transform.
     border-spacing: 0;
     border-collapse: collapse;
 }
+
 .blog-article th,
 .blog-article td {
     padding: 8px;
@@ -111,10 +129,12 @@ as wide as their container + padding, then centre with an offset and transform.
 .blog-article .highlight {
     width: calc(100% + 48px); /* Force blocks to occupy page width */
 }
+
 .blog-article .highlight pre {
     padding: 16px 24px;
     overflow-x: scroll;
 }
+
 @media print {
     .blog-article pre {
         white-space: pre-wrap;

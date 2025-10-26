@@ -14,7 +14,7 @@ I've gathered a few interesting fixes here to problems I've either encountered m
 
 <!--more-->
 
-### Conditionally loading images in a static site
+## Conditionally loading images in a static site
 
 A consequence of my site being (largely) static is that I have a very little visibility over end clients. No matter who requests my website, they can expect largely the same experience whether they're using a 320px wide phone or a 1920px wide desktop monitor.
 
@@ -23,11 +23,7 @@ This poses a problem when it comes to adding behaviour that depends on the viewp
 A quick solution would be to use a media query to hide the image when the viewport falls under a certain width, but this isn't ideal. Even though the image won't be displayed, it will still be requested as the browser parses the page's HTML.
 
 ```html
-<img
-    id="avatar"
-    alt="A dog in a large winter coat"
-    src="https://scrungus.club/img/scrungus.png"
-/>
+<img id="avatar" alt="A dog in a large winter coat" src="https://scrungus.club/img/scrungus.png" />
 
 <style>
     @media (max-width: 599px) {
@@ -44,10 +40,7 @@ Enter the `<picture>` element. It's designed to hint at alternative sizes and fo
 
 ```html
 <picture>
-    <source
-        srcset="https://scrungus.club/img/scrungus.png"
-        media="(min-width: 600px)"
-    />
+    <source srcset="https://scrungus.club/img/scrungus.png" media="(min-width: 600px)" />
     <img id="avatar" alt="A dog in a large winter coat" src="" />
 </picture>
 
@@ -64,7 +57,7 @@ It's not good to leave the `src` attribute empty, so you can supply a small base
 
 _Aside: Another solution is to specify that the avatar image should be [lazy loaded](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading), but I wanted to see if there was an alternative way to do it._
 
-### Placeholders for large media content
+## Placeholders for large media content
 
 It's not uncommon these days to see news items and blog posts open with large hero images or stock photos. While they're a nice step to reduce the eyesore from a wall of text, large media can take a while to load on slower connections. Worse, it can lead to a jarring user experience if an image loads much later than other content and changes the layout of the page.
 
@@ -81,7 +74,7 @@ This leads to a few neat benefits and considerations.
 -   Inlined placeholders can be displayed immediately as the document is loaded, rather than waiting on a request.
 -   It requires pre-processing, which is a great opportunity to consider serving resized images for devices with small viewports or low pixel densities.
 
-### Removing empty CSS classes
+## Removing empty CSS classes
 
 When I changed the syntax highlighting on code blocks on my website to use a stylesheet rather than inline styles, I ended up with a [large file of CSS rules](https://github.com/nchlswhttkr/website/blob/182cf2c5e20cd741664dbcd6270d076b3cad9cb9/assets/highlight.css). While I could get rid of comments and whitespace with asset minification during a build, empty rules were not being cleaned up.
 
@@ -93,7 +86,7 @@ sed -i 's/[a-z.* ]*{}//g' public/highlight.min.css
 
 This doesn't beat the tree-shaking capabilities that you might see in frameworks like Tailwind CSS with `purge`, but it's a neat little venture nonetheless.
 
-### Working around framework constraints
+## Working around framework constraints
 
 Sometimes frameworks introduce constraints that can be troublesome for development. Today's example comes courtesy of [Can I Leave Melbourne](https://canileave.melbourne/) from [Terence Huynh](https://terencehuynh.com/), which uses NextJS to bring pre-rendering capabilities to a React app.
 
@@ -118,7 +111,7 @@ const handleShare = async () => {
 
 _Aside: I think [opting out of pre-rendering for this section of the page](https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr) might be another way to fix this, but with the tradeoff that the section will not show if a client isn't running JavaScript._
 
-### Filling the screen width with CSS
+## Filling the screen width with CSS
 
 These days, I usually prefer to use padding over margins to create space between elements, after I had a few rough run-ins with [margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing) in the past. For example, on this website I set `padding: 16px` on each section of the page to distance content from the edge of the viewport, rather than using left/right margins.
 
@@ -142,7 +135,7 @@ The relative positioning shifts the selected elements right from their normal po
 
 ![A blog post screenshot, where text is padded on either side but images and code blocks fill the width of the page](./wide-images-and-code-blocks.png)
 
-### What have you seen in the wilds?
+## What have you seen in the wilds?
 
 That's a wrap! I hope you've enjoyed reading these quick dives, and that you're walking away knowing something new — be it knowledge of a new workaround or a sense of dread from all the weird things done in the name of development.
 

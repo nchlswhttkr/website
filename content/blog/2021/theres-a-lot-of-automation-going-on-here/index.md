@@ -4,7 +4,6 @@ date: 2021-05-01T21:00:00+1000
 tags:
     - automation
     - github
-date: 2021-05-01T21:00:00+1000
 ---
 
 With a little bit of invested time, I've figured out a nice little process for previewing changes to my site. The technical side of it is a writeup for another day, but it's too cool to not to talk about here and now.

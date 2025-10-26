@@ -19,7 +19,7 @@ I was originally planning to write up my thoughts on all of the presentations. I
 
 ![A photo of the DDD 10th anniversary logo, with the inset caption "It's a great day"](./snap.png)
 
-### API Development
+## API Development
 
 [Rob Crowley](https://twitter.com/robdcrowley) / [Slides](https://speakerdeck.com/robcrowley/graphql-grpc-or-rest-resolving-the-api-developers-dilemma)
 
@@ -29,7 +29,7 @@ The most important takeaway for me was recognising that, more often than not, th
 
 This can include considerations like the expected API consumers, as you might only need to cater to a single application/process, or may need to make something generally available to a wider audience (think public APIs like Reddit or Twitter). You could go for a standard response format with a resource-focused approach like REST, or allow clients to refine a query for their own convenience, a-la GraphQL.
 
-### Microfrontends
+## Microfrontends
 
 Michael King
 
@@ -47,7 +47,7 @@ In short, the simultaneous strength and weakness of microfrontends is that each 
 
 I can see the case for microfrontends, with large frontends maintained by multiple teams. I think I'd be a bigger fan if code-sharing was a greater focus (a-la jQuery days), allowing common dependencies (bulky frontend frameworks, company design system components) to be loaded once only. This does go against the core concept of independence though.
 
-### Imposter Syndrome
+## Imposter Syndrome
 
 [Cameo Langford](https://www.cameocodes.com/)
 
@@ -65,7 +65,7 @@ Thank you for speaking Cameo.
 
 _I'm also stealing your "dog picture break" idea for my own presentations._
 
-### Junior Developer Panel
+## Junior Developer Panel
 
 [Terence Huynh](https://twitter.com/terencehuynh) (Moderator) / Kate Illsley / Amir Moghimi / Erin Zimmer / Sabrina Swatee
 
@@ -81,7 +81,7 @@ An interesting discussion focused around the difference between junior developer
 
 A more lighthearted moment was when everyone in the room was asked to raise their hand if they'd ever broken something in prod. A sea of hands followed. It's a gentle reminder that no developer is perfect, and that mistakes can be made by anyone at any stage of a software project. What's more important is to care about fixing the problem quickly and effectively when it's caught.
 
-### Notifications and Dark Patterns
+## Notifications and Dark Patterns
 
 [Bec Martin](https://twitter.com/coder_bec)
 
@@ -95,7 +95,7 @@ Differing between communications in terms of importance feels like the best rout
 
 Services like Gmail offer to only send notifications for "important" emails (blindly guessed by a black box), but I'm part of the crowd that fears missing that one critical email.
 
-### Serverless
+## Serverless
 
 [Matt Tyler](https://matthewtyler.io/)
 
@@ -105,7 +105,7 @@ His talk also made me harken back to past work at Monash University, where we we
 
 In this case, the performance of our chosen service had gradually improved over time, all without any action/optimisation on our end as the customer. I don't think it's wise to take these kinds of performance improvements for granted, but it does bear keeping in mind that they can occur.
 
-### Performance & Scale
+## Performance & Scale
 
 [Marcel Dempers](https://marcel.guru/)
 
@@ -116,14 +116,14 @@ When it comes to work in large systems, problems can arise from anywhere in the 
 -   The generation of mock requests
 -   Monitoring/measuring the performance of the system
 
-### Locknote
+## Locknote
 
 [Aaron Powell](http://www.aaron-powell.com/)
 
 Aaron was kind enough to speak at Monash University earlier this year, giving an introduction to Docker ("_from scratch_" :laughing:) as a part of Techfest, a week-long event organised by [WIRED Monash](https:wired.org.au).
 I can see why this was the closing talk. Nostaligia kick for sure.
 
-### Stray thoughts
+## Stray thoughts
 
 I've got a few last thoughts that don't really tie themselves to any particular talk, but I still feel like noting down.
 

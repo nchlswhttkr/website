@@ -16,7 +16,7 @@ While pressing this "big red button" only takes a half-dozen clicks in a web UI,
 
 <!--more-->
 
-### The typical process
+## The typical process
 
 To quickly recap the necessary technical details, I use [Buildkite](https://buildkite.com/) for my website's builds. Whenever a new newsletter is detected, two extra jobs are appended to the in-progress build. The first sends me a preview newsletter, and the second sends it to my readers.
 
@@ -39,7 +39,7 @@ Another option I weighed up was to SSH from my phone into a remote device with t
 
 This was when I had the glaring realisation that maybe, _just maybe_, I could do it all within Shortcuts itself! Usage would be restricted to my Apple devices, interaction could be done through system prompts, and all logic would be contained within the app itself!
 
-### A faster process
+## A faster process
 
 With a plan in mind, I set about creating a shortcut. After some dragging and dropping, I was able to unblock jobs from the comfort of my phone!
 

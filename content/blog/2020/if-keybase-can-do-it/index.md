@@ -16,7 +16,7 @@ They were also [acquired by Zoom](https://keybase.io/blog/keybase-joins-zoom) la
 
 With this post, I thought it would be interesting to talk a little about my process when approaching a problem like this. Maybe the journey isn't as interesting as the end result, but it can't hurt to write about it!
 
-### Break it down
+## Break it down
 
 I'm rebuilding something that already exists, so let's start with a high-level description of what Keybase does for me. In particular, what are the key elements to it?
 
@@ -38,7 +38,7 @@ Let's wrap this up with a rough description of the end product and get onto buil
 
 > When filesystem changes happens locally, they are synced to my remote web server. This server then makes the files available to the web.
 
-### Serving files to the web is easy
+## Serving files to the web is easy
 
 This was a pretty quick addition to the Nginx config for my server, on it goes!
 
@@ -56,7 +56,7 @@ This was a pretty quick addition to the Nginx config for my server, on it goes!
 
 With an `alias` to serve local files for matching locations and the `autoindex` directice to generate directory views on index routes, web visitors can browse my public files.
 
-### Syncing files between devices is hard
+## Syncing files between devices is hard
 
 I have files I want share in `~/public-files/`. I want them on the remote at `~/public-files/`. I want them synced automatically/in the background.
 
@@ -92,7 +92,7 @@ Compared to other tools (cron, systemd) it might be unwieldy, but for me the sys
 
 However, we can actually introduce one last change to make it a little better though!
 
-### Replacing a background job with a manual trigger
+## Replacing a background job with a manual trigger
 
 There's a useful little app that comes with macOS called Automator. Automator lets you set up a similar level of automation to what you can achieve with AppleSCript, but through a GUI. In Automator, the automation documents are called workflows.
 
@@ -104,7 +104,7 @@ So there you have it, file syncing from my machine to the web!
 
 If you'd like to see the end result, just head to [https://nicholas.cloud/files/](https://nicholas.cloud/files/)!
 
-### Thanks
+## Thanks
 
 I wouldn't have known about macOS automation if [Josh Parnham](https://joshparnham.com/) hadn't given a talk on it a few years ago. You can find [his slides on GitHub](https://github.com/josh-/automating-macOS-with-JXA-presentation) to see what he spoke about, as well as links to plenty of resources on jumping into automation in macOS!
 

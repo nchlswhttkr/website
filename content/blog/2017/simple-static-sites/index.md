@@ -11,7 +11,7 @@ Personal websites! Everyone wants to have one, but nobody wants to go through th
 
 <!--more-->
 
-### Outline
+## Outline
 
 Let's go through the basics first. I build my site using the static site generator [Hugo](https://gohugo.io/), and serve my content (for free!) with [GitHub Pages](https://pages.github.com/). I chose Hugo for its blazing fast performance (~25ms to build my current site), and its focus on giving full control over design, structure and templating. While Hugo, like its competitors, offers a plethora of pre-built templates to choose from, I enjoy having the freedom to change anything to do with my site's presentation.
 
@@ -19,7 +19,7 @@ Here's a few of the methods I went through to build and deploy my site. Hugo, li
 
 My goal was to eliminate as much effort from my side as possible when it comes to building and deploying, but at the same time ensuring that I maintain a fairly clean solution that avoids 'dirty' fixes to make functional ends meet.
 
-### Using `.gitignore`
+## Using `.gitignore`
 
 My first approach was quite naive but effective.
 
@@ -28,7 +28,7 @@ My first approach was quite naive but effective.
 
 This approach is simple and understandable, but I found a few drawbacks with it. This setup struggles to be **portable**, as you have to keep setting up the `public` folder when moving from computer to computer, and at the time it was **unwieldy** to have to keep on remembering to push after each build.
 
-### CI/CD Providers
+## CI/CD Providers
 
 The next approach was seeing if I could find a solution where all the heavy lifting (building and deploying) would be done through an external service.
 
@@ -38,7 +38,7 @@ I did a little investigating and found that [GitLab](https://gitlab.com/) also o
 
 _It should be noted that at the time of development/writing, GitLab is working on a [feature](https://gitlab.com/gitlab-org/gitlab-ce/issues/18106) to allow CI runners to push back to other repositories during a build. However, this issue had been open for more than two years and a public release did not seem to be on the horizon)._
 
-### Method 3: (Back) To The Local Repo!
+## Method 3: (Back) To The Local Repo!
 
 After development stagnated for a while as I studied at university and worked with [MonPlan](https://monplan.github.io/), I learned a bit more about the features of Git, and how to use scripts to automate simple actions. Everything started to click into place when I discovered a little feature of Git called hooks, which allow you to run various configured commands or scripts before/after key actions in the Git lifecycle (commit, push, etc...).
 

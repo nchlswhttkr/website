@@ -4,7 +4,7 @@ Source code for [my website](https://nicholas.cloud/). I host it on [my own infr
 
 See the [main site](https://nicholas.cloud/site/#acknowledgements) for further acknowledgements and attributions.
 
-### Development
+## Development
 
 You'll need to [Hugo](https://gohugo.io/) along with the [Vault CLI](https://developer.hashicorp.com/vault/docs/get-vault) and access to my Vault instance.
 

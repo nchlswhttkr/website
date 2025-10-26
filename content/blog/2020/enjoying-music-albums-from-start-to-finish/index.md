@@ -12,7 +12,7 @@ Take an album and let it run from its first track until conclusion. Don't put it
 
 <!--more-->
 
-### What you gain from listening linearly
+## What you gain from listening linearly
 
 _"Listening Linearly" would have been a good title for this post. Ah well, c'est la vie._
 
@@ -24,7 +24,7 @@ You can't listen to "Dollar Days" and "I Can't Give Everything Away" in isolatio
 
 There's brief moments of joy you get when you listen to albums uninterrupted too, courtesy of a little musical device called a segue. I think it's captivating when one song flows into the next in an album. Take the closing tracks in Gorillaz's _Demon Days_, "Don't Get Lost In Heaven" and "Demon Days", as an example. Personally I consider them to be a single piece, given how they fade together.
 
-### Perhaps it's not the style of today
+## Perhaps it's not the style of today
 
 I think this style of listening stems back to the days of vinyl records, where jumping easily between tracks wasn't a possibility. It was just needle down, from start to finish. An album like _The Dark Side of the Moon_ only ever lets up when you need to flip from side A to side B.
 
@@ -48,7 +48,7 @@ If you've played a game like [Celeste](http://www.celestegame.com/) or [Hollow K
 
 So why not relive it all with headphones instead of a controller?
 
-### It's just food for thought
+## It's just food for thought
 
 All of this said, I don't want to decry playlists and curated mixes. The models behind them are just as applicable to helping me find [new sounds I might like](https://www.music-map.com/vulfpeck) as they are to helping other explore songs that fit their tastes.
 

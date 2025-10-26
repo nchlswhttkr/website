@@ -14,21 +14,41 @@
     }
 }
 
+/*****************/
+/* BASE ELEMENTS */
+/*****************/
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     font-family: sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
 }
 
-a {
-    color: var(--link-color);
+header,
+.content,
+footer {
+    width: 100%;
+    min-width: 300px;
+    max-width: 810px;
 }
 
-.constrain-width {
-    margin: 0 auto;
-    min-width: 300px;
-    max-width: 820px;
+header,
+footer {
+    max-width: 842px; /* simulates padding on main content */
+    color: var(--theme-text-color);
+    background-color: var(--theme-color);
+    box-sizing: border-box;
+    padding: 16px 16px 8px;
+}
+
+/*********/
+/* LINKS */
+/*********/
+a {
+    color: var(--link-color);
 }
 
 header a,
@@ -38,36 +58,47 @@ footer a:visited {
     color: inherit;
 }
 
-header > *,
-footer > * {
-    color: var(--theme-text-color);
-    background-color: var(--theme-color);
-    box-sizing: border-box;
-    padding: 16px 24px;
-}
-
+/**********/
+/* HEADER */
+/**********/
 header > div {
     display: flex;
-    padding-bottom: 8px;
     justify-content: space-between;
 }
-header h1 {
+
+header h2 {
     font-size: 24px;
     margin: 0;
 }
+
 header a {
     text-decoration: none;
 }
+
 header img {
     height: 24px;
 }
 
-.content > .constrain-width {
-    max-width: 772px; // simulate padding
+/**********/
+/* FOOTER */
+/**********/
+.footer-icons {
+    margin: 0 0 8px;
 }
+
+.footer-icons a {
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+/**************/
+/* NAVIGATION */
+/**************/
 nav {
-    margin: 24px 0;
+    flex-grow: 1;
+    margin: 24px 0 0;
 }
+
 nav ul {
     margin: 0;
     padding: 0 16px;
@@ -75,39 +106,34 @@ nav ul {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 nav li {
     font-weight: 700;
     list-style-type: none;
     margin: 4px 8px;
 }
-main {
-    width: 100%;
-    max-width: 640px;
-    margin: 0 auto;
-}
 
-@media (min-width: 800px) {
-    .content > .constrain-width {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+@media (min-width: 842px) {
     nav ul {
         display: block;
         padding: 0;
     }
+
     nav li {
         margin: 0 0 8px;
     }
-    main {
-        margin: 0;
-    }
 }
 
-.footer-icons {
-    margin: 0 0 16px;
+/****************/
+/* PAGE CONTENT */
+/****************/
+.content > .constrain-width {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.footer-icons a {
-    text-decoration: none;
-    margin-right: 16px;
+
+main {
+    width: 100%;
+    max-width: 648px;
 }

@@ -22,19 +22,19 @@ At the moment, I pay US$5 for a DigitalOcean droplet (about ~AU$8 after conversi
 
 As a challenge to myself, I decided to try hosting a Terraria server. I went with Terraria because of its minimal requirements (only 500MB of memory is needed, so I don't have to upgrade) and because I can test the connection easily with my Terraria client on Steam.
 
-### Setting up the server
+## Setting up the server
 
 The first step was getting a server up, made easy because the Re-Logic team publishes a dedicated server distribution for Terraria. Before long, my droplet was running a server I could connect to, I was chugging along!
 
 ![My character on the Terraria server saying "Hello world!"](./terraria.png)
 
-### The joys of automation
+## The joys of automation
 
 Since I didn't want to have an SSH session open while running the server, I set up a [screen](https://www.gnu.org/software/screen/) for the server to run in that I could attach to and detach from to run admin commands as needed. As a further step, I set this up as a [systemd](https://freedesktop.org/wiki/Software/systemd/) service, so that I could easily bring it up and down as I needed.
 
 A key thing to note here is that the server was set up as a user unit to systemd, and not a system-wide unit. I went with this because I didn't want to make the user running my Terraria server a sudoer. User units behave similarly to normal units, except that they are managed by a single user, who can command them as needed (start, stop, enable, etc...) without root access.
 
-### Automating it a bit further
+## Automating it a bit further
 
 So I decided to take it a bit further - what if I didn't even need to SSH into the droplet from my computer to start and stop the server?
 
@@ -48,7 +48,7 @@ Initially this seemed to work fine, I could run the Shortcut and the server unit
 
 Except sometimes it didn't.
 
-### Digging deep to debug
+## Digging deep to debug
 
 Sometimes the server would inexplicably shut down right after starting up. From what I could gauge, this shutdown was at least graceful, following the stop command I'd defined for the unit.
 

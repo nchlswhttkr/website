@@ -20,7 +20,7 @@ You can find links to each album on Bandcamp for easy purchase and streaming. Mo
 
 So now in no particular order, here are my favourite music albums from 2020!
 
-### Strange Satisfaction - Woody & Jeremy
+## Strange Satisfaction - Woody & Jeremy
 
 At the end of 2019, I celebrated by taking the plunge and buying the complete Vulfpeck discography after watching their [Madison Square Garden concert](https://www.youtube.com/watch?v=rv4wf7bzfFE) online. When I heard my favourite member, Woody Goss, was doing an album with a friend of his, I was all ears!
 
@@ -30,7 +30,7 @@ An interesting discovery I stumbled upon with this album is that the digital dow
 
 {{< bandcamp-album woodyandjeremy strange-satisfaction >}}
 
-### The Joy of Music, The Job of Real Estate - Vulfpeck
+## The Joy of Music, The Job of Real Estate - Vulfpeck
 
 Vulfpeck also released an album as a band in 2020. Some songs in the release have been available online for years, but like that they're collected into a proper release.
 
@@ -38,7 +38,7 @@ The final track for this album was auctioned off to the highest bidder on eBay, 
 
 {{< bandcamp-album vulfpeck the-joy-of-music-the-job-of-real-estate-2 >}}
 
-### Don't Shy Away - LOMA
+## Don't Shy Away - LOMA
 
 Sometimes, I sit on Bandcamp's home page to watch the live feed of purchases go by. _Don't Shy Away_ was one of the albums I saw flash by one day, and decided to give it a go.
 
@@ -46,7 +46,7 @@ I find it calming to put this on from time to time. I'm hoping to see more music
 
 {{< bandcamp-album lomamusic dont-shy-away >}}
 
-### Realign - Red Vox
+## Realign - Red Vox
 
 One of my completely new discoveries this year was the band Red Vox. Rock isn't always my genre, but I enjoy the band's sound and I've frequently listened to this album since buying it.
 
@@ -54,13 +54,13 @@ This is also the first album I've bought on vinyl, and I'm looking for working m
 
 {{< bandcamp-album vine realign >}}
 
-### Lost For A While - Red Vox
+## Lost For A While - Red Vox
 
 _Realign_ also had a follow-up album incorporating a collection of songs that didn't make it onto the initial release. Seeing as this album also came out in 2020, it's fair game to include here!
 
 {{< bandcamp-album vine lost-for-a-while-ep >}}
 
-### A Short Hike - Mark Sparling
+## A Short Hike - Mark Sparling
 
 I bought the game [A Short Hike](https://ashorthike.com/) as part of a bundle around the middle of the year, and thoroughly enjoyed playing it. Its soothing soundtrack is rife with the acoustic sounds of guitars, pianos and percussion, and it's a fitting accompaniment for protagonist Claire's adventure.
 
@@ -70,7 +70,7 @@ Now, _technically_ this album was released in 2019, but I'm keeping it in since 
 
 {{< bandcamp-album marksparling a-short-hike-original-soundtrack >}}
 
-### That Place, Our Place - Callum Mintzis
+## That Place, Our Place - Callum Mintzis
 
 Another quiet album I loved was this collection of pieces for keys and strings. I think it's nice to have something softer in contrast to some of the more upbeat and energetic music I listen to.
 
@@ -78,7 +78,7 @@ This is the only album I've mentioned here that's from an Australian artist. I'm
 
 {{< bandcamp-album callummintzis that-place-our-place >}}
 
-### Songs of Supergiant Games - Darren Korb & Ashley Barrett
+## Songs of Supergiant Games - Darren Korb & Ashley Barrett
 
 The team at Supergiant Games celebrates a decade of games with a selection of reorchestrated songs from all of their games.
 
@@ -88,13 +88,13 @@ One last thing that amuses me with these arrangements is that they successfully 
 
 {{< bandcamp-album supergiantgames songs-of-supergiant-games >}}
 
-### Carry Me Home - KOKOROKO
+## Carry Me Home - KOKOROKO
 
 While technically only a _single_ and not an _album_, I am a big fan of KOROKOKO's afrobeat sound. They've only got a few songs to their name, but I eagerly await more releases! You can find all of their music on Bandcamp, so I'd encourage you to check them out.
 
 {{< bandcamp-album kokoroko carry-me-home >}}
 
-### Modern Johnny Sings: Songs in the Age of Vibe - Theo Katzman
+## Modern Johnny Sings: Songs in the Age of Vibe - Theo Katzman
 
 My last album is from another Vulfpeck member, if that suggests a pattern. Theo has a golden voice, with the lyricism to match.
 

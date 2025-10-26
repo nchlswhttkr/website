@@ -3,7 +3,6 @@ title: "I'm excited for The Great Ace Attorney Chronicles and the Story Mode fea
 date: 2021-05-29T23:00:00+1000
 tags:
     - gaming
-date: 2021-05-29T23:00:00+1000
 ---
 
 Late last year, I grabbed the original Ace Attorney trilogy on discount after stumbling across [a trending fan video](https://www.youtube.com/watch?v=vDMwDT6BhhE). I've now played through all six mainline games, and I'm optimistic for a seventh to coincide with the series' 20th anniversary later this year.

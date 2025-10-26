@@ -9,7 +9,7 @@ services:
         build:
             context: .
             args:
-                HUGO_VERSION: "0.145.0"
+                HUGO_VERSION: "0.152.2"
         environment:
             - VAULT_ADDR
             - VAULT_TOKEN

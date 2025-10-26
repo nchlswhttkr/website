@@ -21,7 +21,7 @@ markup:
 # Cheers Ruben for the neat trick to preserve permalinks while grouping content!
 # https://gitlab.com/rubenerd/rubenerd.com/-/blob/bdd34af9/config.yaml#L150
 permalinks:
-    blog: /blog/:filename/
+    blog: /blog/:contentbasename/
 
 params:
     color: "#2442ba"
@@ -52,4 +52,4 @@ outputFormats:
 security:
     http:
         mediaTypes:
-            - ^application/vnd\.vimeo\.video\+json$
+            - ^application/vnd\.vimeo\.video\+json$ # Vimeo API responses
