@@ -21,7 +21,7 @@ This blog runs on a DigitalOcean droplet managed with Ansible. The inventory of 
 
 Previously, that inventory was a 1:1 mapping of machine names to hostnames. Hosts in an inventory can be grouped as well though. What if each Tailscale machine is tagged with the projects it hosts?
 
-![](./tailscale-machines.png)
+![A web console listing several machines, each with tags corresponding to different software projects](./tailscale-machines.png)
 
 Mapping each of these tags to a group in the Ansible needs only [a small bit of wrangling with the inventory script](https://github.com/nchlswhttkr/hosting/blob/07cd9a23575b92abf3115a9020676390cf7fad32/deploy/inventory.py).
 
