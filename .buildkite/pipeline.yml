@@ -10,6 +10,14 @@ steps:
           run: ci
           config: .buildkite/docker-compose.yml
 
+  - label: ':cloudflare: Sync to R2'
+    if: 'build.branch == "main"'
+    key: sync-to-r2
+    depends_on: build
+    command: .buildkite/sync-to-r2.sh
+    concurrency_group: $BUILDKITE_PIPELINE_SLUG/deploy
+    concurrency: 1
+
   - label: ':shipit: Deploy website'
     if: 'build.branch == "main"'
     key: deploy
