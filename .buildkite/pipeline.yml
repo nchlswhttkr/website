@@ -19,6 +19,7 @@ steps:
     concurrency: 1
 
   - label: ':shipit: Deploy website'
+    skip: "Currently serving website from Cloudflare Workers"
     if: 'build.branch == "main"'
     key: deploy
     depends_on: build
@@ -34,5 +35,5 @@ steps:
   - label: ":cloudflare: Purge Cloudflare cache"
     if: 'build.branch == "main"'
     key: purge-cloudflare-cache
-    depends_on: deploy
+    depends_on: sync-to-r2
     command: .buildkite/purge-cloudflare-cache.sh
